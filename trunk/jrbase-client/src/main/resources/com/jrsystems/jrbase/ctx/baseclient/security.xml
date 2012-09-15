@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+  <bean id="applicationSecurityManager"
+         class="org.springframework.richclient.security.support.DefaultApplicationSecurityManager">
+         <property name="authenticationManager" ref="authenticationManager"/>
+  </bean> 
+  
+<!--  <bean id="userDetailsService" class="org.springframework.security.userdetails.jdbc.JdbcDaoImpl">-->
+<!--  	<property name="dataSource" ref="dataSource" />-->
+<!--  </bean>-->
+  
+  <bean id="userDetailsService" class="com.jrsystems.jrbase.user.service.UserServiceImpl" >
+  	
+  </bean>
+
+  <bean id="securityAwareConfigurer"
+         class="org.springframework.richclient.security.SecurityAwareConfigurer"
+         lazy-init="false"/>
+  
+  <bean id="authenticationManager" class="org.springframework.security.providers.ProviderManager">
+    <property name="providers">
+      <list>
+        <ref bean="daoAuthenticationProvider" />
+      </list>
+    </property>
+  </bean>
+  
+  <bean id="daoAuthenticationProvider" class="org.springframework.security.providers.dao.DaoAuthenticationProvider">
+    <property name="userDetailsService" ref="userDetailsService" />    
+<!--    <property name="passwordEncoder">-->
+<!--    	<bean class="org.springframework.security.providers.encoding.Md5PasswordEncoder">-->
+<!--            	<property name="encodeHashAsBase64">-->
+<!--                    <value>false</value>-->
+<!--        		</property>-->
+<!--    	</bean>    	-->
+<!--  	</property>   	-->
+<!--  	<property name = "saltSource">-->
+<!--		<ref local = "systemWideSalt"/>-->
+<!--	</property>	-->
+
+  </bean>
+  
+  <!-- SECURITY CONTROLLERS --> 
+  <bean id="adminController" class="org.springframework.richclient.security.support.UserRoleSecurityController" >
+  	<property name="authorizingRoles" value="ROLE_ADMINISTRATOR" />
+  	<property name="accessDecisionManager" ref="accessDecisionManager" />
+  </bean>
+  
+  <!-- SECURITY CONTROLLERS --> 
+  <bean id="managerController" class="org.springframework.richclient.security.support.UserRoleSecurityController" >
+  	<property name="authorizingRoles" value="ROLE_ADMINISTRATOR, ROLE_MANAGER" />
+  	<property name="accessDecisionManager" ref="accessDecisionManager" />
+  </bean>
+      
+  <bean id="cashierController" class="org.springframework.richclient.security.support.UserRoleSecurityController">
+  	<property name="authorizingRoles" value="ROLE_ADMINISTRATOR, ROLE_MANAGER, ROLE_CASHIER"/>  
+  	<property name="accessDecisionManager" ref="accessDecisionManager" />
+  </bean>
+
+  <!-- =================== SECURITY BEANS YOU WILL RARELY (IF EVER) CHANGE ================== -->
+  <bean id="roleVoter" class="org.springframework.security.vote.RoleVoter" />
+
+  <bean id="accessDecisionManager" class="org.springframework.security.vote.AffirmativeBased">
+    <property name="allowIfAllAbstainDecisions" value="false" />
+    <property name="decisionVoters">
+      <list>
+        <ref bean="roleVoter" />
+      </list>
+    </property>
+  </bean>
+
+</beans>
