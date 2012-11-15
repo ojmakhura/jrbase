@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE jboss PUBLIC "-//JBoss//DTD JBOSS 3.0//EN" 
+                       "http://www.jboss.org/j2ee/dtd/jboss_3_2.dtd">
+
+<jboss>
+
+    <enterprise-beans>
+
+        <session>
+            <ejb-name>IndividualService</ejb-name>
+            <local-jndi-name>jrbase-1.0/ejb/com.jrsystems.jrbase.individual.service.IndividualService</local-jndi-name>
+        </session>
+
+        <session>
+            <ejb-name>UserService</ejb-name>
+            <local-jndi-name>jrbase-1.0/ejb/com.jrsystems.jrbase.user.service.UserService</local-jndi-name>
+        </session>
+
+        <session>
+            <ejb-name>OrganisationService</ejb-name>
+            <local-jndi-name>jrbase-1.0/ejb/com.jrsystems.jrbase.organisation.service.OrganisationService</local-jndi-name>
+        </session>
+
+        <session>
+            <ejb-name>LocationService</ejb-name>
+            <local-jndi-name>jrbase-1.0/ejb/com.jrsystems.jrbase.location.service.LocationService</local-jndi-name>
+        </session>
+
+        <session>
+            <ejb-name>CounterService</ejb-name>
+            <local-jndi-name>jrbase-1.0/ejb/com.jrsystems.jrbase.counter.service.CounterService</local-jndi-name>
+        </session>
+
+        <session>
+            <ejb-name>RoleService</ejb-name>
+            <local-jndi-name>jrbase-1.0/ejb/com.jrsystems.jrbase.role.service.RoleService</local-jndi-name>
+        </session>
+
+        <session>
+            <ejb-name>ClearanceLevelService</ejb-name>
+            <local-jndi-name>jrbase-1.0/ejb/com.jrsystems.jrbase.clearancelevel.service.ClearanceLevelService</local-jndi-name>
+        </session>
+
+        <session>
+            <ejb-name>LoginSessionService</ejb-name>
+            <local-jndi-name>jrbase-1.0/ejb/com.jrsystems.jrbase.loginsession.service.LoginSessionService</local-jndi-name>
+        </session>
+
+        <session>
+            <ejb-name>ProgramService</ejb-name>
+            <local-jndi-name>jrbase-1.0/ejb/com.jrsystems.jrbase.workbench.program.service.ProgramService</local-jndi-name>
+        </session>
+
+        <session>
+            <ejb-name>MenuService</ejb-name>
+            <local-jndi-name>jrbase-1.0/ejb/com.jrsystems.jrbase.workbench.menu.service.MenuService</local-jndi-name>
+        </session>
+
+   </enterprise-beans>
+
+</jboss>

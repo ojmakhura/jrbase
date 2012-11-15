@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+	<bean id = "counterForm" class="com.jrsystems.jrbase.counter.CounterForm"/>
+	<bean id="individualForm" class="com.jrsystems.jrbase.individual.IndividualForm"/>
+	<bean id="locationForm" class="com.jrsystems.jrbase.location.LocationForm"/>
+	<bean id="locationTypeForm" class="com.jrsystems.jrbase.location.LocationTypeForm"/>
+	<bean id="organisationForm" class="com.jrsystems.jrbase.organisation.OrganisationForm"/>
+	<bean id="organisationTypeForm" class="com.jrsystems.jrbase.organisation.OrganisationTypeForm"/>
+	<bean id="roleForm" class="com.jrsystems.jrbase.role.RoleForm"/>
+	<bean id="userForm" class="com.jrsystems.jrbase.user.UserForm"/>
+	<bean id="clearanceLevelForm" class="com.jrsystems.jrbase.clearancelevel.ClearanceLevelForm"/>
+	<bean id="loginForm" class="com.jrsystems.jrbase.login.LoginForm"/>
+</beans>

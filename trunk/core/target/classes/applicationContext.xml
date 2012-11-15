@@ -1,0 +1,592 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+
+    <!-- ========================= GENERAL DEFINITIONS ========================= -->
+
+    <!-- Message source for this context, loaded from localized "messages_xx" files -->
+    <bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+        <property name="basename"><value>messages</value></property>
+    </bean>
+
+    <!-- applicationContext merge-point -->
+    <bean id="hibernateMappingLocations" class="org.springframework.beans.factory.config.ListFactoryBean">
+        <property name="sourceList">
+            <list>
+                <!-- applicationContext hibernateMappingLocations merge-point -->
+                <value>classpath:com/jrsystems/jrbase/individual/Individual.hbm.xml</value>
+                <value>classpath:com/jrsystems/jrbase/user/User.hbm.xml</value>
+                <value>classpath:com/jrsystems/jrbase/user/UserLocation.hbm.xml</value>
+                <value>classpath:com/jrsystems/jrbase/organisation/Organisation.hbm.xml</value>
+                <value>classpath:com/jrsystems/jrbase/organisation/OrganisationType.hbm.xml</value>
+                <value>classpath:com/jrsystems/jrbase/location/LocationType.hbm.xml</value>
+                <value>classpath:com/jrsystems/jrbase/location/Location.hbm.xml</value>
+                <value>classpath:com/jrsystems/jrbase/counter/Counter.hbm.xml</value>
+                <value>classpath:com/jrsystems/jrbase/role/Role.hbm.xml</value>
+                <value>classpath:com/jrsystems/jrbase/clearancelevel/ClearanceLevel.hbm.xml</value>
+                <value>classpath:com/jrsystems/jrbase/loginsession/LoginSession.hbm.xml</value>
+                <value>classpath:com/jrsystems/jrbase/workbench/program/Program.hbm.xml</value>
+                <value>classpath:com/jrsystems/jrbase/workbench/menu/Menu.hbm.xml</value>
+            </list>
+         </property>
+    </bean>
+
+    <bean id="hibernateProperties" class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+        <property name="properties">
+            <props>
+                <prop key="hibernate.show_sql">true</prop>
+                <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+                <prop key="hibernate.default_batch_fetch_size">16</prop>
+                <prop key="hibernate.cache.provider_class">org.hibernate.cache.EhCacheProvider</prop>
+                <prop key="hibernate.cache.query_cache_factory">org.hibernate.cache.StandardQueryCacheFactory</prop>
+                <!-- applicationContext hibernateProperties merge-point -->
+            </props>
+        </property>
+    </bean>
+
+    <!-- Hibernate SessionFactory -->
+    <bean id="sessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+        <property name="dataSource"><ref bean="dataSource"/></property>
+        <property name="mappingLocations"><ref bean="hibernateMappingLocations"/></property>
+        <property name="hibernateProperties"><ref bean="hibernateProperties"/></property>
+        <!-- applicationContext sessionFactory merge-point -->
+    </bean>
+
+    <!-- The Hibernate interceptor -->
+    <bean id="hibernateInterceptor" class="org.springframework.orm.hibernate3.HibernateInterceptor">
+        <property name="sessionFactory"><ref bean="sessionFactory"/></property>
+        <!-- applicationContext hibernateInterceptor merge-point -->
+    </bean>
+
+    <!-- Individual Entity Proxy with inner Individual Entity implementation -->
+    <bean id="individualDao" class="org.springframework.aop.framework.ProxyFactoryBean">
+        <property name="target">
+            <bean class="com.jrsystems.jrbase.individual.IndividualDaoImpl">
+                <property name="sessionFactory"><ref local="sessionFactory"/></property>
+                <property name="locationDao"><ref bean="locationDao"/></property>
+                <lookup-method name="getUserDao" bean="userDao"/>
+                <!-- Individual entity property merge-point -->
+            </bean>
+        </property>
+        <property name="proxyInterfaces">
+            <value>com.jrsystems.jrbase.individual.IndividualDao</value>
+        </property>
+        <property name="interceptorNames">
+            <list>
+                <value>hibernateInterceptor</value>
+            </list>
+        </property>
+    </bean>
+
+    <!-- User Entity Proxy with inner User Entity implementation -->
+    <bean id="userDao" class="org.springframework.aop.framework.ProxyFactoryBean">
+        <property name="target">
+            <bean class="com.jrsystems.jrbase.user.UserDaoImpl">
+                <property name="sessionFactory"><ref local="sessionFactory"/></property>
+                <lookup-method name="getIndividualDao" bean="individualDao"/>
+                <lookup-method name="getUserLocationDao" bean="userLocationDao"/>
+                <lookup-method name="getRoleDao" bean="roleDao"/>
+                <lookup-method name="getLoginSessionDao" bean="loginSessionDao"/>
+                <lookup-method name="getMenuDao" bean="menuDao"/>
+                <lookup-method name="getProgramDao" bean="programDao"/>
+                <!-- User entity property merge-point -->
+            </bean>
+        </property>
+        <property name="proxyInterfaces">
+            <value>com.jrsystems.jrbase.user.UserDao</value>
+        </property>
+        <property name="interceptorNames">
+            <list>
+                <value>hibernateInterceptor</value>
+            </list>
+        </property>
+    </bean>
+
+    <!-- UserLocation Entity Proxy with inner UserLocation Entity implementation -->
+    <bean id="userLocationDao" class="org.springframework.aop.framework.ProxyFactoryBean">
+        <property name="target">
+            <bean class="com.jrsystems.jrbase.user.UserLocationDaoImpl">
+                <property name="sessionFactory"><ref local="sessionFactory"/></property>
+                <property name="locationDao"><ref bean="locationDao"/></property>
+                <lookup-method name="getUserDao" bean="userDao"/>
+                <!-- UserLocation entity property merge-point -->
+            </bean>
+        </property>
+        <property name="proxyInterfaces">
+            <value>com.jrsystems.jrbase.user.UserLocationDao</value>
+        </property>
+        <property name="interceptorNames">
+            <list>
+                <value>hibernateInterceptor</value>
+            </list>
+        </property>
+    </bean>
+
+    <!-- Organisation Entity Proxy with inner Organisation Entity implementation -->
+    <bean id="organisationDao" class="org.springframework.aop.framework.ProxyFactoryBean">
+        <property name="target">
+            <bean class="com.jrsystems.jrbase.organisation.OrganisationDaoImpl">
+                <property name="sessionFactory"><ref local="sessionFactory"/></property>
+                <lookup-method name="getOrganisationTypeDao" bean="organisationTypeDao"/>
+                <!-- Organisation entity property merge-point -->
+            </bean>
+        </property>
+        <property name="proxyInterfaces">
+            <value>com.jrsystems.jrbase.organisation.OrganisationDao</value>
+        </property>
+        <property name="interceptorNames">
+            <list>
+                <value>hibernateInterceptor</value>
+            </list>
+        </property>
+    </bean>
+
+    <!-- OrganisationType Entity Proxy with inner OrganisationType Entity implementation -->
+    <bean id="organisationTypeDao" class="org.springframework.aop.framework.ProxyFactoryBean">
+        <property name="target">
+            <bean class="com.jrsystems.jrbase.organisation.OrganisationTypeDaoImpl">
+                <property name="sessionFactory"><ref local="sessionFactory"/></property>
+                <lookup-method name="getOrganisationDao" bean="organisationDao"/>
+                <!-- OrganisationType entity property merge-point -->
+            </bean>
+        </property>
+        <property name="proxyInterfaces">
+            <value>com.jrsystems.jrbase.organisation.OrganisationTypeDao</value>
+        </property>
+        <property name="interceptorNames">
+            <list>
+                <value>hibernateInterceptor</value>
+            </list>
+        </property>
+    </bean>
+
+    <!-- LocationType Entity Proxy with inner LocationType Entity implementation -->
+    <bean id="locationTypeDao" class="org.springframework.aop.framework.ProxyFactoryBean">
+        <property name="target">
+            <bean class="com.jrsystems.jrbase.location.LocationTypeDaoImpl">
+                <property name="sessionFactory"><ref local="sessionFactory"/></property>
+                <!-- LocationType entity property merge-point -->
+            </bean>
+        </property>
+        <property name="proxyInterfaces">
+            <value>com.jrsystems.jrbase.location.LocationTypeDao</value>
+        </property>
+        <property name="interceptorNames">
+            <list>
+                <value>hibernateInterceptor</value>
+            </list>
+        </property>
+    </bean>
+
+    <!-- Location Entity Proxy with inner Location Entity implementation -->
+    <bean id="locationDao" class="org.springframework.aop.framework.ProxyFactoryBean">
+        <property name="target">
+            <bean class="com.jrsystems.jrbase.location.LocationDaoImpl">
+                <property name="sessionFactory"><ref local="sessionFactory"/></property>
+                <property name="locationTypeDao"><ref bean="locationTypeDao"/></property>
+                <lookup-method name="getLoginSessionDao" bean="loginSessionDao"/>
+                <!-- Location entity property merge-point -->
+            </bean>
+        </property>
+        <property name="proxyInterfaces">
+            <value>com.jrsystems.jrbase.location.LocationDao</value>
+        </property>
+        <property name="interceptorNames">
+            <list>
+                <value>hibernateInterceptor</value>
+            </list>
+        </property>
+    </bean>
+
+    <!-- Counter Entity Proxy with inner Counter Entity implementation -->
+    <bean id="counterDao" class="org.springframework.aop.framework.ProxyFactoryBean">
+        <property name="target">
+            <bean class="com.jrsystems.jrbase.counter.CounterDaoImpl">
+                <property name="sessionFactory"><ref local="sessionFactory"/></property>
+                <!-- Counter entity property merge-point -->
+            </bean>
+        </property>
+        <property name="proxyInterfaces">
+            <value>com.jrsystems.jrbase.counter.CounterDao</value>
+        </property>
+        <property name="interceptorNames">
+            <list>
+                <value>hibernateInterceptor</value>
+            </list>
+        </property>
+    </bean>
+
+    <!-- Role Entity Proxy with inner Role Entity implementation -->
+    <bean id="roleDao" class="org.springframework.aop.framework.ProxyFactoryBean">
+        <property name="target">
+            <bean class="com.jrsystems.jrbase.role.RoleDaoImpl">
+                <property name="sessionFactory"><ref local="sessionFactory"/></property>
+                <lookup-method name="getClearanceLevelDao" bean="clearanceLevelDao"/>
+                <lookup-method name="getUserDao" bean="userDao"/>
+                <lookup-method name="getMenuDao" bean="menuDao"/>
+                <lookup-method name="getProgramDao" bean="programDao"/>
+                <!-- Role entity property merge-point -->
+            </bean>
+        </property>
+        <property name="proxyInterfaces">
+            <value>com.jrsystems.jrbase.role.RoleDao</value>
+        </property>
+        <property name="interceptorNames">
+            <list>
+                <value>hibernateInterceptor</value>
+            </list>
+        </property>
+    </bean>
+
+    <!-- ClearanceLevel Entity Proxy with inner ClearanceLevel Entity implementation -->
+    <bean id="clearanceLevelDao" class="org.springframework.aop.framework.ProxyFactoryBean">
+        <property name="target">
+            <bean class="com.jrsystems.jrbase.clearancelevel.ClearanceLevelDaoImpl">
+                <property name="sessionFactory"><ref local="sessionFactory"/></property>
+                <property name="userDao"><ref bean="userDao"/></property>
+                <lookup-method name="getUpperDao" bean="clearanceLevelDao"/>
+                <lookup-method name="getClearanceLevelDao" bean="clearanceLevelDao"/>
+                <lookup-method name="getRoleDao" bean="roleDao"/>
+                <!-- ClearanceLevel entity property merge-point -->
+            </bean>
+        </property>
+        <property name="proxyInterfaces">
+            <value>com.jrsystems.jrbase.clearancelevel.ClearanceLevelDao</value>
+        </property>
+        <property name="interceptorNames">
+            <list>
+                <value>hibernateInterceptor</value>
+            </list>
+        </property>
+    </bean>
+
+    <!-- LoginSession Entity Proxy with inner LoginSession Entity implementation -->
+    <bean id="loginSessionDao" class="org.springframework.aop.framework.ProxyFactoryBean">
+        <property name="target">
+            <bean class="com.jrsystems.jrbase.loginsession.LoginSessionDaoImpl">
+                <property name="sessionFactory"><ref local="sessionFactory"/></property>
+                <lookup-method name="getUserDao" bean="userDao"/>
+                <lookup-method name="getLocationDao" bean="locationDao"/>
+                <!-- LoginSession entity property merge-point -->
+            </bean>
+        </property>
+        <property name="proxyInterfaces">
+            <value>com.jrsystems.jrbase.loginsession.LoginSessionDao</value>
+        </property>
+        <property name="interceptorNames">
+            <list>
+                <value>hibernateInterceptor</value>
+            </list>
+        </property>
+    </bean>
+
+    <!-- Program Entity Proxy with inner Program Entity implementation -->
+    <bean id="programDao" class="org.springframework.aop.framework.ProxyFactoryBean">
+        <property name="target">
+            <bean class="com.jrsystems.jrbase.workbench.program.ProgramDaoImpl">
+                <property name="sessionFactory"><ref local="sessionFactory"/></property>
+                <lookup-method name="getMenuDao" bean="menuDao"/>
+                <lookup-method name="getUserDao" bean="userDao"/>
+                <lookup-method name="getRoleDao" bean="roleDao"/>
+                <!-- Program entity property merge-point -->
+            </bean>
+        </property>
+        <property name="proxyInterfaces">
+            <value>com.jrsystems.jrbase.workbench.program.ProgramDao</value>
+        </property>
+        <property name="interceptorNames">
+            <list>
+                <value>hibernateInterceptor</value>
+            </list>
+        </property>
+    </bean>
+
+    <!-- Menu Entity Proxy with inner Menu Entity implementation -->
+    <bean id="menuDao" class="org.springframework.aop.framework.ProxyFactoryBean">
+        <property name="target">
+            <bean class="com.jrsystems.jrbase.workbench.menu.MenuDaoImpl">
+                <property name="sessionFactory"><ref local="sessionFactory"/></property>
+                <lookup-method name="getProgramDao" bean="programDao"/>
+                <lookup-method name="getUserDao" bean="userDao"/>
+                <lookup-method name="getRoleDao" bean="roleDao"/>
+                <!-- Menu entity property merge-point -->
+            </bean>
+        </property>
+        <property name="proxyInterfaces">
+            <value>com.jrsystems.jrbase.workbench.menu.MenuDao</value>
+        </property>
+        <property name="interceptorNames">
+            <list>
+                <value>hibernateInterceptor</value>
+            </list>
+        </property>
+    </bean>
+
+    <!-- ========================= Start of SERVICE DEFINITIONS ========================= -->
+
+    <!-- Service Transactional Interceptor -->
+    <bean id="serviceTransactionInterceptor" class="org.springframework.transaction.interceptor.TransactionInterceptor">
+        <property name="transactionManager"><ref bean="transactionManager"/></property>
+        <property name="transactionAttributeSource">
+            <value>
+                com.jrsystems.jrbase.individual.service.IndividualService.saveIndividual=PROPAGATION_REQUIRED
+                com.jrsystems.jrbase.individual.service.IndividualService.getAllIndividuals=PROPAGATION_REQUIRED
+                com.jrsystems.jrbase.individual.service.IndividualService.removeIndividual=PROPAGATION_REQUIRED
+                com.jrsystems.jrbase.user.service.UserService.saveUser=PROPAGATION_REQUIRED
+                com.jrsystems.jrbase.user.service.UserService.removeUser=PROPAGATION_REQUIRED
+                com.jrsystems.jrbase.user.service.UserService.getAllUsers=PROPAGATION_REQUIRED
+                com.jrsystems.jrbase.user.service.UserService.getUsersByStatus=PROPAGATION_REQUIRED
+                com.jrsystems.jrbase.user.service.UserService.getUserDetails=PROPAGATION_REQUIRED
+                com.jrsystems.jrbase.user.service.UserService.getUserLocations=PROPAGATION_REQUIRED
+                com.jrsystems.jrbase.user.service.UserService.getUserCurrentLocation=PROPAGATION_REQUIRED
+                com.jrsystems.jrbase.organisation.service.OrganisationService.getOrganisationBranches=PROPAGATION_REQUIRED
+                com.jrsystems.jrbase.organisation.service.OrganisationService.saveOrganisation=PROPAGATION_REQUIRED
+                com.jrsystems.jrbase.organisation.service.OrganisationService.saveOrganisationType=PROPAGATION_REQUIRED
+                com.jrsystems.jrbase.organisation.service.OrganisationService.getAllOrganisations=PROPAGATION_REQUIRED
+                com.jrsystems.jrbase.organisation.service.OrganisationService.getAllOrganisationTypes=PROPAGATION_REQUIRED
+                com.jrsystems.jrbase.organisation.service.OrganisationService.removeOrganisation=PROPAGATION_REQUIRED
+                com.jrsystems.jrbase.organisation.service.OrganisationService.removeOrganisationType=PROPAGATION_REQUIRED
+                com.jrsystems.jrbase.location.service.LocationService.getAllAreasByType=PROPAGATION_REQUIRED
+                com.jrsystems.jrbase.location.service.LocationService.getAreasInArea=PROPAGATION_REQUIRED
+                com.jrsystems.jrbase.location.service.LocationService.removeArea=PROPAGATION_REQUIRED
+                com.jrsystems.jrbase.location.service.LocationService.saveArea=PROPAGATION_REQUIRED
+                com.jrsystems.jrbase.location.service.LocationService.removeAreaType=PROPAGATION_REQUIRED
+                com.jrsystems.jrbase.location.service.LocationService.saveAreaType=PROPAGATION_REQUIRED
+                com.jrsystems.jrbase.location.service.LocationService.getAllAreaTypes=PROPAGATION_REQUIRED
+                com.jrsystems.jrbase.location.service.LocationService.getAreasByStatus=PROPAGATION_REQUIRED
+                com.jrsystems.jrbase.location.service.LocationService.getAreaTypesByStatus=PROPAGATION_REQUIRED
+                com.jrsystems.jrbase.counter.service.CounterService.createCounter=PROPAGATION_REQUIRED
+                com.jrsystems.jrbase.counter.service.CounterService.getCount=PROPAGATION_REQUIRED
+                com.jrsystems.jrbase.counter.service.CounterService.removeCounter=PROPAGATION_REQUIRED
+                com.jrsystems.jrbase.role.service.RoleService.saveRole=PROPAGATION_REQUIRED
+                com.jrsystems.jrbase.role.service.RoleService.getAllRoles=PROPAGATION_REQUIRED
+                com.jrsystems.jrbase.role.service.RoleService.getRolesByClearance=PROPAGATION_REQUIRED
+                com.jrsystems.jrbase.role.service.RoleService.getRoleClearanceLevels=PROPAGATION_REQUIRED
+                com.jrsystems.jrbase.role.service.RoleService.removeRole=PROPAGATION_REQUIRED
+                com.jrsystems.jrbase.clearancelevel.service.ClearanceLevelService.saveClearanceLevel=PROPAGATION_REQUIRED
+                com.jrsystems.jrbase.clearancelevel.service.ClearanceLevelService.getAllClearanceLevels=PROPAGATION_REQUIRED
+                com.jrsystems.jrbase.clearancelevel.service.ClearanceLevelService.removeClearanceLevel=PROPAGATION_REQUIRED
+                com.jrsystems.jrbase.loginsession.service.LoginSessionService.saveLoginSession=PROPAGATION_REQUIRED
+                com.jrsystems.jrbase.loginsession.service.LoginSessionService.getAllLoginSessions=PROPAGATION_REQUIRED
+                com.jrsystems.jrbase.loginsession.service.LoginSessionService.verifyLoginDetails=PROPAGATION_REQUIRED
+                com.jrsystems.jrbase.workbench.program.service.ProgramService.getAllPrograms=PROPAGATION_REQUIRED
+                com.jrsystems.jrbase.workbench.program.service.ProgramService.saveProgram=PROPAGATION_REQUIRED
+                com.jrsystems.jrbase.workbench.program.service.ProgramService.removeProgram=PROPAGATION_REQUIRED
+                com.jrsystems.jrbase.workbench.menu.service.MenuService.getAllMenus=PROPAGATION_REQUIRED
+                com.jrsystems.jrbase.workbench.menu.service.MenuService.getMenuBycode=PROPAGATION_REQUIRED
+                com.jrsystems.jrbase.workbench.menu.service.MenuService.getMenuByName=PROPAGATION_REQUIRED
+                com.jrsystems.jrbase.workbench.menu.service.MenuService.saveMenu=PROPAGATION_REQUIRED
+                com.jrsystems.jrbase.workbench.menu.service.MenuService.removeMenu=PROPAGATION_REQUIRED
+            </value>
+        </property>
+    <!-- applicationContext serviceTransactionInterceptor merge-point -->
+    </bean>
+
+    <!-- IndividualService Service Proxy with inner IndividualService Service Implementation -->
+    <bean id="individualService" class="org.springframework.aop.framework.ProxyFactoryBean">
+        <property name="target">
+            <bean class="com.jrsystems.jrbase.individual.service.IndividualServiceImpl">
+                <property name="individualDao"><ref bean="individualDao"/></property>
+                <property name="locationDao"><ref bean="locationDao"/></property>
+                <property name="locationTypeDao"><ref bean="locationTypeDao"/></property>
+                <property name="userDao"><ref bean="userDao"/></property>
+                <!-- IndividualService service property merge-point -->
+            </bean>
+        </property>
+        <property name="proxyInterfaces">
+            <value>com.jrsystems.jrbase.individual.service.IndividualService</value>
+        </property>
+        <property name="interceptorNames">
+            <list>
+                <value>serviceTransactionInterceptor</value>
+                <value>hibernateInterceptor</value>
+            </list>
+        </property>
+    </bean>
+
+    <!-- UserService Service Proxy with inner UserService Service Implementation -->
+    <bean id="userService" class="org.springframework.aop.framework.ProxyFactoryBean">
+        <property name="target">
+            <bean class="com.jrsystems.jrbase.user.service.UserServiceImpl">
+                <property name="userDao"><ref bean="userDao"/></property>
+                <property name="userLocationDao"><ref bean="userLocationDao"/></property>
+                <property name="locationDao"><ref bean="locationDao"/></property>
+                <!-- UserService service property merge-point -->
+            </bean>
+        </property>
+        <property name="proxyInterfaces">
+            <value>com.jrsystems.jrbase.user.service.UserService</value>
+        </property>
+        <property name="interceptorNames">
+            <list>
+                <value>serviceTransactionInterceptor</value>
+                <value>hibernateInterceptor</value>
+            </list>
+        </property>
+    </bean>
+
+    <!-- OrganisationService Service Proxy with inner OrganisationService Service Implementation -->
+    <bean id="organisationService" class="org.springframework.aop.framework.ProxyFactoryBean">
+        <property name="target">
+            <bean class="com.jrsystems.jrbase.organisation.service.OrganisationServiceImpl">
+                <property name="organisationDao"><ref bean="organisationDao"/></property>
+                <property name="locationDao"><ref bean="locationDao"/></property>
+                <property name="organisationTypeDao"><ref bean="organisationTypeDao"/></property>
+                <!-- OrganisationService service property merge-point -->
+            </bean>
+        </property>
+        <property name="proxyInterfaces">
+            <value>com.jrsystems.jrbase.organisation.service.OrganisationService</value>
+        </property>
+        <property name="interceptorNames">
+            <list>
+                <value>serviceTransactionInterceptor</value>
+                <value>hibernateInterceptor</value>
+            </list>
+        </property>
+    </bean>
+
+    <!-- LocationService Service Proxy with inner LocationService Service Implementation -->
+    <bean id="locationService" class="org.springframework.aop.framework.ProxyFactoryBean">
+        <property name="target">
+            <bean class="com.jrsystems.jrbase.location.service.LocationServiceImpl">
+                <property name="locationDao"><ref bean="locationDao"/></property>
+                <property name="locationTypeDao"><ref bean="locationTypeDao"/></property>
+                <!-- LocationService service property merge-point -->
+            </bean>
+        </property>
+        <property name="proxyInterfaces">
+            <value>com.jrsystems.jrbase.location.service.LocationService</value>
+        </property>
+        <property name="interceptorNames">
+            <list>
+                <value>serviceTransactionInterceptor</value>
+                <value>hibernateInterceptor</value>
+            </list>
+        </property>
+    </bean>
+
+    <!-- CounterService Service Proxy with inner CounterService Service Implementation -->
+    <bean id="counterService" class="org.springframework.aop.framework.ProxyFactoryBean">
+        <property name="target">
+            <bean class="com.jrsystems.jrbase.counter.service.CounterServiceImpl">
+                <property name="counterDao"><ref bean="counterDao"/></property>
+                <!-- CounterService service property merge-point -->
+            </bean>
+        </property>
+        <property name="proxyInterfaces">
+            <value>com.jrsystems.jrbase.counter.service.CounterService</value>
+        </property>
+        <property name="interceptorNames">
+            <list>
+                <value>serviceTransactionInterceptor</value>
+                <value>hibernateInterceptor</value>
+            </list>
+        </property>
+    </bean>
+
+    <!-- RoleService Service Proxy with inner RoleService Service Implementation -->
+    <bean id="roleService" class="org.springframework.aop.framework.ProxyFactoryBean">
+        <property name="target">
+            <bean class="com.jrsystems.jrbase.role.service.RoleServiceImpl">
+                <property name="roleDao"><ref bean="roleDao"/></property>
+                <property name="clearanceLevelDao"><ref bean="clearanceLevelDao"/></property>
+                <property name="userDao"><ref bean="userDao"/></property>
+                <!-- RoleService service property merge-point -->
+            </bean>
+        </property>
+        <property name="proxyInterfaces">
+            <value>com.jrsystems.jrbase.role.service.RoleService</value>
+        </property>
+        <property name="interceptorNames">
+            <list>
+                <value>serviceTransactionInterceptor</value>
+                <value>hibernateInterceptor</value>
+            </list>
+        </property>
+    </bean>
+
+    <!-- ClearanceLevelService Service Proxy with inner ClearanceLevelService Service Implementation -->
+    <bean id="clearanceLevelService" class="org.springframework.aop.framework.ProxyFactoryBean">
+        <property name="target">
+            <bean class="com.jrsystems.jrbase.clearancelevel.service.ClearanceLevelServiceImpl">
+                <property name="clearanceLevelDao"><ref bean="clearanceLevelDao"/></property>
+                <property name="userDao"><ref bean="userDao"/></property>
+                <property name="roleDao"><ref bean="roleDao"/></property>
+                <!-- ClearanceLevelService service property merge-point -->
+            </bean>
+        </property>
+        <property name="proxyInterfaces">
+            <value>com.jrsystems.jrbase.clearancelevel.service.ClearanceLevelService</value>
+        </property>
+        <property name="interceptorNames">
+            <list>
+                <value>serviceTransactionInterceptor</value>
+                <value>hibernateInterceptor</value>
+            </list>
+        </property>
+    </bean>
+
+    <!-- LoginSessionService Service Proxy with inner LoginSessionService Service Implementation -->
+    <bean id="loginSessionService" class="org.springframework.aop.framework.ProxyFactoryBean">
+        <property name="target">
+            <bean class="com.jrsystems.jrbase.loginsession.service.LoginSessionServiceImpl">
+                <property name="loginSessionDao"><ref bean="loginSessionDao"/></property>
+                <property name="locationDao"><ref bean="locationDao"/></property>
+                <property name="userDao"><ref bean="userDao"/></property>
+                <!-- LoginSessionService service property merge-point -->
+            </bean>
+        </property>
+        <property name="proxyInterfaces">
+            <value>com.jrsystems.jrbase.loginsession.service.LoginSessionService</value>
+        </property>
+        <property name="interceptorNames">
+            <list>
+                <value>serviceTransactionInterceptor</value>
+                <value>hibernateInterceptor</value>
+            </list>
+        </property>
+    </bean>
+
+    <!-- ProgramService Service Proxy with inner ProgramService Service Implementation -->
+    <bean id="programService" class="org.springframework.aop.framework.ProxyFactoryBean">
+        <property name="target">
+            <bean class="com.jrsystems.jrbase.workbench.program.service.ProgramServiceImpl">
+                <property name="programDao"><ref bean="programDao"/></property>
+                <!-- ProgramService service property merge-point -->
+            </bean>
+        </property>
+        <property name="proxyInterfaces">
+            <value>com.jrsystems.jrbase.workbench.program.service.ProgramService</value>
+        </property>
+        <property name="interceptorNames">
+            <list>
+                <value>serviceTransactionInterceptor</value>
+                <value>hibernateInterceptor</value>
+            </list>
+        </property>
+    </bean>
+
+    <!-- MenuService Service Proxy with inner MenuService Service Implementation -->
+    <bean id="menuService" class="org.springframework.aop.framework.ProxyFactoryBean">
+        <property name="target">
+            <bean class="com.jrsystems.jrbase.workbench.menu.service.MenuServiceImpl">
+                <property name="menuDao"><ref bean="menuDao"/></property>
+                <!-- MenuService service property merge-point -->
+            </bean>
+        </property>
+        <property name="proxyInterfaces">
+            <value>com.jrsystems.jrbase.workbench.menu.service.MenuService</value>
+        </property>
+        <property name="interceptorNames">
+            <list>
+                <value>serviceTransactionInterceptor</value>
+                <value>hibernateInterceptor</value>
+            </list>
+        </property>
+    </bean>
+
+    <!-- ========================= End of SERVICE DEFINITIONS ========================= -->
+
+</beans>

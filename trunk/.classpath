@@ -1,3 +1,5 @@
+<<<<<<< .mine
+=======
 <classpath>
   <classpathentry kind="src" path="core/src/main/java"/>
   <classpathentry kind="src" path="core/target/src"/>
@@ -117,4 +119,4 @@
   <classpathentry kind="var" path="M2_REPO/xpp3/xpp3_min/1.1.4c/xpp3_min-1.1.4c.jar"/>
   <classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
   <classpathentry kind="output" path="target/classes"/>
-</classpath>
+</classpath>>>>>>>> .r4

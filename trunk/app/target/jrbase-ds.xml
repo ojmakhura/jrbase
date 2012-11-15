@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- JBoss Server DataSource -->
+<datasources>
+    <local-tx-datasource>
+        <jndi-name>jdbc/jrbase</jndi-name>
+        <connection-url>jdbc:mysql://localhost:3306/jrbase</connection-url>
+        <driver-class>com.mysql.jdbc.Driver</driver-class>
+        <user-name>root</user-name>
+        <password>whocares</password>
+        <!-- <check-valid-connection-sql>select 1 from dual</check-valid-connection-sql> -->
+        <!-- Checks for error codes and messages for fatal errors
+        <exception-sorter-class-name>org.jboss.resource.adapter.jdbc.vendor.MySQLExceptionSorter</exception-sorter-class-name>
+        -->
+    </local-tx-datasource>
+</datasources>
