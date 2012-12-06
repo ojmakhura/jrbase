@@ -1,0 +1,667 @@
+2012-12-06 14:08:55,128 INFO  [AndroMDA] - discovering namespaces -
+2012-12-06 14:08:55,348 INFO  [AndroMDA] found namespace --> 'bpm4struts'
+2012-12-06 14:08:55,348 INFO  [AndroMDA]   +  registering component 'cartridge'
+2012-12-06 14:08:55,475 INFO  [AndroMDA]   +  registering component 'metafacades'
+2012-12-06 14:08:55,578 INFO  [AndroMDA]   +  registering component 'profile'
+2012-12-06 14:08:55,603 INFO  [AndroMDA] found namespace --> 'emf-uml22'
+2012-12-06 14:08:55,603 INFO  [AndroMDA]   +  registering component 'repository'
+2012-12-06 14:08:55,646 INFO  [AndroMDA]   +  registering component 'metafacades'
+2012-12-06 14:08:55,777 INFO  [AndroMDA]   +  registering component 'profile'
+2012-12-06 14:08:55,787 INFO  [AndroMDA] found namespace --> 'hibernate'
+2012-12-06 14:08:55,787 INFO  [AndroMDA]   +  registering component 'cartridge'
+2012-12-06 14:08:55,813 INFO  [AndroMDA]   +  registering component 'metafacades'
+2012-12-06 14:08:55,853 INFO  [AndroMDA]   +  registering component 'profile'
+2012-12-06 14:08:55,864 INFO  [AndroMDA] found namespace --> 'java'
+2012-12-06 14:08:55,864 INFO  [AndroMDA]   +  registering component 'cartridge'
+2012-12-06 14:08:55,876 INFO  [AndroMDA]   +  registering component 'profile'
+2012-12-06 14:08:55,879 INFO  [AndroMDA]   +  registering component 'metafacades'
+2012-12-06 14:08:55,884 INFO  [AndroMDA] found namespace --> 'netBeansMDR'
+2012-12-06 14:08:55,884 INFO  [AndroMDA]   +  registering component 'repository'
+2012-12-06 14:08:56,102 INFO  [AndroMDA] found namespace --> 'spring'
+2012-12-06 14:08:56,102 INFO  [AndroMDA]   +  registering component 'cartridge'
+2012-12-06 14:08:56,212 INFO  [AndroMDA]   +  registering component 'metafacades'
+2012-12-06 14:08:56,268 INFO  [AndroMDA]   +  registering component 'profile'
+2012-12-06 14:08:56,280 INFO  [AndroMDA] found namespace --> 'uml-1.4'
+2012-12-06 14:08:56,280 INFO  [AndroMDA]   +  registering component 'metafacades'
+2012-12-06 14:08:56,372 INFO  [AndroMDA]   +  registering component 'profile'
+2012-12-06 14:08:56,378 INFO  [AndroMDA] found namespace --> 'validation'
+2012-12-06 14:08:56,378 INFO  [AndroMDA]   +  registering component 'translation-library'
+2012-12-06 14:08:58,024 INFO  [AndroMDA] - core initialization complete: 3.206[s] -
+2012-12-06 14:08:58,063 INFO  [AndroMDA] loading model --> 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/src/main/uml/jrbase.uml'
+2012-12-06 14:08:58,082 INFO  [AndroMDA] referenced model --> 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/src/main/uml/jrbase.uml' 
+2012-12-06 14:08:58,408 INFO  [AndroMDA] referenced model --> 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/src/main/uml/UML_Standard_Profile.MagicDraw_Profile.profile.uml' 
+2012-12-06 14:08:58,594 INFO  [AndroMDA] referenced model --> 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/src/main/uml/UML_Standard_Profile.Validation_Profile.profile.uml' 
+2012-12-06 14:08:58,728 INFO  [AndroMDA] referenced model --> 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/src/main/uml/UML_Standard_Profile.MagicDraw_Profile.DSL_Customization.profile.uml' 
+2012-12-06 14:08:58,795 INFO  [AndroMDA] referenced model --> 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/src/main/uml/org.andromda.profile.persistence.profile.uml' 
+2012-12-06 14:08:58,905 INFO  [AndroMDA] referenced model --> 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/src/main/uml/org.andromda.profile.common.profile.uml' 
+2012-12-06 14:08:58,923 INFO  [AndroMDA] referenced model --> 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/src/main/uml/org.andromda.profile.service.profile.uml' 
+2012-12-06 14:08:58,960 INFO  [AndroMDA] referenced model --> 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/src/main/uml/org.andromda.profile.presentation.profile.uml' 
+2012-12-06 14:08:59,048 INFO  [AndroMDA] referenced model --> 'jar:file:/usr/local/m2repo/repository/org/eclipse/uml2/org.eclipse.uml2.uml.resources/3.1.0.v201005031530/org.eclipse.uml2.uml.resources-3.1.0.v201005031530.jar!/profiles/Standard.profile.uml#_yzU58YinEdqtvbnfB2L_5w' 
+2012-12-06 14:08:59,053 INFO  [AndroMDA] referenced model --> 'jar:file:/usr/local/m2repo/repository/org/eclipse/uml2/org.eclipse.uml2.uml.resources/3.1.0.v201005031530/org.eclipse.uml2.uml.resources-3.1.0.v201005031530.jar!/profiles/Standard.profile.uml#_0' 
+2012-12-06 14:08:59,057 INFO  [AndroMDA] referenced model --> 'jar:file:/usr/local/m2repo/repository/org/eclipse/uml2/org.eclipse.uml2.uml.resources/3.1.0.v201005031530/org.eclipse.uml2.uml.resources-3.1.0.v201005031530.jar!/profiles/Standard.profile.uml' 
+2012-12-06 14:08:59,125 INFO  [AndroMDA] referenced model --> 'jar:file:/usr/local/m2repo/repository/org/eclipse/uml2/org.eclipse.uml2.uml.resources/3.1.0.v201005031530/org.eclipse.uml2.uml.resources-3.1.0.v201005031530.jar!/profiles/Ecore.profile.uml#_z1OFcHjqEdy8S4Cr8Rc_NA' 
+2012-12-06 14:08:59,129 INFO  [AndroMDA] referenced model --> 'jar:file:/usr/local/m2repo/repository/org/eclipse/uml2/org.eclipse.uml2.uml.resources/3.1.0.v201005031530/org.eclipse.uml2.uml.resources-3.1.0.v201005031530.jar!/profiles/Ecore.profile.uml#_0' 
+2012-12-06 14:08:59,136 INFO  [AndroMDA] referenced model --> 'jar:file:/usr/local/m2repo/repository/org/eclipse/uml2/org.eclipse.uml2.uml.resources/3.1.0.v201005031530/org.eclipse.uml2.uml.resources-3.1.0.v201005031530.jar!/profiles/Ecore.profile.uml' 
+2012-12-06 14:08:59,397 INFO  [AndroMDA] referenced model --> 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/src/main/uml/org.andromda.profile.xml.profile.uml' 
+2012-12-06 14:08:59,411 INFO  [AndroMDA] referenced model --> 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/src/main/uml/org.andromda.profile.messaging.profile.uml' 
+2012-12-06 14:08:59,438 INFO  [AndroMDA] referenced model --> 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/src/main/uml/org.andromda.profile.webservice.profile.uml' 
+2012-12-06 14:08:59,461 INFO  [AndroMDA] referenced model --> 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/src/main/uml/org.andromda.profile.process.profile.uml' 
+2012-12-06 14:08:59,498 INFO  [AndroMDA] referenced model --> 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/src/main/uml/UML_Standard_Profile.UML_Standard_Profile.profile.uml' 
+2012-12-06 14:08:59,912 INFO  [AndroMDA] referenced model --> 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/src/main/uml/org.andromda.profile.meta.profile.uml' 
+2012-12-06 14:08:59,929 INFO  [AndroMDA] - loading complete: 1.901[s] -
+2012-12-06 14:08:59,929 INFO  [AndroMDA] - validating model -
+2012-12-06 14:09:04,180 INFO  [AndroMDA] - validation complete: 4.251[s] -
+2012-12-06 14:09:04,254 INFO  [AndroMDA] Processing cartridge spring on model /home/junior/Documents/business/jrsystems/devel/jrbase/mda/src/main/uml/jrbase.uml
+2012-12-06 14:09:04,260 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/spring/SpringServiceLocator.vsl with 23 metafacades from 2 model elements
+2012-12-06 14:09:04,421 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/ServiceLocator.java'
+2012-12-06 14:09:04,426 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/spring/SpringServiceLocator.vsl with 13 metafacades from 2 model elements
+2012-12-06 14:09:04,428 WARN  [org.andromda.core.cartridge.Cartridge] Template outlet location 'server' is not defined in namespace spring
+2012-12-06 14:09:04,431 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/spring/richclient/SpringServerTest.vsl with 0 metafacades from 1 model elements
+2012-12-06 14:09:04,434 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/spring/richclient/ThisBeanFactory.java.vsl with 0 metafacades from 1 model elements
+2012-12-06 14:09:04,443 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/spring/remoting/client/SpringClientServiceLocator.vsl with 13 metafacades from 2 model elements
+2012-12-06 14:09:04,504 WARN  [org.andromda.core.cartridge.Cartridge] Template outlet location 'client' is not defined in namespace spring
+2012-12-06 14:09:04,506 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/spring/richclient/SpringClientTest.vsl with 0 metafacades from 1 model elements
+2012-12-06 14:09:04,508 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/spring/SpringClientExceptionHandlingAdvice.vsl with 0 metafacades from 1 model elements
+2012-12-06 14:09:04,510 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/spring/SpringService.vsl with 10 metafacades from 1 model elements
+2012-12-06 14:09:04,534 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/individual/service/IndividualService.java'
+2012-12-06 14:09:04,543 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/user/service/UserService.java'
+2012-12-06 14:09:04,556 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/organisation/service/OrganisationService.java'
+2012-12-06 14:09:04,568 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/location/service/LocationService.java'
+2012-12-06 14:09:04,572 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/counter/service/CounterService.java'
+2012-12-06 14:09:04,579 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/role/service/RoleService.java'
+2012-12-06 14:09:04,584 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/clearancelevel/service/ClearanceLevelService.java'
+2012-12-06 14:09:04,592 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/loginsession/service/LoginSessionService.java'
+2012-12-06 14:09:04,596 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/workbench/program/service/ProgramService.java'
+2012-12-06 14:09:04,602 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/workbench/menu/service/MenuService.java'
+2012-12-06 14:09:04,604 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/spring/SpringService.vsl with 0 metafacades from 1 model elements
+2012-12-06 14:09:04,609 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/spring/SpringWebServiceDelegator.vsl with 0 metafacades from 1 model elements
+2012-12-06 14:09:04,610 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/spring/SpringServiceBase.vsl with 10 metafacades from 1 model elements
+2012-12-06 14:09:04,712 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/individual/service/IndividualServiceBase.java'
+2012-12-06 14:09:04,770 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/user/service/UserServiceBase.java'
+2012-12-06 14:09:04,815 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/organisation/service/OrganisationServiceBase.java'
+2012-12-06 14:09:04,865 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/location/service/LocationServiceBase.java'
+2012-12-06 14:09:04,881 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/counter/service/CounterServiceBase.java'
+2012-12-06 14:09:04,913 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/role/service/RoleServiceBase.java'
+2012-12-06 14:09:04,932 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/clearancelevel/service/ClearanceLevelServiceBase.java'
+2012-12-06 14:09:04,950 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/loginsession/service/LoginSessionServiceBase.java'
+2012-12-06 14:09:04,965 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/workbench/program/service/ProgramServiceBase.java'
+2012-12-06 14:09:04,983 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/workbench/menu/service/MenuServiceBase.java'
+2012-12-06 14:09:04,984 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/spring/SpringServiceBase.vsl with 0 metafacades from 1 model elements
+2012-12-06 14:09:04,986 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/spring/SpringPrincipalStore.java.vsl with 10 metafacades from 2 model elements
+2012-12-06 14:09:04,995 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/PrincipalStore.java'
+2012-12-06 14:09:04,996 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/spring/SpringPrincipalStore.java.vsl with 0 metafacades from 1 model elements
+2012-12-06 14:09:04,997 WARN  [org.andromda.core.cartridge.Cartridge] Template outlet location 'server' is not defined in namespace spring
+2012-12-06 14:09:04,998 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/spring/SpringServiceImpl.vsl with 10 metafacades from 1 model elements
+2012-12-06 14:09:05,024 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/src/main/java/com/systemsjr/jrbase/individual/service/IndividualServiceImpl.java'
+2012-12-06 14:09:05,028 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/src/main/java/com/systemsjr/jrbase/user/service/UserServiceImpl.java'
+2012-12-06 14:09:05,033 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/src/main/java/com/systemsjr/jrbase/organisation/service/OrganisationServiceImpl.java'
+2012-12-06 14:09:05,038 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/src/main/java/com/systemsjr/jrbase/location/service/LocationServiceImpl.java'
+2012-12-06 14:09:05,041 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/src/main/java/com/systemsjr/jrbase/counter/service/CounterServiceImpl.java'
+2012-12-06 14:09:05,044 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/src/main/java/com/systemsjr/jrbase/role/service/RoleServiceImpl.java'
+2012-12-06 14:09:05,047 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/src/main/java/com/systemsjr/jrbase/clearancelevel/service/ClearanceLevelServiceImpl.java'
+2012-12-06 14:09:05,053 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/src/main/java/com/systemsjr/jrbase/loginsession/service/LoginSessionServiceImpl.java'
+2012-12-06 14:09:05,055 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/src/main/java/com/systemsjr/jrbase/workbench/program/service/ProgramServiceImpl.java'
+2012-12-06 14:09:05,058 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/src/main/java/com/systemsjr/jrbase/workbench/menu/service/MenuServiceImpl.java'
+2012-12-06 14:09:05,060 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/spring/SpringServiceImpl.vsl with 0 metafacades from 1 model elements
+2012-12-06 14:09:05,061 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/spring/DefaultServiceException.vsl with 10 metafacades from 1 model elements
+2012-12-06 14:09:05,068 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/individual/service/IndividualServiceException.java'
+2012-12-06 14:09:05,072 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/user/service/UserServiceException.java'
+2012-12-06 14:09:05,076 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/organisation/service/OrganisationServiceException.java'
+2012-12-06 14:09:05,081 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/location/service/LocationServiceException.java'
+2012-12-06 14:09:05,085 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/counter/service/CounterServiceException.java'
+2012-12-06 14:09:05,088 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/role/service/RoleServiceException.java'
+2012-12-06 14:09:05,092 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/clearancelevel/service/ClearanceLevelServiceException.java'
+2012-12-06 14:09:05,096 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/loginsession/service/LoginSessionServiceException.java'
+2012-12-06 14:09:05,100 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/workbench/program/service/ProgramServiceException.java'
+2012-12-06 14:09:05,104 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/workbench/menu/service/MenuServiceException.java'
+2012-12-06 14:09:05,105 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/spring/DefaultServiceException.vsl with 0 metafacades from 1 model elements
+2012-12-06 14:09:05,107 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/spring/SpringDao.vsl with 13 metafacades from 1 model elements
+2012-12-06 14:09:05,245 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/individual/IndividualDao.java'
+2012-12-06 14:09:05,281 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/user/UserDao.java'
+2012-12-06 14:09:05,314 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/user/UserLocationDao.java'
+2012-12-06 14:09:05,463 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/organisation/OrganisationDao.java'
+2012-12-06 14:09:05,486 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/organisation/OrganisationTypeDao.java'
+2012-12-06 14:09:05,514 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/location/LocationTypeDao.java'
+2012-12-06 14:09:05,551 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/location/LocationDao.java'
+2012-12-06 14:09:05,575 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/counter/CounterDao.java'
+2012-12-06 14:09:05,599 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/role/RoleDao.java'
+2012-12-06 14:09:05,622 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/clearancelevel/ClearanceLevelDao.java'
+2012-12-06 14:09:05,642 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/loginsession/LoginSessionDao.java'
+2012-12-06 14:09:05,668 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/workbench/program/ProgramDao.java'
+2012-12-06 14:09:05,690 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/workbench/menu/MenuDao.java'
+2012-12-06 14:09:05,692 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/spring/hibernate/SpringHibernateDaoBase.vsl with 13 metafacades from 1 model elements
+2012-12-06 14:09:05,876 WARN  [org.andromda.core.cartridge.Cartridge] Error PostProcessing file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/individual/IndividualDaoBase.java: Parse error at line 462, column 60.  Encountered: <
+2012-12-06 14:09:05,877 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/individual/IndividualDaoBase.java'
+2012-12-06 14:09:05,954 WARN  [org.andromda.core.cartridge.Cartridge] Error PostProcessing file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/user/UserDaoBase.java: Parse error at line 506, column 60.  Encountered: <
+2012-12-06 14:09:05,955 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/user/UserDaoBase.java'
+2012-12-06 14:09:06,040 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/user/UserLocationDaoBase.java'
+2012-12-06 14:09:06,077 WARN  [org.andromda.core.cartridge.Cartridge] Error PostProcessing file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/organisation/OrganisationDaoBase.java: Parse error at line 388, column 60.  Encountered: <
+2012-12-06 14:09:06,078 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/organisation/OrganisationDaoBase.java'
+2012-12-06 14:09:06,103 WARN  [org.andromda.core.cartridge.Cartridge] Error PostProcessing file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/organisation/OrganisationTypeDaoBase.java: Parse error at line 359, column 60.  Encountered: <
+2012-12-06 14:09:06,103 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/organisation/OrganisationTypeDaoBase.java'
+2012-12-06 14:09:06,189 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/location/LocationTypeDaoBase.java'
+2012-12-06 14:09:06,255 WARN  [org.andromda.core.cartridge.Cartridge] Error PostProcessing file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/location/LocationDaoBase.java: Parse error at line 429, column 60.  Encountered: <
+2012-12-06 14:09:06,255 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/location/LocationDaoBase.java'
+2012-12-06 14:09:06,322 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/counter/CounterDaoBase.java'
+2012-12-06 14:09:06,359 WARN  [org.andromda.core.cartridge.Cartridge] Error PostProcessing file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/role/RoleDaoBase.java: Parse error at line 419, column 60.  Encountered: <
+2012-12-06 14:09:06,359 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/role/RoleDaoBase.java'
+2012-12-06 14:09:06,394 WARN  [org.andromda.core.cartridge.Cartridge] Error PostProcessing file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/clearancelevel/ClearanceLevelDaoBase.java: Parse error at line 416, column 60.  Encountered: <
+2012-12-06 14:09:06,394 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/clearancelevel/ClearanceLevelDaoBase.java'
+2012-12-06 14:09:06,416 WARN  [org.andromda.core.cartridge.Cartridge] Error PostProcessing file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/loginsession/LoginSessionDaoBase.java: Parse error at line 402, column 60.  Encountered: <
+2012-12-06 14:09:06,417 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/loginsession/LoginSessionDaoBase.java'
+2012-12-06 14:09:06,495 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/workbench/program/ProgramDaoBase.java'
+2012-12-06 14:09:06,566 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/workbench/menu/MenuDaoBase.java'
+2012-12-06 14:09:06,569 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/spring/hibernate/SpringHibernateDaoImpl.vsl with 0 metafacades from 1 model elements
+2012-12-06 14:09:06,571 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/spring/hibernate/SpringHibernateDaoImpl.vsl with 13 metafacades from 1 model elements
+2012-12-06 14:09:06,584 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/src/main/java/com/systemsjr/jrbase/individual/IndividualDaoImpl.java'
+2012-12-06 14:09:06,590 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/src/main/java/com/systemsjr/jrbase/user/UserDaoImpl.java'
+2012-12-06 14:09:06,594 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/src/main/java/com/systemsjr/jrbase/user/UserLocationDaoImpl.java'
+2012-12-06 14:09:06,599 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/src/main/java/com/systemsjr/jrbase/organisation/OrganisationDaoImpl.java'
+2012-12-06 14:09:06,603 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/src/main/java/com/systemsjr/jrbase/organisation/OrganisationTypeDaoImpl.java'
+2012-12-06 14:09:06,607 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/src/main/java/com/systemsjr/jrbase/location/LocationTypeDaoImpl.java'
+2012-12-06 14:09:06,612 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/src/main/java/com/systemsjr/jrbase/location/LocationDaoImpl.java'
+2012-12-06 14:09:06,615 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/src/main/java/com/systemsjr/jrbase/counter/CounterDaoImpl.java'
+2012-12-06 14:09:06,619 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/src/main/java/com/systemsjr/jrbase/role/RoleDaoImpl.java'
+2012-12-06 14:09:06,623 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/src/main/java/com/systemsjr/jrbase/clearancelevel/ClearanceLevelDaoImpl.java'
+2012-12-06 14:09:06,627 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/src/main/java/com/systemsjr/jrbase/loginsession/LoginSessionDaoImpl.java'
+2012-12-06 14:09:06,632 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/src/main/java/com/systemsjr/jrbase/workbench/program/ProgramDaoImpl.java'
+2012-12-06 14:09:06,636 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/src/main/java/com/systemsjr/jrbase/workbench/menu/MenuDaoImpl.java'
+2012-12-06 14:09:06,637 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/spring/ejb/SpringSessionBean.vsl with 10 metafacades from 1 model elements
+2012-12-06 14:09:06,647 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/individual/service/ejb/IndividualServiceBean.java'
+2012-12-06 14:09:06,656 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/user/service/ejb/UserServiceBean.java'
+2012-12-06 14:09:06,665 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/organisation/service/ejb/OrganisationServiceBean.java'
+2012-12-06 14:09:06,675 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/location/service/ejb/LocationServiceBean.java'
+2012-12-06 14:09:06,681 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/counter/service/ejb/CounterServiceBean.java'
+2012-12-06 14:09:06,688 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/role/service/ejb/RoleServiceBean.java'
+2012-12-06 14:09:06,694 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/clearancelevel/service/ejb/ClearanceLevelServiceBean.java'
+2012-12-06 14:09:06,703 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/loginsession/service/ejb/LoginSessionServiceBean.java'
+2012-12-06 14:09:06,709 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/workbench/program/service/ejb/ProgramServiceBean.java'
+2012-12-06 14:09:06,715 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/workbench/menu/service/ejb/MenuServiceBean.java'
+2012-12-06 14:09:06,717 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/spring/ejb/SpringSessionRemote.vsl with 0 metafacades from 1 model elements
+2012-12-06 14:09:06,718 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/spring/ejb/SpringSessionRemoteHome.vsl with 0 metafacades from 1 model elements
+2012-12-06 14:09:06,720 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/spring/ejb/SpringSessionLocal.vsl with 10 metafacades from 1 model elements
+2012-12-06 14:09:06,726 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/individual/service/ejb/IndividualService.java'
+2012-12-06 14:09:06,728 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/user/service/ejb/UserService.java'
+2012-12-06 14:09:06,731 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/organisation/service/ejb/OrganisationService.java'
+2012-12-06 14:09:06,734 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/location/service/ejb/LocationService.java'
+2012-12-06 14:09:06,736 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/counter/service/ejb/CounterService.java'
+2012-12-06 14:09:06,738 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/role/service/ejb/RoleService.java'
+2012-12-06 14:09:06,740 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/clearancelevel/service/ejb/ClearanceLevelService.java'
+2012-12-06 14:09:06,741 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/loginsession/service/ejb/LoginSessionService.java'
+2012-12-06 14:09:06,743 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/workbench/program/service/ejb/ProgramService.java'
+2012-12-06 14:09:06,745 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/workbench/menu/service/ejb/MenuService.java'
+2012-12-06 14:09:06,746 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/spring/ejb/SpringSessionLocalHome.vsl with 10 metafacades from 1 model elements
+2012-12-06 14:09:06,749 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/individual/service/ejb/IndividualServiceHome.java'
+2012-12-06 14:09:06,752 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/user/service/ejb/UserServiceHome.java'
+2012-12-06 14:09:06,753 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/organisation/service/ejb/OrganisationServiceHome.java'
+2012-12-06 14:09:06,754 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/location/service/ejb/LocationServiceHome.java'
+2012-12-06 14:09:06,756 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/counter/service/ejb/CounterServiceHome.java'
+2012-12-06 14:09:06,757 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/role/service/ejb/RoleServiceHome.java'
+2012-12-06 14:09:06,758 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/clearancelevel/service/ejb/ClearanceLevelServiceHome.java'
+2012-12-06 14:09:06,760 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/loginsession/service/ejb/LoginSessionServiceHome.java'
+2012-12-06 14:09:06,761 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/workbench/program/service/ejb/ProgramServiceHome.java'
+2012-12-06 14:09:06,762 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/workbench/menu/service/ejb/MenuServiceHome.java'
+2012-12-06 14:09:06,765 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/spring/applicationContext.xml.vsl with 23 metafacades from 3 model elements
+2012-12-06 14:09:06,814 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/applicationContext.xml'
+2012-12-06 14:09:06,816 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/spring/applicationContext-dataSource.xml.vsl with 23 metafacades from 2 model elements
+2012-12-06 14:09:06,819 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/applicationContext-dataSource.xml'
+2012-12-06 14:09:06,821 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/spring/applicationContext-localDataSource.xml.vsl with 23 metafacades from 2 model elements
+2012-12-06 14:09:06,824 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/applicationContext-localDataSource.xml'
+2012-12-06 14:09:06,826 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/spring/applicationContext-testDataSource.xml.vsl with 23 metafacades from 2 model elements
+2012-12-06 14:09:06,829 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/src/test/resources/applicationContext-testDataSource.xml'
+2012-12-06 14:09:06,831 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/spring/applicationContext-server.xml.vsl with 0 metafacades from 2 model elements
+2012-12-06 14:09:06,834 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/spring/applicationContext-server.xml.vsl with 0 metafacades from 2 model elements
+2012-12-06 14:09:06,836 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/spring/remoting/client/applicationContext-client.xml.vsl with 13 metafacades from 2 model elements
+2012-12-06 14:09:06,841 WARN  [org.andromda.core.cartridge.Cartridge] Template outlet location 'client-config' is not defined in namespace spring
+2012-12-06 14:09:06,842 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/spring/richclient/applicationContext-server-authentication.xml.vsl with 0 metafacades from 1 model elements
+2012-12-06 14:09:06,844 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/spring/hibernate/H2.java.vsl with 13 metafacades from 1 model elements
+2012-12-06 14:09:06,852 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/test/java/org/andromda/dbtest/H2.java'
+2012-12-06 14:09:06,853 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/spring/richclient/ehcache-server-authentication.xml.vsl with 0 metafacades from 1 model elements
+2012-12-06 14:09:06,854 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/spring/richclient/AuthenticationDaoImpl.vsl with 0 metafacades from 1 model elements
+2012-12-06 14:09:06,855 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/spring/richclient/SpringMergeMappings.vsl with 0 metafacades from 1 model elements
+2012-12-06 14:09:06,856 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/spring/remoting/client/applicationContext-client-authentication.xml.vsl with 0 metafacades from 1 model elements
+2012-12-06 14:09:06,858 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/spring/remoting/client/applicationContext-client.properties.vsl with 0 metafacades from 1 model elements
+2012-12-06 14:09:06,859 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/spring/osgi/applicationContext-osgi-export.xml.vsl with 10 metafacades from 1 model elements
+2012-12-06 14:09:06,861 WARN  [org.andromda.core.cartridge.Cartridge] Template outlet location 'osgi' is not defined in namespace spring
+2012-12-06 14:09:06,862 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/spring/osgi/applicationContext-osgi-import.xml.vsl with 10 metafacades from 1 model elements
+2012-12-06 14:09:06,864 WARN  [org.andromda.core.cartridge.Cartridge] Template outlet location 'osgi' is not defined in namespace spring
+2012-12-06 14:09:06,868 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/spring/richclient/web.xml.vsl with 0 metafacades from 4 model elements
+2012-12-06 14:09:06,869 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/spring/ejb/applicationContext-remoteEjb.xml.vsl with 10 metafacades from 1 model elements
+2012-12-06 14:09:06,873 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/spring/ejb/applicationContext-localEjb.xml.vsl with 10 metafacades from 1 model elements
+2012-12-06 14:09:06,876 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/applicationContext-localEjb.xml'
+2012-12-06 14:09:06,877 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/spring/ejb/ejb-jar.xml.vsl with 10 metafacades from 1 model elements
+2012-12-06 14:09:06,899 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/META-INF/ejb-jar.xml'
+2012-12-06 14:09:06,900 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/spring/ejb/ejb-jar.xml.vsl with 0 metafacades from 1 model elements
+2012-12-06 14:09:06,901 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/spring/ejb/jboss.xml.vsl with 10 metafacades from 1 model elements
+2012-12-06 14:09:06,903 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/META-INF/jboss.xml'
+2012-12-06 14:09:06,904 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/spring/ejb/jboss.xml.vsl with 0 metafacades from 1 model elements
+2012-12-06 14:09:06,909 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/spring/beanRefFactory.xml.vsl with 23 metafacades from 4 model elements
+2012-12-06 14:09:06,913 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/beanRefFactory.xml'
+2012-12-06 14:09:06,917 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/spring/richclient/serverTestBeanRefFactory.xml.vsl with 0 metafacades from 3 model elements
+2012-12-06 14:09:06,918 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/spring/richclient/serverTestBeanRefFactory.properties.vsl with 0 metafacades from 1 model elements
+2012-12-06 14:09:06,920 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/spring/hibernate/search/SearchParameter.java.vsl with 13 metafacades from 1 model elements
+2012-12-06 14:09:06,926 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/SearchParameter.java'
+2012-12-06 14:09:06,927 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/spring/hibernate/search/Search.java.vsl with 13 metafacades from 1 model elements
+2012-12-06 14:09:06,933 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/Search.java'
+2012-12-06 14:09:06,934 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/spring/hibernate/search/PropertySearch.java.vsl with 13 metafacades from 1 model elements
+2012-12-06 14:09:06,948 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/PropertySearch.java'
+2012-12-06 14:09:06,951 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/org/andromda/spring/PaginationResult.java'
+2012-12-06 14:09:06,952 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/spring/hibernate/HibernateSearch.vsl with 13 metafacades from 1 model elements
+2012-12-06 14:09:06,993 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/CriteriaSearch.java'
+2012-12-06 14:09:06,994 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/spring/hibernate/HibernateSearchProperties.vsl with 13 metafacades from 1 model elements
+2012-12-06 14:09:07,053 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/CriteriaSearchProperties.java'
+2012-12-06 14:09:07,054 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/spring/hibernate/HibernateSearchConfiguration.vsl with 13 metafacades from 1 model elements
+2012-12-06 14:09:07,057 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/CriteriaSearchConfiguration.java'
+2012-12-06 14:09:07,058 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/spring/hibernate/HibernateSearchParameter.vsl with 13 metafacades from 1 model elements
+2012-12-06 14:09:07,067 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/CriteriaSearchParameter.java'
+2012-12-06 14:09:07,068 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/spring/hibernate/SearchCriteria.vsl with 0 metafacades from 1 model elements
+2012-12-06 14:09:07,069 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/spring/presentation/hibernate/OpenSessionInViewFilter.java.vsl with 13 metafacades from 1 model elements
+2012-12-06 14:09:07,071 WARN  [org.andromda.core.cartridge.Cartridge] Template outlet location 'open-session-in-view' is not defined in namespace spring
+2012-12-06 14:09:07,076 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/BeanLocator.java'
+2012-12-06 14:09:07,078 WARN  [org.andromda.core.cartridge.Cartridge] Template outlet location 'remoting-war-support' is not defined in namespace spring
+2012-12-06 14:09:07,079 WARN  [org.andromda.core.cartridge.Cartridge] Template outlet location 'remoting-war-support' is not defined in namespace spring
+2012-12-06 14:09:07,081 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/spring/remoting/SpringRemotingWarMergeMappings.xml.vsl with 0 metafacades from 1 model elements
+2012-12-06 14:09:07,093 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/spring/remoting/client/AuthenticatingHttpInvokerRequestExecutor.java.vsl with 0 metafacades from 1 model elements
+2012-12-06 14:09:07,098 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/spring/jms/applicationContext-jms.xml.vsl with 0 metafacades from 4 model elements
+2012-12-06 14:09:07,099 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/spring/jms/MessageListener.java.vsl with 0 metafacades from 1 model elements
+2012-12-06 14:09:07,100 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/spring/crud/applicationContext-manageable.xml.vsl with 13 metafacades from 1 model elements
+2012-12-06 14:09:07,134 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/applicationContext-manageable.xml'
+2012-12-06 14:09:07,136 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/spring/crud/SpringCrudServiceLocator.vsl with 13 metafacades from 1 model elements
+2012-12-06 14:09:07,147 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/ManageableServiceLocator.java'
+2012-12-06 14:09:07,148 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/spring/crud/SpringCrudService.vsl with 13 metafacades from 1 model elements
+2012-12-06 14:09:07,185 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/individual/crud/IndividualManageableService.java'
+2012-12-06 14:09:07,219 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/user/crud/UserManageableService.java'
+2012-12-06 14:09:07,234 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/user/crud/UserLocationManageableService.java'
+2012-12-06 14:09:07,255 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/organisation/crud/OrganisationManageableService.java'
+2012-12-06 14:09:07,263 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/organisation/crud/OrganisationTypeManageableService.java'
+2012-12-06 14:09:07,282 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/location/crud/LocationTypeManageableService.java'
+2012-12-06 14:09:07,321 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/location/crud/LocationManageableService.java'
+2012-12-06 14:09:07,324 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/counter/crud/CounterManageableService.java'
+2012-12-06 14:09:07,345 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/role/crud/RoleManageableService.java'
+2012-12-06 14:09:07,367 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/clearancelevel/crud/ClearanceLevelManageableService.java'
+2012-12-06 14:09:07,380 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/loginsession/crud/LoginSessionManageableService.java'
+2012-12-06 14:09:07,389 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/workbench/program/crud/ProgramManageableService.java'
+2012-12-06 14:09:07,397 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/workbench/menu/crud/MenuManageableService.java'
+2012-12-06 14:09:07,399 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/spring/crud/SpringCrudServiceBase.vsl with 13 metafacades from 1 model elements
+2012-12-06 14:09:07,474 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/individual/crud/IndividualManageableServiceBase.java'
+2012-12-06 14:09:07,547 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/user/crud/UserManageableServiceBase.java'
+2012-12-06 14:09:07,582 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/user/crud/UserLocationManageableServiceBase.java'
+2012-12-06 14:09:07,626 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/organisation/crud/OrganisationManageableServiceBase.java'
+2012-12-06 14:09:07,643 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/organisation/crud/OrganisationTypeManageableServiceBase.java'
+2012-12-06 14:09:07,681 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/location/crud/LocationTypeManageableServiceBase.java'
+2012-12-06 14:09:07,776 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/location/crud/LocationManageableServiceBase.java'
+2012-12-06 14:09:07,784 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/counter/crud/CounterManageableServiceBase.java'
+2012-12-06 14:09:07,818 WARN  [org.andromda.core.cartridge.Cartridge] Error PostProcessing file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/role/crud/RoleManageableServiceBase.java: Parse error at line 244, column 47.  Encountered: [
+2012-12-06 14:09:07,818 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/role/crud/RoleManageableServiceBase.java'
+2012-12-06 14:09:07,855 WARN  [org.andromda.core.cartridge.Cartridge] Error PostProcessing file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/clearancelevel/crud/ClearanceLevelManageableServiceBase.java: Parse error at line 221, column 47.  Encountered: [
+2012-12-06 14:09:07,856 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/clearancelevel/crud/ClearanceLevelManageableServiceBase.java'
+2012-12-06 14:09:07,884 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/loginsession/crud/LoginSessionManageableServiceBase.java'
+2012-12-06 14:09:07,900 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/workbench/program/crud/ProgramManageableServiceBase.java'
+2012-12-06 14:09:07,917 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/workbench/menu/crud/MenuManageableServiceBase.java'
+2012-12-06 14:09:07,918 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/spring/crud/SpringCrudDao.vsl with 13 metafacades from 1 model elements
+2012-12-06 14:09:07,950 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/individual/crud/IndividualManageableDao.java'
+2012-12-06 14:09:07,979 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/user/crud/UserManageableDao.java'
+2012-12-06 14:09:07,994 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/user/crud/UserLocationManageableDao.java'
+2012-12-06 14:09:08,012 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/organisation/crud/OrganisationManageableDao.java'
+2012-12-06 14:09:08,020 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/organisation/crud/OrganisationTypeManageableDao.java'
+2012-12-06 14:09:08,037 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/location/crud/LocationTypeManageableDao.java'
+2012-12-06 14:09:08,073 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/location/crud/LocationManageableDao.java'
+2012-12-06 14:09:08,076 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/counter/crud/CounterManageableDao.java'
+2012-12-06 14:09:08,096 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/role/crud/RoleManageableDao.java'
+2012-12-06 14:09:08,117 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/clearancelevel/crud/ClearanceLevelManageableDao.java'
+2012-12-06 14:09:08,130 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/loginsession/crud/LoginSessionManageableDao.java'
+2012-12-06 14:09:08,138 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/workbench/program/crud/ProgramManageableDao.java'
+2012-12-06 14:09:08,146 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/workbench/menu/crud/MenuManageableDao.java'
+2012-12-06 14:09:08,148 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/spring/crud/SpringCrudDaoBase.vsl with 13 metafacades from 1 model elements
+2012-12-06 14:09:08,233 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/individual/crud/IndividualManageableDaoBase.java'
+2012-12-06 14:09:08,321 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/user/crud/UserManageableDaoBase.java'
+2012-12-06 14:09:08,363 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/user/crud/UserLocationManageableDaoBase.java'
+2012-12-06 14:09:08,412 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/organisation/crud/OrganisationManageableDaoBase.java'
+2012-12-06 14:09:08,430 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/organisation/crud/OrganisationTypeManageableDaoBase.java'
+2012-12-06 14:09:08,470 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/location/crud/LocationTypeManageableDaoBase.java'
+2012-12-06 14:09:08,571 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/location/crud/LocationManageableDaoBase.java'
+2012-12-06 14:09:08,578 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/counter/crud/CounterManageableDaoBase.java'
+2012-12-06 14:09:08,626 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/role/crud/RoleManageableDaoBase.java'
+2012-12-06 14:09:08,681 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/clearancelevel/crud/ClearanceLevelManageableDaoBase.java'
+2012-12-06 14:09:08,717 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/loginsession/crud/LoginSessionManageableDaoBase.java'
+2012-12-06 14:09:08,741 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/workbench/program/crud/ProgramManageableDaoBase.java'
+2012-12-06 14:09:08,763 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/workbench/menu/crud/MenuManageableDaoBase.java'
+2012-12-06 14:09:08,764 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/spring/crud/SpringCrudValueObject.vsl with 13 metafacades from 1 model elements
+2012-12-06 14:09:08,789 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../common/target/src/main/java/com/systemsjr/jrbase/individual/crud/IndividualValueObject.java'
+2012-12-06 14:09:08,810 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../common/target/src/main/java/com/systemsjr/jrbase/user/crud/UserValueObject.java'
+2012-12-06 14:09:08,819 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../common/target/src/main/java/com/systemsjr/jrbase/user/crud/UserLocationValueObject.java'
+2012-12-06 14:09:08,831 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../common/target/src/main/java/com/systemsjr/jrbase/organisation/crud/OrganisationValueObject.java'
+2012-12-06 14:09:08,837 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../common/target/src/main/java/com/systemsjr/jrbase/organisation/crud/OrganisationTypeValueObject.java'
+2012-12-06 14:09:08,849 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../common/target/src/main/java/com/systemsjr/jrbase/location/crud/LocationTypeValueObject.java'
+2012-12-06 14:09:08,873 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../common/target/src/main/java/com/systemsjr/jrbase/location/crud/LocationValueObject.java'
+2012-12-06 14:09:08,876 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../common/target/src/main/java/com/systemsjr/jrbase/counter/crud/CounterValueObject.java'
+2012-12-06 14:09:08,889 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../common/target/src/main/java/com/systemsjr/jrbase/role/crud/RoleValueObject.java'
+2012-12-06 14:09:08,902 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../common/target/src/main/java/com/systemsjr/jrbase/clearancelevel/crud/ClearanceLevelValueObject.java'
+2012-12-06 14:09:08,910 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../common/target/src/main/java/com/systemsjr/jrbase/loginsession/crud/LoginSessionValueObject.java'
+2012-12-06 14:09:08,916 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../common/target/src/main/java/com/systemsjr/jrbase/workbench/program/crud/ProgramValueObject.java'
+2012-12-06 14:09:08,922 INFO  [AndroMDA:spring] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../common/target/src/main/java/com/systemsjr/jrbase/workbench/menu/crud/MenuValueObject.java'
+2012-12-06 14:09:08,949 INFO  [AndroMDA] Processing cartridge hibernate on model /home/junior/Documents/business/jrsystems/devel/jrbase/mda/src/main/uml/jrbase.uml
+2012-12-06 14:09:08,951 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/hibernate/HibernateEntity.vsl with 13 metafacades from 1 model elements
+2012-12-06 14:09:09,308 INFO  [AndroMDA:hibernate] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/individual/Individual.java'
+2012-12-06 14:09:09,533 INFO  [AndroMDA:hibernate] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/user/User.java'
+2012-12-06 14:09:09,600 INFO  [AndroMDA:hibernate] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/user/UserLocation.java'
+2012-12-06 14:09:09,693 INFO  [AndroMDA:hibernate] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/organisation/Organisation.java'
+2012-12-06 14:09:09,742 INFO  [AndroMDA:hibernate] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/organisation/OrganisationType.java'
+2012-12-06 14:09:09,855 INFO  [AndroMDA:hibernate] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/location/LocationType.java'
+2012-12-06 14:09:10,110 INFO  [AndroMDA:hibernate] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/location/Location.java'
+2012-12-06 14:09:10,143 INFO  [AndroMDA:hibernate] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/counter/Counter.java'
+2012-12-06 14:09:10,237 INFO  [AndroMDA:hibernate] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/role/Role.java'
+2012-12-06 14:09:10,337 INFO  [AndroMDA:hibernate] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/clearancelevel/ClearanceLevel.java'
+2012-12-06 14:09:10,374 INFO  [AndroMDA:hibernate] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/loginsession/LoginSession.java'
+2012-12-06 14:09:10,442 INFO  [AndroMDA:hibernate] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/workbench/program/Program.java'
+2012-12-06 14:09:10,508 INFO  [AndroMDA:hibernate] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/workbench/menu/Menu.java'
+2012-12-06 14:09:10,509 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/hibernate/HibernateEntityImpl.vsl with 13 metafacades from 1 model elements
+2012-12-06 14:09:10,511 INFO  [AndroMDA:hibernate] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/individual/IndividualImpl.java'
+2012-12-06 14:09:10,512 INFO  [AndroMDA:hibernate] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/user/UserImpl.java'
+2012-12-06 14:09:10,513 INFO  [AndroMDA:hibernate] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/user/UserLocationImpl.java'
+2012-12-06 14:09:10,514 INFO  [AndroMDA:hibernate] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/organisation/OrganisationImpl.java'
+2012-12-06 14:09:10,514 INFO  [AndroMDA:hibernate] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/organisation/OrganisationTypeImpl.java'
+2012-12-06 14:09:10,515 INFO  [AndroMDA:hibernate] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/location/LocationTypeImpl.java'
+2012-12-06 14:09:10,515 INFO  [AndroMDA:hibernate] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/location/LocationImpl.java'
+2012-12-06 14:09:10,516 INFO  [AndroMDA:hibernate] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/counter/CounterImpl.java'
+2012-12-06 14:09:10,517 INFO  [AndroMDA:hibernate] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/role/RoleImpl.java'
+2012-12-06 14:09:10,517 INFO  [AndroMDA:hibernate] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/clearancelevel/ClearanceLevelImpl.java'
+2012-12-06 14:09:10,518 INFO  [AndroMDA:hibernate] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/loginsession/LoginSessionImpl.java'
+2012-12-06 14:09:10,518 INFO  [AndroMDA:hibernate] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/workbench/program/ProgramImpl.java'
+2012-12-06 14:09:10,518 INFO  [AndroMDA:hibernate] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/workbench/menu/MenuImpl.java'
+2012-12-06 14:09:10,520 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/hibernate/HibernateEntityImpl.vsl with 0 metafacades from 1 model elements
+2012-12-06 14:09:10,546 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/hibernate/HibernateEntityPK.vsl with 0 metafacades from 1 model elements
+2012-12-06 14:09:10,548 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/hibernate/HibernateEmbeddedValue.vsl with 0 metafacades from 1 model elements
+2012-12-06 14:09:10,549 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/hibernate/HibernateEmbeddedValueImpl.vsl with 0 metafacades from 1 model elements
+2012-12-06 14:09:10,553 INFO  [AndroMDA:hibernate] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/org/andromda/persistence/hibernate/usertypes/HibernateByteBlobType.java'
+2012-12-06 14:09:10,557 INFO  [AndroMDA:hibernate] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/org/andromda/persistence/hibernate/usertypes/HibernateStringClobType.java'
+2012-12-06 14:09:10,558 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/hibernate/ejb/ejb-jar.xml.vsl with 10 metafacades from 1 model elements
+2012-12-06 14:09:10,585 WARN  [org.andromda.core.cartridge.Cartridge] Template outlet location 'session-beans' is not defined in namespace hibernate
+2012-12-06 14:09:10,586 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/hibernate/ejb/jboss.xml.vsl with 10 metafacades from 1 model elements
+2012-12-06 14:09:10,587 WARN  [org.andromda.core.cartridge.Cartridge] Template outlet location 'session-beans' is not defined in namespace hibernate
+2012-12-06 14:09:10,588 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/hibernate/ejb/HibernateSessionEJBLocator.vsl with 10 metafacades from 1 model elements
+2012-12-06 14:09:10,590 WARN  [org.andromda.core.cartridge.Cartridge] Template outlet location 'session-beans' is not defined in namespace hibernate
+2012-12-06 14:09:10,591 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/hibernate/ejb/HibernateSessionBean.vsl with 10 metafacades from 1 model elements
+2012-12-06 14:09:10,595 WARN  [org.andromda.core.cartridge.Cartridge] Template outlet location 'session-beans' is not defined in namespace hibernate
+2012-12-06 14:09:10,600 WARN  [org.andromda.core.cartridge.Cartridge] Template outlet location 'session-beans' is not defined in namespace hibernate
+2012-12-06 14:09:10,606 WARN  [org.andromda.core.cartridge.Cartridge] Template outlet location 'session-beans' is not defined in namespace hibernate
+2012-12-06 14:09:10,611 WARN  [org.andromda.core.cartridge.Cartridge] Template outlet location 'session-beans' is not defined in namespace hibernate
+2012-12-06 14:09:10,614 WARN  [org.andromda.core.cartridge.Cartridge] Template outlet location 'session-beans' is not defined in namespace hibernate
+2012-12-06 14:09:10,617 WARN  [org.andromda.core.cartridge.Cartridge] Template outlet location 'session-beans' is not defined in namespace hibernate
+2012-12-06 14:09:10,620 WARN  [org.andromda.core.cartridge.Cartridge] Template outlet location 'session-beans' is not defined in namespace hibernate
+2012-12-06 14:09:10,622 WARN  [org.andromda.core.cartridge.Cartridge] Template outlet location 'session-beans' is not defined in namespace hibernate
+2012-12-06 14:09:10,624 WARN  [org.andromda.core.cartridge.Cartridge] Template outlet location 'session-beans' is not defined in namespace hibernate
+2012-12-06 14:09:10,627 WARN  [org.andromda.core.cartridge.Cartridge] Template outlet location 'session-beans' is not defined in namespace hibernate
+2012-12-06 14:09:10,628 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/hibernate/ejb/HibernateSessionBeanImpl.vsl with 10 metafacades from 1 model elements
+2012-12-06 14:09:10,630 WARN  [org.andromda.core.cartridge.Cartridge] Template outlet location 'session-impls' is not defined in namespace hibernate
+2012-12-06 14:09:10,632 WARN  [org.andromda.core.cartridge.Cartridge] Template outlet location 'session-impls' is not defined in namespace hibernate
+2012-12-06 14:09:10,633 WARN  [org.andromda.core.cartridge.Cartridge] Template outlet location 'session-impls' is not defined in namespace hibernate
+2012-12-06 14:09:10,635 WARN  [org.andromda.core.cartridge.Cartridge] Template outlet location 'session-impls' is not defined in namespace hibernate
+2012-12-06 14:09:10,636 WARN  [org.andromda.core.cartridge.Cartridge] Template outlet location 'session-impls' is not defined in namespace hibernate
+2012-12-06 14:09:10,638 WARN  [org.andromda.core.cartridge.Cartridge] Template outlet location 'session-impls' is not defined in namespace hibernate
+2012-12-06 14:09:10,639 WARN  [org.andromda.core.cartridge.Cartridge] Template outlet location 'session-impls' is not defined in namespace hibernate
+2012-12-06 14:09:10,639 WARN  [org.andromda.core.cartridge.Cartridge] Template outlet location 'session-impls' is not defined in namespace hibernate
+2012-12-06 14:09:10,640 WARN  [org.andromda.core.cartridge.Cartridge] Template outlet location 'session-impls' is not defined in namespace hibernate
+2012-12-06 14:09:10,641 WARN  [org.andromda.core.cartridge.Cartridge] Template outlet location 'session-impls' is not defined in namespace hibernate
+2012-12-06 14:09:10,642 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/hibernate/ejb/HibernateSession.vsl with 10 metafacades from 1 model elements
+2012-12-06 14:09:10,644 WARN  [org.andromda.core.cartridge.Cartridge] Template outlet location 'session-beans' is not defined in namespace hibernate
+2012-12-06 14:09:10,645 WARN  [org.andromda.core.cartridge.Cartridge] Template outlet location 'session-beans' is not defined in namespace hibernate
+2012-12-06 14:09:10,646 WARN  [org.andromda.core.cartridge.Cartridge] Template outlet location 'session-beans' is not defined in namespace hibernate
+2012-12-06 14:09:10,648 WARN  [org.andromda.core.cartridge.Cartridge] Template outlet location 'session-beans' is not defined in namespace hibernate
+2012-12-06 14:09:10,649 WARN  [org.andromda.core.cartridge.Cartridge] Template outlet location 'session-beans' is not defined in namespace hibernate
+2012-12-06 14:09:10,650 WARN  [org.andromda.core.cartridge.Cartridge] Template outlet location 'session-beans' is not defined in namespace hibernate
+2012-12-06 14:09:10,651 WARN  [org.andromda.core.cartridge.Cartridge] Template outlet location 'session-beans' is not defined in namespace hibernate
+2012-12-06 14:09:10,652 WARN  [org.andromda.core.cartridge.Cartridge] Template outlet location 'session-beans' is not defined in namespace hibernate
+2012-12-06 14:09:10,653 WARN  [org.andromda.core.cartridge.Cartridge] Template outlet location 'session-beans' is not defined in namespace hibernate
+2012-12-06 14:09:10,654 WARN  [org.andromda.core.cartridge.Cartridge] Template outlet location 'session-beans' is not defined in namespace hibernate
+2012-12-06 14:09:10,655 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/hibernate/ejb/HibernateSessionHome.vsl with 10 metafacades from 1 model elements
+2012-12-06 14:09:10,656 WARN  [org.andromda.core.cartridge.Cartridge] Template outlet location 'session-beans' is not defined in namespace hibernate
+2012-12-06 14:09:10,656 WARN  [org.andromda.core.cartridge.Cartridge] Template outlet location 'session-beans' is not defined in namespace hibernate
+2012-12-06 14:09:10,657 WARN  [org.andromda.core.cartridge.Cartridge] Template outlet location 'session-beans' is not defined in namespace hibernate
+2012-12-06 14:09:10,658 WARN  [org.andromda.core.cartridge.Cartridge] Template outlet location 'session-beans' is not defined in namespace hibernate
+2012-12-06 14:09:10,659 WARN  [org.andromda.core.cartridge.Cartridge] Template outlet location 'session-beans' is not defined in namespace hibernate
+2012-12-06 14:09:10,659 WARN  [org.andromda.core.cartridge.Cartridge] Template outlet location 'session-beans' is not defined in namespace hibernate
+2012-12-06 14:09:10,660 WARN  [org.andromda.core.cartridge.Cartridge] Template outlet location 'session-beans' is not defined in namespace hibernate
+2012-12-06 14:09:10,661 WARN  [org.andromda.core.cartridge.Cartridge] Template outlet location 'session-beans' is not defined in namespace hibernate
+2012-12-06 14:09:10,661 WARN  [org.andromda.core.cartridge.Cartridge] Template outlet location 'session-beans' is not defined in namespace hibernate
+2012-12-06 14:09:10,662 WARN  [org.andromda.core.cartridge.Cartridge] Template outlet location 'session-beans' is not defined in namespace hibernate
+2012-12-06 14:09:10,663 WARN  [org.andromda.core.cartridge.Cartridge] Template outlet location 'session-beans' is not defined in namespace hibernate
+2012-12-06 14:09:10,664 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/hibernate/ehcache.xml.vsl with 13 metafacades from 1 model elements
+2012-12-06 14:09:10,665 INFO  [AndroMDA:hibernate] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/ehcache.xml'
+2012-12-06 14:09:10,666 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/hibernate3/ejb/HibernateEntityFactory.vsl with 13 metafacades from 1 model elements
+2012-12-06 14:09:10,675 WARN  [org.andromda.core.cartridge.Cartridge] Template outlet location 'session-beans' is not defined in namespace hibernate
+2012-12-06 14:09:10,681 WARN  [org.andromda.core.cartridge.Cartridge] Template outlet location 'session-beans' is not defined in namespace hibernate
+2012-12-06 14:09:10,686 WARN  [org.andromda.core.cartridge.Cartridge] Template outlet location 'session-beans' is not defined in namespace hibernate
+2012-12-06 14:09:10,690 WARN  [org.andromda.core.cartridge.Cartridge] Template outlet location 'session-beans' is not defined in namespace hibernate
+2012-12-06 14:09:10,693 WARN  [org.andromda.core.cartridge.Cartridge] Template outlet location 'session-beans' is not defined in namespace hibernate
+2012-12-06 14:09:10,697 WARN  [org.andromda.core.cartridge.Cartridge] Template outlet location 'session-beans' is not defined in namespace hibernate
+2012-12-06 14:09:10,703 WARN  [org.andromda.core.cartridge.Cartridge] Template outlet location 'session-beans' is not defined in namespace hibernate
+2012-12-06 14:09:10,706 WARN  [org.andromda.core.cartridge.Cartridge] Template outlet location 'session-beans' is not defined in namespace hibernate
+2012-12-06 14:09:10,709 WARN  [org.andromda.core.cartridge.Cartridge] Template outlet location 'session-beans' is not defined in namespace hibernate
+2012-12-06 14:09:10,712 WARN  [org.andromda.core.cartridge.Cartridge] Template outlet location 'session-beans' is not defined in namespace hibernate
+2012-12-06 14:09:10,715 WARN  [org.andromda.core.cartridge.Cartridge] Template outlet location 'session-beans' is not defined in namespace hibernate
+2012-12-06 14:09:10,718 WARN  [org.andromda.core.cartridge.Cartridge] Template outlet location 'session-beans' is not defined in namespace hibernate
+2012-12-06 14:09:10,721 WARN  [org.andromda.core.cartridge.Cartridge] Template outlet location 'session-beans' is not defined in namespace hibernate
+2012-12-06 14:09:10,722 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/hibernate/persistence.xml.vsl with 13 metafacades from 1 model elements
+2012-12-06 14:09:10,724 WARN  [org.andromda.core.cartridge.Cartridge] Template outlet location 'configuration' is not defined in namespace hibernate
+2012-12-06 14:09:10,726 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/hibernate3/hibernate.cfg.xml.vsl with 13 metafacades from 1 model elements
+2012-12-06 14:09:10,727 WARN  [org.andromda.core.cartridge.Cartridge] Template outlet location 'configuration' is not defined in namespace hibernate
+2012-12-06 14:09:10,728 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/hibernate/test/persistence-test.xml.vsl with 13 metafacades from 1 model elements
+2012-12-06 14:09:10,730 WARN  [org.andromda.core.cartridge.Cartridge] Template outlet location 'test-configuration' is not defined in namespace hibernate
+2012-12-06 14:09:10,731 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/hibernate/test/hibernate-test.cfg.xml.vsl with 13 metafacades from 1 model elements
+2012-12-06 14:09:10,733 WARN  [org.andromda.core.cartridge.Cartridge] Template outlet location 'test-configuration' is not defined in namespace hibernate
+2012-12-06 14:09:10,734 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/hibernate3/hibernate.hbm.xml.vsl with 13 metafacades from 1 model elements
+2012-12-06 14:09:10,778 INFO  [AndroMDA:hibernate] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/individual/Individual.hbm.xml'
+2012-12-06 14:09:10,837 INFO  [AndroMDA:hibernate] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/user/User.hbm.xml'
+2012-12-06 14:09:10,858 INFO  [AndroMDA:hibernate] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/user/UserLocation.hbm.xml'
+2012-12-06 14:09:10,887 INFO  [AndroMDA:hibernate] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/organisation/Organisation.hbm.xml'
+2012-12-06 14:09:10,902 INFO  [AndroMDA:hibernate] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/organisation/OrganisationType.hbm.xml'
+2012-12-06 14:09:10,949 INFO  [AndroMDA:hibernate] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/location/LocationType.hbm.xml'
+2012-12-06 14:09:10,996 INFO  [AndroMDA:hibernate] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/location/Location.hbm.xml'
+2012-12-06 14:09:11,007 INFO  [AndroMDA:hibernate] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/counter/Counter.hbm.xml'
+2012-12-06 14:09:11,035 INFO  [AndroMDA:hibernate] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/role/Role.hbm.xml'
+2012-12-06 14:09:11,057 INFO  [AndroMDA:hibernate] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/clearancelevel/ClearanceLevel.hbm.xml'
+2012-12-06 14:09:11,076 INFO  [AndroMDA:hibernate] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/loginsession/LoginSession.hbm.xml'
+2012-12-06 14:09:11,093 INFO  [AndroMDA:hibernate] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/workbench/program/Program.hbm.xml'
+2012-12-06 14:09:11,108 INFO  [AndroMDA:hibernate] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/workbench/menu/Menu.hbm.xml'
+2012-12-06 14:09:11,109 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/hibernate3/HibernateEnumeration.vsl with 0 metafacades from 1 model elements
+2012-12-06 14:09:11,110 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/hibernate3/usertypes/HibernateEnumType.vsl with 8 metafacades from 1 model elements
+2012-12-06 14:09:11,114 INFO  [AndroMDA:hibernate] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/org/andromda/persistence/hibernate/usertypes/HibernateEnumType.java'
+2012-12-06 14:09:11,115 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/hibernate2/ejb/HibernateEntityFactory.vsl with 0 metafacades from 1 model elements
+2012-12-06 14:09:11,117 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/hibernate2/hibernate.cfg.xml.vsl with 0 metafacades from 1 model elements
+2012-12-06 14:09:11,118 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/hibernate2/hibernate.hbm.xml.vsl with 0 metafacades from 1 model elements
+2012-12-06 14:09:11,119 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/hibernate2/HibernateEnumeration.vsl with 0 metafacades from 1 model elements
+2012-12-06 14:09:11,123 INFO  [AndroMDA] Processing cartridge java on model /home/junior/Documents/business/jrsystems/devel/jrbase/mda/src/main/uml/jrbase.uml
+2012-12-06 14:09:11,125 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/java/Service.vsl with 10 metafacades from 1 model elements
+2012-12-06 14:09:11,133 INFO  [AndroMDA:java] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/individual/service/IndividualService.java'
+2012-12-06 14:09:11,139 INFO  [AndroMDA:java] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/user/service/UserService.java'
+2012-12-06 14:09:11,146 INFO  [AndroMDA:java] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/organisation/service/OrganisationService.java'
+2012-12-06 14:09:11,154 INFO  [AndroMDA:java] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/location/service/LocationService.java'
+2012-12-06 14:09:11,157 INFO  [AndroMDA:java] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/counter/service/CounterService.java'
+2012-12-06 14:09:11,161 INFO  [AndroMDA:java] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/role/service/RoleService.java'
+2012-12-06 14:09:11,164 INFO  [AndroMDA:java] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/clearancelevel/service/ClearanceLevelService.java'
+2012-12-06 14:09:11,168 INFO  [AndroMDA:java] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/loginsession/service/LoginSessionService.java'
+2012-12-06 14:09:11,171 INFO  [AndroMDA:java] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/workbench/program/service/ProgramService.java'
+2012-12-06 14:09:11,175 INFO  [AndroMDA:java] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/target/src/main/java/com/systemsjr/jrbase/workbench/menu/service/MenuService.java'
+2012-12-06 14:09:11,176 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/java/ServiceImpl.vsl with 10 metafacades from 1 model elements
+2012-12-06 14:09:11,202 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/java/ServiceImpl.vsl with 10 metafacades from 1 model elements
+2012-12-06 14:09:11,203 INFO  [AndroMDA:java] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/src/main/java/com/systemsjr/jrbase/individual/service/IndividualServiceImpl.java.ref'
+2012-12-06 14:09:11,204 INFO  [AndroMDA:java] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/src/main/java/com/systemsjr/jrbase/user/service/UserServiceImpl.java.ref'
+2012-12-06 14:09:11,204 INFO  [AndroMDA:java] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/src/main/java/com/systemsjr/jrbase/organisation/service/OrganisationServiceImpl.java.ref'
+2012-12-06 14:09:11,205 INFO  [AndroMDA:java] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/src/main/java/com/systemsjr/jrbase/location/service/LocationServiceImpl.java.ref'
+2012-12-06 14:09:11,206 INFO  [AndroMDA:java] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/src/main/java/com/systemsjr/jrbase/counter/service/CounterServiceImpl.java.ref'
+2012-12-06 14:09:11,208 INFO  [AndroMDA:java] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/src/main/java/com/systemsjr/jrbase/role/service/RoleServiceImpl.java.ref'
+2012-12-06 14:09:11,209 INFO  [AndroMDA:java] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/src/main/java/com/systemsjr/jrbase/clearancelevel/service/ClearanceLevelServiceImpl.java.ref'
+2012-12-06 14:09:11,209 INFO  [AndroMDA:java] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/src/main/java/com/systemsjr/jrbase/loginsession/service/LoginSessionServiceImpl.java.ref'
+2012-12-06 14:09:11,210 INFO  [AndroMDA:java] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/src/main/java/com/systemsjr/jrbase/workbench/program/service/ProgramServiceImpl.java.ref'
+2012-12-06 14:09:11,211 INFO  [AndroMDA:java] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../core/src/main/java/com/systemsjr/jrbase/workbench/menu/service/MenuServiceImpl.java.ref'
+2012-12-06 14:09:11,212 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/java/ValueObject.vsl with 25 metafacades from 1 model elements
+2012-12-06 14:09:11,257 INFO  [AndroMDA:java] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../common/target/src/main/java/com/systemsjr/jrbase/individual/vo/IndividualVO.java'
+2012-12-06 14:09:11,283 INFO  [AndroMDA:java] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../common/target/src/main/java/com/systemsjr/jrbase/individual/vo/IndividualSearchCriteria.java'
+2012-12-06 14:09:11,325 INFO  [AndroMDA:java] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../common/target/src/main/java/com/systemsjr/jrbase/user/vo/UserVO.java'
+2012-12-06 14:09:11,347 INFO  [AndroMDA:java] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../common/target/src/main/java/com/systemsjr/jrbase/user/vo/UserSearchCriteria.java'
+2012-12-06 14:09:11,365 INFO  [AndroMDA:java] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../common/target/src/main/java/com/systemsjr/jrbase/user/vo/UserLocationVO.java'
+2012-12-06 14:09:11,381 INFO  [AndroMDA:java] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../common/target/src/main/java/com/systemsjr/jrbase/user/vo/UserLocationSearchCriteria.java'
+2012-12-06 14:09:11,405 INFO  [AndroMDA:java] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../common/target/src/main/java/com/systemsjr/jrbase/organisation/vo/OrganisationVO.java'
+2012-12-06 14:09:11,419 INFO  [AndroMDA:java] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../common/target/src/main/java/com/systemsjr/jrbase/organisation/vo/OrganisationSearchCriteria.java'
+2012-12-06 14:09:11,432 INFO  [AndroMDA:java] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../common/target/src/main/java/com/systemsjr/jrbase/organisation/vo/OrganisationTypeVO.java'
+2012-12-06 14:09:11,447 INFO  [AndroMDA:java] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../common/target/src/main/java/com/systemsjr/jrbase/organisation/vo/OrganisationTypeSearchCriteria.java'
+2012-12-06 14:09:11,467 INFO  [AndroMDA:java] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../common/target/src/main/java/com/systemsjr/jrbase/location/vo/LocationVO.java'
+2012-12-06 14:09:11,481 INFO  [AndroMDA:java] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../common/target/src/main/java/com/systemsjr/jrbase/location/vo/LocationTypeVO.java'
+2012-12-06 14:09:11,494 INFO  [AndroMDA:java] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../common/target/src/main/java/com/systemsjr/jrbase/location/vo/LocationTypeSearchCriteria.java'
+2012-12-06 14:09:11,510 INFO  [AndroMDA:java] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../common/target/src/main/java/com/systemsjr/jrbase/location/vo/LocationSearchCriteria.java'
+2012-12-06 14:09:11,523 INFO  [AndroMDA:java] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../common/target/src/main/java/com/systemsjr/jrbase/counter/vo/CounterVO.java'
+2012-12-06 14:09:11,542 INFO  [AndroMDA:java] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../common/target/src/main/java/com/systemsjr/jrbase/role/vo/RoleVO.java'
+2012-12-06 14:09:11,553 INFO  [AndroMDA:java] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../common/target/src/main/java/com/systemsjr/jrbase/role/vo/RoleSearchCriteria.java'
+2012-12-06 14:09:11,567 INFO  [AndroMDA:java] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../common/target/src/main/java/com/systemsjr/jrbase/clearancelevel/vo/ClearanceLevelVO.java'
+2012-12-06 14:09:11,579 INFO  [AndroMDA:java] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../common/target/src/main/java/com/systemsjr/jrbase/clearancelevel/vo/ClearanceLevelSearchCriteria.java'
+2012-12-06 14:09:11,593 INFO  [AndroMDA:java] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../common/target/src/main/java/com/systemsjr/jrbase/loginsession/vo/LoginSessionVO.java'
+2012-12-06 14:09:11,602 INFO  [AndroMDA:java] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../common/target/src/main/java/com/systemsjr/jrbase/loginsession/vo/LoginSearchCriteria.java'
+2012-12-06 14:09:11,617 INFO  [AndroMDA:java] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../common/target/src/main/java/com/systemsjr/jrbase/workbench/program/vo/ProgramVO.java'
+2012-12-06 14:09:11,627 INFO  [AndroMDA:java] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../common/target/src/main/java/com/systemsjr/jrbase/workbench/program/vo/ProgramSearchCriteria.java'
+2012-12-06 14:09:11,639 INFO  [AndroMDA:java] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../common/target/src/main/java/com/systemsjr/jrbase/workbench/menu/vo/MenuVO.java'
+2012-12-06 14:09:11,650 INFO  [AndroMDA:java] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../common/target/src/main/java/com/systemsjr/jrbase/workbench/menu/vo/MenuSearchCriteria.java'
+2012-12-06 14:09:11,652 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/java/ApplicationException.vsl with 0 metafacades from 2 model elements
+2012-12-06 14:09:11,654 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/java/UnexpectedException.vsl with 0 metafacades from 1 model elements
+2012-12-06 14:09:11,655 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/java/Enumeration.vsl with 0 metafacades from 1 model elements
+2012-12-06 14:09:11,656 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/java/TypeSafeEnumeration.vsl with 8 metafacades from 1 model elements
+2012-12-06 14:09:11,670 INFO  [AndroMDA:java] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../common/target/src/main/java/com/systemsjr/jrbase/individual/Gender.java'
+2012-12-06 14:09:11,709 INFO  [AndroMDA:java] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../common/target/src/main/java/com/systemsjr/jrbase/individual/Salutation.java'
+2012-12-06 14:09:11,723 INFO  [AndroMDA:java] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../common/target/src/main/java/com/systemsjr/jrbase/individual/IDType.java'
+2012-12-06 14:09:11,742 INFO  [AndroMDA:java] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../common/target/src/main/java/com/systemsjr/jrbase/user/UserStatus.java'
+2012-12-06 14:09:11,752 INFO  [AndroMDA:java] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../common/target/src/main/java/com/systemsjr/jrbase/user/UserLocationStatus.java'
+2012-12-06 14:09:11,766 INFO  [AndroMDA:java] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../common/target/src/main/java/com/systemsjr/jrbase/location/LocationStatus.java'
+2012-12-06 14:09:11,785 INFO  [AndroMDA:java] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../common/target/src/main/java/com/systemsjr/jrbase/location/Type.java'
+2012-12-06 14:09:11,803 INFO  [AndroMDA:java] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../common/target/src/main/java/com/systemsjr/jrbase/TimeType.java'
+2012-12-06 14:09:11,805 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/java/Interface.vsl with 0 metafacades from 1 model elements
+2012-12-06 14:09:11,806 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/java/InterfaceImpl.vsl with 0 metafacades from 1 model elements
+2012-12-06 14:09:11,818 INFO  [AndroMDA] Processing cartridge bpm4struts on model /home/junior/Documents/business/jrsystems/devel/jrbase/mda/src/main/uml/jrbase.uml
+2012-12-06 14:09:11,847 INFO  [AndroMDA:bpm4struts] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../web/target/src/main/webapp/layout/ascending.gif'
+2012-12-06 14:09:11,848 INFO  [AndroMDA:bpm4struts] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../web/target/src/main/webapp/layout/breadcrumb.gif'
+2012-12-06 14:09:11,848 INFO  [AndroMDA:bpm4struts] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../web/target/src/main/webapp/layout/csv.gif'
+2012-12-06 14:09:11,849 INFO  [AndroMDA:bpm4struts] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../web/target/src/main/webapp/layout/default-calendar.css'
+2012-12-06 14:09:11,849 INFO  [AndroMDA:bpm4struts] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../web/target/src/main/webapp/layout/default.css'
+2012-12-06 14:09:11,850 INFO  [AndroMDA:bpm4struts] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../web/target/src/main/webapp/layout/descending.gif'
+2012-12-06 14:09:11,850 INFO  [AndroMDA:bpm4struts] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../web/target/src/main/webapp/layout/excel.gif'
+2012-12-06 14:09:11,851 INFO  [AndroMDA:bpm4struts] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../web/target/src/main/webapp/layout/help.gif'
+2012-12-06 14:09:11,851 INFO  [AndroMDA:bpm4struts] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../web/target/src/main/webapp/layout/hints.js'
+2012-12-06 14:09:11,852 INFO  [AndroMDA:bpm4struts] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../web/target/src/main/webapp/layout/key-events.js'
+2012-12-06 14:09:11,852 INFO  [AndroMDA:bpm4struts] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../web/target/src/main/webapp/layout/layout-common.js'
+2012-12-06 14:09:11,853 INFO  [AndroMDA:bpm4struts] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../web/target/src/main/webapp/layout/none.gif'
+2012-12-06 14:09:11,853 INFO  [AndroMDA:bpm4struts] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../web/target/src/main/webapp/layout/pdf.gif'
+2012-12-06 14:09:11,854 INFO  [AndroMDA:bpm4struts] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../web/target/src/main/webapp/layout/warning.gif'
+2012-12-06 14:09:11,854 INFO  [AndroMDA:bpm4struts] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../web/target/src/main/webapp/layout/xml.gif'
+2012-12-06 14:09:11,855 INFO  [AndroMDA:bpm4struts] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../web/target/src/main/webapp/layout/calendar/calendar.gif'
+2012-12-06 14:09:11,856 INFO  [AndroMDA:bpm4struts] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../web/target/src/main/webapp/layout/calendar/menuarrow.gif'
+2012-12-06 14:09:11,857 INFO  [AndroMDA:bpm4struts] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../web/target/src/main/webapp/WEB-INF/lib/andromda-breadcrumbs-taglib.jar'
+2012-12-06 14:09:11,858 INFO  [AndroMDA:bpm4struts] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../web/target/src/main/webapp/WEB-INF/lib/andromda-collections-taglib.jar'
+2012-12-06 14:09:11,858 INFO  [AndroMDA:bpm4struts] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../web/target/src/main/webapp/WEB-INF/lib/andromda-formatting-taglib.jar'
+2012-12-06 14:09:11,859 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/bpm4struts/actions/Action.java.vsl with 0 metafacades from 1 model elements
+2012-12-06 14:09:11,864 INFO  [AndroMDA:bpm4struts] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../web/target/src/main/java/org/andromda/presentation/bpm4struts/PatternMatchingExceptionHandler.java'
+2012-12-06 14:09:11,866 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/bpm4struts/pages/action.jsp.vsl with 0 metafacades from 1 model elements
+2012-12-06 14:09:11,867 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/bpm4struts/forms/ActionForm.java.vsl with 0 metafacades from 1 model elements
+2012-12-06 14:09:11,868 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/bpm4struts/forms/ActionFormInterface.java.vsl with 0 metafacades from 1 model elements
+2012-12-06 14:09:11,869 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/bpm4struts/controllers/ControllerImpl.java.vsl with 0 metafacades from 1 model elements
+2012-12-06 14:09:11,870 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/bpm4struts/controllers/Controller.java.vsl with 0 metafacades from 1 model elements
+2012-12-06 14:09:11,871 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/bpm4struts/controllers/ControllerFactory.java.vsl with 0 metafacades from 1 model elements
+2012-12-06 14:09:11,872 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/bpm4struts/controllers/SessionObject.java.vsl with 0 metafacades from 1 model elements
+2012-12-06 14:09:11,873 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/bpm4struts/pages/page.jsp.vsl with 0 metafacades from 1 model elements
+2012-12-06 14:09:11,876 INFO  [AndroMDA:bpm4struts] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../web/target/src/main/webapp/error-page.jsp'
+2012-12-06 14:09:11,877 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/bpm4struts/pages/page-javascript.jspf.vsl with 0 metafacades from 1 model elements
+2012-12-06 14:09:11,878 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/bpm4struts/pages/page-variables.jspf.vsl with 0 metafacades from 1 model elements
+2012-12-06 14:09:11,879 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/bpm4struts/pages/page-hidden-parameters.jspf.vsl with 0 metafacades from 1 model elements
+2012-12-06 14:09:11,880 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/bpm4struts/pages/page-table.jspf.vsl with 0 metafacades from 1 model elements
+2012-12-06 14:09:11,881 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/bpm4struts/pages/form-validation.jsp.vsl with 0 metafacades from 1 model elements
+2012-12-06 14:09:11,884 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/bpm4struts/configuration/validator-rules.xml.vsl with 0 metafacades from 1 model elements
+2012-12-06 14:09:11,893 INFO  [AndroMDA:bpm4struts] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../web/target/src/main/java/org/andromda/presentation/bpm4struts/StrutsValidator.java'
+2012-12-06 14:09:11,896 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/bpm4struts/pages/index.jsp.vsl with 13 metafacades from 2 model elements
+2012-12-06 14:09:11,898 INFO  [AndroMDA:bpm4struts] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../web/target/src/main/webapp/index.jsp'
+2012-12-06 14:09:11,900 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/bpm4struts/messages/application-resources.properties.vsl with 13 metafacades from 2 model elements
+2012-12-06 14:09:11,937 INFO  [AndroMDA:bpm4struts] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../web/target/src/main/webapp/WEB-INF/classes/application-resources.properties'
+2012-12-06 14:09:11,940 INFO  [AndroMDA:bpm4struts] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../web/target/src/main/webapp/WEB-INF/classes/displaytag.properties'
+2012-12-06 14:09:11,943 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/bpm4struts/configuration/web.xml.vsl with 13 metafacades from 2 model elements
+2012-12-06 14:09:11,947 INFO  [AndroMDA:bpm4struts] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../web/target/src/main/webapp/WEB-INF/web.xml'
+2012-12-06 14:09:11,951 INFO  [AndroMDA:bpm4struts] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../web/target/src/main/java/org/andromda/presentation/bpm4struts/ActionServlet.java'
+2012-12-06 14:09:11,954 INFO  [AndroMDA:bpm4struts] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../web/target/src/main/webapp/login/login-form.jsp'
+2012-12-06 14:09:11,956 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/bpm4struts/pages/menu.jsp.vsl with 13 metafacades from 2 model elements
+2012-12-06 14:09:11,959 INFO  [AndroMDA:bpm4struts] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../web/target/src/main/webapp/layout/menu.jsp'
+2012-12-06 14:09:11,960 INFO  [AndroMDA:bpm4struts] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../web/target/src/main/webapp/layout/main-layout.jsp'
+2012-12-06 14:09:11,962 INFO  [AndroMDA:bpm4struts] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../web/target/src/main/webapp/WEB-INF/tiles-defs.xml'
+2012-12-06 14:09:11,964 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/bpm4struts/configuration/struts-config.xml.vsl with 13 metafacades from 2 model elements
+2012-12-06 14:09:11,971 INFO  [AndroMDA:bpm4struts] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../web/target/src/main/webapp/WEB-INF/struts-config.xml'
+2012-12-06 14:09:11,973 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/bpm4struts/configuration/menu-config.xml.vsl with 0 metafacades from 1 model elements
+2012-12-06 14:09:11,977 INFO  [AndroMDA:bpm4struts] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../web/target/src/main/webapp/WEB-INF/menu-config.xml'
+2012-12-06 14:09:11,978 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/bpm4struts/configuration/validation.xml.vsl with 0 metafacades from 1 model elements
+2012-12-06 14:09:11,987 INFO  [AndroMDA:bpm4struts] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../web/target/src/main/webapp/layout/default-application.css'
+2012-12-06 14:09:11,988 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/bpm4struts/pages/page.css.vsl with 0 metafacades from 1 model elements
+2012-12-06 14:09:11,991 INFO  [AndroMDA:bpm4struts] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../web/target/src/main/webapp/layout/messages.jsp'
+2012-12-06 14:09:11,992 WARN  [org.andromda.core.cartridge.Cartridge] Template outlet location 'server' is not defined in namespace bpm4struts
+2012-12-06 14:09:11,993 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/bpm4struts/server/roles.properties.vsl with 0 metafacades from 1 model elements
+2012-12-06 14:09:11,995 WARN  [org.andromda.core.cartridge.Cartridge] Template outlet location 'server' is not defined in namespace bpm4struts
+2012-12-06 14:09:12,005 INFO  [AndroMDA:bpm4struts] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../web/target/src/main/webapp/calendar-js.jsp'
+2012-12-06 14:09:12,007 INFO  [AndroMDA:bpm4struts] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../web/target/src/main/webapp/layout/breadcrumbs.jsp'
+2012-12-06 14:09:12,009 INFO  [AndroMDA:bpm4struts] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../web/target/src/main/webapp/taglib-imports.jspf'
+2012-12-06 14:09:12,010 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/bpm4struts/pages/page-help.jsp.vsl with 0 metafacades from 1 model elements
+2012-12-06 14:09:12,011 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/bpm4struts/pages/application-help.jsp.vsl with 0 metafacades from 1 model elements
+2012-12-06 14:09:12,013 INFO  [AndroMDA:bpm4struts] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../web/target/src/main/webapp/application-help.jsp'
+2012-12-06 14:09:12,015 INFO  [AndroMDA:bpm4struts] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../web/target/src/main/webapp/layout/help-layout.jsp'
+2012-12-06 14:09:12,016 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/bpm4struts/decorators/TableDecorator.java.vsl with 0 metafacades from 1 model elements
+2012-12-06 14:09:12,017 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/bpm4struts/actions/crud/CrudAction.java.vsl with 13 metafacades from 1 model elements
+2012-12-06 14:09:12,057 INFO  [AndroMDA:bpm4struts] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../web/target/src/main/java/com/systemsjr/jrbase/individual/crud/ManageIndividual.java'
+2012-12-06 14:09:12,080 INFO  [AndroMDA:bpm4struts] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../web/target/src/main/java/com/systemsjr/jrbase/user/crud/ManageUser.java'
+2012-12-06 14:09:12,091 INFO  [AndroMDA:bpm4struts] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../web/target/src/main/java/com/systemsjr/jrbase/user/crud/ManageUserLocation.java'
+2012-12-06 14:09:12,104 INFO  [AndroMDA:bpm4struts] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../web/target/src/main/java/com/systemsjr/jrbase/organisation/crud/ManageOrganisation.java'
+2012-12-06 14:09:12,112 INFO  [AndroMDA:bpm4struts] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../web/target/src/main/java/com/systemsjr/jrbase/organisation/crud/ManageOrganisationType.java'
+2012-12-06 14:09:12,127 INFO  [AndroMDA:bpm4struts] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../web/target/src/main/java/com/systemsjr/jrbase/location/crud/ManageLocationType.java'
+2012-12-06 14:09:12,147 INFO  [AndroMDA:bpm4struts] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../web/target/src/main/java/com/systemsjr/jrbase/location/crud/ManageLocation.java'
+2012-12-06 14:09:12,154 INFO  [AndroMDA:bpm4struts] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../web/target/src/main/java/com/systemsjr/jrbase/counter/crud/ManageCounter.java'
+2012-12-06 14:09:12,167 INFO  [AndroMDA:bpm4struts] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../web/target/src/main/java/com/systemsjr/jrbase/role/crud/ManageRole.java'
+2012-12-06 14:09:12,177 INFO  [AndroMDA:bpm4struts] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../web/target/src/main/java/com/systemsjr/jrbase/clearancelevel/crud/ManageClearanceLevel.java'
+2012-12-06 14:09:12,185 INFO  [AndroMDA:bpm4struts] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../web/target/src/main/java/com/systemsjr/jrbase/loginsession/crud/ManageLoginSession.java'
+2012-12-06 14:09:12,193 INFO  [AndroMDA:bpm4struts] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../web/target/src/main/java/com/systemsjr/jrbase/workbench/program/crud/ManageProgram.java'
+2012-12-06 14:09:12,201 INFO  [AndroMDA:bpm4struts] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../web/target/src/main/java/com/systemsjr/jrbase/workbench/menu/crud/ManageMenu.java'
+2012-12-06 14:09:12,203 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/bpm4struts/forms/crud/CrudForm.java.vsl with 13 metafacades from 1 model elements
+2012-12-06 14:09:12,219 INFO  [AndroMDA:bpm4struts] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../web/target/src/main/java/com/systemsjr/jrbase/individual/crud/IndividualForm.java'
+2012-12-06 14:09:12,228 INFO  [AndroMDA:bpm4struts] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../web/target/src/main/java/com/systemsjr/jrbase/user/crud/UserForm.java'
+2012-12-06 14:09:12,235 INFO  [AndroMDA:bpm4struts] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../web/target/src/main/java/com/systemsjr/jrbase/user/crud/UserLocationForm.java'
+2012-12-06 14:09:12,240 INFO  [AndroMDA:bpm4struts] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../web/target/src/main/java/com/systemsjr/jrbase/organisation/crud/OrganisationForm.java'
+2012-12-06 14:09:12,244 INFO  [AndroMDA:bpm4struts] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../web/target/src/main/java/com/systemsjr/jrbase/organisation/crud/OrganisationTypeForm.java'
+2012-12-06 14:09:12,251 INFO  [AndroMDA:bpm4struts] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../web/target/src/main/java/com/systemsjr/jrbase/location/crud/LocationTypeForm.java'
+2012-12-06 14:09:12,260 INFO  [AndroMDA:bpm4struts] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../web/target/src/main/java/com/systemsjr/jrbase/location/crud/LocationForm.java'
+2012-12-06 14:09:12,264 INFO  [AndroMDA:bpm4struts] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../web/target/src/main/java/com/systemsjr/jrbase/counter/crud/CounterForm.java'
+2012-12-06 14:09:12,268 INFO  [AndroMDA:bpm4struts] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../web/target/src/main/java/com/systemsjr/jrbase/role/crud/RoleForm.java'
+2012-12-06 14:09:12,273 INFO  [AndroMDA:bpm4struts] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../web/target/src/main/java/com/systemsjr/jrbase/clearancelevel/crud/ClearanceLevelForm.java'
+2012-12-06 14:09:12,276 INFO  [AndroMDA:bpm4struts] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../web/target/src/main/java/com/systemsjr/jrbase/loginsession/crud/LoginSessionForm.java'
+2012-12-06 14:09:12,280 INFO  [AndroMDA:bpm4struts] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../web/target/src/main/java/com/systemsjr/jrbase/workbench/program/crud/ProgramForm.java'
+2012-12-06 14:09:12,283 INFO  [AndroMDA:bpm4struts] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../web/target/src/main/java/com/systemsjr/jrbase/workbench/menu/crud/MenuForm.java'
+2012-12-06 14:09:12,285 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/bpm4struts/pages/crud/manageable.jsp.vsl with 13 metafacades from 1 model elements
+2012-12-06 14:09:12,316 INFO  [AndroMDA:bpm4struts] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../web/target/src/main/webapp/com/systemsjr/jrbase/individual/crud/individual-crud.jsp'
+2012-12-06 14:09:12,332 INFO  [AndroMDA:bpm4struts] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../web/target/src/main/webapp/com/systemsjr/jrbase/user/crud/user-crud.jsp'
+2012-12-06 14:09:12,343 INFO  [AndroMDA:bpm4struts] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../web/target/src/main/webapp/com/systemsjr/jrbase/user/crud/userlocation-crud.jsp'
+2012-12-06 14:09:12,354 INFO  [AndroMDA:bpm4struts] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../web/target/src/main/webapp/com/systemsjr/jrbase/organisation/crud/organisation-crud.jsp'
+2012-12-06 14:09:12,362 INFO  [AndroMDA:bpm4struts] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../web/target/src/main/webapp/com/systemsjr/jrbase/organisation/crud/organisationtype-crud.jsp'
+2012-12-06 14:09:12,375 INFO  [AndroMDA:bpm4struts] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../web/target/src/main/webapp/com/systemsjr/jrbase/location/crud/locationtype-crud.jsp'
+2012-12-06 14:09:12,390 INFO  [AndroMDA:bpm4struts] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../web/target/src/main/webapp/com/systemsjr/jrbase/location/crud/location-crud.jsp'
+2012-12-06 14:09:12,397 INFO  [AndroMDA:bpm4struts] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../web/target/src/main/webapp/com/systemsjr/jrbase/counter/crud/counter-crud.jsp'
+2012-12-06 14:09:12,407 INFO  [AndroMDA:bpm4struts] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../web/target/src/main/webapp/com/systemsjr/jrbase/role/crud/role-crud.jsp'
+2012-12-06 14:09:12,417 INFO  [AndroMDA:bpm4struts] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../web/target/src/main/webapp/com/systemsjr/jrbase/clearancelevel/crud/clearancelevel-crud.jsp'
+2012-12-06 14:09:12,423 INFO  [AndroMDA:bpm4struts] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../web/target/src/main/webapp/com/systemsjr/jrbase/loginsession/crud/loginsession-crud.jsp'
+2012-12-06 14:09:12,432 INFO  [AndroMDA:bpm4struts] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../web/target/src/main/webapp/com/systemsjr/jrbase/workbench/program/crud/program-crud.jsp'
+2012-12-06 14:09:12,442 INFO  [AndroMDA:bpm4struts] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../web/target/src/main/webapp/com/systemsjr/jrbase/workbench/menu/crud/menu-crud.jsp'
+2012-12-06 14:09:12,444 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/bpm4struts/pages/crud/manageable-help.jsp.vsl with 13 metafacades from 1 model elements
+2012-12-06 14:09:12,445 INFO  [AndroMDA:bpm4struts] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../web/target/src/main/webapp/com/systemsjr/jrbase/individual/crud/individual_help.jsp'
+2012-12-06 14:09:12,446 INFO  [AndroMDA:bpm4struts] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../web/target/src/main/webapp/com/systemsjr/jrbase/user/crud/user_help.jsp'
+2012-12-06 14:09:12,447 INFO  [AndroMDA:bpm4struts] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../web/target/src/main/webapp/com/systemsjr/jrbase/user/crud/userlocation_help.jsp'
+2012-12-06 14:09:12,447 INFO  [AndroMDA:bpm4struts] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../web/target/src/main/webapp/com/systemsjr/jrbase/organisation/crud/organisation_help.jsp'
+2012-12-06 14:09:12,447 INFO  [AndroMDA:bpm4struts] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../web/target/src/main/webapp/com/systemsjr/jrbase/organisation/crud/organisationtype_help.jsp'
+2012-12-06 14:09:12,448 INFO  [AndroMDA:bpm4struts] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../web/target/src/main/webapp/com/systemsjr/jrbase/location/crud/locationtype_help.jsp'
+2012-12-06 14:09:12,448 INFO  [AndroMDA:bpm4struts] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../web/target/src/main/webapp/com/systemsjr/jrbase/location/crud/location_help.jsp'
+2012-12-06 14:09:12,448 INFO  [AndroMDA:bpm4struts] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../web/target/src/main/webapp/com/systemsjr/jrbase/counter/crud/counter_help.jsp'
+2012-12-06 14:09:12,449 INFO  [AndroMDA:bpm4struts] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../web/target/src/main/webapp/com/systemsjr/jrbase/role/crud/role_help.jsp'
+2012-12-06 14:09:12,449 INFO  [AndroMDA:bpm4struts] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../web/target/src/main/webapp/com/systemsjr/jrbase/clearancelevel/crud/clearancelevel_help.jsp'
+2012-12-06 14:09:12,449 INFO  [AndroMDA:bpm4struts] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../web/target/src/main/webapp/com/systemsjr/jrbase/loginsession/crud/loginsession_help.jsp'
+2012-12-06 14:09:12,450 INFO  [AndroMDA:bpm4struts] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../web/target/src/main/webapp/com/systemsjr/jrbase/workbench/program/crud/program_help.jsp'
+2012-12-06 14:09:12,450 INFO  [AndroMDA:bpm4struts] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../web/target/src/main/webapp/com/systemsjr/jrbase/workbench/menu/crud/menu_help.jsp'
+2012-12-06 14:09:12,451 INFO  [org.andromda.core.cartridge.Cartridge] Processing templates/bpm4struts/pages/crud/default-manageable.css.vsl with 13 metafacades from 1 model elements
+2012-12-06 14:09:12,452 INFO  [AndroMDA:bpm4struts] Output: 'file:/home/junior/Documents/business/jrsystems/devel/jrbase/mda/../web/target/src/main/webapp/layout/default-manageable.css'
+2012-12-06 14:09:12,454 INFO  [AndroMDA] completed model processing --> TIME: 14.43[s], RESOURCES WRITTEN: 463
