@@ -1,1 +1,0 @@
-ERROR 2012-12-06 14:09:11,958 - Left side ($useCases.size()) of '>' operation has null value at templates/bpm4struts/pages/menu.jsp.vsl[line 24, column 23]
