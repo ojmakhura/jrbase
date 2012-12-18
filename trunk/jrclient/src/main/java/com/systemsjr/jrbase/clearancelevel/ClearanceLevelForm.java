@@ -25,8 +25,9 @@ public class ClearanceLevelForm extends BaseItemForm<ClearanceLevelVO> {
 	@SuppressWarnings("unchecked")
 	@Override
 	protected JComponent createFormControl() {
-		SwingBindingFactory sbf = (SwingBindingFactory) getBindingFactory();
-		itemList = (BaseItemTable<ClearanceLevelVO>) Application.instance().getApplicationContext().getBean("clearanceLevelTable");
+		sbf = (SwingBindingFactory) getBindingFactory();	
+		valueHolder = BaseUIUtils.getClearanceLevelValueHolder();
+		itemList = (BaseItemTable<ClearanceLevelVO>) Application.instance().getApplicationContext().getBean("clearanceLevelTable");	
 		scrollPane = getComponentFactory().createScrollPane(itemList.getControl());
 		builder.setLabelAttributes("colSpec=right:pref");
 		
@@ -35,9 +36,9 @@ public class ClearanceLevelForm extends BaseItemForm<ClearanceLevelVO> {
 		//builder.row();
 		builder.add("levelDescription", "colSpec=40dlu:grow");
 		builder.row();
-		builder.add(sbf.createBoundComboBox("upperLevel", BaseUIUtils.getClearanceLevelValueHolder(), "levelCode"));
+		builder.add(sbf.createBoundComboBox("upperLevel", valueHolder, "levelCode"));
 		builder.row();
-		builder.add(sbf.createBoundComboBox("lowerLevel", BaseUIUtils.getClearanceLevelValueHolder(), "levelCode"));
+		builder.add(sbf.createBoundComboBox("lowerLevel", valueHolder, "levelCode"));
 		builder.row();
 		builder.addSeparator("Clearance Level Details");		
 

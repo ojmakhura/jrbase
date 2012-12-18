@@ -9,6 +9,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JSplitPane;
 
 import org.springframework.binding.value.ValueModel;
+import org.springframework.binding.value.support.RefreshableValueHolder;
 import org.springframework.context.ApplicationEvent;
 import org.springframework.context.ApplicationListener;
 import org.springframework.richclient.command.AbstractCommand;
@@ -33,7 +34,16 @@ public class BaseItemForm<T> extends AbstractForm implements ApplicationListener
 	protected SwingBindingFactory sbf;
 	protected JScrollPane scrollPane;
 	protected TableFormBuilder builder;
+	protected RefreshableValueHolder valueHolder;
 	
+	public RefreshableValueHolder getValueholder() {
+		return valueHolder;
+	}
+
+	public void setValueholder(RefreshableValueHolder valueholder) {
+		this.valueHolder = valueholder;
+	}
+
 	public SwingBindingFactory getSbf() {
 		return sbf;
 	}

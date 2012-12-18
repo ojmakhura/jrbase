@@ -93,6 +93,46 @@ public class BaseUIUtils {
 		}, false, false);
 	}
 	
+	public static RefreshableValueHolder getIndividualValueHolder(){
+		return new RefreshableValueHolder(new Closure() {
+			@Override
+			public Object call(Object object) {
+				return DataSourceAccessUtils.getAllClearanceLevels();
+			}
+
+		}, false, false);
+	}
+	
+	public static RefreshableValueHolder getCounterValueHolder(){
+		return new RefreshableValueHolder(new Closure() {
+			@Override
+			public Object call(Object object) {
+				return DataSourceAccessUtils.getAllCounters();
+			}
+
+		}, false, false);
+	}
+	
+	public static RefreshableValueHolder getLocationTypeValueHolder(){
+		return new RefreshableValueHolder(new Closure() {
+			@Override
+			public Object call(Object object) {
+				return BaseServiceUtils.getLocationService().getAllLocationTypes();
+			}
+
+		}, false, false);
+	}
+	
+	public static RefreshableValueHolder getLocationValueHolder(){
+		return new RefreshableValueHolder(new Closure() {
+			@Override
+			public Object call(Object object) {
+				return BaseServiceUtils.getLocationService().get;
+			}
+
+		}, false, false);
+	}
+	
 	/**
      * 
      */

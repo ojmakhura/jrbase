@@ -1,5 +1,7 @@
 package com.systemsjr.jrbase.clearancelevel;
 
+import java.awt.Component;
+
 import javax.swing.JComponent;
 
 import org.springframework.richclient.command.ActionCommand;
@@ -9,6 +11,7 @@ import org.springframework.richclient.command.support.GlobalCommandIds;
 import com.systemsjr.jrbase.clearancelevel.vo.ClearanceLevelVO;
 import com.systemsjr.jrbase.common.BaseItemView;
 import com.systemsjr.jrbase.utils.BaseServiceUtils;
+import com.systemsjr.jrbase.utils.BaseUIUtils;
 
 public class ClearanceLevelView extends BaseItemView<ClearanceLevelVO> {
 	@Override
@@ -25,7 +28,7 @@ public class ClearanceLevelView extends BaseItemView<ClearanceLevelVO> {
 			getItemForm().getFormModel().commit();
 			ClearanceLevelVO levelVO = (ClearanceLevelVO) getItemForm().getFormObject();
 			levelVO = BaseServiceUtils.getClearanceService().saveClearanceLevel(levelVO);
-			getItemForm().getItemList().setInitialData(BaseServiceUtils.getClearanceService().getAllClearanceLevels());
+			getItemForm().getValueholder().refresh();
 			return levelVO;
 		}
 		return null;
