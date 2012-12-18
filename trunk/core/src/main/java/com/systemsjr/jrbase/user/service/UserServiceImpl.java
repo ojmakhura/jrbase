@@ -72,18 +72,18 @@ public class UserServiceImpl
 	}
 
 	@Override
-	protected List handleGetAllUsers() throws Exception {
-		return Arrays.asList((UserVO[])getUserDao().loadAll(UserDao.TRANSFORM_USERVO).toArray());
+	protected UserVO[] handleGetAllUsers() throws Exception {
+		return (UserVO[])getUserDao().loadAll(UserDao.TRANSFORM_USERVO).toArray();
 	}
 
 	@Override
-	protected List handleGetUsersByStatus(UserStatus status) throws Exception {
+	protected UserVO[] handleGetUsersByStatus(UserStatus status) throws Exception {
 		
 		UserSearchCriteria searchCriteria = new UserSearchCriteria();
 		
 		searchCriteria.setStatus(status);
 		
-		return getUserDao().findByCriteria(searchCriteria);
+		return (UserVO[]) getUserDao().findByCriteria(searchCriteria).toArray();
 	}
 
 	@Override
