@@ -208,8 +208,6 @@ public abstract class BaseItemView<T> extends AbstractView {
 
 	protected abstract void deleteItem();
 
-	protected abstract void showItem();
-
 	private class listTableFactory {
 		public BaseItemTable createListTable() {
 

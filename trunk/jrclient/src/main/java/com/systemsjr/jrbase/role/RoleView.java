@@ -37,11 +37,4 @@ public class RoleView extends BaseItemView<RoleVO>{
 		RoleVO roleVO = ((RoleVO)getItemForm().getFormObject());
 		BaseServiceUtils.getRoleService().removeRole(roleVO);
 	}
-
-	@Override
-	protected void showItem() {
-		// TODO Auto-generated method stub
-		
-	}
-
 }

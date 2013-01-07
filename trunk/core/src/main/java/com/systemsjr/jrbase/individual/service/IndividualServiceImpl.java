@@ -5,10 +5,11 @@
  */
 package com.systemsjr.jrbase.individual.service;
 
-import java.util.List;
+import java.util.Collection;
 
 import com.systemsjr.jrbase.individual.Individual;
 import com.systemsjr.jrbase.individual.IndividualDao;
+import com.systemsjr.jrbase.individual.vo.IndividualVO;
 
 /**
  * @see com.systemsjr.jrbase.individual.service.IndividualService
@@ -39,10 +40,11 @@ public class IndividualServiceImpl
      * @see com.systemsjr.jrbase.individual.service.IndividualService#getAllIndividuals()
      */
     @Override
-	protected  List handleGetAllIndividuals()
+	protected  IndividualVO[] handleGetAllIndividuals()
         throws java.lang.Exception
     {
-    	return java.util.Arrays.asList(getIndividualDao().loadAll(IndividualDao.TRANSFORM_INDIVIDUALVO).toArray());
+    	Collection individuals = getIndividualDao().loadAll();
+    	return getIndividualDao().toIndividualVOArray(individuals);
     }
 
     /**

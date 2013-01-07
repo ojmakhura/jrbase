@@ -5,13 +5,10 @@
  */
 package com.systemsjr.jrbase.counter.service;
 
-import java.util.Arrays;
 import java.util.Collection;
-import java.util.List;
 
 import com.systemsjr.jrbase.counter.Counter;
 import com.systemsjr.jrbase.counter.vo.CounterVO;
-import com.systemsjr.jrbase.role.Role;
 
 /**
  * @see com.systemsjr.jrbase.counter.service.CounterService

@@ -6,8 +6,6 @@
 package com.systemsjr.jrbase.user.service;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 import org.apache.commons.lang.ArrayUtils;
 
@@ -56,7 +54,7 @@ public class UserServiceImpl
 	}
 
 	@Override
-	protected List handleGetUserLocations(UserVO userVO) throws Exception {
+	protected LocationVO[] handleGetUserLocations(UserVO userVO) throws Exception {
 		ArrayList<LocationVO> locations = new ArrayList<LocationVO>();
 		UserLocationVO[] userLocations = userVO.getUserLocations();
 		
@@ -68,7 +66,7 @@ public class UserServiceImpl
 			locations = null;
 		}
 		
-		return locations;
+		return (LocationVO[]) locations.toArray();
 	}
 
 	@Override
@@ -96,7 +94,7 @@ public class UserServiceImpl
 	}
 
 	@Override
-	protected UserVO handleGetUserCurrentLocation(UserVO userVO) throws Exception {
+	protected LocationVO handleGetUserCurrentLocation(UserVO userVO) throws Exception {
 		UserLocationSearchCriteria searchCriteria = new UserLocationSearchCriteria();
 		
 		if(userVO != null && userVO.getId() != null){
@@ -106,7 +104,7 @@ public class UserServiceImpl
 			return null;
 		}
 		
-		return (UserVO) getUserLocationDao().findByCriteria(searchCriteria).toArray()[0];
+		return  getUserLocationDao().toUserLocationVOArray(getUserLocationDao().findByCriteria(searchCriteria))[0].getLocation();
 	}
 
 }

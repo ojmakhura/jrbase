@@ -3,8 +3,10 @@ package com.systemsjr.jrbase.individual;
 import javax.swing.JComponent;
 
 import com.systemsjr.jrbase.common.BaseItemView;
+import com.systemsjr.jrbase.utils.BaseServiceUtils;
+import com.systemsjr.jrbase.individual.vo.IndividualVO;
 
-public class IndividualView<IndividualVO> extends BaseItemView<IndividualVO> {
+public class IndividualView extends BaseItemView<IndividualVO> {
 
 	@Override
 	protected JComponent createControl() {
@@ -13,20 +15,28 @@ public class IndividualView<IndividualVO> extends BaseItemView<IndividualVO> {
 
 	@Override
 	protected IndividualVO saveItem() {
-		// TODO Auto-generated method stub
+		if(getItemForm().isDirty()){
+			getItemForm().getFormModel().commit();
+			IndividualVO individualVO = (IndividualVO)getItemForm().getFormObject();
+			individualVO = BaseServiceUtils.getIndividualService().saveIndividual(individualVO);
+			return individualVO;
+		}
 		return null;
 	}
 
 	@Override
 	protected IndividualVO newItem() {
-		// TODO Auto-generated method stub
-		return null;
+		getItemForm().setFormObject(new IndividualVO());
+		getItemForm().getFormModel().commit();
+		return (IndividualVO) getItemForm().getFormObject();
 	}
 
 	@Override
 	protected void deleteItem() {
-		// TODO Auto-generated method stub
-		
+		getItemForm().getFormModel().commit();
+		IndividualVO individualVO = (IndividualVO) getItemForm().getFormObject();
+		BaseServiceUtils.getIndividualService().removeIndividual(individualVO);
+		getItemForm().getFormModel().commit();
 	}
 
 	@Override

@@ -97,7 +97,7 @@ public class BaseUIUtils {
 		return new RefreshableValueHolder(new Closure() {
 			@Override
 			public Object call(Object object) {
-				return DataSourceAccessUtils.getAllClearanceLevels();
+				return DataSourceAccessUtils.getAllIndividuals();
 			}
 
 		}, false, false);
@@ -127,7 +127,7 @@ public class BaseUIUtils {
 		return new RefreshableValueHolder(new Closure() {
 			@Override
 			public Object call(Object object) {
-				return BaseServiceUtils.getLocationService().get;
+				return BaseServiceUtils.getLocationService().getAllLocations();
 			}
 
 		}, false, false);

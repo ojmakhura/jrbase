@@ -5,7 +5,6 @@
  */
 package com.systemsjr.jrbase.counter;
 
-import com.systemsjr.jrbase.role.Role;
 
 /**
  * @see com.systemsjr.jrbase.counter.Counter
@@ -80,7 +79,6 @@ public class CounterDaoImpl
         com.systemsjr.jrbase.counter.Counter target,
         boolean copyIfNull)
     {
-        // @todo verify behavior of counterVOToEntity
         super.counterVOToEntity(source, target, copyIfNull);
     }
 

@@ -29,6 +29,7 @@ public class CounterForm extends BaseItemForm<CounterVO> {
 		itemList = (BaseItemTable<CounterVO>) Application.instance().getApplicationContext().getBean("counterListTable");
 		scrollPane = getComponentFactory().createScrollPane(itemList.getControl());
 		builder = new TableFormBuilder(sbf);
+		
 		builder.setLabelAttributes("colSpec=right:pref");
 		builder.row();
 		builder.add("counterName", "colSpan=1");

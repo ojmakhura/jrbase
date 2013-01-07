@@ -30,11 +30,4 @@ public class OrganisationView extends BaseItemView<OrganisationVO> {
 		// TODO Auto-generated method stub
 		
 	}
-
-	@Override
-	protected void showItem() {
-		// TODO Auto-generated method stub
-		
-	}
-
 }

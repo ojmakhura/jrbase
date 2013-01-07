@@ -5,9 +5,6 @@
  */
 package com.systemsjr.jrbase.role.service;
 
-import java.util.Arrays;
-import java.util.List;
-
 import com.systemsjr.jrbase.clearancelevel.vo.ClearanceLevelVO;
 import com.systemsjr.jrbase.role.Role;
 import com.systemsjr.jrbase.role.RoleDao;
@@ -47,17 +44,17 @@ public class RoleServiceImpl
      * @see com.systemsjr.jrbase.role.service.RoleService#getAllRoles()
      */
     @Override
-	protected  List handleGetAllRoles()
+	protected  RoleVO[] handleGetAllRoles()
         throws java.lang.Exception
     {
-    	return Arrays.asList(getRoleDao().loadAll(RoleDao.TRANSFORM_ROLEVO).toArray());
+    	return (RoleVO[]) getRoleDao().loadAll(RoleDao.TRANSFORM_ROLEVO).toArray();
     }
 
     /**
      * @see com.systemsjr.jrbase.role.service.RoleService#getRolesByClearance(com.systemsjr.jrbase.clearancelevel.vo.ClearanceLevelVO)
      */
     @Override
-	protected  List<RoleVO> handleGetRolesByClearance(com.systemsjr.jrbase.clearancelevel.vo.ClearanceLevelVO clearanceVO)
+	protected  RoleVO[] handleGetRolesByClearance(com.systemsjr.jrbase.clearancelevel.vo.ClearanceLevelVO clearanceVO)
         throws java.lang.Exception
     {
     	// @todo
@@ -78,11 +75,11 @@ public class RoleServiceImpl
     }
 
 	@Override
-	protected List handleGetRoleClearanceLevels(RoleVO roleVO) throws Exception {
+	protected ClearanceLevelVO[] handleGetRoleClearanceLevels(RoleVO roleVO) throws Exception {
 		
 		Role role = getRoleDao().roleVOToEntity(roleVO);
 		
-		return Arrays.asList(role.getRoleClearanceLevels().toArray());
+		return (ClearanceLevelVO[]) role.getRoleClearanceLevels().toArray();
 	}
 
 	@Override

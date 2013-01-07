@@ -5,9 +5,6 @@
  */
 package com.systemsjr.jrbase.workbench.program.service;
 
-import java.util.Arrays;
-import java.util.List;
-
 import com.systemsjr.jrbase.workbench.program.Program;
 import com.systemsjr.jrbase.workbench.program.ProgramDao;
 import com.systemsjr.jrbase.workbench.program.vo.ProgramVO;
@@ -23,10 +20,10 @@ public class ProgramServiceImpl
      * @see com.systemsjr.jrbase.workbench.program.service.ProgramService#getAllPrograms()
      */
     @Override
-	protected  List<ProgramVO> handleGetAllPrograms()
+	protected  ProgramVO[] handleGetAllPrograms()
         throws java.lang.Exception
     {
-    	return Arrays.asList((ProgramVO[])getProgramDao().loadAll(ProgramDao.TRANSFORM_PROGRAMVO).toArray());
+    	return (ProgramVO[])getProgramDao().loadAll(ProgramDao.TRANSFORM_PROGRAMVO).toArray();
     }
 
 	@Override

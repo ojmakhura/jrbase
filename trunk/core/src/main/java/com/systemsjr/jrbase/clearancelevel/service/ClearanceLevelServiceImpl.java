@@ -5,7 +5,6 @@
  */
 package com.systemsjr.jrbase.clearancelevel.service;
 
-import java.util.Arrays;
 import java.util.Collection;
 
 import com.systemsjr.jrbase.clearancelevel.ClearanceLevel;
@@ -30,7 +29,6 @@ public class ClearanceLevelServiceImpl
     	if(clearanceLevelVO.getId() == null){
     		clearanceLevel = getClearanceLevelDao().create(getClearanceLevelDao().clearanceLevelVOToEntity(clearanceLevelVO));
     	} else{
-    		System.out.println("Updating ClearanceLevel " + clearanceLevelVO);
     		clearanceLevel = getClearanceLevelDao().clearanceLevelVOToEntity(clearanceLevelVO);
     		getClearanceLevelDao().update(clearanceLevel);
     	}

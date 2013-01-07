@@ -18,7 +18,6 @@ public class IndividualForm extends BaseItemForm<IndividualVO> {
 
 	public IndividualForm(IndividualVO item, String formId) {
 		super(item, formId);
-		// TODO Auto-generated constructor stub
 	}
 	
 	public IndividualForm(){
@@ -29,13 +28,14 @@ public class IndividualForm extends BaseItemForm<IndividualVO> {
 	protected JComponent createFormControl() {
 		sbf = (SwingBindingFactory) getBindingFactory();
 		valueHolder = BaseUIUtils.getIndividualValueHolder();
-		itemList = (BaseItemTable<IndividualVO>) Application.instance().getApplicationContext().getBean("individualTable");
-		//builder = new TableFormBuilder(sbf);
+		itemList = (BaseItemTable<IndividualVO>) Application.instance().getApplicationContext().getBean("individualListTable");
 		scrollPane = getComponentFactory().createScrollPane(itemList.getControl());
 		builder.setLabelAttributes("colSpec=right:pref");
 		
 		builder.row();
 		builder.add("individualId", "colSpan=1");
+		builder.row();
+		builder.add(sbf.createBoundComboBox("idType", IDType.literals().toArray()), "colSpan=1");
 		builder.add("idNumber", "colSpan=1");
 		builder.row();
 		builder.add(sbf.createBoundComboBox("salutation", Salutation.literals().toArray()), "colSpan=1");
@@ -48,11 +48,18 @@ public class IndividualForm extends BaseItemForm<IndividualVO> {
 		builder.row();
 		builder.addTextArea("postalAddress", "colSpan=1");
 		builder.addTextArea("physicalAddress", "colSpan=1");
+		builder.row();
+		builder.add("dob", "colSpan=1");
+		builder.add("email", "colSpan=1");
+		builder.row();
+		builder.add(sbf.createBoundComboBox("countryOfBirth", BaseUIUtils.getLocationValueHolder(), "locationName"), "colSpan=1");
+		builder.add(sbf.createBoundComboBox("countryOfCitizenship", 
+				BaseUIUtils.getLocationValueHolder(), "locationName"), "colSpan=1");
 		
 		itemPanel.add(builder.getForm(), BorderLayout.CENTER);
 		itemPanel.add(scrollPane, BorderLayout.WEST);
 		
-		return builder.getForm();
+		return itemPanel;
 	}
 
 }

@@ -9,6 +9,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import org.hibernate.Criteria;
+import org.hibernate.criterion.Restrictions;
 
 /**
  * @see com.systemsjr.jrbase.role.Role
@@ -23,7 +24,19 @@ public class RoleDaoImpl
 	protected List handleFindByCriteria(com.systemsjr.jrbase.role.vo.RoleSearchCriteria searchCriteria)
     {
     	Criteria criteria = getSession().createCriteria(Role.class);
-            	
+    	
+    	if(searchCriteria.getRole() != null){
+    		criteria.add(Restrictions.ilike("role", searchCriteria.getRole()));
+    	}
+    	
+    	if(searchCriteria.getRoleCode() != null){
+    		criteria.add(Restrictions.ilike("roleCode", searchCriteria.getRoleCode()));
+    	}
+        
+    	if(searchCriteria.getRoleDescription() != null){
+    		criteria.add(Restrictions.ilike("roleDescription", searchCriteria.getRoleDescription()));
+    	}
+    	
     	return Arrays.asList(toRoleVOArray(criteria.list()));
     }
 
@@ -36,16 +49,6 @@ public class RoleDaoImpl
         com.systemsjr.jrbase.role.vo.RoleVO target)
     {
         super.toRoleVO(source, target);
-        
-        /*if(source.getRoleClearanceLevels() != null){
-        	ClearanceLevel[] clearanceLevels = (ClearanceLevel[])source.getRoleClearanceLevels().toArray();
-        	target.setRoleClearanceLevels(getClearanceLevelDao().toClearanceLevelVOArray(Arrays.asList(clearanceLevels)));
-        }
-        
-        if(source.getUsers() != null){
-        	User[] users = (User[])source.getUsers().toArray();
-        	target.setUsers(getUserDao().toUserVOArray(Arrays.asList(users)));
-        }*/
     }
 
 

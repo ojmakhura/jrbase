@@ -12,6 +12,7 @@ import org.springframework.binding.value.ValueModel;
 import org.springframework.binding.value.support.RefreshableValueHolder;
 import org.springframework.context.ApplicationEvent;
 import org.springframework.context.ApplicationListener;
+import org.springframework.richclient.application.Application;
 import org.springframework.richclient.command.AbstractCommand;
 import org.springframework.richclient.command.ActionCommand;
 import org.springframework.richclient.command.support.GlobalCommandIds;
@@ -21,6 +22,9 @@ import org.springframework.richclient.form.binding.swing.SwingBindingFactory;
 import org.springframework.richclient.form.builder.TableFormBuilder;
 import org.springframework.richclient.list.ListSelectionValueModelAdapter;
 import org.springframework.richclient.list.ListSingleSelectionGuard;
+
+import com.systemsjr.jrbase.clearancelevel.vo.ClearanceLevelVO;
+import com.systemsjr.jrbase.utils.BaseUIUtils;
 
 public class BaseItemForm<T> extends AbstractForm implements ApplicationListener {
 	
@@ -136,6 +140,27 @@ public class BaseItemForm<T> extends AbstractForm implements ApplicationListener
 
 	public void setItemPanel(JPanel itemPanel) {
 		this.itemPanel = itemPanel;
-	}	
+	}
 	
+	/***
+	 * This method just sets the proper variabled to their respective values.
+	 * @param tableBean: Passed to the method to allow for each form to determine which list is loaded into the table
+	 */
+	@SuppressWarnings("unchecked")
+	protected void initForm(String tableBean){
+		sbf = (SwingBindingFactory) getBindingFactory();	
+		itemList = (BaseItemTable<T>) Application.instance().getApplicationContext().getBean(tableBean);	
+		scrollPane = getComponentFactory().createScrollPane(itemList.getControl());
+		builder = new TableFormBuilder(sbf);
+		builder.setLabelAttributes("colSpec=right:pref");
+	}
+	
+	/***
+	 * This method gets called at the end of the overriden method createControl.
+	 * It just adds the builder and scrollpane to their respective location on the itempanel
+	 */
+	protected void endFormCreate(){
+		itemPanel.add(builder.getForm(), BorderLayout.CENTER);
+		itemPanel.add(scrollPane, BorderLayout.WEST);
+	}
 }

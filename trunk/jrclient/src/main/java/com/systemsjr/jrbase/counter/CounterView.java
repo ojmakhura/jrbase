@@ -35,11 +35,4 @@ public class CounterView extends BaseItemView<CounterVO> {
 		CounterVO counterVO = (CounterVO) getItemForm().getFormObject();
 		BaseServiceUtils.getCounterService().removeCounter(counterVO);
 	}
-
-	@Override
-	protected void showItem() {
-		// TODO Auto-generated method stub
-		
-	}
-
 }

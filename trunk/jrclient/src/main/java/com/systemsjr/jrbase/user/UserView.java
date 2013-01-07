@@ -30,11 +30,4 @@ public class UserView extends BaseItemView<UserVO> {
 		// TODO Auto-generated method stub
 		
 	}
-
-	@Override
-	protected void showItem() {
-		// TODO Auto-generated method stub
-		
-	}
-
 }

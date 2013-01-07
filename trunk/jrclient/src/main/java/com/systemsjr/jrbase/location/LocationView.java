@@ -4,37 +4,43 @@ import javax.swing.JComponent;
 
 import com.systemsjr.jrbase.common.BaseItemView;
 import com.systemsjr.jrbase.location.vo.LocationVO;
+import com.systemsjr.jrbase.utils.BaseServiceUtils;
 
 public class LocationView extends BaseItemView<LocationVO> {
 
 	@Override
 	protected JComponent createControl() {
-		// TODO Auto-generated method stub
-		return null;
+		setItemForm(new LocationForm());
+		
+		return getItemForm().getControl();
 	}
 
 	@Override
 	protected LocationVO saveItem() {
-		// TODO Auto-generated method stub
+		
+		if(getItemForm().isDirty()){
+			getItemForm().getFormModel().commit();
+			LocationVO locationVO = (LocationVO) getItemForm().getFormObject();
+			locationVO = BaseServiceUtils.getLocationService().saveLocation(locationVO);
+			getItemForm().getValueholder().refresh();
+			return locationVO;
+		}
 		return null;
 	}
 
 	@Override
 	protected LocationVO newItem() {
-		// TODO Auto-generated method stub
-		return null;
+		getItemForm().setFormObject(new LocationVO());
+		getItemForm().getFormModel().commit();
+		return (LocationVO) getItemForm().getFormObject();
 	}
 
 	@Override
 	protected void deleteItem() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	protected void showItem() {
-		// TODO Auto-generated method stub
-		
+		getItemForm().getFormModel().commit();
+		LocationVO locationVO = (LocationVO) getItemForm().getFormObject();
+		BaseServiceUtils.getLocationService().removeLocation(locationVO);
+		getItemForm().getFormModel().commit();		
 	}
 
 }

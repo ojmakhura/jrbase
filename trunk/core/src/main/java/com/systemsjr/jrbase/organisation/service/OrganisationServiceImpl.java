@@ -5,9 +5,6 @@
  */
 package com.systemsjr.jrbase.organisation.service;
 
-import java.util.Arrays;
-import java.util.List;
-
 import com.systemsjr.jrbase.organisation.Organisation;
 import com.systemsjr.jrbase.organisation.OrganisationDao;
 import com.systemsjr.jrbase.organisation.OrganisationType;
@@ -26,7 +23,7 @@ public class OrganisationServiceImpl
      * @see com.systemsjr.jrbase.organisation.service.OrganisationService#getOrganisationBranches(com.systemsjr.jrbase.organisation.vo.OrganisationVO)
      */
     @Override
-	protected  List<OrganisationVO> handleGetOrganisationBranches(com.systemsjr.jrbase.organisation.vo.OrganisationVO organisationVO)
+	protected  OrganisationVO[] handleGetOrganisationBranches(com.systemsjr.jrbase.organisation.vo.OrganisationVO organisationVO)
         throws java.lang.Exception
     {
     	OrganisationVO[] branches = null;
@@ -34,7 +31,7 @@ public class OrganisationServiceImpl
     		branches = (OrganisationVO[])organisationVO.getBranches().toArray();
     	}
     	
-    	return Arrays.asList(branches);
+    	return branches;
     }
 
     /**
@@ -77,20 +74,20 @@ public class OrganisationServiceImpl
      * @see com.systemsjr.jrbase.organisation.service.OrganisationService#getAllOrganisations()
      */
     @Override
-	protected  List<OrganisationVO> handleGetAllOrganisations()
+	protected  OrganisationVO[] handleGetAllOrganisations()
         throws java.lang.Exception
     {
-    	return Arrays.asList((OrganisationVO[])getOrganisationDao().loadAll(OrganisationDao.TRANSFORM_ORGANISATIONVO).toArray());
+    	return (OrganisationVO[])getOrganisationDao().loadAll(OrganisationDao.TRANSFORM_ORGANISATIONVO).toArray();
     }
 
     /**
      * @see com.systemsjr.jrbase.organisation.service.OrganisationService#getAllOrganisationTypes()
      */
     @Override
-	protected  List<OrganisationTypeVO> handleGetAllOrganisationTypes()
+	protected  OrganisationTypeVO[] handleGetAllOrganisationTypes()
         throws java.lang.Exception
     {
-    	return Arrays.asList((OrganisationTypeVO[])getOrganisationTypeDao().loadAll(OrganisationTypeDao.TRANSFORM_ORGANISATIONTYPEVO).toArray());
+    	return (OrganisationTypeVO[])getOrganisationTypeDao().loadAll(OrganisationTypeDao.TRANSFORM_ORGANISATIONTYPEVO).toArray();
     }
 
 	@Override

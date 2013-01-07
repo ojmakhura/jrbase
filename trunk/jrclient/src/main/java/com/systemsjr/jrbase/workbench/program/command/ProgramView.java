@@ -30,11 +30,4 @@ public class ProgramView extends BaseItemView<ProgramVO> {
 		// TODO Auto-generated method stub
 		
 	}
-
-	@Override
-	protected void showItem() {
-		// TODO Auto-generated method stub
-		
-	}
-
 }

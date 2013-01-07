@@ -5,7 +5,6 @@
  */
 package com.systemsjr.jrbase.loginsession.service;
 
-import java.util.Arrays;
 import java.util.List;
 
 import com.systemsjr.jrbase.loginsession.LoginSession;
@@ -43,12 +42,12 @@ public class LoginSessionServiceImpl
      * @see com.systemsjr.jrbase.loginsession.service.LoginSessionService#getAllLoginSessions()
      */
     @Override
-	protected  List<LoginSessionVO> handleGetAllLoginSessions()
+	protected  LoginSessionVO[] handleGetAllLoginSessions()
         throws java.lang.Exception
     {
         
     	
-        return Arrays.asList((LoginSessionVO[])getLoginSessionDao().loadAll(LoginSessionDao.TRANSFORM_LOGINSESSIONVO).toArray());
+        return (LoginSessionVO[])getLoginSessionDao().loadAll(LoginSessionDao.TRANSFORM_LOGINSESSIONVO).toArray();
     }
 
     /**

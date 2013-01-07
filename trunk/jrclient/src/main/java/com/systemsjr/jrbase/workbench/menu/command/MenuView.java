@@ -30,11 +30,4 @@ public class MenuView extends BaseItemView<MenuVO> {
 		// TODO Auto-generated method stub
 		
 	}
-
-	@Override
-	protected void showItem() {
-		// TODO Auto-generated method stub
-		
-	}
-
 }

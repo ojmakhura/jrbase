@@ -199,7 +199,7 @@ public class BaseServiceUtils {
 
 	public static LocationService getLocationService() {
 		if(locationService == null){
-			//locationService = serviceLocator.get;
+			locationService = serviceLocator.getLocationService();
 		}
 		return locationService;
 	}

@@ -2,7 +2,9 @@
 <beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
 	<bean id = "clearanceLevelTable" class="com.systemsjr.jrbase.clearancelevel.ClearanceLevelTable" depends-on="application"/> 
-	<!-- bean id = "inidividualListTable" class="com.systemsjr.jrbase.individual.IndividualListTable" depends-on="application"/> -->
+	<bean id = "individualListTable" class="com.systemsjr.jrbase.individual.IndividualTable" depends-on="application"/>
 	<bean id = "roleListTable" class="com.systemsjr.jrbase.role.RoleTable" depends-on="application"/>
 	<bean id = "counterListTable" class="com.systemsjr.jrbase.counter.CounterTable" depends-on="application"/>
+	<bean id = "locationListTable" class="com.systemsjr.jrbase.location.LocationTable" depends-on="application"/>
+	<bean id = "locationTypeTable" class="com.systemsjr.jrbase.location.LocationTypeTable" depends-on="application"/>
 </beans>

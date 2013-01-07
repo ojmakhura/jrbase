@@ -7,6 +7,9 @@ package com.systemsjr.jrbase.individual;
 
 import java.util.List;
 
+import org.hibernate.Criteria;
+import org.hibernate.criterion.Restrictions;
+
 /**
  * @see com.systemsjr.jrbase.individual.Individual
  */
@@ -19,8 +22,53 @@ public class IndividualDaoImpl
     @Override
 	protected List handleFindByCriteria(com.systemsjr.jrbase.individual.vo.IndividualSearchCriteria searchCriteria)
     {
-        // @todo implement public com.systemsjr.jrbase.individual.vo.IndividualVO handleFindByCriteria(com.systemsjr.jrbase.individual.vo.IndividualSearchCriteria searchCriteria)
-        return null;
+    	Criteria criteria = getSession().createCriteria(Individual.class);
+        
+    	if(searchCriteria.getEmail() != null){
+    		criteria.add(Restrictions.ilike("email", searchCriteria.getEmail()));
+    	}
+    	
+    	if(searchCriteria.getFirstName() != null){
+    		criteria.add(Restrictions.ilike("firstName", searchCriteria.getFirstName()));
+    	}
+    	
+    	if(searchCriteria.getIdNumber() != null){
+    		criteria.add(Restrictions.ilike("idNumber", searchCriteria.getIdNumber()));
+    	}
+    	
+    	if(searchCriteria.getIndividualId() != null){
+    		criteria.add(Restrictions.ilike("individualId", searchCriteria.getIndividualId()));
+    	}
+    	
+    	if(searchCriteria.getMiddleNames() != null){
+    		criteria.add(Restrictions.ilike("middleNames", searchCriteria.getMiddleNames()));
+    	}
+    	
+    	if(searchCriteria.getPhysicalAddress() != null){
+    		criteria.add(Restrictions.ilike("physicalAddress", searchCriteria.getPhysicalAddress()));
+    	}
+    	
+    	if(searchCriteria.getPostalAddress() != null){
+    		criteria.add(Restrictions.ilike("postalAddress", searchCriteria.getPostalAddress()));
+    	}
+    	
+    	if(searchCriteria.getPostalAddress() != null){
+    		criteria.add(Restrictions.ilike("postalAddress", searchCriteria.getPostalAddress()));
+    	}
+    	
+    	if(searchCriteria.getSalutation() != null){
+    		criteria.add(Restrictions.ilike("surname", searchCriteria.getSurname()));
+    	}
+    	
+    	if(searchCriteria.getSalutation() != null){
+    		criteria.add(Restrictions.ilike("salutation", searchCriteria.getSalutation()));
+    	}
+    	
+    	if(searchCriteria.getSex() != null){
+    		criteria.add(Restrictions.ilike("sex", searchCriteria.getSex()));
+    	}
+    	
+    	return criteria.list();
     }
 
     /**
@@ -33,6 +81,7 @@ public class IndividualDaoImpl
     {
         // @todo verify behavior of toIndividualVO
         super.toIndividualVO(source, target);
+        
         // WARNING! No conversion for target.nextOfKin (can't convert source.getNextOfKin():com.systemsjr.jrbase.individual.Individual to com.systemsjr.jrbase.individual.vo.IndividualVO
         // WARNING! No conversion for target.countryOfBirth (can't convert source.getCountryOfBirth():com.systemsjr.jrbase.location.Location to com.systemsjr.jrbase.location.vo.LocationVO
         // WARNING! No conversion for target.countryOfCitizenship (can't convert source.getCountryOfCitizenship():com.systemsjr.jrbase.location.Location to com.systemsjr.jrbase.location.vo.LocationVO

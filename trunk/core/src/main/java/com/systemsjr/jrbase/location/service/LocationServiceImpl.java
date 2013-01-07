@@ -5,7 +5,8 @@
  */
 package com.systemsjr.jrbase.location.service;
 
-import com.systemsjr.jrbase.location.vo.LocationSearchCriteria;
+import com.systemsjr.jrbase.location.Location;
+import com.systemsjr.jrbase.location.LocationType;
 import com.systemsjr.jrbase.location.vo.LocationTypeVO;
 import com.systemsjr.jrbase.location.vo.LocationVO;
 
@@ -20,18 +21,12 @@ public class LocationServiceImpl
      * @see com.systemsjr.jrbase.location.service.LocationService#getAllLocationsByType(com.systemsjr.jrbase.location.vo.LocationTypeVO)
      */
     @Override
-	protected  LocationVO[] handleGetAllLocationsByType(com.systemsjr.jrbase.location.vo.LocationTypeVO locationTypeVO)
+	protected  LocationVO[] handleGetAllLocations()
         throws java.lang.Exception
     {
-    	if(locationTypeVO == null){
-    		return (LocationVO[]) getLocationDao().loadAll(getLocationDao().TRANSFORM_LOCATIONVO).toArray();
-    	} else{
-	    	LocationSearchCriteria locationCriteria = new LocationSearchCriteria();
-	    	locationCriteria.setLocationTypeVO(locationTypeVO);
-	    	//Criteria criteria = getLocationTypeDao().
-	        // @todo implement protected  com.systemsjr.jrbase.location.vo.LocationVO handleGetAllLocationsByType(com.systemsjr.jrbase.location.vo.LocationTypeVO areaTypeVO)
-	        throw new java.lang.UnsupportedOperationException("com.systemsjr.jrbase.location.service.LocationService.handleGetAllLocationsByType(com.systemsjr.jrbase.location.vo.LocationTypeVO areaTypeVO) Not implemented!");
-    	}
+    	LocationVO[] locationVOs = getLocationDao().toLocationVOArray(getLocationDao().loadAll());
+    	   	
+		return locationVOs;
     }
 
     /**
@@ -49,54 +44,61 @@ public class LocationServiceImpl
      * @see com.systemsjr.jrbase.location.service.LocationService#removeLocation(com.systemsjr.jrbase.location.vo.LocationVO)
      */
     @Override
-	protected  void handleRemoveLocation(com.systemsjr.jrbase.location.vo.LocationVO areaVO)
+	protected  void handleRemoveLocation(com.systemsjr.jrbase.location.vo.LocationVO locationVO)
         throws java.lang.Exception
     {
-        // @todo implement protected  com.systemsjr.jrbase.location.vo.LocationVO handleRemoveLocation(com.systemsjr.jrbase.location.vo.LocationVO areaVO)
-        throw new java.lang.UnsupportedOperationException("com.systemsjr.jrbase.location.service.LocationService.handleRemoveLocation(com.systemsjr.jrbase.location.vo.LocationVO areaVO) Not implemented!");
+    	if(locationVO.getId() != null){
+    		getLocationDao().remove(locationVO.getId());
+    	}
     }
 
     /**
      * @see com.systemsjr.jrbase.location.service.LocationService#saveLocation(com.systemsjr.jrbase.location.vo.LocationVO)
      */
     @Override
-	protected  com.systemsjr.jrbase.location.vo.LocationVO handleSaveLocation(com.systemsjr.jrbase.location.vo.LocationVO areaVO)
+	protected  com.systemsjr.jrbase.location.vo.LocationVO handleSaveLocation(com.systemsjr.jrbase.location.vo.LocationVO locationVO)
         throws java.lang.Exception
     {
-        // @todo implement protected  com.systemsjr.jrbase.location.vo.LocationVO handleSaveLocation(com.systemsjr.jrbase.location.vo.LocationVO areaVO)
-        throw new java.lang.UnsupportedOperationException("com.systemsjr.jrbase.location.service.LocationService.handleSaveLocation(com.systemsjr.jrbase.location.vo.LocationVO areaVO) Not implemented!");
+    	Location location;
+    	
+    	if(locationVO.getId() == null){
+    		location = getLocationDao().create(getLocationDao().locationVOToEntity(locationVO));
+    	}else{
+    		location = getLocationDao().locationVOToEntity(locationVO);
+    		getLocationDao().update(location);
+    	}
+    	return getLocationDao().toLocationVO(location);
     }
 
     /**
      * @see com.systemsjr.jrbase.location.service.LocationService#removeLocationType(com.systemsjr.jrbase.location.vo.LocationTypeVO)
      */
     @Override
-	protected  void handleRemoveLocationType(com.systemsjr.jrbase.location.vo.LocationTypeVO areaTypeVO)
+	protected  void handleRemoveLocationType(com.systemsjr.jrbase.location.vo.LocationTypeVO locationTypeVO)
         throws java.lang.Exception
     {
-        // @todo implement protected  com.systemsjr.jrbase.location.vo.LocationTypeVO handleRemoveLocationType(com.systemsjr.jrbase.location.vo.LocationTypeVO areaTypeVO)
-        throw new java.lang.UnsupportedOperationException("com.systemsjr.jrbase.location.service.LocationService.handleRemoveLocationType(com.systemsjr.jrbase.location.vo.LocationTypeVO areaTypeVO) Not implemented!");
+    	if(locationTypeVO.getId() != null){
+    		getLocationTypeDao().remove(locationTypeVO.getId());
+    	}
     }
 
     /**
      * @see com.systemsjr.jrbase.location.service.LocationService#saveLocationType(com.systemsjr.jrbase.location.vo.LocationTypeVO)
      */
     @Override
-	protected  com.systemsjr.jrbase.location.vo.LocationTypeVO handleSaveLocationType(com.systemsjr.jrbase.location.vo.LocationTypeVO areaTypeVO)
+	protected  com.systemsjr.jrbase.location.vo.LocationTypeVO handleSaveLocationType(com.systemsjr.jrbase.location.vo.LocationTypeVO locationTypeVO)
         throws java.lang.Exception
     {
-        // @todo implement protected  com.systemsjr.jrbase.location.vo.LocationTypeVO handleSaveLocationType(com.systemsjr.jrbase.location.vo.LocationTypeVO areaTypeVO)
-        throw new java.lang.UnsupportedOperationException("com.systemsjr.jrbase.location.service.LocationService.handleSaveLocationType(com.systemsjr.jrbase.location.vo.LocationTypeVO areaTypeVO) Not implemented!");
-    }
-
-    /**
-     * @see com.systemsjr.jrbase.location.service.LocationService#getAllLocationType()
-     */
-    protected  com.systemsjr.jrbase.location.vo.LocationTypeVO[] handleGetAllLocationType()
-        throws java.lang.Exception
-    {
-        // @todo implement protected  com.systemsjr.jrbase.location.vo.LocationTypeVO[] handleGetAllLocationType()
-        throw new java.lang.UnsupportedOperationException("com.systemsjr.jrbase.location.service.LocationService.handleGetAllLocationType() Not implemented!");
+    	LocationType locationType;
+    	
+    	if(locationTypeVO.getId() == null){
+    		locationType = getLocationTypeDao().create(getLocationTypeDao().locationTypeVOToEntity(locationTypeVO));
+    	} else{
+    		locationType = getLocationTypeDao().locationTypeVOToEntity(locationTypeVO);
+    		getLocationTypeDao().update(locationType);
+    	}
+    	
+    	return getLocationTypeDao().toLocationTypeVO(locationType);
     }
 
     /**
@@ -123,8 +125,13 @@ public class LocationServiceImpl
 
 	@Override
 	protected LocationTypeVO[] handleGetAllLocationTypes() throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+		LocationTypeVO[] locationTypes = getLocationTypeDao().toLocationTypeVOArray(getLocationTypeDao().loadAll());
+		
+		if(locationTypes == null){
+			return new LocationTypeVO[]{};
+		}
+		
+		return locationTypes;
 	}
 
 }

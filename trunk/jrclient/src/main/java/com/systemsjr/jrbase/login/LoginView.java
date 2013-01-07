@@ -31,11 +31,4 @@ public class LoginView extends BaseItemView<LoginSessionVO> {
 		// TODO Auto-generated method stub
 		
 	}
-
-	@Override
-	protected void showItem() {
-		// TODO Auto-generated method stub
-		
-	}
-
 }
