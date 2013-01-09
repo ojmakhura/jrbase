@@ -101,7 +101,7 @@ public class BaseServiceUtils {
 	 */
 	public static LocationVO createDefaultLocation(LocationTypeVO locationTypeVO){
 		LocationVO location = new LocationVO();
-		location.setLocationTypeVO(locationTypeVO);
+		location.setLocationType(locationTypeVO);
 		//area.setCreatedBy(getCurrentUsername());
 		return location;
 	}

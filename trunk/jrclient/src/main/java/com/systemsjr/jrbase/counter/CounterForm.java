@@ -11,6 +11,7 @@ import org.springframework.richclient.form.builder.TableFormBuilder;
 import com.systemsjr.jrbase.common.BaseItemForm;
 import com.systemsjr.jrbase.common.BaseItemTable;
 import com.systemsjr.jrbase.counter.vo.CounterVO;
+import com.systemsjr.jrbase.utils.BaseServiceUtils;
 
 public class CounterForm extends BaseItemForm<CounterVO> {
 
@@ -19,7 +20,7 @@ public class CounterForm extends BaseItemForm<CounterVO> {
 	}
 	
 	public CounterForm(){
-		super(new CounterVO(), "counter");
+		super(BaseServiceUtils.createDefaultCounter(), "counterForm");
 	}
 
 	@SuppressWarnings("unchecked")

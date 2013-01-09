@@ -28,7 +28,7 @@ public class RoleTable extends BaseItemTable<RoleVO> {
 
 	@Override
 	protected Object[] getDefaultInitialData() {
-		setInitialData(BaseServiceUtils.getRoleService().getAllRoles().toArray());
+		setInitialData(BaseServiceUtils.getRoleService().getAllRoles());
 		return getInitialData();
 	}
 

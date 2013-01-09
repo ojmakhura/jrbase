@@ -38,10 +38,4 @@ public class IndividualView extends BaseItemView<IndividualVO> {
 		BaseServiceUtils.getIndividualService().removeIndividual(individualVO);
 		getItemForm().getFormModel().commit();
 	}
-
-	@Override
-	protected void showItem() {
-		// TODO Auto-generated method stub
-		
-	}	
 }
