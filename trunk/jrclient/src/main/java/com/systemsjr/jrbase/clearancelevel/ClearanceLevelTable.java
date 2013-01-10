@@ -1,18 +1,10 @@
 package com.systemsjr.jrbase.clearancelevel;
 
-import java.util.List;
-
 import javax.swing.JTable;
 import javax.swing.table.TableColumnModel;
 
-import org.springframework.richclient.application.PageComponent;
-import org.springframework.richclient.command.ActionCommand;
-import org.springframework.richclient.command.ActionCommandExecutor;
-import org.springframework.richclient.command.CommandGroup;
-
 import com.systemsjr.jrbase.clearancelevel.vo.ClearanceLevelVO;
 import com.systemsjr.jrbase.common.BaseItemTable;
-import com.systemsjr.jrbase.common.BaseItemView;
 import com.systemsjr.jrbase.utils.BaseServiceUtils;
 
 public class ClearanceLevelTable extends BaseItemTable<ClearanceLevelVO> {

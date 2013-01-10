@@ -11,13 +11,11 @@ public class ClearanceLevelView extends BaseItemView<ClearanceLevelVO> {
 	protected JComponent createControl() {
 		setItemForm(new ClearanceLevelForm());
 
-		//listTableFactory(getItemForm().getItemList());
 		return getItemForm().getControl();
 	}
 
 	@Override
 	protected ClearanceLevelVO saveItem() {
-		logger.warn(getItemForm().getValueModel("levelDescription"));
 		if(getItemForm().isDirty()){
 			getItemForm().getFormModel().commit();
 			ClearanceLevelVO levelVO = (ClearanceLevelVO) getItemForm().getFormObject();

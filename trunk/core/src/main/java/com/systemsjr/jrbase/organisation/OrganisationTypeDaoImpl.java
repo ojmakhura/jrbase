@@ -49,17 +49,15 @@ public class OrganisationTypeDaoImpl
      */
     private com.systemsjr.jrbase.organisation.OrganisationType loadOrganisationTypeFromOrganisationTypeVO(com.systemsjr.jrbase.organisation.vo.OrganisationTypeVO organisationTypeVO)
     {
-        // @todo implement loadOrganisationTypeFromOrganisationTypeVO
-        throw new java.lang.UnsupportedOperationException("com.systemsjr.jrbase.organisation.loadOrganisationTypeFromOrganisationTypeVO(com.systemsjr.jrbase.organisation.vo.OrganisationTypeVO) not yet implemented.");
-
-        /* A typical implementation looks like this:
-        com.systemsjr.jrbase.organisation.OrganisationType organisationType = this.load(organisationTypeVO.getId());
-        if (organisationType == null)
+        com.systemsjr.jrbase.organisation.OrganisationType organisationType;// = this.load(organisationTypeVO.getId());
+        if (organisationTypeVO.getId() == null)
         {
             organisationType = com.systemsjr.jrbase.organisation.OrganisationType.Factory.newInstance();
+        } else{
+        	organisationType = this.load(organisationTypeVO.getId());
         }
         return organisationType;
-        */
+        
     }
 
     

@@ -19,8 +19,6 @@ import org.springframework.richclient.command.support.GlobalCommandIds;
 import org.springframework.richclient.list.ListSelectionValueModelAdapter;
 import org.springframework.richclient.list.ListSingleSelectionGuard;
 
-import com.systemsjr.jrbase.counter.vo.CounterVO;
-
 public abstract class BaseItemView<T> extends AbstractView {
 	private T item;
 	private BaseItemForm<T> itemForm;
@@ -37,6 +35,11 @@ public abstract class BaseItemView<T> extends AbstractView {
 
 	public BaseItemView() {
 		super();
+	}
+	
+	public BaseItemView(BaseItemForm<T> form){
+		super();
+		this.itemForm = form;
 	}
 
 	public BaseItemView(BaseItemForm<T> form, BaseItemTable<T> table) {

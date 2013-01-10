@@ -6,13 +6,10 @@ import java.util.List;
 import javax.swing.JTable;
 
 import org.apache.commons.lang.ArrayUtils;
-import org.springframework.richclient.application.PageComponent;
 import org.springframework.richclient.command.ActionCommand;
 import org.springframework.richclient.command.ActionCommandExecutor;
 import org.springframework.richclient.table.support.AbstractObjectTable;
 import org.springframework.util.CollectionUtils;
-
-import com.systemsjr.jrbase.clearancelevel.ClearanceLevelView;
 
 public abstract class BaseItemTable<T> extends AbstractObjectTable {
 	private T[] initialData;

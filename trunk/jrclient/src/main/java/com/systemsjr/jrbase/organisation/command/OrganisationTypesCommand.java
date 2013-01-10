@@ -1,14 +1,14 @@
 package com.systemsjr.jrbase.organisation.command;
 
 import org.springframework.richclient.application.Application;
-import org.springframework.richclient.command.AbstractCommand;
+import org.springframework.richclient.command.ActionCommand;
 
 
 
-public class OrganisationTypesCommand extends AbstractCommand {
+public class OrganisationTypesCommand extends ActionCommand {
 
 	@Override
-	public void execute() {
+	public void doExecuteCommand() {
 		Application.instance().getActiveWindow().getPage().showView("organisationTypeView");
 	}
 

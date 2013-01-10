@@ -3,8 +3,8 @@ package com.systemsjr.jrbase.individual;
 import javax.swing.JComponent;
 
 import com.systemsjr.jrbase.common.BaseItemView;
-import com.systemsjr.jrbase.utils.BaseServiceUtils;
 import com.systemsjr.jrbase.individual.vo.IndividualVO;
+import com.systemsjr.jrbase.utils.BaseServiceUtils;
 
 public class IndividualView extends BaseItemView<IndividualVO> {
 

@@ -2,32 +2,44 @@ package com.systemsjr.jrbase.organisation;
 
 import javax.swing.JComponent;
 
+import com.systemsjr.jrbase.clearancelevel.vo.ClearanceLevelVO;
 import com.systemsjr.jrbase.common.BaseItemView;
 import com.systemsjr.jrbase.organisation.vo.OrganisationTypeVO;
+import com.systemsjr.jrbase.utils.BaseServiceUtils;
 
 public class OrganisationTypeView extends BaseItemView<OrganisationTypeVO> {
 
 	@Override
 	protected JComponent createControl() {
-		// TODO Auto-generated method stub
-		return null;
+		setItemForm(new OrganisationTypeForm());
+		return getItemForm().getControl();
 	}
 
 	@Override
 	protected OrganisationTypeVO saveItem() {
-		// TODO Auto-generated method stub
+		if(getItemForm().isDirty()){
+			getItemForm().getFormModel().commit();
+			OrganisationTypeVO organisationTypeVO = (OrganisationTypeVO) getItemForm().getFormObject();
+			organisationTypeVO = BaseServiceUtils.getOrgService().saveOrganisationType(organisationTypeVO);
+			getItemForm().getValueholder().refresh();
+			return organisationTypeVO;
+		}
 		return null;
 	}
 
 	@Override
 	protected OrganisationTypeVO newItem() {
-		// TODO Auto-generated method stub
-		return null;
+		getItemForm().setFormObject(new OrganisationTypeVO());
+		getItemForm().getFormModel().commit();
+		return (OrganisationTypeVO) getItemForm().getFormObject();
 	}
 
 	@Override
 	protected void deleteItem() {
-		// TODO Auto-generated method stub
+		getItemForm().getFormModel().commit();
+		OrganisationTypeVO organisationTypeVO = (OrganisationTypeVO) getItemForm().getFormObject();
+		BaseServiceUtils.getOrgService().removeOrganisationType(organisationTypeVO);
+		getItemForm().getFormModel().commit();
 		
 	}
 }
