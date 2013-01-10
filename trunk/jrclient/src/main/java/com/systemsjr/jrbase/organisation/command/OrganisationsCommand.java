@@ -9,7 +9,6 @@ public class OrganisationsCommand extends ActionCommand {
 
 	@Override
 	public void doExecuteCommand() {
-		Application.instance().getActiveWindow().getPage().showView("organisationlView");
+		Application.instance().getActiveWindow().getPage().showView("organisationView");
 	}
-
 }

@@ -46,7 +46,7 @@ CREATE TABLE `CLEARANCE_LEVELS` (
 
 LOCK TABLES `CLEARANCE_LEVELS` WRITE;
 /*!40000 ALTER TABLE `CLEARANCE_LEVELS` DISABLE KEYS */;
-INSERT INTO `CLEARANCE_LEVELS` VALUES (1,'LEVEL 1','Level 1 Clearence',2,NULL),(2,'LEVEL 2','Level 2 Clearence Level',3,1),(3,'LEVEL 3','Level 3 Clearence',4,2),(4,'LEVEL 4','Level 4 Clearence',NULL,NULL),(5,'LEVEL 5','Level 5 Clearence',NULL,NULL),(6,'LEVEL 6','Level 6 Clearence',NULL,NULL),(7,'LEVEL 7','Level 7',8,6),(8,'LEVEL 8','Level 8',9,7),(9,'LEVEL 9','Level 9 Clearence',NULL,NULL);
+INSERT INTO `CLEARANCE_LEVELS` VALUES (1,'LEVEL 1','Level 1 Clearence',2,NULL),(2,'LEVEL 2','Level 2 Clearence Level',3,1),(3,'LEVEL 3','Level 3 Clearence',4,2),(4,'LEVEL 4','Level 4 Clearence',NULL,NULL),(5,'LEVEL 5','Level 5 Clearence',7,4),(6,'LEVEL 6','Level 6 Clearence',NULL,NULL),(7,'LEVEL 7','Level 7',8,6),(8,'LEVEL 8','Level 8',9,7),(9,'LEVEL 9','Level 9 Clearence',NULL,NULL);
 /*!40000 ALTER TABLE `CLEARANCE_LEVELS` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -403,7 +403,7 @@ CREATE TABLE `ORGANISATION_TYPE` (
   PRIMARY KEY (`ID`),
   UNIQUE KEY `LEVEL_CODE` (`LEVEL_CODE`),
   UNIQUE KEY `NAME` (`NAME`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -412,6 +412,7 @@ CREATE TABLE `ORGANISATION_TYPE` (
 
 LOCK TABLES `ORGANISATION_TYPE` WRITE;
 /*!40000 ALTER TABLE `ORGANISATION_TYPE` DISABLE KEYS */;
+INSERT INTO `ORGANISATION_TYPE` VALUES (1,'PRS','Pre-School','School for babies'),(2,'PRM','Primary School','School hosting Standard 1 to Standard 7. The main examinations are the Primary School Leaving\nExaminations (PSLE)');
 /*!40000 ALTER TABLE `ORGANISATION_TYPE` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -681,4 +682,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2013-01-09 16:53:30
+-- Dump completed on 2013-01-10 18:03:46

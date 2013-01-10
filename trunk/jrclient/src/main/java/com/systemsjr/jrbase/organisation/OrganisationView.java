@@ -4,30 +4,42 @@ import javax.swing.JComponent;
 
 import com.systemsjr.jrbase.common.BaseItemView;
 import com.systemsjr.jrbase.organisation.vo.OrganisationVO;
+import com.systemsjr.jrbase.utils.BaseServiceUtils;
 
 public class OrganisationView extends BaseItemView<OrganisationVO> {
-
+	
 	@Override
 	protected JComponent createControl() {
-		// TODO Auto-generated method stub
-		return null;
+		setItemForm(new OrganisationForm());
+		return getItemForm().getControl();
 	}
 
 	@Override
 	protected OrganisationVO saveItem() {
-		// TODO Auto-generated method stub
+		if(getItemForm().isDirty()){
+			getItemForm().getFormModel().commit();
+			OrganisationVO organisationVO = (OrganisationVO) getItemForm().getFormObject();
+			organisationVO = BaseServiceUtils.getOrgService().saveOrganisation(organisationVO);
+			getItemForm().getValueholder().refresh();
+			((OrganisationForm)getItemForm()).getTypesValueHolder().refresh();
+			return organisationVO;
+		}
 		return null;
 	}
 
 	@Override
 	protected OrganisationVO newItem() {
-		// TODO Auto-generated method stub
-		return null;
+		getItemForm().setFormObject(new OrganisationVO());
+		getItemForm().getFormModel().commit();
+		return (OrganisationVO) getItemForm().getFormObject();
 	}
 
 	@Override
 	protected void deleteItem() {
-		// TODO Auto-generated method stub
+		getItemForm().getFormModel().commit();
+		OrganisationVO organisationVO = (OrganisationVO) getItemForm().getFormObject();
+		BaseServiceUtils.getOrgService().removeOrganisation(organisationVO);
+		getItemForm().getFormModel().commit();
 		
 	}
 }

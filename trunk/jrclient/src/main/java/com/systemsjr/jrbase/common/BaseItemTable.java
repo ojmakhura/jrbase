@@ -93,10 +93,8 @@ public abstract class BaseItemTable<T> extends AbstractObjectTable {
 			detailsCommand = new ActionCommand("detailsCommand") {				
 				@Override
 				protected void doExecuteCommand() {
-					logger.warn("View is null");
 					BaseItemView view;
 					view = (BaseItemView) getApplication().getActiveWindow().getPage().getActiveComponent();
-					logger.warn("OOOOOOOOPS!");
 					if(view != null){
 						view.getItemForm().setFormObject(getSelectedItem());
 						view.getItemForm().commit();

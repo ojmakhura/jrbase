@@ -27,7 +27,7 @@ public class OrganisationTypeTable extends BaseItemTable<OrganisationTypeVO> {
 		super.configureTable(table);
 		TableColumnModel tcm = table.getColumnModel();
 		tcm.getColumn(0).setPreferredWidth(30);
-		tcm.getColumn(2).setPreferredWidth(100);
+		tcm.getColumn(1).setPreferredWidth(100);
 	}
 
 	@Override

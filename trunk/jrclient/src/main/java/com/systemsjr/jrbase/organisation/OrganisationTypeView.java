@@ -2,7 +2,6 @@ package com.systemsjr.jrbase.organisation;
 
 import javax.swing.JComponent;
 
-import com.systemsjr.jrbase.clearancelevel.vo.ClearanceLevelVO;
 import com.systemsjr.jrbase.common.BaseItemView;
 import com.systemsjr.jrbase.organisation.vo.OrganisationTypeVO;
 import com.systemsjr.jrbase.utils.BaseServiceUtils;

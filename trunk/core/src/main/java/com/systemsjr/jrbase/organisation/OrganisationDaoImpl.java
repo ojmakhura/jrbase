@@ -47,9 +47,9 @@ public class OrganisationDaoImpl
         com.systemsjr.jrbase.organisation.Organisation source,
         com.systemsjr.jrbase.organisation.vo.OrganisationVO target)
     {
-        // @todo verify behavior of toOrganisationVO
         super.toOrganisationVO(source, target);
-        // WARNING! No conversion for target.organisationType (can't convert source.getOrganisationType():com.systemsjr.jrbase.organisation.OrganisationType to com.systemsjr.jrbase.organisation.vo.OrganisationTypeVO
+        target.setOrganisationType(getOrganisationTypeDao().toOrganisationTypeVO(source.getOrganisationType()));
+        //target.setOrganisationLocations(getOrganisationTypeDao().);
         // WARNING! No conversion for target.organisationLocations (can't convert source.getOrganisationLocations():com.systemsjr.jrbase.location.Location to com.systemsjr.jrbase.location.vo.LocationVO[]
     }
 

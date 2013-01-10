@@ -90,16 +90,9 @@ public class OrganisationServiceImpl
 	protected  OrganisationTypeVO[] handleGetAllOrganisationTypes()
         throws java.lang.Exception
     {
-    	try{
     	Collection orgTypes = getOrganisationTypeDao().loadAll();
-    	System.out.println("ahaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
     	
     	return getOrganisationTypeDao().toOrganisationTypeVOArray(orgTypes);
-    	} catch(Exception e){
-    		System.out.println("ijoooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo");
-    		e.printStackTrace();
-    	}
-    	return null;
     }
 
 	@Override
