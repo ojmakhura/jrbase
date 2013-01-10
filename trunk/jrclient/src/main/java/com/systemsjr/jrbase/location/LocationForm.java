@@ -26,11 +26,6 @@ public class LocationForm extends BaseItemForm<LocationVO> {
 	@Override
 	protected JComponent createFormControl() {
 		super.initForm("locationListTable");
-		/*sbf = (SwingBindingFactory) getBindingFactory();	
-		itemList = (BaseItemTable<LocationVO>) Application.instance().getApplicationContext().getBean("locationListTable");	
-		scrollPane = getComponentFactory().createScrollPane(itemList.getControl());
-		builder = new TableFormBuilder(sbf);		
-		builder.setLabelAttributes("colSpec=right:pref");*/
 		
 		valueHolder = BaseUIUtils.getIndividualValueHolder();
 		
@@ -38,14 +33,14 @@ public class LocationForm extends BaseItemForm<LocationVO> {
 		builder.row();
 		builder.add(sbf.createBoundComboBox("locationType", BaseUIUtils.getLocationTypeValueHolder(), "name"));
 		builder.row();
-		builder.add("levelCode", "colSpec=40dlu");
+		builder.add("levelCode", "colSpec=20dlu");
 		builder.add("uniqueCode", "colSpec=40dlu:grow");
 		builder.row();
-		builder.add("locationName", "colSpan=1");
+		builder.add("locationName", "colSpec=40dlu:grow");
 		builder.row();
-		builder.addTextArea("description", "colSpan=1");
+		builder.addTextArea("description", "colSpec=40dlu:grow");
 		builder.row();
-		//builder.add(sbf.createBoundComboBox("fallsWithinArea", valueHolder, "locationName"), "colSpan=1");
+		builder.add(sbf.createBoundComboBox("fallsWithinLocation", valueHolder, "locationName"), "colSpan=1");
 		
 		//super.endFormCreate();
 		itemPanel.add(builder.getForm(), BorderLayout.CENTER);

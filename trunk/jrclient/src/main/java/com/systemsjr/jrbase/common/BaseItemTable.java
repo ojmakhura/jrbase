@@ -97,8 +97,9 @@ public abstract class BaseItemTable<T> extends AbstractObjectTable {
 				@Override
 				protected void doExecuteCommand() {
 					logger.warn("View is null");
-					ClearanceLevelView view;
-					view = (ClearanceLevelView) getApplication().getActiveWindow().getPage().getActiveComponent();
+					BaseItemView view;
+					view = (BaseItemView) getApplication().getActiveWindow().getPage().getActiveComponent();
+					logger.warn("OOOOOOOOPS!");
 					if(view != null){
 						view.getItemForm().setFormObject(getSelectedItem());
 						view.getItemForm().commit();

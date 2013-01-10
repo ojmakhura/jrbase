@@ -5,6 +5,8 @@
  */
 package com.systemsjr.jrbase.organisation.service;
 
+import java.util.Collection;
+
 import com.systemsjr.jrbase.organisation.Organisation;
 import com.systemsjr.jrbase.organisation.OrganisationDao;
 import com.systemsjr.jrbase.organisation.OrganisationType;
@@ -77,7 +79,8 @@ public class OrganisationServiceImpl
 	protected  OrganisationVO[] handleGetAllOrganisations()
         throws java.lang.Exception
     {
-    	return (OrganisationVO[])getOrganisationDao().loadAll(OrganisationDao.TRANSFORM_ORGANISATIONVO).toArray();
+    	Collection orgs = getOrganisationDao().loadAll();
+    	return getOrganisationDao().toOrganisationVOArray(orgs);
     }
 
     /**
@@ -87,7 +90,8 @@ public class OrganisationServiceImpl
 	protected  OrganisationTypeVO[] handleGetAllOrganisationTypes()
         throws java.lang.Exception
     {
-    	return (OrganisationTypeVO[])getOrganisationTypeDao().loadAll(OrganisationTypeDao.TRANSFORM_ORGANISATIONTYPEVO).toArray();
+    	Collection orgTypes = getOrganisationTypeDao().loadAll();
+    	return getOrganisationTypeDao().toOrganisationTypeVOArray(orgTypes);
     }
 
 	@Override

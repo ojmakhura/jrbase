@@ -1,4 +1,4 @@
-package com.systemsjr.jrbase.individual;
+package com.systemsjr.jrbase.organisation;
 
 import javax.swing.JTable;
 import javax.swing.table.TableColumnModel;
@@ -8,17 +8,18 @@ import org.springframework.richclient.command.ActionCommandExecutor;
 import com.systemsjr.jrbase.common.BaseItemTable;
 import com.systemsjr.jrbase.counter.vo.CounterVO;
 import com.systemsjr.jrbase.individual.vo.IndividualVO;
+import com.systemsjr.jrbase.organisation.vo.OrganisationVO;
 import com.systemsjr.jrbase.utils.BaseServiceUtils;
 
-public class IndividualTable extends BaseItemTable<IndividualVO> {
+public class OrganisationTable extends BaseItemTable<OrganisationVO> {
 
-	public IndividualTable(IndividualVO[] data, String modelId,
+	public OrganisationTable(OrganisationVO[] data, String modelId,
 			String[] columnPropertyNames) {
 		super(data, modelId, columnPropertyNames);
 	}
 	
-	public IndividualTable(){
-		super(new IndividualVO[]{}, "individuals", new String[]{
+	public OrganisationTable(){
+		super(new OrganisationVO[]{}, "individuals", new String[]{
 				"idNumber",
 				"salutation",
 				"surname",
@@ -39,7 +40,7 @@ public class IndividualTable extends BaseItemTable<IndividualVO> {
 
 	@Override
 	protected Object[] getDefaultInitialData() {
-		setInitialData(BaseServiceUtils.getIndividualService().getAllIndividuals());
+		setInitialData(BaseServiceUtils.getOrgService().getAllOrganisations());
 		return getInitialData();
 	}
 

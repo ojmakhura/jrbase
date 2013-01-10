@@ -26,6 +26,7 @@ public class LocationTypeTable extends BaseItemTable<LocationTypeVO>{
 	
 	@Override
 	protected void configureTable(JTable table) {
+		super.configureTable(table);
 		TableColumnModel tcm = table.getColumnModel();
 		tcm.getColumn(0).setPreferredWidth(10);
 		tcm.getColumn(1).setPreferredWidth(20);

@@ -133,6 +133,26 @@ public class BaseUIUtils {
 		}, false, false);
 	}
 	
+	public static RefreshableValueHolder getOrganisationTypeValueHolder(){
+		return new RefreshableValueHolder(new Closure() {
+			@Override
+			public Object call(Object object) {
+				return BaseServiceUtils.getOrgService().getAllOrganisationTypes();
+			}
+
+		}, false, false);
+	}
+	
+	public static RefreshableValueHolder getOrganisationValueHolder(){
+		return new RefreshableValueHolder(new Closure() {
+			@Override
+			public Object call(Object object) {
+				return BaseServiceUtils.getOrgService().getAllOrganisations();
+			}
+
+		}, false, false);
+	}
+	
 	/**
      * 
      */

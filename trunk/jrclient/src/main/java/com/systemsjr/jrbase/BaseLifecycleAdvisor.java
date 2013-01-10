@@ -1,5 +1,7 @@
 package com.systemsjr.jrbase;
 
+import java.awt.Dimension;
+
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.richclient.application.ApplicationWindow;
@@ -30,7 +32,7 @@ public class BaseLifecycleAdvisor extends DefaultApplicationLifecycleAdvisor {
         // Uncomment to hide the menubar, toolbar, or alter window size...
         // configurer.setShowMenuBar(false);
         // configurer.setShowToolBar(false);
-        // configurer.setInitialSize(new Dimension(640, 480));
+        configurer.setInitialSize(new Dimension(1200, 700));
     }
 
     /**

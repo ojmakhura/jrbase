@@ -7,4 +7,6 @@
 	<bean id = "counterListTable" class="com.systemsjr.jrbase.counter.CounterTable" depends-on="application"/>
 	<bean id = "locationListTable" class="com.systemsjr.jrbase.location.LocationTable" depends-on="application"/>
 	<bean id = "locationTypeTable" class="com.systemsjr.jrbase.location.LocationTypeTable" depends-on="application"/>
+	<bean id = "organisationTypeTable" class="com.systemsjr.jrbase.organisation.OrganisationTypeTable" depends-on="application"/>
+	<bean id = "organisationTable" class="com.systemsjr.jrbase.organisation.OrganisationTable" depends-on="application"/>
 </beans>

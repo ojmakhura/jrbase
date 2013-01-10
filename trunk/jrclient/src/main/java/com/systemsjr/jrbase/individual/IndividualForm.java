@@ -26,10 +26,8 @@ public class IndividualForm extends BaseItemForm<IndividualVO> {
 
 	@Override
 	protected JComponent createFormControl() {
-		sbf = (SwingBindingFactory) getBindingFactory();
+		super.initForm("individualListTable");
 		valueHolder = BaseUIUtils.getIndividualValueHolder();
-		itemList = (BaseItemTable<IndividualVO>) Application.instance().getApplicationContext().getBean("individualListTable");
-		scrollPane = getComponentFactory().createScrollPane(itemList.getControl());
 		builder.setLabelAttributes("colSpec=right:pref");
 		
 		builder.row();

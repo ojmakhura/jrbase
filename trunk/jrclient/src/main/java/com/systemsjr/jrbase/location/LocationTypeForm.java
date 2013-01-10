@@ -29,9 +29,9 @@ public class LocationTypeForm extends BaseItemForm<LocationTypeVO> {
 		builder.row();
 		builder.add("name", "colSpec=1:grow");
 		builder.row();
-		builder.addTextArea("description", "colSpan=1");
+		builder.addTextArea("description", "colSpec=40dlu:grow");
 		builder.row();
-		builder.add(sbf.createBoundComboBox("fallsWithinLocationType", valueHolder, "name"),"colSpec=1:grow");
+		builder.add(sbf.createBoundComboBox("fallsWithinLocationType", valueHolder, "name"),"colSpan=1");
 		
 		super.endFormCreate();
 		return itemPanel;
