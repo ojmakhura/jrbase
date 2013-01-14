@@ -19,8 +19,7 @@ public class LocationTable extends BaseItemTable<LocationVO> {
 				"levelCode",
 				"uniqueCode",
 				"locationName",
-				"status",
-				"type.name"
+				"status"//, "locationType.name"
 		});
 		
 	}
@@ -33,7 +32,7 @@ public class LocationTable extends BaseItemTable<LocationVO> {
 		tcm.getColumn(1).setPreferredWidth(20);
 		tcm.getColumn(2).setPreferredWidth(100);
 		tcm.getColumn(3).setPreferredWidth(30);
-		tcm.getColumn(4).setPreferredWidth(100);
+		//tcm.getColumn(4).setPreferredWidth(100);
 	}
 
 	@Override

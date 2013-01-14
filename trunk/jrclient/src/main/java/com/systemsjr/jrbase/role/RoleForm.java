@@ -1,7 +1,5 @@
 package com.systemsjr.jrbase.role;
 
-import java.awt.BorderLayout;
-
 import javax.swing.JComponent;
 
 import org.springframework.richclient.application.Application;
@@ -27,9 +25,6 @@ public class RoleForm extends BaseItemForm<RoleVO> {
 	@Override
 	protected JComponent createFormControl() {
 		super.initForm("roleListTable");
-		setSbf((SwingBindingFactory) getBindingFactory());
-		setItemList((BaseItemTable<RoleVO>) Application.instance().getApplicationContext().getBean("roleListTable"));
-		setScrollPane(getComponentFactory().createScrollPane(itemList.getControl()));
 		
 		valueHolder = BaseUIUtils.getRoleValueHolder();
 		

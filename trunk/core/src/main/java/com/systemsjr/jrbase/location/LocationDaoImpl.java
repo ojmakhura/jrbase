@@ -10,6 +10,8 @@ import java.util.List;
 import org.hibernate.Criteria;
 import org.hibernate.criterion.Restrictions;
 
+import com.systemsjr.jrbase.location.vo.LocationVO;
+
 /**
  * @see com.systemsjr.jrbase.location.Location
  */
@@ -65,7 +67,19 @@ public class LocationDaoImpl
         // WARNING! No conversion for target.levelCode (can't convert source.getLevelCode():java.lang.String to String
         target.setLevelCode(source.getLevelCode());
         
-        //target.setLocationType(getlo)
+        target.setLocationType(getLocationTypeDao().toLocationTypeVO(source.getLocationType()));
+        
+        if(source.getFallsWithinArea() != null){
+        	LocationVO locationVO = new LocationVO();
+        	locationVO.setDescription(source.getFallsWithinArea().getDescription());
+        	locationVO.setId(source.getFallsWithinArea().getId());
+        	locationVO.setLevelCode(source.getFallsWithinArea().getLevelCode());
+        	locationVO.setLocationName(source.getFallsWithinArea().getLocationName());
+        	locationVO.setLocationType(getLocationTypeDao().toLocationTypeVO(source.getFallsWithinArea().getLocationType()));
+        	locationVO.setStatus(source.getFallsWithinArea().getStatus());
+        	locationVO.setType(source.getFallsWithinArea().getType());
+        	target.setFallsWithinLocation(locationVO);
+        }
     }
 
 

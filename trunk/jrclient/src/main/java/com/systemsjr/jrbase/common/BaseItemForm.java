@@ -145,6 +145,7 @@ public class BaseItemForm<T> extends AbstractForm implements ApplicationListener
 		scrollPane = getComponentFactory().createScrollPane(itemList.getControl());
 		builder = new TableFormBuilder(sbf);
 		builder.setLabelAttributes("colSpec=right:pref");
+		builder.row();
 	}
 	
 	/***

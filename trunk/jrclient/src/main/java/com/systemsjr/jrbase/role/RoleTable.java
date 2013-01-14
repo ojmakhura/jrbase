@@ -29,5 +29,19 @@ public class RoleTable extends BaseItemTable<RoleVO> {
 		setInitialData(BaseServiceUtils.getRoleService().getAllRoles());
 		return getInitialData();
 	}
+	
+	@Override
+	public JTable getItemTable(){
+		JTable table = getTable();
+		if(table != null){
+			return table;
+		}
+		return null;
+	}
+	
+	@Override
+	protected void setViewId(String id) {
+		viewId = id;
+	}
 
 }

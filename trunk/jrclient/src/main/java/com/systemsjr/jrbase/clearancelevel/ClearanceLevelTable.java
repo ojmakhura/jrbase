@@ -48,7 +48,5 @@ public class ClearanceLevelTable extends BaseItemTable<ClearanceLevelVO> {
 	@Override
 	protected void setViewId(String id) {
 		viewId = id;
-	}
-	
-	
+	}	
 }

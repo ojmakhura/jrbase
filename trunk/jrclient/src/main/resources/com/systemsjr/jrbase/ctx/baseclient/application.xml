@@ -185,7 +185,7 @@
   <bean id="imageResourcesFactory" class="org.springframework.context.support.ResourceMapFactoryBean">
     <property name="locations">
       <list>
-        <!-- value>classpath:classpath:org/springframework/richclient/image/images.properties</value-->
+        <value>classpath:org/springframework/richclient/image/images.properties</value>
         <value>classpath:com/systemsjr/jrbase/ui/baseclient/images.properties</value>
       </list>
     </property>
