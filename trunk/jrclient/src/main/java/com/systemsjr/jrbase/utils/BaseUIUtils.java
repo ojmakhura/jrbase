@@ -153,6 +153,26 @@ public class BaseUIUtils {
 		}, false, false);
 	}
 	
+	public static RefreshableValueHolder getRoleValueHolder(){
+		return new RefreshableValueHolder(new Closure() {
+			@Override
+			public Object call(Object object) {
+				return BaseServiceUtils.getRoleService().getAllRoles();
+			}
+
+		}, false, false);
+	}
+	
+	public static RefreshableValueHolder getUserValueHolder(){
+		return new RefreshableValueHolder(new Closure() {
+			@Override
+			public Object call(Object object) {
+				return BaseServiceUtils.getUserService().getAllUsers();
+			}
+
+		}, false, false);
+	}
+	
 	/**
      * 
      */

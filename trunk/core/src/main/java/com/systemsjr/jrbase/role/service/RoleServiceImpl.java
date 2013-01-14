@@ -5,6 +5,8 @@
  */
 package com.systemsjr.jrbase.role.service;
 
+import java.util.Collection;
+
 import com.systemsjr.jrbase.clearancelevel.vo.ClearanceLevelVO;
 import com.systemsjr.jrbase.role.Role;
 import com.systemsjr.jrbase.role.RoleDao;
@@ -28,11 +30,8 @@ public class RoleServiceImpl
     	Role role;// = getRoleDao().roleVOToEntity(roleVO);
     	
     	if(roleVO.getId() == null){
-    		System.out.println("id is null");
     		role = getRoleDao().create(getRoleDao().roleVOToEntity(roleVO));
-    		System.out.println("id is " + role.getId());
     	} else{
-    		System.out.println("-------------- updating id is " + roleVO.getId());
     		role = getRoleDao().roleVOToEntity(roleVO);
     		getRoleDao().update(role);
     	}
@@ -47,7 +46,8 @@ public class RoleServiceImpl
 	protected  RoleVO[] handleGetAllRoles()
         throws java.lang.Exception
     {
-    	return (RoleVO[]) getRoleDao().loadAll(RoleDao.TRANSFORM_ROLEVO).toArray();
+    	Collection roles = getRoleDao().loadAll();
+    	return getRoleDao().toRoleVOArray(roles);
     }
 
     /**

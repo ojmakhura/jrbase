@@ -6,6 +6,8 @@
 package com.systemsjr.jrbase.user.service;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
 
 import org.apache.commons.lang.ArrayUtils;
 
@@ -33,11 +35,12 @@ public class UserServiceImpl
 	protected  com.systemsjr.jrbase.user.vo.UserVO handleSaveUser(com.systemsjr.jrbase.user.vo.UserVO userVO)
         throws java.lang.Exception
     {
-    	User user = getUserDao().userVOToEntity(userVO);
+    	User user;
     	
-    	if(user.getId() == null){
-    		user = getUserDao().create(user);
+    	if(userVO.getId() == null){
+    		user = getUserDao().create(getUserDao().userVOToEntity(userVO));
     	} else{
+    		user = getUserDao().userVOToEntity(userVO);
     		getUserDao().update(user);
     	}
     	
@@ -71,7 +74,8 @@ public class UserServiceImpl
 
 	@Override
 	protected UserVO[] handleGetAllUsers() throws Exception {
-		return (UserVO[])getUserDao().loadAll(UserDao.TRANSFORM_USERVO).toArray();
+		Collection users = getUserDao().loadAll();
+		return getUserDao().toUserVOArray(users);
 	}
 
 	@Override
@@ -80,8 +84,9 @@ public class UserServiceImpl
 		UserSearchCriteria searchCriteria = new UserSearchCriteria();
 		
 		searchCriteria.setStatus(status);
-		
-		return (UserVO[]) getUserDao().findByCriteria(searchCriteria).toArray();
+		List users = getUserDao().findByCriteria(searchCriteria);
+				
+		return getUserDao().toUserVOArray(users);
 	}
 
 	@Override
@@ -89,8 +94,9 @@ public class UserServiceImpl
 		UserSearchCriteria searchCriteria = new UserSearchCriteria();
 		
 		searchCriteria.setUsername(username);
+		List users = getUserDao().findByCriteria(searchCriteria);
 		
-		return (UserVO)getUserDao().findByCriteria(searchCriteria).get(0);
+		return getUserDao().toUserVOArray(users)[0];
 	}
 
 	@Override

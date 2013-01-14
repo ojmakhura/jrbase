@@ -240,5 +240,7 @@
     data in the application context.
   -->
   <bean id="aboutCommand" class="org.springframework.richclient.command.support.AboutCommand" />
-
+  
+  <bean id="loginCommand" class="org.springframework.richclient.security.LoginCommand"/>
+  
 </beans>

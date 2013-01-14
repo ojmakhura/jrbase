@@ -73,8 +73,8 @@ public class OrganisationDaoImpl
     private com.systemsjr.jrbase.organisation.Organisation loadOrganisationFromOrganisationVO(com.systemsjr.jrbase.organisation.vo.OrganisationVO organisationVO)
     {
         // A typical implementation looks like this:
-        com.systemsjr.jrbase.organisation.Organisation organisation = this.load(organisationVO.getId());
-        if (organisation == null)
+        com.systemsjr.jrbase.organisation.Organisation organisation;
+        if (organisationVO.getId() == null)
         {
             organisation = com.systemsjr.jrbase.organisation.Organisation.Factory.newInstance();
         } else{

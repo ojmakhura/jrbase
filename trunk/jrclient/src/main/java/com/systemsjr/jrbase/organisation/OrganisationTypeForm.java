@@ -21,8 +21,8 @@ public class OrganisationTypeForm extends BaseItemForm<OrganisationTypeVO> {
 		super.initForm("organisationTypeTable");
 				
 		valueHolder = BaseUIUtils.getOrganisationTypeValueHolder();
-		builder.add("levelCode", "colSpec=10dlu");
-		builder.add("name", "colSpec=1:grow");
+		builder.add("levelCode", "colSpec=40dlu");
+		builder.add("name", "colSpec=40:grow");
 		builder.row();
 		builder.addTextArea("description", "colSpec=40dlu:grow");
 		

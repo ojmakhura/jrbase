@@ -22,11 +22,12 @@ public class LocationForm extends BaseItemForm<LocationVO> {
 	protected JComponent createFormControl() {
 		super.initForm("locationListTable");
 		
-		valueHolder = BaseUIUtils.getIndividualValueHolder();
+		valueHolder = BaseUIUtils.getLocationValueHolder();
 		
 		builder.add(sbf.createBoundComboBox("status", LocationStatus.literals().toArray()), "colSpan=1");
 		builder.row();
-		builder.add(sbf.createBoundComboBox("locationType", BaseUIUtils.getLocationTypeValueHolder(), "name"));
+		builder.add(sbf.createBoundComboBox("type", new Object[]{Type.AREA, Type.FACILITY}), "colSpec=40dlu:grow");
+		builder.add(sbf.createBoundComboBox("locationType", BaseUIUtils.getLocationTypeValueHolder(), "name"), "colSpec=40dlu:grow");
 		builder.row();
 		builder.add("levelCode", "colSpec=20dlu");
 		builder.add("uniqueCode", "colSpec=40dlu:grow");

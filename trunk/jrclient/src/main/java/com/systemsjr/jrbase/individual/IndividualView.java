@@ -18,6 +18,7 @@ public class IndividualView extends BaseItemView<IndividualVO> {
 		if(getItemForm().isDirty()){
 			getItemForm().getFormModel().commit();
 			IndividualVO individualVO = (IndividualVO)getItemForm().getFormObject();
+			logger.warn(individualVO);
 			individualVO = BaseServiceUtils.getIndividualService().saveIndividual(individualVO);
 			return individualVO;
 		}

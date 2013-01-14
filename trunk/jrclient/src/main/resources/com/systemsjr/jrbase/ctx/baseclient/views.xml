@@ -94,6 +94,17 @@
 		</property>
 	</bean>
 	
+	<bean id="userView" class="org.springframework.richclient.application.support.DefaultViewDescriptor">
+		<property name="viewClass" value="com.systemsjr.jrbase.user.UserView"/>
+		<property name="viewProperties">
+			<map>
+				<entry key="item" value-ref="userVO"/>
+				<entry key="itemForm" value-ref="userForm"/>
+				<!-- entry key="itemTable" value-ref="roleListTable"/-->
+			</map>
+		</property>
+	</bean>
+	
 	<bean id="loginView" class="org.springframework.richclient.application.support.DefaultViewDescriptor">
 		<property name="viewClass" value="com.systemsjr.jrbase.login.LoginView"/>
 		<property name="viewProperties">

@@ -7,6 +7,7 @@ import org.apache.commons.logging.LogFactory;
 import org.springframework.richclient.application.ApplicationWindow;
 import org.springframework.richclient.application.config.ApplicationWindowConfigurer;
 import org.springframework.richclient.application.config.DefaultApplicationLifecycleAdvisor;
+import org.springframework.richclient.command.ActionCommand;
 
 
 public class BaseLifecycleAdvisor extends DefaultApplicationLifecycleAdvisor {
@@ -49,6 +50,8 @@ public class BaseLifecycleAdvisor extends DefaultApplicationLifecycleAdvisor {
         if( logger.isInfoEnabled() ) {
             logger.info("onCommandsCreated( windowNumber=" + window.getNumber() + " )");
         }
+        //ActionCommand command = (ActionCommand) window.getCommandManager().getCommand("loginCommand", ActionCommand.class);
+        //command.execute();
     }
 
     /**

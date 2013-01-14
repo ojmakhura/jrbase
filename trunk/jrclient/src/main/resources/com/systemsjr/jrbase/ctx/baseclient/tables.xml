@@ -9,4 +9,5 @@
 	<bean id = "locationTypeTable" class="com.systemsjr.jrbase.location.LocationTypeTable" depends-on="application"/>
 	<bean id = "organisationTypeTable" class="com.systemsjr.jrbase.organisation.OrganisationTypeTable" depends-on="application"/>
 	<bean id = "organisationTable" class="com.systemsjr.jrbase.organisation.OrganisationTable" depends-on="application"/>
+	<bean id = "userTable" class="com.systemsjr.jrbase.user.UserTable" depends-on="application"/>
 </beans>

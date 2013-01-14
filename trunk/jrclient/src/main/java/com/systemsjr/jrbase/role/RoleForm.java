@@ -11,6 +11,7 @@ import org.springframework.richclient.form.builder.TableFormBuilder;
 import com.systemsjr.jrbase.common.BaseItemForm;
 import com.systemsjr.jrbase.common.BaseItemTable;
 import com.systemsjr.jrbase.role.vo.RoleVO;
+import com.systemsjr.jrbase.utils.BaseUIUtils;
 
 public class RoleForm extends BaseItemForm<RoleVO> {
 
@@ -25,9 +26,13 @@ public class RoleForm extends BaseItemForm<RoleVO> {
 	@SuppressWarnings("unchecked")
 	@Override
 	protected JComponent createFormControl() {
+		super.initForm("roleListTable");
 		setSbf((SwingBindingFactory) getBindingFactory());
 		setItemList((BaseItemTable<RoleVO>) Application.instance().getApplicationContext().getBean("roleListTable"));
 		setScrollPane(getComponentFactory().createScrollPane(itemList.getControl()));
+		
+		valueHolder = BaseUIUtils.getRoleValueHolder();
+		
 		builder = new TableFormBuilder(sbf);
 		builder.setLabelAttributes("colSpec=right:pref");
 		builder.row();
@@ -35,11 +40,8 @@ public class RoleForm extends BaseItemForm<RoleVO> {
 		builder.add("role", "colSpan=1");
 		builder.row();
 		builder.addTextArea("roleDescription", "colSpan=3");
-		//if(itemPanel == null){
-			//itemPanel = 
-		//}
-		itemPanel.add(builder.getForm(), BorderLayout.CENTER);
-		itemPanel.add(scrollPane, BorderLayout.WEST);
+		
+		super.endFormCreate();
 		return itemPanel;
 	}
 }

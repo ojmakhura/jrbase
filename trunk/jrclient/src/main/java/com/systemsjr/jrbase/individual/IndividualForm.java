@@ -4,6 +4,8 @@ import java.awt.BorderLayout;
 
 import javax.swing.JComponent;
 
+import org.springframework.rules.constraint.Constraint;
+
 import com.systemsjr.jrbase.common.BaseItemForm;
 import com.systemsjr.jrbase.individual.vo.IndividualVO;
 import com.systemsjr.jrbase.utils.BaseUIUtils;
@@ -41,7 +43,7 @@ public class IndividualForm extends BaseItemForm<IndividualVO> {
 		builder.addTextArea("postalAddress", "colSpan=1");
 		builder.addTextArea("physicalAddress", "colSpan=1");
 		builder.row();
-		builder.add("dob", "colSpan=1");
+		builder.add ("dob", "colSpan=1"); // Month Day, Year
 		builder.add("email", "colSpan=1");
 		builder.row();
 		builder.add(sbf.createBoundComboBox("countryOfBirth", BaseUIUtils.getLocationValueHolder(), "locationName"), "colSpan=1");

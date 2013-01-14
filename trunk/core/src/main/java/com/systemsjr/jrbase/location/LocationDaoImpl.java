@@ -58,8 +58,14 @@ public class LocationDaoImpl
         // @todo verify behavior of toLocationVO
         super.toLocationVO(source, target);
         // WARNING! No conversion for target.description (can't convert source.getDescription():java.lang.String to String
+        target.setDescription(target.getDescription());
         // WARNING! No conversion for target.locationName (can't convert source.getLocationName():java.lang.String to String
+        target.setLocationName(source.getLocationName());
+        
         // WARNING! No conversion for target.levelCode (can't convert source.getLevelCode():java.lang.String to String
+        target.setLevelCode(source.getLevelCode());
+        
+        //target.setLocationType(getlo)
     }
 
 
@@ -119,8 +125,24 @@ public class LocationDaoImpl
         // @todo verify behavior of locationVOToEntity
         super.locationVOToEntity(source, target, copyIfNull);
         // No conversion for target.levelCode (can't convert source.getLevelCode():String to java.lang.String
+        if(copyIfNull || source.getLevelCode() != null){
+        	target.setLevelCode(source.getLevelCode());
+        }
+        
         // No conversion for target.locationName (can't convert source.getLocationName():String to java.lang.String
+        if(copyIfNull || source.getLocationName() != null){
+        	target.setLocationName(source.getLocationName());
+        }
+        
         // No conversion for target.description (can't convert source.getDescription():String to java.lang.String
+        if(copyIfNull || source.getDescription() != null){
+        	target.setDescription(source.getDescription());
+        }
+        
+        if(copyIfNull || source.getLocationType() != null){
+        	target.setLocationType(getLocationTypeDao().locationTypeVOToEntity(source.getLocationType()));
+        }
     }
+    
 
 }

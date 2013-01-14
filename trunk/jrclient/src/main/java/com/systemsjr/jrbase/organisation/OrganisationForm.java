@@ -25,13 +25,12 @@ public class OrganisationForm extends BaseItemForm<OrganisationVO> {
 		valueHolder = BaseUIUtils.getOrganisationValueHolder();
 		typesValueHolder = BaseUIUtils.getOrganisationTypeValueHolder();
 		
-		builder.add(sbf.createBoundComboBox("organisationType", typesValueHolder, "name"), "colSpan=1");
-		builder.row();
-		builder.add("registrationRef", "colSpan=1");
+		builder.add(sbf.createBoundComboBox("organisationType", typesValueHolder, "name"), "colSpec=40dlu:grow");
+		builder.add("registrationRef", "colSpec=40dlu:grow");
 		builder.row();
 		builder.add("name", "colSpec=40dlu:grow");
 		builder.row();
-		builder.add("description", "colSpec=40dlu:grow");
+		builder.addTextArea("description", "colSpec=40dlu:grow");
 		
 		super.endFormCreate();
 		return itemPanel;

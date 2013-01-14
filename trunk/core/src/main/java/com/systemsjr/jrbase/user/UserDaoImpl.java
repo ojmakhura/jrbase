@@ -35,8 +35,8 @@ public class UserDaoImpl
     	if(searchCriteria.getStatus() != null){
     		criteria.add(Restrictions.eq("status", searchCriteria.getStatus()));
     	}
-        // @todo implement public com.systemsjr.jrbase.user.vo.UserLocationVO[] handleFindByCriteria(com.systemsjr.jrbase.user.vo.UserSearchCriteria searchCriteria)
-        return criteria.list();
+        
+    	return criteria.list();
     }
 
     /**
@@ -48,11 +48,13 @@ public class UserDaoImpl
         com.systemsjr.jrbase.user.vo.UserVO target)
     {
         // @todo verify behavior of toUserVO
-    	//getRoleDao().
         super.toUserVO(source, target);
         // WARNING! No conversion for target.userClearanceLevels (can't convert source.getUserClearanceLevels():com.systemsjr.jrbase.clearancelevel.ClearanceLevel to com.systemsjr.jrbase.clearancelevel.vo.ClearanceLevelVO[]
+        target.setUserClearanceLevels(getClearanceLevelDao().toClearanceLevelVOArray(source.getUserClearanceLevels()));
         // WARNING! No conversion for target.userRoles (can't convert source.getUserRoles():com.systemsjr.jrbase.role.Role to com.systemsjr.jrbase.role.vo.RoleVO[]
+        target.setUserRoles(getRoleDao().toRoleVOArray(source.getUserRoles()));
         // WARNING! No conversion for target.userLocations (can't convert source.getUserLocations():com.systemsjr.jrbase.user.UserLocation to com.systemsjr.jrbase.user.vo.UserLocationVO[]
+        target.setUserLocations(getUserLocationDao().toUserLocationVOArray(source.getUserLocations()));
     }
 
 
@@ -74,11 +76,14 @@ public class UserDaoImpl
      */
     private com.systemsjr.jrbase.user.User loadUserFromUserVO(com.systemsjr.jrbase.user.vo.UserVO userVO)
     {
-    	com.systemsjr.jrbase.user.User user = this.load(userVO.getId());
-        if (user == null)
+    	com.systemsjr.jrbase.user.User user;
+        if (userVO.getId() == null)
         {
             user = com.systemsjr.jrbase.user.User.Factory.newInstance();
-        }
+        } else{
+        	user  = this.load(userVO.getId());
+        }        
+        
         return user;
     }
 
