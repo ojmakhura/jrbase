@@ -173,6 +173,16 @@ public class BaseUIUtils {
 		}, false, false);
 	}
 	
+	public static RefreshableValueHolder getCountriesValueHolder(){
+		return new RefreshableValueHolder(new Closure() {
+			@Override
+			public Object call(Object object) {
+				return BaseServiceUtils.getLocationService().getAllCountries();
+			}
+
+		}, false, false);
+	}
+	
 	/**
      * 
      */

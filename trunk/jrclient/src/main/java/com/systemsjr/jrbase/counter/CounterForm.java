@@ -12,6 +12,7 @@ import com.systemsjr.jrbase.common.BaseItemForm;
 import com.systemsjr.jrbase.common.BaseItemTable;
 import com.systemsjr.jrbase.counter.vo.CounterVO;
 import com.systemsjr.jrbase.utils.BaseServiceUtils;
+import com.systemsjr.jrbase.utils.BaseUIUtils;
 
 public class CounterForm extends BaseItemForm<CounterVO> {
 
@@ -26,10 +27,8 @@ public class CounterForm extends BaseItemForm<CounterVO> {
 	@SuppressWarnings("unchecked")
 	@Override
 	protected JComponent createFormControl() {
-		sbf = (SwingBindingFactory) getBindingFactory();
-		itemList = (BaseItemTable<CounterVO>) Application.instance().getApplicationContext().getBean("counterListTable");
-		scrollPane = getComponentFactory().createScrollPane(itemList.getControl());
-		builder = new TableFormBuilder(sbf);
+		super.initForm("counterListTable");
+		valueHolder = BaseUIUtils.getCounterValueHolder();
 		
 		builder.setLabelAttributes("colSpec=right:pref");
 		builder.row();
@@ -39,8 +38,7 @@ public class CounterForm extends BaseItemForm<CounterVO> {
 		builder.row();
 		builder.add("currentCount", "colSpan=1");
 
-		itemPanel.add(builder.getForm(), BorderLayout.CENTER);
-		itemPanel.add(scrollPane, BorderLayout.WEST);
+		super.endFormCreate();
 		return itemPanel;
 	}
 	

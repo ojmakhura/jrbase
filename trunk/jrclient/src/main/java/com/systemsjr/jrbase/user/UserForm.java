@@ -6,6 +6,7 @@ import org.springframework.binding.value.support.RefreshableValueHolder;
 
 import com.systemsjr.jrbase.common.BaseItemForm;
 import com.systemsjr.jrbase.user.vo.UserVO;
+import com.systemsjr.jrbase.utils.BaseServiceUtils;
 import com.systemsjr.jrbase.utils.BaseUIUtils;
 
 public class UserForm extends BaseItemForm<UserVO> {
@@ -14,7 +15,7 @@ public class UserForm extends BaseItemForm<UserVO> {
 	 * @wbp.parser.entryPoint
 	 */
 	public UserForm() {
-		super(new UserVO(), "userForm");
+		super(BaseServiceUtils.createDefaultUser(), "userForm");
 	}
 
 	/**

@@ -19,8 +19,7 @@ public class CounterTable extends BaseItemTable<CounterVO> {
 				"counterName",
 				"format",
 				"currentCount"
-		});
-		
+		});		
 	}
 	
 	@Override
@@ -36,15 +35,6 @@ public class CounterTable extends BaseItemTable<CounterVO> {
 	protected Object[] getDefaultInitialData() {
 		setInitialData(BaseServiceUtils.getCounterService().getAllCounters());
 		return getInitialData();
-	}
-
-	@Override
-	public JTable getItemTable(){
-		JTable table = getTable();
-		if(table != null){
-			return table;
-		}
-		return null;
 	}
 	
 

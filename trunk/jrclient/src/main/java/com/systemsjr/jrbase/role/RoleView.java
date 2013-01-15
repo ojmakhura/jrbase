@@ -24,11 +24,7 @@ public class RoleView extends BaseItemView<RoleVO>{
 	protected RoleVO saveItem() {
 		getItemForm().getFormModel().commit();		
 		RoleVO roleVO = ((RoleVO)getItemForm().getFormObject());
-		RoleForm roleForm = (RoleForm) getItemForm();
-		AbstractTableModel tableModel = roleForm.getItemList().getTableModel();
-		tableModel.fireTableDataChanged();
-		JTable table = roleForm.getItemList().getItemTable();
-		table.repaint();
+		setListTable(new RoleTable());
 		return BaseServiceUtils.getRoleService().saveRole(roleVO);
 	}
 

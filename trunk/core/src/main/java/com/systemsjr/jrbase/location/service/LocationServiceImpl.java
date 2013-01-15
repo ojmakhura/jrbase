@@ -134,4 +134,13 @@ public class LocationServiceImpl
 		return locationTypes;
 	}
 
+	@Override
+	protected LocationVO[] handleGetAllCountries() throws Exception {
+		LocationVO[] locations = getLocationDao().toLocationVOArray(getLocationDao().findCountries());
+		if(locations == null){
+			locations = new LocationVO[]{};
+		}
+		return locations;
+	}
+
 }

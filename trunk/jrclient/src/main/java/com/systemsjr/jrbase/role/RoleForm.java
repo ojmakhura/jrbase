@@ -18,7 +18,7 @@ public class RoleForm extends BaseItemForm<RoleVO> {
 	}
 
 	public RoleForm(){
-		super(new RoleVO(), "role");
+		super(new RoleVO(), "roleForm");
 	}
 
 	@SuppressWarnings("unchecked")

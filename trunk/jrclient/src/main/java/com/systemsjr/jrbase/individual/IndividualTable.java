@@ -3,7 +3,11 @@ package com.systemsjr.jrbase.individual;
 import javax.swing.JTable;
 import javax.swing.table.TableColumnModel;
 
+import org.springframework.richclient.command.ActionCommand;
+import org.springframework.richclient.command.ActionCommandExecutor;
+
 import com.systemsjr.jrbase.common.BaseItemTable;
+import com.systemsjr.jrbase.common.BaseItemView;
 import com.systemsjr.jrbase.individual.vo.IndividualVO;
 import com.systemsjr.jrbase.utils.BaseServiceUtils;
 
@@ -19,7 +23,8 @@ public class IndividualTable extends BaseItemTable<IndividualVO> {
 				"idNumber",
 				"salutation",
 				"surname",
-				"firstName"
+				"firstName",
+				"dob"
 		});
 		
 	}
@@ -32,6 +37,7 @@ public class IndividualTable extends BaseItemTable<IndividualVO> {
 		tcm.getColumn(1).setPreferredWidth(10);
 		tcm.getColumn(2).setPreferredWidth(100);
 		tcm.getColumn(3).setPreferredWidth(100);
+		tcm.getColumn(4).setPreferredWidth(30);
 	}
 
 	@Override
@@ -54,5 +60,4 @@ public class IndividualTable extends BaseItemTable<IndividualVO> {
 	protected void setViewId(String id) {
 		viewId = id;
 	}
-
 }

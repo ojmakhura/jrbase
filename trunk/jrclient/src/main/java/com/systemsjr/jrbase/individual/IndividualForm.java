@@ -4,26 +4,29 @@ import java.awt.BorderLayout;
 
 import javax.swing.JComponent;
 
-import org.springframework.rules.constraint.Constraint;
+import org.springframework.binding.value.support.RefreshableValueHolder;
 
 import com.systemsjr.jrbase.common.BaseItemForm;
 import com.systemsjr.jrbase.individual.vo.IndividualVO;
+import com.systemsjr.jrbase.utils.BaseServiceUtils;
 import com.systemsjr.jrbase.utils.BaseUIUtils;
 
 public class IndividualForm extends BaseItemForm<IndividualVO> {
-
+	RefreshableValueHolder countryHolder;
 	public IndividualForm(IndividualVO item, String formId) {
 		super(item, formId);
 	}
 	
 	public IndividualForm(){
-		super(new IndividualVO(), "individual");
+		super(BaseServiceUtils.createDefaultIndividual(), "individualForm");
 	}
 
 	@Override
 	protected JComponent createFormControl() {
 		super.initForm("individualListTable");
 		valueHolder = BaseUIUtils.getIndividualValueHolder();
+		countryHolder = BaseUIUtils.getCountriesValueHolder();
+		
 		builder.setLabelAttributes("colSpec=right:pref");
 		
 		builder.row();
@@ -46,12 +49,11 @@ public class IndividualForm extends BaseItemForm<IndividualVO> {
 		builder.add ("dob", "colSpan=1"); // Month Day, Year
 		builder.add("email", "colSpan=1");
 		builder.row();
-		builder.add(sbf.createBoundComboBox("countryOfBirth", BaseUIUtils.getLocationValueHolder(), "locationName"), "colSpan=1");
+		builder.add(sbf.createBoundComboBox("countryOfBirth", countryHolder, "locationName"), "colSpan=1");
 		builder.add(sbf.createBoundComboBox("countryOfCitizenship", 
 				BaseUIUtils.getLocationValueHolder(), "locationName"), "colSpan=1");
 		
-		itemPanel.add(builder.getForm(), BorderLayout.CENTER);
-		itemPanel.add(scrollPane, BorderLayout.WEST);
+		super.endFormCreate();
 		
 		return itemPanel;
 	}

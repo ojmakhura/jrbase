@@ -20,6 +20,12 @@ public class CounterView extends BaseItemView<CounterVO> {
 		getItemForm().getFormModel().commit();
 		
 		CounterVO counterVO = ((CounterVO)getItemForm().getFormObject());
+		setListTable(new CounterTable(BaseServiceUtils.getCounterService().getAllCounters(), "counters", new String[]{
+				"counterName",
+				"format",
+				"currentCount"
+		}));
+		
 		return BaseServiceUtils.getCounterService().saveCounter(counterVO);
 	}
 

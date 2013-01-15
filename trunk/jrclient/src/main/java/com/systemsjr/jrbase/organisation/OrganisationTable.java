@@ -15,11 +15,9 @@ public class OrganisationTable extends BaseItemTable<OrganisationVO> {
 	}
 	
 	public OrganisationTable(){
-		super(new OrganisationVO[]{}, "individuals", new String[]{
-				"idNumber",
-				"salutation",
-				"surname",
-				"firstName"
+		super(new OrganisationVO[]{}, "organisations", new String[]{
+				"registrationRef",
+				"name"
 		});
 		
 	}
@@ -29,9 +27,7 @@ public class OrganisationTable extends BaseItemTable<OrganisationVO> {
 		super.configureTable(table);
 		TableColumnModel tcm = table.getColumnModel();
 		tcm.getColumn(0).setPreferredWidth(30);
-		tcm.getColumn(1).setPreferredWidth(10);
-		tcm.getColumn(2).setPreferredWidth(100);
-		tcm.getColumn(3).setPreferredWidth(100);
+		tcm.getColumn(1).setPreferredWidth(100);
 	}
 
 	@Override

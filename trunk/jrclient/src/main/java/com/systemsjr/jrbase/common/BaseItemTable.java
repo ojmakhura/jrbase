@@ -49,8 +49,10 @@ public abstract class BaseItemTable<T> extends AbstractObjectTable {
 	public T getSelectedItem(){
 		List<T> selected = getSelectedItems();
 		if (CollectionUtils.isEmpty(selected)) {
+			logger.warn("The list is empty --------------------------------------------");
 			return null;
 		}
+		logger.warn("---------------- " + selected.get(0));
 		return selected.get(0);
 	}
 	
@@ -68,6 +70,7 @@ public abstract class BaseItemTable<T> extends AbstractObjectTable {
 	public List<T> getSelectedItems(){
 		int[] selected = getTable().getSelectedRows();
 		if(ArrayUtils.isEmpty(selected)){
+			logger.warn("getSelectedItems: no selected item");
 			return new ArrayList<T>();
 		}
 		ArrayList<T> selection = new ArrayList<T>();
@@ -96,8 +99,11 @@ public abstract class BaseItemTable<T> extends AbstractObjectTable {
 					BaseItemView view;
 					view = (BaseItemView) getApplication().getActiveWindow().getPage().getActiveComponent();
 					if(view != null){
+						logger.warn("view is " + view);
 						view.getItemForm().setFormObject(getSelectedItem());
+						logger.warn("item is " + getSelectedItem());
 						view.getItemForm().commit();
+						view.getItemForm().getFormModel().commit();
 					} else{
 						logger.warn("View is null");
 					}

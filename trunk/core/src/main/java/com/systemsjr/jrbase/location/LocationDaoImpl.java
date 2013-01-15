@@ -10,6 +10,9 @@ import java.util.List;
 import org.hibernate.Criteria;
 import org.hibernate.criterion.Restrictions;
 
+import com.systemsjr.jrbase.location.vo.LocationSearchCriteria;
+import com.systemsjr.jrbase.location.vo.LocationTypeSearchCriteria;
+import com.systemsjr.jrbase.location.vo.LocationTypeVO;
 import com.systemsjr.jrbase.location.vo.LocationVO;
 
 /**
@@ -43,7 +46,7 @@ public class LocationDaoImpl
     	}
 
     	if(searchCriteria.getLocationTypeVO() != null){
-    		criteria.add(Restrictions.eq("locationTypeVO", searchCriteria.getLocationTypeVO()));
+    		criteria.add(Restrictions.eq("locationType", getLocationTypeDao().locationTypeVOToEntity(searchCriteria.getLocationTypeVO())));
     	}
     	
         return criteria.list();
@@ -57,14 +60,10 @@ public class LocationDaoImpl
         com.systemsjr.jrbase.location.Location source,
         com.systemsjr.jrbase.location.vo.LocationVO target)
     {
-        // @todo verify behavior of toLocationVO
         super.toLocationVO(source, target);
-        // WARNING! No conversion for target.description (can't convert source.getDescription():java.lang.String to String
         target.setDescription(target.getDescription());
-        // WARNING! No conversion for target.locationName (can't convert source.getLocationName():java.lang.String to String
         target.setLocationName(source.getLocationName());
         
-        // WARNING! No conversion for target.levelCode (can't convert source.getLevelCode():java.lang.String to String
         target.setLevelCode(source.getLevelCode());
         
         target.setLocationType(getLocationTypeDao().toLocationTypeVO(source.getLocationType()));
@@ -102,7 +101,7 @@ public class LocationDaoImpl
     private com.systemsjr.jrbase.location.Location loadLocationFromLocationVO(com.systemsjr.jrbase.location.vo.LocationVO locationVO)
     {
         // A typical implementation looks like this:
-        com.systemsjr.jrbase.location.Location location;// = this.load(locationVO.getId());
+        com.systemsjr.jrbase.location.Location location;
         if (locationVO.getId() == null)
         {
             location = com.systemsjr.jrbase.location.Location.Factory.newInstance();
@@ -120,7 +119,6 @@ public class LocationDaoImpl
     @Override
 	public com.systemsjr.jrbase.location.Location locationVOToEntity(com.systemsjr.jrbase.location.vo.LocationVO locationVO)
     {
-        // @todo verify behavior of locationVOToEntity
         com.systemsjr.jrbase.location.Location entity = this.loadLocationFromLocationVO(locationVO);
         this.locationVOToEntity(locationVO, entity, true);
         return entity;
@@ -136,19 +134,15 @@ public class LocationDaoImpl
         com.systemsjr.jrbase.location.Location target,
         boolean copyIfNull)
     {
-        // @todo verify behavior of locationVOToEntity
         super.locationVOToEntity(source, target, copyIfNull);
-        // No conversion for target.levelCode (can't convert source.getLevelCode():String to java.lang.String
         if(copyIfNull || source.getLevelCode() != null){
         	target.setLevelCode(source.getLevelCode());
         }
         
-        // No conversion for target.locationName (can't convert source.getLocationName():String to java.lang.String
         if(copyIfNull || source.getLocationName() != null){
         	target.setLocationName(source.getLocationName());
         }
         
-        // No conversion for target.description (can't convert source.getDescription():String to java.lang.String
         if(copyIfNull || source.getDescription() != null){
         	target.setDescription(source.getDescription());
         }
@@ -157,6 +151,18 @@ public class LocationDaoImpl
         	target.setLocationType(getLocationTypeDao().locationTypeVOToEntity(source.getLocationType()));
         }
     }
+
+	@Override
+	protected List handleFindCountries() throws Exception {
+    	LocationSearchCriteria searchCritera = new LocationSearchCriteria();
+    	LocationTypeSearchCriteria typeCriteria = new LocationTypeSearchCriteria();
+    	typeCriteria.setLevelCode("CTR");
+    	LocationTypeVO[] types = getLocationTypeDao().toLocationTypeVOArray(getLocationTypeDao().findByCriteria(typeCriteria));
+    	
+    	searchCritera.setLocationTypeVO(types[0]);
+    	
+        return findByCriteria(searchCritera);
+	}
     
 
 }
