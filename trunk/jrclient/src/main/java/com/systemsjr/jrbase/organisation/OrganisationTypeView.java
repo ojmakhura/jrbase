@@ -34,11 +34,12 @@ public class OrganisationTypeView extends BaseItemView<OrganisationTypeVO> {
 	}
 
 	@Override
-	protected void deleteItem() {
+	protected OrganisationTypeVO deleteItem() {
 		getItemForm().getFormModel().commit();
 		OrganisationTypeVO organisationTypeVO = (OrganisationTypeVO) getItemForm().getFormObject();
 		BaseServiceUtils.getOrgService().removeOrganisationType(organisationTypeVO);
 		getItemForm().getFormModel().commit();
 		
+		return organisationTypeVO;		
 	}
 }

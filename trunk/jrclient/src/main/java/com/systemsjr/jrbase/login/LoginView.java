@@ -27,8 +27,8 @@ public class LoginView extends BaseItemView<LoginSessionVO> {
 	}
 
 	@Override
-	protected void deleteItem() {
+	protected LoginSessionVO deleteItem() {
 		// TODO Auto-generated method stub
-		
+		return null;
 	}
 }

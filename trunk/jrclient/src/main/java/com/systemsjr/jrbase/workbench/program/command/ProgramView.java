@@ -26,8 +26,8 @@ public class ProgramView extends BaseItemView<ProgramVO> {
 	}
 
 	@Override
-	protected void deleteItem() {
+	protected ProgramVO deleteItem() {
 		// TODO Auto-generated method stub
-		
+		return null;
 	}
 }

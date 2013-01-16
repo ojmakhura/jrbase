@@ -18,14 +18,7 @@ public class CounterView extends BaseItemView<CounterVO> {
 	@Override
 	protected CounterVO saveItem() {
 		getItemForm().getFormModel().commit();
-		
-		CounterVO counterVO = ((CounterVO)getItemForm().getFormObject());
-		setListTable(new CounterTable(BaseServiceUtils.getCounterService().getAllCounters(), "counters", new String[]{
-				"counterName",
-				"format",
-				"currentCount"
-		}));
-		
+		CounterVO counterVO = ((CounterVO)getItemForm().getFormObject());		
 		return BaseServiceUtils.getCounterService().saveCounter(counterVO);
 	}
 
@@ -36,9 +29,11 @@ public class CounterView extends BaseItemView<CounterVO> {
 	}
 
 	@Override
-	protected void deleteItem() {
+	protected CounterVO deleteItem() {
 		getItemForm().commit();
 		CounterVO counterVO = (CounterVO) getItemForm().getFormObject();
 		BaseServiceUtils.getCounterService().removeCounter(counterVO);
+		
+		return counterVO;
 	}
 }

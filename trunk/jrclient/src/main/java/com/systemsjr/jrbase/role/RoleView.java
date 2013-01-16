@@ -6,6 +6,7 @@ import javax.swing.table.AbstractTableModel;
 
 import com.systemsjr.jrbase.common.BaseItemView;
 import com.systemsjr.jrbase.role.vo.RoleVO;
+import com.systemsjr.jrbase.utils.Action;
 import com.systemsjr.jrbase.utils.BaseServiceUtils;
 
 public class RoleView extends BaseItemView<RoleVO>{
@@ -24,7 +25,7 @@ public class RoleView extends BaseItemView<RoleVO>{
 	protected RoleVO saveItem() {
 		getItemForm().getFormModel().commit();		
 		RoleVO roleVO = ((RoleVO)getItemForm().getFormObject());
-		setListTable(new RoleTable());
+		setAction(roleVO.getId());
 		return BaseServiceUtils.getRoleService().saveRole(roleVO);
 	}
 
@@ -35,9 +36,12 @@ public class RoleView extends BaseItemView<RoleVO>{
 	}
 
 	@Override
-	protected void deleteItem() {
+	protected RoleVO deleteItem() {
+		setAction(Action.DELETE);
 		getItemForm().getFormModel().commit();
 		RoleVO roleVO = ((RoleVO)getItemForm().getFormObject());
 		BaseServiceUtils.getRoleService().removeRole(roleVO);
+		return roleVO;
 	}
+
 }

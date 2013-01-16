@@ -16,9 +16,7 @@
 		<property name="viewClass" value="com.systemsjr.jrbase.clearancelevel.ClearanceLevelView"/>
 		<property name="viewProperties">
 			<map>
-				<entry key="item" value-ref="clearanceLevelVO"/>
 				<entry key="itemForm" value-ref="clearanceLevelForm"/>
-				<!-- entry key="itemTable" value-ref="clearanceLevelListTable"/-->
 			</map>
 		</property>
 	</bean>
@@ -27,9 +25,7 @@
 		<property name="viewClass" value="com.systemsjr.jrbase.individual.IndividualView"/>
 		<property name="viewProperties">
 			<map>
-				<entry key="item" value-ref="individualVO"/>
 				<entry key="itemForm" value-ref="individualForm"/>
-				<!-- entry key="itemTable" value-ref="individualListTable"/> -->
 			</map>
 		</property>
 	</bean>
@@ -37,9 +33,7 @@
 		<property name="viewClass" value="com.systemsjr.jrbase.role.RoleView"/>
 		<property name="viewProperties">
 			<map>
-				<entry key="item" value-ref="roleVO"/>
 				<entry key="itemForm" value-ref="roleForm"/>
-				<!-- entry key="itemTable" value-ref="roleListTable"/-->
 			</map>
 		</property>
 	</bean>
@@ -47,9 +41,7 @@
 		<property name="viewClass" value="com.systemsjr.jrbase.counter.CounterView"/>
 		<property name="viewProperties">
 			<map>
-				<entry key="item" value-ref="counterVO"/>
 				<entry key="itemForm" value-ref="counterForm"/>
-				<!-- entry key="itemTable" value-ref="roleListTable"/-->
 			</map>
 		</property>
 	</bean>
@@ -57,9 +49,7 @@
 		<property name="viewClass" value="com.systemsjr.jrbase.location.LocationTypeView"/>
 		<property name="viewProperties">
 			<map>
-				<entry key="item" value-ref="locationTypeVO"/>
 				<entry key="itemForm" value-ref="locationTypeForm"/>
-				<!-- entry key="itemTable" value-ref="roleListTable"/-->
 			</map>
 		</property>
 	</bean>
@@ -67,9 +57,7 @@
 		<property name="viewClass" value="com.systemsjr.jrbase.location.LocationView"/>
 		<property name="viewProperties">
 			<map>
-				<entry key="item" value-ref="locationVO"/>
 				<entry key="itemForm" value-ref="locationForm"/>
-				<!-- entry key="itemTable" value-ref="roleListTable"/-->
 			</map>
 		</property>
 	</bean>
@@ -77,9 +65,7 @@
 		<property name="viewClass" value="com.systemsjr.jrbase.organisation.OrganisationTypeView"/>
 		<property name="viewProperties">
 			<map>
-				<entry key="item" value-ref="organisationTypeVO"/>
 				<entry key="itemForm" value-ref="organisationTypeForm"/>
-				<!-- entry key="itemTable" value-ref="roleListTable"/-->
 			</map>
 		</property>
 	</bean>
@@ -87,9 +73,7 @@
 		<property name="viewClass" value="com.systemsjr.jrbase.organisation.OrganisationView"/>
 		<property name="viewProperties">
 			<map>
-				<entry key="item" value-ref="organisationVO"/>
 				<entry key="itemForm" value-ref="organisationForm"/>
-				<!-- entry key="itemTable" value-ref="roleListTable"/-->
 			</map>
 		</property>
 	</bean>
@@ -98,9 +82,7 @@
 		<property name="viewClass" value="com.systemsjr.jrbase.user.UserView"/>
 		<property name="viewProperties">
 			<map>
-				<entry key="item" value-ref="userVO"/>
 				<entry key="itemForm" value-ref="userForm"/>
-				<!-- entry key="itemTable" value-ref="roleListTable"/-->
 			</map>
 		</property>
 	</bean>
@@ -109,9 +91,7 @@
 		<property name="viewClass" value="com.systemsjr.jrbase.login.LoginView"/>
 		<property name="viewProperties">
 			<map>
-				<entry key="item" value-ref="userVO"/>
 				<entry key="itemForm" value-ref="loginForm"/>
-				<!-- entry key="itemTable" value-ref="roleListTable"/-->
 			</map>
 		</property>
 	</bean>

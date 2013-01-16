@@ -19,19 +19,17 @@ import org.springframework.richclient.command.support.GlobalCommandIds;
 import org.springframework.richclient.list.ListSelectionValueModelAdapter;
 import org.springframework.richclient.list.ListSingleSelectionGuard;
 
+import com.systemsjr.jrbase.utils.Action;
+
 public abstract class BaseItemView<T> extends AbstractView {
-	private T item;
 	private BaseItemForm<T> itemForm;
-	private BaseItemTable<T> listTable;
-	private JScrollPane srollPane;
 
 	private ActionCommandExecutor saveExecutor = new SaveExecutor();
 	private ActionCommandExecutor deleteExecutor = new DeleteExecutor();
 	private ActionCommandExecutor newExecutor = new NewExecutor();
 	private GuardedActionCommandExecutor propertiesExecutor = new PropertiesExecutor();
 	private CommandGroup popup = new CommandGroup();
-
-	// private ActionCommandExecutor saveAsExecutor;
+	protected String action;
 
 	public BaseItemView() {
 		super();
@@ -45,18 +43,24 @@ public abstract class BaseItemView<T> extends AbstractView {
 	public BaseItemView(BaseItemForm<T> form, BaseItemTable<T> table) {
 		super();
 		this.itemForm = form;
-		this.listTable = table;
+	}
+	
+	public void setAction(Long id){
+		if(id == null){
+			setAction(Action.INSERT);
+		} else {
+			setAction(Action.UPDATE);
+		}
+	}
+	
+	public void setAction(String action){
+		this.action = action;
 	}
 
 	@Override
 	protected JComponent createControl() {
 		JPanel view = new JPanel();
-		JScrollPane scrollPane = getComponentFactory().createScrollPane(
-				listTable.getControl());
-		view.add(scrollPane, BorderLayout.WEST);
-		view.add(listTable.getControl(), BorderLayout.CENTER);
 		view.add(itemForm.getControl(), BorderLayout.EAST);
-		//listTableFactory();
 		return view;
 	}
 	
@@ -68,38 +72,6 @@ public abstract class BaseItemView<T> extends AbstractView {
 			ValueModel selectionHolder = new ListSelectionValueModelAdapter(baseItemTable.getSelectionModel());
 			new ListSingleSelectionGuard(selectionHolder, propertiesExecutor);
 		}
-	}
-
-	/*private class ItemListTableFactory {
-
-		public BaseItemTable<T> createItemTable() {
-
-			BaseItemTable<T> itemTable = new BaseItemTable(getId(),
-					columnPropertyNames);
-
-			// itemTable.setDoubleClickHandler(propertiesExecutor);
-
-			CommandGroup popup = new CommandGroup();
-			popup.add((ActionCommand) getWindowCommandManager().getCommand(
-					"propertiesCommand", ActionCommand.class));
-			itemTable.setPopupCommandGroup(popup);
-
-			ValueModel selectionHolder = new ListSelectionValueModelAdapter(
-					itemTable.getSelectionModel()); // new
-			ListSingleSelectionGuard(selectionHolder, propertiesExecutor);
-			new ListSingleSelectionGuard(selectionHolder, saveExecutor);
-			new ListSingleSelectionGuard(selectionHolder, deleteExecutor);
-			return itemTable;
-		}
-
-	}*/
-
-	public JScrollPane getSrollPane() {
-		return srollPane;
-	}
-
-	public void setSrollPane(JScrollPane srollPane) {
-		this.srollPane = srollPane;
 	}
 
 	public ActionCommandExecutor getSaveExecutor() {
@@ -135,14 +107,6 @@ public abstract class BaseItemView<T> extends AbstractView {
 		context.register(GlobalCommandIds.PROPERTIES, propertiesExecutor);
 	}
 
-	public T getItem() {
-		return item;
-	}
-
-	public void setItem(T item) {
-		this.item = item;
-	}
-
 	public BaseItemForm<T> getItemForm() {
 		return itemForm;
 	}
@@ -150,29 +114,35 @@ public abstract class BaseItemView<T> extends AbstractView {
 	public void setItemForm(BaseItemForm<T> itemForm) {
 		this.itemForm = itemForm;
 	}
-
-	public BaseItemTable<T> getListTable() {
-		return listTable;
-	}
-
-	public void setListTable(BaseItemTable<T> listTable) {
-		this.listTable = listTable;
-	}
-
+	
+	/**
+	 * This class saves the form object. it also updates the display table depending on
+	 * whether the action was an insert or an update
+	 * @author junior
+	 *
+	 */
 	private class SaveExecutor implements ActionCommandExecutor {
 		@Override
 		public void execute() {
-			saveItem();
+			itemForm.getItemList().itemSaved(saveItem(), action);
+			itemForm.getItemList().getItemTable().repaint();
 		}
 	}
 
+	/**
+	 * This class deletes a form object from the data source and also updates the 
+	 * display in the form.
+	 * @author junior
+	 *
+	 */
 	private class DeleteExecutor implements ActionCommandExecutor {
 		@Override
 		public void execute() {
-			deleteItem();
+			itemForm.getItemList().itemDeleted(deleteItem());
+			itemForm.getItemList().getItemTable().repaint();
 		}
 	}
-
+	
 	/**
 	 * Private inner class to create a new customer.
 	 */
@@ -209,7 +179,7 @@ public abstract class BaseItemView<T> extends AbstractView {
 
 	protected abstract T newItem();
 
-	protected abstract void deleteItem();
+	protected abstract T deleteItem();
 
 	private class listTableFactory {
 		public BaseItemTable createListTable() {

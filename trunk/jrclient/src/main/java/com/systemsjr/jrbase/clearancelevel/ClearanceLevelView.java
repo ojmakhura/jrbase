@@ -34,10 +34,11 @@ public class ClearanceLevelView extends BaseItemView<ClearanceLevelVO> {
 	}
 
 	@Override
-	protected void deleteItem() {
+	protected ClearanceLevelVO deleteItem() {
 		getItemForm().getFormModel().commit();
 		ClearanceLevelVO levelVO = (ClearanceLevelVO) getItemForm().getFormObject();
 		BaseServiceUtils.getClearanceService().removeClearanceLevel(levelVO);
 		getItemForm().getFormModel().commit();
+		return levelVO;
 	}
 }

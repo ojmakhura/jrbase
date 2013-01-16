@@ -33,10 +33,12 @@ public class IndividualView extends BaseItemView<IndividualVO> {
 	}
 
 	@Override
-	protected void deleteItem() {
+	protected IndividualVO deleteItem() {
 		getItemForm().getFormModel().commit();
 		IndividualVO individualVO = (IndividualVO) getItemForm().getFormObject();
 		BaseServiceUtils.getIndividualService().removeIndividual(individualVO);
 		getItemForm().getFormModel().commit();
+		
+		return individualVO;
 	}
 }

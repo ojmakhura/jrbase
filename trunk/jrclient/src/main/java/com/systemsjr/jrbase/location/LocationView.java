@@ -36,11 +36,12 @@ public class LocationView extends BaseItemView<LocationVO> {
 	}
 
 	@Override
-	protected void deleteItem() {
+	protected LocationVO deleteItem() {
 		getItemForm().getFormModel().commit();
 		LocationVO locationVO = (LocationVO) getItemForm().getFormObject();
 		BaseServiceUtils.getLocationService().removeLocation(locationVO);
-		getItemForm().getFormModel().commit();		
+		getItemForm().getFormModel().commit();
+		
+		return locationVO;
 	}
-
 }

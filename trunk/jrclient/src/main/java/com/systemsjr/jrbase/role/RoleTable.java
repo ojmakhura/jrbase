@@ -28,6 +28,7 @@ public class RoleTable extends BaseItemTable<RoleVO> {
 
 	@Override
 	protected void configureTable(JTable table) {
+		super.configureTable(table);
 		TableColumnModel tcm = table.getColumnModel();
 		tcm.getColumn(0).setPreferredWidth(10);
 		tcm.getColumn(1).setPreferredWidth(100);
@@ -53,28 +54,4 @@ public class RoleTable extends BaseItemTable<RoleVO> {
 		}
 		return null;
 	}
-	
-	@Override
-	protected ActionCommandExecutor getDetailsCommand() {
-		if(detailsCommand == null){
-			detailsCommand = new ActionCommand("detailsCommand") {				
-				@Override
-				protected void doExecuteCommand() {
-					BaseItemView view;
-					view = (BaseItemView) getApplication().getActiveWindow().getPage().getActiveComponent();
-					if(view != null){
-						logger.warn("view is " + view);
-						view.getItemForm().setFormObject(getSelectedItem());
-						logger.warn("item is " + getSelectedItem());
-						view.getItemForm().commit();
-						view.getItemForm().getFormModel().commit();
-					} else{
-						logger.warn("View is null");
-					}
-				}
-			};
-		}
-		return detailsCommand;
-	}
-
 }

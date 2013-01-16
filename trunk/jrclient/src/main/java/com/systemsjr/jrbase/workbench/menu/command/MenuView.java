@@ -26,8 +26,8 @@ public class MenuView extends BaseItemView<MenuVO> {
 	}
 
 	@Override
-	protected void deleteItem() {
+	protected MenuVO deleteItem() {
 		// TODO Auto-generated method stub
-		
+		return null;
 	}
 }

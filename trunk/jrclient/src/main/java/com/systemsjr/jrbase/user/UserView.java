@@ -43,10 +43,11 @@ public class UserView extends BaseItemView<UserVO> {
 	}
 
 	@Override
-	protected void deleteItem() {
+	protected UserVO deleteItem() {
 		getItemForm().commit();
 		UserVO userVO = (UserVO) getItemForm().getFormObject();
 		BaseServiceUtils.getUserService().removeUser(userVO);
 		
+		return userVO;
 	}
 }

@@ -11,6 +11,8 @@ import org.springframework.richclient.command.ActionCommandExecutor;
 import org.springframework.richclient.table.support.AbstractObjectTable;
 import org.springframework.util.CollectionUtils;
 
+import com.systemsjr.jrbase.utils.Action;
+
 public abstract class BaseItemTable<T> extends AbstractObjectTable {
 	private T[] initialData;
 	protected ActionCommand detailsCommand;
@@ -49,10 +51,8 @@ public abstract class BaseItemTable<T> extends AbstractObjectTable {
 	public T getSelectedItem(){
 		List<T> selected = getSelectedItems();
 		if (CollectionUtils.isEmpty(selected)) {
-			logger.warn("The list is empty --------------------------------------------");
 			return null;
 		}
-		logger.warn("---------------- " + selected.get(0));
 		return selected.get(0);
 	}
 	
@@ -99,9 +99,7 @@ public abstract class BaseItemTable<T> extends AbstractObjectTable {
 					BaseItemView view;
 					view = (BaseItemView) getApplication().getActiveWindow().getPage().getActiveComponent();
 					if(view != null){
-						logger.warn("view is " + view);
 						view.getItemForm().setFormObject(getSelectedItem());
-						logger.warn("item is " + getSelectedItem());
 						view.getItemForm().commit();
 						view.getItemForm().getFormModel().commit();
 					} else{
@@ -119,5 +117,31 @@ public abstract class BaseItemTable<T> extends AbstractObjectTable {
 	
 	protected void setViewId(String id) {
 		viewId = id;
+	}
+	
+	/**
+	 * This method gives public access to the protected handleNewObject and handleUpdateObject
+	 * methods defined in the AbstractTable class. This allows the application to be able to reflect 
+	 * the item list table on the frontend.
+	 * 
+	 * @param o
+	 * @param action
+	 */
+	public void itemSaved(Object o, String action){
+		if(action.equals(Action.INSERT)){
+			handleNewObject(o);
+		} else if(action.equals(Action.UPDATE)){
+			handleUpdatedObject(o);
+		}
+	}
+	
+	/**
+	 * This method gives public access to the handleDeleteObject method defined in the AbstractTable
+	 * class defined inside the spring-richclient-sandbox library. This allows the application to refresh
+	 * the displayed list on the frontend
+	 * @param object
+	 */
+	public void itemDeleted(Object object){
+		handleDeletedObject(object);
 	}
 }
