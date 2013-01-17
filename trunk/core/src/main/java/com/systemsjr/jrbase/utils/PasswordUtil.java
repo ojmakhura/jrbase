@@ -6,7 +6,7 @@ import java.security.NoSuchAlgorithmException;
 
 import org.apache.commons.codec.binary.Base64;
 
-public class LoginUtil {
+public class PasswordUtil {
 	/**
 	 * This method encrypts the password. The method can be used when
 	 * creating a user or when verifying the user. 

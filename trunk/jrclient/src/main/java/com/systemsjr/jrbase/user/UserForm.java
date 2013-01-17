@@ -30,7 +30,7 @@ public class UserForm extends BaseItemForm<UserVO> {
 		builder.row();
 		builder.add("username", "colSpec=1");
 		builder.row();
-		builder.add(sbf.createBoundComboBox("individual", individualHolder, "idNumber, surname, firstName"), "colSpec=40dlu");
+		builder.add(sbf.createBoundComboBox("individual", individualHolder, "idNumber"), "colSpec=40dlu");
 		builder.add("name", "colSpec=40dlu:grow");
 		builder.row();
 		builder.addPasswordField("password", "colSpan=1");

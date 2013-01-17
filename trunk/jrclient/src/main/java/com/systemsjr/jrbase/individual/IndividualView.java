@@ -3,6 +3,7 @@ package com.systemsjr.jrbase.individual;
 import javax.swing.JComponent;
 
 import com.systemsjr.jrbase.common.BaseItemView;
+import com.systemsjr.jrbase.counter.CounterForm;
 import com.systemsjr.jrbase.individual.vo.IndividualVO;
 import com.systemsjr.jrbase.utils.BaseServiceUtils;
 
@@ -10,7 +11,9 @@ public class IndividualView extends BaseItemView<IndividualVO> {
 
 	@Override
 	protected JComponent createControl() {
-		return new IndividualForm().createFormControl();
+
+		setItemForm(new IndividualForm());
+		return getItemForm().getControl();
 	}
 
 	@Override

@@ -1,7 +1,5 @@
 package com.systemsjr.jrbase.individual;
 
-import java.awt.BorderLayout;
-
 import javax.swing.JComponent;
 
 import org.springframework.binding.value.support.RefreshableValueHolder;
@@ -50,8 +48,7 @@ public class IndividualForm extends BaseItemForm<IndividualVO> {
 		builder.add("email", "colSpan=1");
 		builder.row();
 		builder.add(sbf.createBoundComboBox("countryOfBirth", countryHolder, "locationName"), "colSpan=1");
-		builder.add(sbf.createBoundComboBox("countryOfCitizenship", 
-				BaseUIUtils.getLocationValueHolder(), "locationName"), "colSpan=1");
+		builder.add(sbf.createBoundComboBox("countryOfCitizenship", countryHolder, "locationName"), "colSpan=1");
 		
 		super.endFormCreate();
 		

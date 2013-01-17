@@ -11,7 +11,6 @@ public class CounterView extends BaseItemView<CounterVO> {
 	@Override
 	protected JComponent createControl() {
 		setItemForm(new CounterForm());
-		listTableFactory(getItemForm().getItemList());
 		return getItemForm().getControl();
 	}
 

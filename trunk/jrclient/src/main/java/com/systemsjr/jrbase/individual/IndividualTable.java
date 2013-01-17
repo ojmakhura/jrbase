@@ -21,7 +21,6 @@ public class IndividualTable extends BaseItemTable<IndividualVO> {
 	public IndividualTable(){
 		super(new IndividualVO[]{}, "individuals", new String[]{
 				"idNumber",
-				"salutation",
 				"surname",
 				"firstName",
 				"dob"
@@ -34,10 +33,9 @@ public class IndividualTable extends BaseItemTable<IndividualVO> {
 		super.configureTable(table);
 		TableColumnModel tcm = table.getColumnModel();
 		tcm.getColumn(0).setPreferredWidth(30);
-		tcm.getColumn(1).setPreferredWidth(10);
+		tcm.getColumn(1).setPreferredWidth(100);
 		tcm.getColumn(2).setPreferredWidth(100);
-		tcm.getColumn(3).setPreferredWidth(100);
-		tcm.getColumn(4).setPreferredWidth(30);
+		tcm.getColumn(3).setPreferredWidth(30);
 	}
 
 	@Override
@@ -45,16 +43,6 @@ public class IndividualTable extends BaseItemTable<IndividualVO> {
 		setInitialData(BaseServiceUtils.getIndividualService().getAllIndividuals());
 		return getInitialData();
 	}
-
-	@Override
-	public JTable getItemTable(){
-		JTable table = getTable();
-		if(table != null){
-			return table;
-		}
-		return null;
-	}
-	
 
 	@Override
 	protected void setViewId(String id) {

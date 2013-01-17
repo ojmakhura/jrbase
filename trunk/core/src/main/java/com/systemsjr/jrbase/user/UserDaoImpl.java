@@ -10,6 +10,8 @@ import java.util.List;
 import org.hibernate.Criteria;
 import org.hibernate.criterion.Restrictions;
 
+import com.systemsjr.jrbase.utils.PasswordUtil;
+
 /**
  * @see com.systemsjr.jrbase.user.User
  */
@@ -55,6 +57,13 @@ public class UserDaoImpl
         target.setUserRoles(getRoleDao().toRoleVOArray(source.getUserRoles()));
         // WARNING! No conversion for target.userLocations (can't convert source.getUserLocations():com.systemsjr.jrbase.user.UserLocation to com.systemsjr.jrbase.user.vo.UserLocationVO[]
         target.setUserLocations(getUserLocationDao().toUserLocationVOArray(source.getUserLocations()));
+        String passRep = "";
+        for(int i = 0; i < source.getPasswordLength(); i++){
+        	passRep = '*'+passRep;
+        }
+        
+        target.setPassword(passRep);
+        target.setPassword2(passRep);
     }
 
 
@@ -112,6 +121,12 @@ public class UserDaoImpl
     {
         // @todo verify behavior of userVOToEntity
         super.userVOToEntity(source, target, copyIfNull);
+        try {
+			target.setPassword(PasswordUtil.encryptPassword(source.getPassword()));
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
     }
 
 }
