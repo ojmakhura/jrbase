@@ -145,13 +145,14 @@
     will register itself into the UI Manager when it is instantiated in
     the context.  Take a look at the JGoodiesLooksConfigurer class for an
     example of this.
-  -->
    <bean id="lookAndFeelConfigurer"
     class="org.springframework.richclient.application.config.JGoodiesLooksConfigurer">
     <property name="popupDropShadowEnabled" value="false" />
     <property name="theme">
       <bean class="com.jgoodies.looks.plastic.theme.ExperienceBlue" />
     </property>
+  </bean-->
+  <bean id="lookAndFeelConfigurer" class="javax.swing.plaf.metal.MetalLookAndFeel">
   </bean>
 
   <!--
@@ -228,4 +229,6 @@
       </list>
     </property>
   </bean>
+  
+  <bean id="rulesSource" class="com.systemsjr.jrbase.user.validation.UserValidationRules"/>
 </beans>
