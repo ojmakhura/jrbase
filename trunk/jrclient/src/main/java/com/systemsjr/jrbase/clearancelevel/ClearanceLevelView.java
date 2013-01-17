@@ -7,6 +7,10 @@ import com.systemsjr.jrbase.common.BaseItemView;
 import com.systemsjr.jrbase.utils.BaseServiceUtils;
 
 public class ClearanceLevelView extends BaseItemView<ClearanceLevelVO> {
+	
+	  /**
+	   * @wbp.parser.entryPoint
+	   */
 	@Override
 	protected JComponent createControl() {
 		setItemForm(new ClearanceLevelForm());
@@ -19,6 +23,7 @@ public class ClearanceLevelView extends BaseItemView<ClearanceLevelVO> {
 		if(getItemForm().isDirty()){
 			getItemForm().getFormModel().commit();
 			ClearanceLevelVO levelVO = (ClearanceLevelVO) getItemForm().getFormObject();
+			setAction(levelVO.getId());
 			levelVO = BaseServiceUtils.getClearanceService().saveClearanceLevel(levelVO);
 			getItemForm().getValueholder().refresh();
 			return levelVO;

@@ -83,8 +83,11 @@ public class IndividualDaoImpl
         super.toIndividualVO(source, target);
         
         // WARNING! No conversion for target.nextOfKin (can't convert source.getNextOfKin():com.systemsjr.jrbase.individual.Individual to com.systemsjr.jrbase.individual.vo.IndividualVO
+        target.setNextOfKin(getNextOfKinDao().toNextOfKinVOArray(source.getNextOfKin()));
         // WARNING! No conversion for target.countryOfBirth (can't convert source.getCountryOfBirth():com.systemsjr.jrbase.location.Location to com.systemsjr.jrbase.location.vo.LocationVO
+        target.setCountryOfBirth(getLocationDao().toLocationVO(source.getCountryOfBirth()));
         // WARNING! No conversion for target.countryOfCitizenship (can't convert source.getCountryOfCitizenship():com.systemsjr.jrbase.location.Location to com.systemsjr.jrbase.location.vo.LocationVO
+        target.setCountryOfCitizenship(getLocationDao().toLocationVO(source.getCountryOfCitizenship()));
     }
 
 
@@ -111,8 +114,9 @@ public class IndividualDaoImpl
         if (individualVO.getId() != null)
         {
         	individual = this.load(individualVO.getId());
+        } else {
+        	individual = com.systemsjr.jrbase.individual.Individual.Factory.newInstance();
         }
-        individual = com.systemsjr.jrbase.individual.Individual.Factory.newInstance();
         return individual;
     }
 

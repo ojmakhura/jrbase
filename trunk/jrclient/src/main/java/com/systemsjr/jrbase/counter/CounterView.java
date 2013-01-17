@@ -17,7 +17,8 @@ public class CounterView extends BaseItemView<CounterVO> {
 	@Override
 	protected CounterVO saveItem() {
 		getItemForm().getFormModel().commit();
-		CounterVO counterVO = ((CounterVO)getItemForm().getFormObject());		
+		CounterVO counterVO = ((CounterVO)getItemForm().getFormObject());	
+		setAction(counterVO.getId());
 		return BaseServiceUtils.getCounterService().saveCounter(counterVO);
 	}
 

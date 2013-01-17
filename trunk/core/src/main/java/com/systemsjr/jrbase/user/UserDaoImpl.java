@@ -49,21 +49,20 @@ public class UserDaoImpl
         com.systemsjr.jrbase.user.User source,
         com.systemsjr.jrbase.user.vo.UserVO target)
     {
-        // @todo verify behavior of toUserVO
         super.toUserVO(source, target);
-        // WARNING! No conversion for target.userClearanceLevels (can't convert source.getUserClearanceLevels():com.systemsjr.jrbase.clearancelevel.ClearanceLevel to com.systemsjr.jrbase.clearancelevel.vo.ClearanceLevelVO[]
         target.setUserClearanceLevels(getClearanceLevelDao().toClearanceLevelVOArray(source.getUserClearanceLevels()));
-        // WARNING! No conversion for target.userRoles (can't convert source.getUserRoles():com.systemsjr.jrbase.role.Role to com.systemsjr.jrbase.role.vo.RoleVO[]
         target.setUserRoles(getRoleDao().toRoleVOArray(source.getUserRoles()));
-        // WARNING! No conversion for target.userLocations (can't convert source.getUserLocations():com.systemsjr.jrbase.user.UserLocation to com.systemsjr.jrbase.user.vo.UserLocationVO[]
         target.setUserLocations(getUserLocationDao().toUserLocationVOArray(source.getUserLocations()));
-        String passRep = "";
+        target.setStatus(source.getStatus());
+        target.setIndividual(getIndividualDao().toIndividualVO(source.getIndividual()));
+        target.setUserId(source.getUserId());
+        StringBuffer passRep = new StringBuffer();
         for(int i = 0; i < source.getPasswordLength(); i++){
-        	passRep = '*'+passRep;
+        	passRep.append('*');
         }
-        
-        target.setPassword(passRep);
-        target.setPassword2(passRep);
+                
+        target.setPassword1(passRep.toString());
+        target.setPassword2(passRep.toString());
     }
 
 
@@ -103,7 +102,6 @@ public class UserDaoImpl
     @Override
 	public com.systemsjr.jrbase.user.User userVOToEntity(com.systemsjr.jrbase.user.vo.UserVO userVO)
     {
-        // @todo verify behavior of userVOToEntity
         com.systemsjr.jrbase.user.User entity = this.loadUserFromUserVO(userVO);
         this.userVOToEntity(userVO, entity, true);
         return entity;
@@ -119,12 +117,11 @@ public class UserDaoImpl
         com.systemsjr.jrbase.user.User target,
         boolean copyIfNull)
     {
-        // @todo verify behavior of userVOToEntity
         super.userVOToEntity(source, target, copyIfNull);
+        target.setIndividual(getIndividualDao().individualVOToEntity(source.getIndividual()));
         try {
-			target.setPassword(PasswordUtil.encryptPassword(source.getPassword()));
+			target.setPassword(PasswordUtil.encryptPassword(source.getPassword1()));
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
     }

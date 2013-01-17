@@ -19,6 +19,7 @@ public class OrganisationView extends BaseItemView<OrganisationVO> {
 		if(getItemForm().isDirty()){
 			getItemForm().getFormModel().commit();
 			OrganisationVO organisationVO = (OrganisationVO) getItemForm().getFormObject();
+			setAction(organisationVO.getId());
 			organisationVO = BaseServiceUtils.getOrgService().saveOrganisation(organisationVO);
 			getItemForm().getValueholder().refresh();
 			((OrganisationForm)getItemForm()).getTypesValueHolder().refresh();

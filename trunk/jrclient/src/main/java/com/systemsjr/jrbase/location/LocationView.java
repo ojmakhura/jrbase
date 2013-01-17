@@ -21,6 +21,7 @@ public class LocationView extends BaseItemView<LocationVO> {
 		if(getItemForm().isDirty()){
 			getItemForm().getFormModel().commit();
 			LocationVO locationVO = (LocationVO) getItemForm().getFormObject();
+			setAction(locationVO.getId());
 			locationVO = BaseServiceUtils.getLocationService().saveLocation(locationVO);
 			getItemForm().getValueholder().refresh();
 			return locationVO;

@@ -27,13 +27,15 @@ public class UserForm extends BaseItemForm<UserVO> {
 		valueHolder = BaseUIUtils.getUserValueHolder();
 		individualHolder = BaseUIUtils.getIndividualValueHolder();
 		
+		builder.add(sbf.createBoundComboBox("status", UserStatus.literals()), "colSpec=70dlu");
 		builder.row();
-		builder.add("username", "colSpec=1");
+		builder.add("userId", "colSpan=1");
+		builder.add("username", "colSpan=1");
 		builder.row();
-		builder.add(sbf.createBoundComboBox("individual", individualHolder, "idNumber"), "colSpec=40dlu");
+		builder.add(sbf.createBoundComboBox("individual", individualHolder, "idNumber"), "colSpan=1");
 		builder.add("name", "colSpec=40dlu:grow");
 		builder.row();
-		builder.addPasswordField("password", "colSpan=1");
+		builder.addPasswordField("password1", "colSpan=1");
 		builder.addPasswordField("password2", "colSpan=1");
 		builder.row();
 		//builder.add("photo", "colSpan=1");
