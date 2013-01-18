@@ -13,6 +13,8 @@ import org.hibernate.criterion.Restrictions;
 import com.systemsjr.jrbase.clearancelevel.vo.ClearanceLevelSearchCriteria;
 import com.systemsjr.jrbase.clearancelevel.vo.ClearanceLevelVO;
 
+import edu.emory.mathcs.backport.java.util.Arrays;
+
 /**
  * @see com.systemsjr.jrbase.clearancelevel.ClearanceLevel
  */
@@ -27,6 +29,10 @@ public class ClearanceLevelDaoImpl extends
 			com.systemsjr.jrbase.clearancelevel.ClearanceLevel source,
 			com.systemsjr.jrbase.clearancelevel.vo.ClearanceLevelVO target) {
 		super.toClearanceLevelVO(source, target);
+		
+		target.setClearedRoles(getRoleDao().toRoleVOArray(source.getClearedRoles()));
+		target.setClearedUsers(getUserDao().toUserVOArray(source.getClearedUsers()));
+		
 		if(source.getLowerLevel() != null){
 			target.setLowerLevel(new ClearanceLevelVO());
 			target.getLowerLevel().setId(source.getLowerLevel().getId());
@@ -103,8 +109,9 @@ public class ClearanceLevelDaoImpl extends
 			boolean copyIfNull) {
 		// @todo verify behavior of clearanceLevelVOToEntity
 		super.clearanceLevelVOToEntity(source, target, copyIfNull);
-	}
-
+		//target.setClearedRoles(getRoleDao().);
+	} 
+	
 	@Override
 	protected List handleFindByCriteria(
 			ClearanceLevelSearchCriteria searchCriteria) throws Exception {
