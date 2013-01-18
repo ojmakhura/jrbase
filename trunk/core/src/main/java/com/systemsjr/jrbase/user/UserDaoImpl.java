@@ -9,8 +9,7 @@ import java.util.List;
 
 import org.hibernate.Criteria;
 import org.hibernate.criterion.Restrictions;
-
-import com.systemsjr.jrbase.utils.PasswordUtil;
+import org.springframework.security.crypto.password.StandardPasswordEncoder;
 
 /**
  * @see com.systemsjr.jrbase.user.User
@@ -119,11 +118,8 @@ public class UserDaoImpl
     {
         super.userVOToEntity(source, target, copyIfNull);
         target.setIndividual(getIndividualDao().individualVOToEntity(source.getIndividual()));
-        try {
-			target.setPassword(PasswordUtil.encryptPassword(source.getPassword1()));
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+        StandardPasswordEncoder encoder = new StandardPasswordEncoder();
+        target.setPassword(encoder.encode(source.getPassword1()));
     }
 
 }
