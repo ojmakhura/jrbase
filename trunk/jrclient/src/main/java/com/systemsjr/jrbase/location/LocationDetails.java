@@ -16,7 +16,7 @@ public class LocationDetails extends BaseTabbedForm<LocationVO>{
 
 	@Override
 	protected Tab[] getTabs() {
-ArrayList<Tab> tabs = new ArrayList<TabbedForm.Tab>();
+		ArrayList<Tab> tabs = new ArrayList<TabbedForm.Tab>();
 		
 		return tabs.toArray(new Tab[0]);
 	}
