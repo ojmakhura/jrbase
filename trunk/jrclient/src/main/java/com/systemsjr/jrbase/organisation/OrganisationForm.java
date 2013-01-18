@@ -20,7 +20,7 @@ public class OrganisationForm extends BaseItemForm<OrganisationVO> {
 
 	@Override
 	protected JComponent createFormControl() {
-		super.initForm("organisationTable");
+		super.initForm("organisationTable", null);
 		
 		valueHolder = BaseUIUtils.getOrganisationValueHolder();
 		typesValueHolder = BaseUIUtils.getOrganisationTypeValueHolder();

@@ -21,7 +21,7 @@ public class IndividualForm extends BaseItemForm<IndividualVO> {
 
 	@Override
 	protected JComponent createFormControl() {
-		super.initForm("individualListTable");
+		super.initForm("individualListTable", null);
 		valueHolder = BaseUIUtils.getIndividualValueHolder();
 		countryHolder = BaseUIUtils.getCountriesValueHolder();
 		

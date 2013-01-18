@@ -27,7 +27,7 @@ public class CounterForm extends BaseItemForm<CounterVO> {
 	@SuppressWarnings("unchecked")
 	@Override
 	protected JComponent createFormControl() {
-		super.initForm("counterListTable");
+		super.initForm("counterListTable", null);
 		valueHolder = BaseUIUtils.getCounterValueHolder();
 		
 		builder.setLabelAttributes("colSpec=right:pref");

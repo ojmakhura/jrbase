@@ -24,7 +24,7 @@ public class RoleForm extends BaseItemForm<RoleVO> {
 	@SuppressWarnings("unchecked")
 	@Override
 	protected JComponent createFormControl() {
-		super.initForm("roleListTable");
+		super.initForm("roleListTable", null);
 		
 		valueHolder = BaseUIUtils.getRoleValueHolder();
 		

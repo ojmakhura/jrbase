@@ -23,7 +23,7 @@ public class LocationForm extends BaseItemForm<LocationVO> {
 
 	@Override
 	protected JComponent createFormControl() {
-		super.initForm("locationListTable");
+		super.initForm("locationListTable", null);
 		locationTypeHolder = BaseUIUtils.getLocationTypeValueHolder();
 		valueHolder = BaseUIUtils.getLocationValueHolder();
 		

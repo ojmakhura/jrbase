@@ -18,7 +18,7 @@ public class OrganisationTypeForm extends BaseItemForm<OrganisationTypeVO> {
 	
 	@Override
 	protected JComponent createFormControl() {
-		super.initForm("organisationTypeTable");
+		super.initForm("organisationTypeTable", null);
 				
 		valueHolder = BaseUIUtils.getOrganisationTypeValueHolder();
 		builder.add("levelCode", "colSpec=40dlu");

@@ -18,7 +18,7 @@ public class LocationTypeForm extends BaseItemForm<LocationTypeVO> {
 
 	@Override
 	protected JComponent createFormControl() {
-		super.initForm("locationTypeTable");
+		super.initForm("locationTypeTable", null);
 		valueHolder = BaseUIUtils.getLocationTypeValueHolder();
 		
 		builder.add(sbf.createBoundComboBox("type", new Object[]{Type.AREATYPE, Type.FACILITYTYPE}), "colSpan=1");

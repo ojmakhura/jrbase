@@ -18,6 +18,8 @@ import org.springframework.richclient.form.FormModelHelper;
 import org.springframework.richclient.form.binding.swing.SwingBindingFactory;
 import org.springframework.richclient.form.builder.TableFormBuilder;
 
+import com.systemsjr.jrbase.clearancelevel.LevelDetails;
+
 public class BaseItemForm<T> extends AbstractForm implements ApplicationListener {
 	
 	protected JSplitPane baseSplitPane;
@@ -31,7 +33,16 @@ public class BaseItemForm<T> extends AbstractForm implements ApplicationListener
 	protected JScrollPane scrollPane;
 	protected TableFormBuilder builder;
 	protected RefreshableValueHolder valueHolder;
+	protected BaseTabbedForm<T> details;
 	
+	public BaseTabbedForm<T> getDetails() {
+		return details;
+	}
+
+	public void setDetails(BaseTabbedForm<T> details) {
+		this.details = details;
+	}
+
 	public RefreshableValueHolder getValueholder() {
 		return valueHolder;
 	}
@@ -63,9 +74,9 @@ public class BaseItemForm<T> extends AbstractForm implements ApplicationListener
 	public BaseItemForm(T item, String formId){
 		super(FormModelHelper.createFormModel(item), formId);
 		sbf = (SwingBindingFactory) getBindingFactory();
-		//scrollPane = getComponentFactory().createScrollPane(itemList.getControl());
 		builder = new TableFormBuilder(sbf);
 		itemPanel = new JPanel(new BorderLayout());
+		details = null;
 	}
 	@Override
 	protected JComponent createFormControl() {
@@ -136,13 +147,15 @@ public class BaseItemForm<T> extends AbstractForm implements ApplicationListener
 	
 	/***
 	 * This method just sets the proper variabled to their respective values.
+	 * @param levelDetails 
 	 * @param tableBean: Passed to the method to allow for each form to determine which list is loaded into the table
 	 */
 	@SuppressWarnings("unchecked")
-	protected void initForm(String tableBean){
+	protected void initForm(String tableBean, BaseTabbedForm details){
 		sbf = (SwingBindingFactory) getBindingFactory();	
 		itemList = (BaseItemTable<T>) Application.instance().getApplicationContext().getBean(tableBean);	
 		scrollPane = getComponentFactory().createScrollPane(itemList.getControl());
+		this.details = details;
 		builder = new TableFormBuilder(sbf);
 		builder.setLabelAttributes("colSpec=right:pref");
 		builder.row();
@@ -153,6 +166,9 @@ public class BaseItemForm<T> extends AbstractForm implements ApplicationListener
 	 * It just adds the builder and scrollpane to their respective location on the itempanel
 	 */
 	protected void endFormCreate(){
+		if(details != null){
+			builder.getLayoutBuilder().cell(details.getControl());
+		}
 		itemPanel.add(builder.getForm(), BorderLayout.CENTER);
 		itemPanel.add(scrollPane, BorderLayout.WEST);
 	}

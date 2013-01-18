@@ -23,7 +23,7 @@ public class UserForm extends BaseItemForm<UserVO> {
 	 */
 	@Override
 	protected JComponent createFormControl() {
-		super.initForm("userTable");
+		super.initForm("userTable", null);
 		valueHolder = BaseUIUtils.getUserValueHolder();
 		individualHolder = BaseUIUtils.getIndividualValueHolder();
 		
