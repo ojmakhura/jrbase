@@ -95,4 +95,24 @@
 			</map>
 		</property>
 	</bean>
+	<!--************************************************************************************************* 
+		Workbench application views
+	 **************************************************************************************************-->
+	<bean id="menuView" class="org.springframework.richclient.application.support.DefaultViewDescriptor">
+		<property name="viewClass" value="com.systemsjr.jrbase.workbench.menu.MenuView"/>
+		<property name="viewProperties">
+			<map>
+				<entry key="itemForm" value-ref="menuForm"/>
+			</map>
+		</property>
+	</bean>
+	
+	<bean id="programView" class="org.springframework.richclient.application.support.DefaultViewDescriptor">
+		<property name="viewClass" value="com.systemsjr.jrbase.workbench.program.ProgramView"/>
+		<property name="viewProperties">
+			<map>
+				<entry key="itemForm" value-ref="programForm"/>
+			</map>
+		</property>
+	</bean>
 </beans>

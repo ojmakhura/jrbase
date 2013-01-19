@@ -49,6 +49,7 @@
         <ref bean="fileMenu" />
         <ref bean="editMenu" />
         <ref bean="baseMenu"/>
+        <ref bean="appMenu"/>
         <ref bean="windowMenu" />
         <ref bean="helpMenu" />
       </list>
@@ -69,6 +70,31 @@
     </property>
   </bean>
   
+  <bean id="appMenu" class="org.springframework.richclient.command.CommandGroupFactoryBean">
+    <property name="members">
+      <list>
+        <ref bean="menusMenu"/>
+        <ref bean="programMenu"/>
+      </list>
+    </property>
+  </bean>
+  
+  <bean id="menusMenu" class="org.springframework.richclient.command.CommandGroupFactoryBean">
+    <property name="members">
+      <list>
+      	<bean id="menusCommand" class="com.systemsjr.jrbase.workbench.menu.command.MenusCommand"/>
+      </list>
+    </property>
+  </bean>
+  
+  <bean id="programMenu" class="org.springframework.richclient.command.CommandGroupFactoryBean">
+    <property name="members">
+      <list>
+      	<bean id="programsCommand" class="com.systemsjr.jrbase.workbench.program.command.ProgramsCommand"/>
+      </list>
+    </property>
+  </bean>
+  
   <bean id="individualMenu" class="org.springframework.richclient.command.CommandGroupFactoryBean">
     <property name="members">
       <list>
@@ -82,7 +108,6 @@
     <property name="members">
       <list>
       	<bean id="clearanceLevelsCommand" class="com.systemsjr.jrbase.clearancelevel.command.ClearanceLevelsCommand"/>
-        <!--bean id="newClearanceLevelCommand" class="com.systemsjr.jrbase.clearancelevel.command.NewClearanceLevelCommand"/-->
         </list>
     </property>
   </bean>
