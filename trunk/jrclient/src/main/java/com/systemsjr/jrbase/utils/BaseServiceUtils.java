@@ -17,11 +17,16 @@ import com.systemsjr.jrbase.location.vo.LocationVO;
 import com.systemsjr.jrbase.loginsession.service.LoginSessionService;
 import com.systemsjr.jrbase.loginsession.vo.LoginSessionVO;
 import com.systemsjr.jrbase.organisation.service.OrganisationService;
+import com.systemsjr.jrbase.organisation.vo.OrganisationTypeVO;
 import com.systemsjr.jrbase.organisation.vo.OrganisationVO;
 import com.systemsjr.jrbase.role.service.RoleService;
 import com.systemsjr.jrbase.role.vo.RoleVO;
 import com.systemsjr.jrbase.user.service.UserService;
 import com.systemsjr.jrbase.user.vo.UserVO;
+import com.systemsjr.jrbase.workbench.menu.service.MenuService;
+import com.systemsjr.jrbase.workbench.menu.vo.MenuVO;
+import com.systemsjr.jrbase.workbench.program.service.ProgramService;
+import com.systemsjr.jrbase.workbench.program.vo.ProgramVO;
 
 public class BaseServiceUtils {
 	private static ServiceLocator serviceLocator = ServiceLocator.instance();
@@ -33,7 +38,9 @@ public class BaseServiceUtils {
 	private static LoginSessionService sessionService;
 	private static OrganisationService orgService;
 	private static RoleService roleService;
-	public static LoginSessionVO currentSession;
+	private static LoginSessionVO currentSession;
+	private static MenuService menuService;
+	private static ProgramService programService;
 	
 	public static final String dateFormat = "dd-MMM-yyyy HH:mm:ss";
 	
@@ -225,10 +232,45 @@ public class BaseServiceUtils {
 		}
 		return roleService;
 	}
+	
+	public static MenuService getMenuService(){
+		if(menuService == null){
+			menuService = serviceLocator.getMenuService();
+		}
+		
+		return menuService;
+	}
+	
+	public static ProgramService getProgramService(){
+		if(programService == null){
+			programService = serviceLocator.getProgramService();
+		}
+		
+		return programService;
+	}
 
-	public static OrganisationVO createDefaultBranch() {
-		OrganisationVO organisation = new OrganisationVO();
-		//branch.setCreatedBy(getCurrentUsername());
-		return organisation;
+	public static OrganisationVO createDefaultOrganisation(OrganisationVO organisation) {
+		OrganisationVO org = new OrganisationVO();
+		if(organisation != null){
+			 
+		}
+		
+		return org;
+	}
+	
+	public static OrganisationTypeVO createDefaultOrganisationType(){
+		OrganisationTypeVO orgType = new OrganisationTypeVO();
+		
+		return orgType;
+	}
+
+	public static MenuVO createDefaultMenu() {
+		MenuVO menuVO = new MenuVO();
+		return menuVO;
+	}
+	
+	public static ProgramVO createDefaultProgram() {
+		ProgramVO programVO = new ProgramVO();
+		return programVO;
 	}
 }

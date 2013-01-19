@@ -2,25 +2,29 @@ package com.systemsjr.jrbase.workbench.program;
 
 import javax.swing.JComponent;
 
-import org.springframework.richclient.form.binding.swing.SwingBindingFactory;
-import org.springframework.richclient.form.builder.TableFormBuilder;
-
 import com.systemsjr.jrbase.common.BaseItemForm;
-import com.systemsjr.jrbase.user.vo.UserVO;
+import com.systemsjr.jrbase.utils.BaseServiceUtils;
+import com.systemsjr.jrbase.utils.BaseUIUtils;
+import com.systemsjr.jrbase.workbench.program.vo.ProgramVO;
 
-public class ProgramForm extends BaseItemForm<UserVO> {
+public class ProgramForm extends BaseItemForm<ProgramVO> {
 	
 	public ProgramForm() {
-		super(new UserVO(), "user");
+		super(BaseServiceUtils.createDefaultProgram(), "programForm");
 	}
 
 	@Override
 	protected JComponent createFormControl() {
-		SwingBindingFactory sbf = (SwingBindingFactory) getBindingFactory();
-		TableFormBuilder builder = new TableFormBuilder(sbf);
-		builder.setLabelAttributes("colSpec=right:pref");
+		super.initForm("programTable", new ProgramDetails());
+		valueHolder = BaseUIUtils.getProgramsValueHolder();
 		
-		return builder.getForm();
+		builder.add("programId", "colSpan=1");
+		builder.add("programName", "colSpan=1");
+		builder.row();
+		builder.addTextArea("programDescription", "colSpec=40dlu:grow");
+		
+		super.endFormCreate("Program Details");
+		return itemPanel;
 	}
 	
 }

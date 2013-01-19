@@ -6,7 +6,6 @@ import org.springframework.richclient.core.Severity;
 
 import com.systemsjr.jrbase.common.BaseItemView;
 import com.systemsjr.jrbase.user.vo.UserVO;
-import com.systemsjr.jrbase.utils.Action;
 import com.systemsjr.jrbase.utils.BaseServiceUtils;
 import com.systemsjr.jrbase.utils.BaseUIUtils;
 
@@ -20,9 +19,8 @@ public class UserView extends BaseItemView<UserVO> {
 	}
 
 	@Override
-	protected UserVO saveItem() {
-		getItemForm().commit();
-		UserVO userVO = (UserVO) getItemForm().getFormObject();
+	protected UserVO handleSaveItem(UserVO object) {
+		UserVO userVO = object;
 		setAction(userVO.getId());
 		if(userVO.getPassword1() == null){
 			BaseUIUtils.showMessage("Empty Password!!", "Password is empty!", Severity.ERROR);
@@ -35,23 +33,18 @@ public class UserView extends BaseItemView<UserVO> {
 		}
 		
 		userVO.setPasswordLength(userVO.getPassword1().length());
-		
-		return BaseServiceUtils.getUserService().saveUser(userVO);
+		object = BaseServiceUtils.getUserService().saveUser(userVO);
+		return object;
 	}
 
 	@Override
-	protected UserVO newItem() {
-		getItemForm().setFormObject(new UserVO());
-		return (UserVO) getItemForm().getFormObject();
+	protected void handleDeleteItem(UserVO object) {
+		BaseServiceUtils.getUserService().removeUser(object);		
 	}
 
 	@Override
-	protected UserVO deleteItem() {
-		setAction(Action.DELETE);
-		getItemForm().commit();
-		UserVO userVO = (UserVO) getItemForm().getFormObject();
-		BaseServiceUtils.getUserService().removeUser(userVO);
-		
-		return userVO;
+	protected UserVO handleNewItem() {
+
+		return BaseServiceUtils.createDefaultUser();
 	}
 }

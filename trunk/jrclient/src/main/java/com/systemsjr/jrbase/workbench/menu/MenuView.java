@@ -3,31 +3,31 @@ package com.systemsjr.jrbase.workbench.menu;
 import javax.swing.JComponent;
 
 import com.systemsjr.jrbase.common.BaseItemView;
+import com.systemsjr.jrbase.utils.BaseServiceUtils;
 import com.systemsjr.jrbase.workbench.menu.vo.MenuVO;
 
 public class MenuView extends BaseItemView<MenuVO> {
 
 	@Override
 	protected JComponent createControl() {
-		// TODO Auto-generated method stub
-		return null;
+		setItemForm(new MenuForm());
+		return getItemForm().getControl();
 	}
 
 	@Override
-	protected MenuVO saveItem() {
-		// TODO Auto-generated method stub
-		return null;
+	protected MenuVO handleSaveItem(MenuVO object) {
+		setAction(object.getId());
+		object = BaseServiceUtils.getMenuService().saveMenu(object);
+		return object;
 	}
 
 	@Override
-	protected MenuVO newItem() {
-		// TODO Auto-generated method stub
-		return null;
+	protected void handleDeleteItem(MenuVO object) {
+		BaseServiceUtils.getMenuService().removeMenu(object);
 	}
 
 	@Override
-	protected MenuVO deleteItem() {
-		// TODO Auto-generated method stub
-		return null;
+	protected MenuVO handleNewItem() {
+		return BaseServiceUtils.createDefaultMenu();
 	}
 }

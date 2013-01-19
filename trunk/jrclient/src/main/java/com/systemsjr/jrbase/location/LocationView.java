@@ -16,20 +16,6 @@ public class LocationView extends BaseItemView<LocationVO> {
 	}
 
 	@Override
-	protected LocationVO saveItem() {
-		
-		if(getItemForm().isDirty()){
-			getItemForm().getFormModel().commit();
-			LocationVO locationVO = (LocationVO) getItemForm().getFormObject();
-			setAction(locationVO.getId());
-			locationVO = BaseServiceUtils.getLocationService().saveLocation(locationVO);
-			getItemForm().getValueholder().refresh();
-			return locationVO;
-		}
-		return null;
-	}
-
-	@Override
 	protected LocationVO newItem() {
 		getItemForm().setFormObject(new LocationVO());
 		getItemForm().getFormModel().commit();
@@ -37,12 +23,19 @@ public class LocationView extends BaseItemView<LocationVO> {
 	}
 
 	@Override
-	protected LocationVO deleteItem() {
-		getItemForm().getFormModel().commit();
-		LocationVO locationVO = (LocationVO) getItemForm().getFormObject();
-		BaseServiceUtils.getLocationService().removeLocation(locationVO);
-		getItemForm().getFormModel().commit();
-		
-		return locationVO;
+	protected LocationVO handleSaveItem(LocationVO object) {
+		setAction(object.getId());
+		object = BaseServiceUtils.getLocationService().saveLocation(object);
+		return object;
+	}
+
+	@Override
+	protected void handleDeleteItem(LocationVO object) {
+		BaseServiceUtils.getLocationService().removeLocation(object);
+	}
+
+	@Override
+	protected LocationVO handleNewItem() {
+		return BaseServiceUtils.createDefaultLocation();
 	}
 }

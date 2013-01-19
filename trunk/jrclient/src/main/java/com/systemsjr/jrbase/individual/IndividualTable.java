@@ -3,11 +3,7 @@ package com.systemsjr.jrbase.individual;
 import javax.swing.JTable;
 import javax.swing.table.TableColumnModel;
 
-import org.springframework.richclient.command.ActionCommand;
-import org.springframework.richclient.command.ActionCommandExecutor;
-
 import com.systemsjr.jrbase.common.BaseItemTable;
-import com.systemsjr.jrbase.common.BaseItemView;
 import com.systemsjr.jrbase.individual.vo.IndividualVO;
 import com.systemsjr.jrbase.utils.BaseServiceUtils;
 

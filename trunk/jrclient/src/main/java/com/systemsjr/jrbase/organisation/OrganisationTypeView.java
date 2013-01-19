@@ -15,32 +15,19 @@ public class OrganisationTypeView extends BaseItemView<OrganisationTypeVO> {
 	}
 
 	@Override
-	protected OrganisationTypeVO saveItem() {
-		if(getItemForm().isDirty()){
-			getItemForm().getFormModel().commit();
-			OrganisationTypeVO organisationTypeVO = (OrganisationTypeVO) getItemForm().getFormObject();
-			setAction(organisationTypeVO.getId());
-			organisationTypeVO = BaseServiceUtils.getOrgService().saveOrganisationType(organisationTypeVO);
-			getItemForm().getValueholder().refresh();
-			return organisationTypeVO;
-		}
-		return null;
+	protected OrganisationTypeVO handleSaveItem(OrganisationTypeVO object) {
+		setAction(object.getId());
+		object = BaseServiceUtils.getOrgService().saveOrganisationType(object);
+		return object;
 	}
 
 	@Override
-	protected OrganisationTypeVO newItem() {
-		getItemForm().setFormObject(new OrganisationTypeVO());
-		getItemForm().getFormModel().commit();
-		return (OrganisationTypeVO) getItemForm().getFormObject();
+	protected void handleDeleteItem(OrganisationTypeVO object) {
+		BaseServiceUtils.getOrgService().removeOrganisationType(object);
 	}
 
 	@Override
-	protected OrganisationTypeVO deleteItem() {
-		getItemForm().getFormModel().commit();
-		OrganisationTypeVO organisationTypeVO = (OrganisationTypeVO) getItemForm().getFormObject();
-		BaseServiceUtils.getOrgService().removeOrganisationType(organisationTypeVO);
-		getItemForm().getFormModel().commit();
-		
-		return organisationTypeVO;		
+	protected OrganisationTypeVO handleNewItem() {
+		return BaseServiceUtils.createDefaultOrganisationType();
 	}
 }

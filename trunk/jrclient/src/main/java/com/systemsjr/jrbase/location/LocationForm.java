@@ -1,7 +1,5 @@
 package com.systemsjr.jrbase.location;
 
-import java.awt.BorderLayout;
-
 import javax.swing.JComponent;
 
 import org.springframework.binding.value.support.RefreshableValueHolder;
@@ -41,7 +39,7 @@ public class LocationForm extends BaseItemForm<LocationVO> {
 		builder.row();
 		builder.add(sbf.createBoundComboBox("fallsWithinLocation", valueHolder, "locationName"), "colSpan=1");
 		
-		super.endFormCreate();
+		super.endFormCreate("");
 		return itemPanel;
 	}
 	

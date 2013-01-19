@@ -32,7 +32,7 @@ public class OrganisationForm extends BaseItemForm<OrganisationVO> {
 		builder.row();
 		builder.addTextArea("description", "colSpec=40dlu:grow");
 		
-		super.endFormCreate();
+		super.endFormCreate("");
 		return itemPanel;
 	}
 

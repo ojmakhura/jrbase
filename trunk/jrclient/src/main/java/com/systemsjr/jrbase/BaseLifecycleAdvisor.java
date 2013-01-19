@@ -7,7 +7,6 @@ import org.apache.commons.logging.LogFactory;
 import org.springframework.richclient.application.ApplicationWindow;
 import org.springframework.richclient.application.config.ApplicationWindowConfigurer;
 import org.springframework.richclient.application.config.DefaultApplicationLifecycleAdvisor;
-import org.springframework.richclient.command.ActionCommand;
 
 
 public class BaseLifecycleAdvisor extends DefaultApplicationLifecycleAdvisor {

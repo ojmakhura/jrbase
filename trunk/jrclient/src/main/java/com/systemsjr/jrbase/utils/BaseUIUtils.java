@@ -183,6 +183,26 @@ public class BaseUIUtils {
 		}, false, false);
 	}
 	
+	public static RefreshableValueHolder getMenusValueHolder(){
+		return new RefreshableValueHolder(new Closure() {
+			@Override
+			public Object call(Object object) {
+				return BaseServiceUtils.getMenuService().getAllMenus();
+			}
+
+		}, false, false);
+	}
+	
+	public static RefreshableValueHolder getProgramsValueHolder(){
+		return new RefreshableValueHolder(new Closure() {
+			@Override
+			public Object call(Object object) {
+				return BaseServiceUtils.getProgramService().getAllPrograms();
+			}
+
+		}, false, false);
+	}
+	
 	/**
      * 
      */

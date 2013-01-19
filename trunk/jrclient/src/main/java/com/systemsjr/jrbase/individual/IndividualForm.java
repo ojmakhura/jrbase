@@ -50,7 +50,7 @@ public class IndividualForm extends BaseItemForm<IndividualVO> {
 		builder.add(sbf.createBoundComboBox("countryOfBirth", countryHolder, "locationName"), "colSpan=1");
 		builder.add(sbf.createBoundComboBox("countryOfCitizenship", countryHolder, "locationName"), "colSpan=1");
 		
-		super.endFormCreate();
+		super.endFormCreate("");
 		
 		return itemPanel;
 	}

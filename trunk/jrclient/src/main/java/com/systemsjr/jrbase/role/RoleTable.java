@@ -3,12 +3,7 @@ package com.systemsjr.jrbase.role;
 import javax.swing.JTable;
 import javax.swing.table.TableColumnModel;
 
-import org.springframework.richclient.command.ActionCommand;
-import org.springframework.richclient.command.ActionCommandExecutor;
-
 import com.systemsjr.jrbase.common.BaseItemTable;
-import com.systemsjr.jrbase.common.BaseItemView;
-import com.systemsjr.jrbase.counter.vo.CounterVO;
 import com.systemsjr.jrbase.role.vo.RoleVO;
 import com.systemsjr.jrbase.utils.BaseServiceUtils;
 

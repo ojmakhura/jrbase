@@ -40,7 +40,7 @@ public class UserForm extends BaseItemForm<UserVO> {
 		builder.row();
 		//builder.add("photo", "colSpan=1");
 		
-		super.endFormCreate();
+		super.endFormCreate("");
 		return itemPanel;
 	}
 	

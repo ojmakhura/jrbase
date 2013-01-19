@@ -33,7 +33,7 @@ public class LocationTypeForm extends BaseItemForm<LocationTypeVO> {
 		builder.row();
 		builder.add(sbf.createBoundComboBox("fallsWithinLocationType", valueHolder, "name"),"colSpan=1");
 		
-		super.endFormCreate();
+		super.endFormCreate("");
 		return itemPanel;
 	}
 }

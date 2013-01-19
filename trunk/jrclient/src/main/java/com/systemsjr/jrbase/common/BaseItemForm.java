@@ -18,8 +18,6 @@ import org.springframework.richclient.form.FormModelHelper;
 import org.springframework.richclient.form.binding.swing.SwingBindingFactory;
 import org.springframework.richclient.form.builder.TableFormBuilder;
 
-import com.systemsjr.jrbase.clearancelevel.LevelDetails;
-
 public class BaseItemForm<T> extends AbstractForm implements ApplicationListener {
 	
 	protected JSplitPane baseSplitPane;
@@ -165,8 +163,11 @@ public class BaseItemForm<T> extends AbstractForm implements ApplicationListener
 	 * This method gets called at the end of the overriden method createControl.
 	 * It just adds the builder and scrollpane to their respective location on the itempanel
 	 */
-	protected void endFormCreate(){
+	protected void endFormCreate(String separatorName){
+		builder.row();
 		if(details != null){
+			builder.addSeparator(separatorName);
+			builder.row();
 			builder.getLayoutBuilder().cell(details.getControl());
 		}
 		itemPanel.add(builder.getForm(), BorderLayout.CENTER);

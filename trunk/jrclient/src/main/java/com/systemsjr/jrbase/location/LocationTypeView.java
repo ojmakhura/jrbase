@@ -15,32 +15,19 @@ public class LocationTypeView extends BaseItemView<LocationTypeVO> {
 	}
 
 	@Override
-	protected LocationTypeVO saveItem() {
-		if(getItemForm().isDirty()){
-			getItemForm().getFormModel().commit();
-			LocationTypeVO locationTypeVO = (LocationTypeVO) getItemForm().getFormObject();
-			setAction(locationTypeVO.getId());
-			locationTypeVO = BaseServiceUtils.getLocationService().saveLocationType(locationTypeVO);
-			getItemForm().getValueholder().refresh();
-			return locationTypeVO;
-		}
-		return null;
+	protected LocationTypeVO handleSaveItem(LocationTypeVO object) {
+		setAction(object.getId());
+		object = BaseServiceUtils.getLocationService().saveLocationType(object);
+		return object;
 	}
 
 	@Override
-	protected LocationTypeVO newItem() {
-		getItemForm().setFormObject(new LocationTypeVO());
-		getItemForm().getFormModel().commit();
-		return (LocationTypeVO) getItemForm().getFormObject();
+	protected void handleDeleteItem(LocationTypeVO object) {
+		BaseServiceUtils.getLocationService().removeLocationType(object);
 	}
 
 	@Override
-	protected LocationTypeVO deleteItem() {
-		getItemForm().getFormModel().commit();
-		LocationTypeVO locationTypeVO = (LocationTypeVO) getItemForm().getFormObject();
-		BaseServiceUtils.getLocationService().removeLocationType(locationTypeVO);
-		getItemForm().getFormModel().commit();
-		
-		return locationTypeVO;
+	protected LocationTypeVO handleNewItem() {
+		return BaseServiceUtils.createDefaultLocationType();
 	}
 }

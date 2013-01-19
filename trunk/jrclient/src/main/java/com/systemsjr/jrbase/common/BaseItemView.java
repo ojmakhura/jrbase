@@ -5,7 +5,6 @@ import java.awt.BorderLayout;
 import javax.swing.JComponent;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.JScrollPane;
 
 import org.springframework.binding.value.ValueModel;
 import org.springframework.richclient.application.PageComponentContext;
@@ -163,30 +162,38 @@ public abstract class BaseItemView<T> extends AbstractView {
 		this.popup = popup;
 	}
 
-	/**
-	 * Private inner class to create a new customer.
-	 */
-	/*
-	 * private class SaveAsExecutor implements ActionCommandExecutor {
-	 * 
-	 * @Override public void execute() { saveAs();
-	 * //JOptionPane.showMessageDialog(null, "new item..."); } }
-	 */
-
-	protected abstract T saveItem();
-
-	// protected abstract T saveAs();
-
-	protected abstract T newItem();
-
-	protected abstract T deleteItem();
-
-	private class listTableFactory {
-		public BaseItemTable createListTable() {
-
-			return null;
+	protected T saveItem(){
+		if(getItemForm().isDirty()){
+			getItemForm().getFormModel().commit();
+			T object = (T) getItemForm().getFormObject();
+			object = handleSaveItem(object);
+			getItemForm().getValueholder().refresh();
+			return (T) object;
 		}
+		return null;
 	}
+
+	protected abstract T handleSaveItem(T object);
+
+	protected T newItem(){
+		getItemForm().setFormObject(handleNewItem());
+		getItemForm().getFormModel().commit();
+		return (T) getItemForm().getFormObject();
+	}
+
+	protected abstract T handleNewItem() ;
+
+	protected T deleteItem(){
+		setAction(Action.DELETE);
+		getItemForm().getFormModel().commit();
+		T object = (T) getItemForm().getFormObject();
+		handleDeleteItem(object);
+		getItemForm().getFormModel().commit();
+		return object;
+	}
+
+	protected abstract void handleDeleteItem(T object);
+
 
 	private class PropertiesExecutor extends AbstractActionCommandExecutor {
 		@Override

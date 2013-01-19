@@ -31,4 +31,22 @@ public class LoginView extends BaseItemView<LoginSessionVO> {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	@Override
+	protected LoginSessionVO handleSaveItem(LoginSessionVO object) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	protected void handleDeleteItem(LoginSessionVO object) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	protected LoginSessionVO handleNewItem() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
