@@ -1,4 +1,4 @@
-package com.systemsjr.jrbase.workbench.program.command;
+package com.systemsjr.jrbase.workbench.program;
 
 import com.systemsjr.jrbase.common.BaseItemFilterForm;
 
