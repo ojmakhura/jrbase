@@ -1,4 +1,4 @@
-package com.systemsjr.jrbase.workbench.menu.command;
+package com.systemsjr.jrbase.workbench.menu;
 
 import javax.swing.JComponent;
 
