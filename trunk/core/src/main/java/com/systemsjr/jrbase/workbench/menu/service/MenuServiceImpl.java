@@ -5,6 +5,8 @@
  */
 package com.systemsjr.jrbase.workbench.menu.service;
 
+import java.util.Collection;
+
 import com.systemsjr.jrbase.workbench.menu.Menu;
 import com.systemsjr.jrbase.workbench.menu.MenuDao;
 import com.systemsjr.jrbase.workbench.menu.vo.MenuSearchCriteria;
@@ -24,7 +26,8 @@ public class MenuServiceImpl
 	protected  MenuVO[] handleGetAllMenus()
         throws java.lang.Exception
     {
-    	return (MenuVO[]) getMenuDao().loadAll(MenuDao.TRANSFORM_MENUVO).toArray();
+    	Collection menus = getMenuDao().loadAll();
+    	return getMenuDao().toMenuVOArray(menus);
     }
 
     /**
@@ -57,11 +60,12 @@ public class MenuServiceImpl
 
 	@Override
 	protected MenuVO handleSaveMenu(MenuVO menuVO) throws Exception {
-		Menu menu = getMenuDao().menuVOToEntity(menuVO);
+		Menu menu;
 		
-		if(menu.getId() == null){
-			menu = getMenuDao().create(menu);
+		if(menuVO.getId() == null){
+			menu = getMenuDao().create(getMenuDao().menuVOToEntity(menuVO));
 		} else{
+			menu = getMenuDao().menuVOToEntity(menuVO);
 			getMenuDao().update(menu);
 		}
 		
@@ -70,9 +74,11 @@ public class MenuServiceImpl
 
 	@Override
 	protected void handleRemoveMenu(MenuVO menuVO) throws Exception {
+		
 		if(menuVO.getId() != null){
 			getMenuDao().remove(getMenuDao().menuVOToEntity(menuVO));
 		}
+		
 	}
 
 }

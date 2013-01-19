@@ -5,6 +5,8 @@
  */
 package com.systemsjr.jrbase.workbench.program.service;
 
+import java.util.Collection;
+
 import com.systemsjr.jrbase.workbench.program.Program;
 import com.systemsjr.jrbase.workbench.program.ProgramDao;
 import com.systemsjr.jrbase.workbench.program.vo.ProgramVO;
@@ -23,7 +25,8 @@ public class ProgramServiceImpl
 	protected  ProgramVO[] handleGetAllPrograms()
         throws java.lang.Exception
     {
-    	return (ProgramVO[])getProgramDao().loadAll(ProgramDao.TRANSFORM_PROGRAMVO).toArray();
+    	Collection roles = getProgramDao().loadAll();
+    	return getProgramDao().toProgramVOArray(roles);
     }
 
 	@Override
@@ -31,7 +34,8 @@ public class ProgramServiceImpl
 		
 		Program program = getProgramDao().programVOToEntity(programVO);
 		
-		if(program.getId() == null){
+		if(programVO.getId() == null){
+			//program = getProgramDao().programVOToEntity(programVO);
 			program = getProgramDao().create(program);
 		} else{
 			getProgramDao().update(program);

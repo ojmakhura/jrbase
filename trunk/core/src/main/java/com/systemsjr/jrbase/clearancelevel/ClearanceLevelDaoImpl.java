@@ -5,15 +5,17 @@
  */
 package com.systemsjr.jrbase.clearancelevel;
 
+import java.util.Collection;
 import java.util.List;
 
 import org.hibernate.Criteria;
 import org.hibernate.criterion.Restrictions;
+import org.springframework.util.CollectionUtils;
 
 import com.systemsjr.jrbase.clearancelevel.vo.ClearanceLevelSearchCriteria;
 import com.systemsjr.jrbase.clearancelevel.vo.ClearanceLevelVO;
 
-import edu.emory.mathcs.backport.java.util.Arrays;
+import java.util.Arrays;
 
 /**
  * @see com.systemsjr.jrbase.clearancelevel.ClearanceLevel
@@ -109,7 +111,13 @@ public class ClearanceLevelDaoImpl extends
 			boolean copyIfNull) {
 		// @todo verify behavior of clearanceLevelVOToEntity
 		super.clearanceLevelVOToEntity(source, target, copyIfNull);
-		//target.setClearedRoles(getRoleDao().);
+		Collection roles = CollectionUtils.arrayToList(source.getClearedRoles());
+		getRoleDao().roleVOToEntityCollection(roles);
+		target.setClearedRoles(roles);
+		
+		Collection users = CollectionUtils.arrayToList(source.getClearedUsers());
+		getUserDao().userVOToEntityCollection(users);
+		target.setClearedUsers(users);
 	} 
 	
 	@Override
