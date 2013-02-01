@@ -9,6 +9,7 @@ import java.util.Map;
 import javax.swing.JFileChooser;
 import javax.swing.filechooser.FileFilter;
 
+import org.springframework.binding.form.ValidatingFormModel;
 import org.springframework.binding.value.support.RefreshableValueHolder;
 import org.springframework.binding.value.support.ValueHolder;
 import org.springframework.richclient.command.ActionCommand;
@@ -62,8 +63,8 @@ public class BaseUIUtils {
 	 * @param guard
 	 */
 	public static void addGuardedCommandsToForm(ActionCommand[] commands, AbstractForm form, int guard){
-		for(ActionCommand command : commands){
-			new FormGuard(form.getFormModel(), command, guard);
+		for(ActionCommand command : commands){			
+			new FormGuard(form.getFormModel(), command,	guard);
 		}
 	}
 	

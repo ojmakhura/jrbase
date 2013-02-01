@@ -39,7 +39,9 @@ public class LoginSessionDaoImpl
         // @todo verify behavior of toLoginSessionVO
         super.toLoginSessionVO(source, target);
         // WARNING! No conversion for target.user (can't convert source.getUser():com.systemsjr.jrbase.user.User to com.systemsjr.jrbase.user.vo.UserVO
+        target.setUser(getUserDao().toUserVO(source.getUser()));
         // WARNING! No conversion for target.area (can't convert source.getArea():com.systemsjr.jrbase.location.Location to com.systemsjr.jrbase.location.vo.LocationVO
+        target.setArea(getLocationDao().toLocationVO(source.getArea()));
     }
 
 

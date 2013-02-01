@@ -4,9 +4,14 @@ import java.awt.Dimension;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.springframework.richclient.application.Application;
 import org.springframework.richclient.application.ApplicationWindow;
 import org.springframework.richclient.application.config.ApplicationWindowConfigurer;
 import org.springframework.richclient.application.config.DefaultApplicationLifecycleAdvisor;
+import org.springframework.richclient.command.ActionCommand;
+
+import com.systemsjr.jrbase.clearancelevel.ClearanceLevelDialog;
+import com.systemsjr.jrbase.login.LoginDialog;
 
 
 public class BaseLifecycleAdvisor extends DefaultApplicationLifecycleAdvisor {
@@ -49,8 +54,6 @@ public class BaseLifecycleAdvisor extends DefaultApplicationLifecycleAdvisor {
         if( logger.isInfoEnabled() ) {
             logger.info("onCommandsCreated( windowNumber=" + window.getNumber() + " )");
         }
-        //ActionCommand command = (ActionCommand) window.getCommandManager().getCommand("loginCommand", ActionCommand.class);
-        //command.execute();
     }
 
     /**
@@ -75,6 +78,8 @@ public class BaseLifecycleAdvisor extends DefaultApplicationLifecycleAdvisor {
         if( logger.isInfoEnabled() ) {
             logger.info("onWindowOpened( windowNumber=" + window.getNumber() + " )");
         }
+        
+        ((LoginDialog)Application.instance().getApplicationContext().getBean("loginDialog")).showDialog();
     }
 
     /**

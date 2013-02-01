@@ -3,6 +3,7 @@ package com.systemsjr.jrbase.utils;
 import java.util.Calendar;
 
 import org.apache.commons.lang.StringUtils;
+import org.jdesktop.swingx.auth.LoginService;
 
 import com.systemsjr.jrbase.ServiceLocator;
 import com.systemsjr.jrbase.clearancelevel.service.ClearanceLevelService;
@@ -21,7 +22,9 @@ import com.systemsjr.jrbase.organisation.vo.OrganisationTypeVO;
 import com.systemsjr.jrbase.organisation.vo.OrganisationVO;
 import com.systemsjr.jrbase.role.service.RoleService;
 import com.systemsjr.jrbase.role.vo.RoleVO;
+import com.systemsjr.jrbase.user.service.UserDetailsService;
 import com.systemsjr.jrbase.user.service.UserService;
+import com.systemsjr.jrbase.user.vo.UserDetailsVO;
 import com.systemsjr.jrbase.user.vo.UserVO;
 import com.systemsjr.jrbase.workbench.menu.service.MenuService;
 import com.systemsjr.jrbase.workbench.menu.vo.MenuVO;
@@ -38,9 +41,11 @@ public class BaseServiceUtils {
 	private static LoginSessionService sessionService;
 	private static OrganisationService orgService;
 	private static RoleService roleService;
-	private static LoginSessionVO currentSession;
+	private static LoginSessionService loginService;
+	private static LoginSessionVO loginSession;
 	private static MenuService menuService;
 	private static ProgramService programService;
+	private static UserDetailsService userDetailsService;
 	
 	public static final String dateFormat = "dd-MMM-yyyy HH:mm:ss";
 	
@@ -130,7 +135,7 @@ public class BaseServiceUtils {
 	public static UserVO getCurrentUser() {
 		String username = getCurrentUsername();
 		if (StringUtils.isNotBlank(username)) {
-			UserVO user = getUserService().getUserDetails(username);
+			UserVO user = getUserDetailsService().getUserDetails(username);
 			return user;
 		}
 		return null;
@@ -233,6 +238,14 @@ public class BaseServiceUtils {
 		return roleService;
 	}
 	
+	public static UserDetailsService getUserDetailsService(){
+		if(userDetailsService == null){
+			userDetailsService = serviceLocator.getUserDetailsService();
+		}
+		
+		return userDetailsService;
+	}
+	
 	public static MenuService getMenuService(){
 		if(menuService == null){
 			menuService = serviceLocator.getMenuService();
@@ -247,6 +260,14 @@ public class BaseServiceUtils {
 		}
 		
 		return programService;
+	}
+	
+	public static LoginSessionService getLoginService(){
+		if(loginService == null){
+			loginService = serviceLocator.getLoginSessionService();
+		}
+		
+		return loginService;
 	}
 
 	public static OrganisationVO createDefaultOrganisation(OrganisationVO organisation) {

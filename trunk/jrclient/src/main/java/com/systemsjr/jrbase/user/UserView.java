@@ -22,7 +22,7 @@ public class UserView extends BaseItemView<UserVO> {
 	protected UserVO handleSaveItem(UserVO object) {
 		UserVO userVO = object;
 		setAction(userVO.getId());
-		if(userVO.getPassword1() == null){
+		/*if(userVO.getPassword1() == null){
 			BaseUIUtils.showMessage("Empty Password!!", "Password is empty!", Severity.ERROR);
 			return null;
 		}
@@ -32,7 +32,7 @@ public class UserView extends BaseItemView<UserVO> {
 			return null;
 		}
 		
-		userVO.setPasswordLength(userVO.getPassword1().length());
+		userVO.setPasswordLength(userVO.getPassword1().length());*/
 		object = BaseServiceUtils.getUserService().saveUser(userVO);
 		return object;
 	}
