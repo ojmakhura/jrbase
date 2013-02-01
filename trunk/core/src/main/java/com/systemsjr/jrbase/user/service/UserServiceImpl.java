@@ -59,7 +59,7 @@ public class UserServiceImpl
 	@Override
 	protected LocationVO[] handleGetUserLocations(UserVO userVO) throws Exception {
 		ArrayList<LocationVO> locations = new ArrayList<LocationVO>();
-		UserLocationVO[] userLocations = userVO.getUserLocations();
+		UserLocationVO[] userLocations = getUserLocationDao().toUserLocationVOArray(getUserDao().getUserDetails(userVO.getUsername()).getUserLocations());//userVO.getUserLocations();
 		
 		if(!ArrayUtils.isEmpty(userLocations)){
 			for(UserLocationVO userLocation : userLocations){
@@ -90,16 +90,6 @@ public class UserServiceImpl
 	}
 
 	@Override
-	protected UserVO handleGetUserDetails(String username) throws Exception {
-		UserSearchCriteria searchCriteria = new UserSearchCriteria();
-		
-		searchCriteria.setUsername(username);
-		List users = getUserDao().findByCriteria(searchCriteria);
-		
-		return getUserDao().toUserVOArray(users)[0];
-	}
-
-	@Override
 	protected LocationVO handleGetUserCurrentLocation(UserVO userVO) throws Exception {
 		UserLocationSearchCriteria searchCriteria = new UserLocationSearchCriteria();
 		
@@ -111,6 +101,13 @@ public class UserServiceImpl
 		}
 		
 		return  getUserLocationDao().toUserLocationVOArray(getUserLocationDao().findByCriteria(searchCriteria))[0].getLocation();
+	}
+
+	@Override
+	protected UserVO handleDoLogin(UserVO userVO) throws Exception {
+		//User user = getUserDao().userLogin(userVO.getUsername(), getUserDao().guserVO.getPassword());
+		
+		return null;//getUserDao().toUserVO(user);
 	}
 
 }
