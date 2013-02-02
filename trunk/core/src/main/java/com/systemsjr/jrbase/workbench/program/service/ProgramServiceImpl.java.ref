@@ -15,14 +15,14 @@ public class ProgramServiceImpl
     /**
      * The serial version UID of this class. Needed for serialization.
      */
-    private static final long serialVersionUID = 2289437980057207763L;
+    private static final long serialVersionUID = 9132545481509261572L;
 
     /**
      * @see com.systemsjr.jrbase.workbench.program.service.ProgramService#getAllPrograms()
      */
-    public java.util.List getAllPrograms()
+    public com.systemsjr.jrbase.workbench.program.vo.ProgramVO[] getAllPrograms()
     {
-        // TODO implement public java.util.List getAllPrograms()
+        // TODO implement public com.systemsjr.jrbase.workbench.program.vo.ProgramVO[] getAllPrograms()
         return null;
     }
 

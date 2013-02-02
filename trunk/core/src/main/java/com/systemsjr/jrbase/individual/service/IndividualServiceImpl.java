@@ -2,61 +2,49 @@
 /**
  * This is only generated once! It will never be overwritten.
  * You can (and have to!) safely modify it by hand.
+ * TEMPLATE:    SpringServiceImpl.vsl in andromda-spring cartridge
+ * MODEL CLASS: AndroMDAModel::jrbase::com.systemsjr.jrbase::individual::service::IndividualService
+ * STEREOTYPE:  Service
  */
 package com.systemsjr.jrbase.individual.service;
 
-import java.util.Collection;
-
-import com.systemsjr.jrbase.individual.Individual;
-import com.systemsjr.jrbase.individual.IndividualDao;
 import com.systemsjr.jrbase.individual.vo.IndividualVO;
 
 /**
  * @see com.systemsjr.jrbase.individual.service.IndividualService
  */
 public class IndividualServiceImpl
-    extends com.systemsjr.jrbase.individual.service.IndividualServiceBase
+    extends IndividualServiceBase
 {
 
     /**
-     * @see com.systemsjr.jrbase.individual.service.IndividualService#saveIndividual(com.systemsjr.jrbase.individual.vo.IndividualVO)
+     * @see com.systemsjr.jrbase.individual.service.IndividualService#saveIndividual(IndividualVO)
      */
-    @Override
-	protected  com.systemsjr.jrbase.individual.vo.IndividualVO handleSaveIndividual(com.systemsjr.jrbase.individual.vo.IndividualVO individualVO)
-        throws java.lang.Exception
+    protected  IndividualVO handleSaveIndividual(IndividualVO individualVO)
+        throws Exception
     {
-    	Individual individual = getIndividualDao().individualVOToEntity(individualVO);
-    	
-    	if(individual.getId() == null){
-    		individual = getIndividualDao().create(individual);
-    	} else {
-    		getIndividualDao().update(individual);
-    	}
-    	
-    	return getIndividualDao().toIndividualVO(individual);
+        // TODO implement protected  IndividualVO handleSaveIndividual(IndividualVO individualVO)
+        throw new UnsupportedOperationException("com.systemsjr.jrbase.individual.service.IndividualService.handleSaveIndividual(IndividualVO individualVO) Not implemented!");
     }
 
     /**
      * @see com.systemsjr.jrbase.individual.service.IndividualService#getAllIndividuals()
      */
-    @Override
-	protected  IndividualVO[] handleGetAllIndividuals()
-        throws java.lang.Exception
+    protected  IndividualVO[] handleGetAllIndividuals()
+        throws Exception
     {
-    	Collection individuals = getIndividualDao().loadAll();
-    	return getIndividualDao().toIndividualVOArray(individuals);
+        // TODO implement protected  IndividualVO[] handleGetAllIndividuals()
+        throw new UnsupportedOperationException("com.systemsjr.jrbase.individual.service.IndividualService.handleGetAllIndividuals() Not implemented!");
     }
 
     /**
-     * @see com.systemsjr.jrbase.individual.service.IndividualService#removeIndividual(com.systemsjr.jrbase.individual.vo.IndividualVO)
+     * @see com.systemsjr.jrbase.individual.service.IndividualService#removeIndividual(IndividualVO)
      */
-    @Override
-	protected  void handleRemoveIndividual(com.systemsjr.jrbase.individual.vo.IndividualVO individualVO)
-        throws java.lang.Exception
+    protected  void handleRemoveIndividual(IndividualVO individualVO)
+        throws Exception
     {
-    	if(individualVO.getId() != null){
-    		getIndividualDao().remove(individualVO.getId());
-    	}
+        // TODO implement protected  void handleRemoveIndividual(IndividualVO individualVO)
+        throw new UnsupportedOperationException("com.systemsjr.jrbase.individual.service.IndividualService.handleRemoveIndividual(IndividualVO individualVO) Not implemented!");
     }
 
 }

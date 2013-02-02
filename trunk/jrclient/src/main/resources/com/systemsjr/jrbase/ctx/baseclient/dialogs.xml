@@ -38,4 +38,6 @@
 	<bean id="organisationTypeDialog" class="com.systemsjr.jrbase.organisation.OrganisationTypeDialog">
 		<property name="itemForm" ref="organisationTypeForm"/>
 	</bean>
+	
+	<bean id="loginDialog" class="com.systemsjr.jrbase.login.LoginDialog"/>
 </beans>

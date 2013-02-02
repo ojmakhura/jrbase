@@ -2,15 +2,12 @@
 /**
  * This is only generated once! It will never be overwritten.
  * You can (and have to!) safely modify it by hand.
+ * TEMPLATE:    SpringServiceImpl.vsl in andromda-spring cartridge
+ * MODEL CLASS: AndroMDAModel::jrbase::com.systemsjr.jrbase::organisation::service::OrganisationService
+ * STEREOTYPE:  Service
  */
 package com.systemsjr.jrbase.organisation.service;
 
-import java.util.Collection;
-
-import com.systemsjr.jrbase.organisation.Organisation;
-import com.systemsjr.jrbase.organisation.OrganisationDao;
-import com.systemsjr.jrbase.organisation.OrganisationType;
-import com.systemsjr.jrbase.organisation.OrganisationTypeDao;
 import com.systemsjr.jrbase.organisation.vo.OrganisationTypeVO;
 import com.systemsjr.jrbase.organisation.vo.OrganisationVO;
 
@@ -18,99 +15,77 @@ import com.systemsjr.jrbase.organisation.vo.OrganisationVO;
  * @see com.systemsjr.jrbase.organisation.service.OrganisationService
  */
 public class OrganisationServiceImpl
-    extends com.systemsjr.jrbase.organisation.service.OrganisationServiceBase
+    extends OrganisationServiceBase
 {
 
     /**
-     * @see com.systemsjr.jrbase.organisation.service.OrganisationService#getOrganisationBranches(com.systemsjr.jrbase.organisation.vo.OrganisationVO)
+     * @see com.systemsjr.jrbase.organisation.service.OrganisationService#getOrganisationBranches(OrganisationVO)
      */
-    @Override
-	protected  OrganisationVO[] handleGetOrganisationBranches(com.systemsjr.jrbase.organisation.vo.OrganisationVO organisationVO)
-        throws java.lang.Exception
+    protected  OrganisationVO[] handleGetOrganisationBranches(OrganisationVO organisationVO)
+        throws Exception
     {
-    	OrganisationVO[] branches = null;
-    	if(organisationVO.getId() != null){
-    		branches = (OrganisationVO[])organisationVO.getBranches().toArray();
-    	}
-    	
-    	return branches;
+        // TODO implement protected  OrganisationVO[] handleGetOrganisationBranches(OrganisationVO organisationVO)
+        throw new UnsupportedOperationException("com.systemsjr.jrbase.organisation.service.OrganisationService.handleGetOrganisationBranches(OrganisationVO organisationVO) Not implemented!");
     }
 
     /**
-     * @see com.systemsjr.jrbase.organisation.service.OrganisationService#saveOrganisation(com.systemsjr.jrbase.organisation.vo.OrganisationVO)
+     * @see com.systemsjr.jrbase.organisation.service.OrganisationService#saveOrganisation(OrganisationVO)
      */
-    @Override
-	protected  com.systemsjr.jrbase.organisation.vo.OrganisationVO handleSaveOrganisation(com.systemsjr.jrbase.organisation.vo.OrganisationVO organisatioVO)
-        throws java.lang.Exception
+    protected  OrganisationVO handleSaveOrganisation(OrganisationVO organisatioVO)
+        throws Exception
     {
-    	Organisation organisation = getOrganisationDao().organisationVOToEntity(organisatioVO);
-    	
-    	if(organisation.getId() == null){
-    		organisation = getOrganisationDao().create(organisation);
-    	} else{
-    		getOrganisationDao().update(organisation);
-    	}
-    	
-    	return getOrganisationDao().toOrganisationVO(organisation);
+        // TODO implement protected  OrganisationVO handleSaveOrganisation(OrganisationVO organisatioVO)
+        throw new UnsupportedOperationException("com.systemsjr.jrbase.organisation.service.OrganisationService.handleSaveOrganisation(OrganisationVO organisatioVO) Not implemented!");
     }
 
     /**
-     * @see com.systemsjr.jrbase.organisation.service.OrganisationService#saveOrganisationType(com.systemsjr.jrbase.organisation.vo.OrganisationTypeVO)
+     * @see com.systemsjr.jrbase.organisation.service.OrganisationService#saveOrganisationType(OrganisationTypeVO)
      */
-    @Override
-	protected  com.systemsjr.jrbase.organisation.vo.OrganisationTypeVO handleSaveOrganisationType(com.systemsjr.jrbase.organisation.vo.OrganisationTypeVO organisationTypeVO)
-        throws java.lang.Exception
+    protected  OrganisationTypeVO handleSaveOrganisationType(OrganisationTypeVO organisationTypeVO)
+        throws Exception
     {
-    	OrganisationType organisationType = getOrganisationTypeDao().organisationTypeVOToEntity(organisationTypeVO);
-    	
-    	if(organisationType.getId() == null){
-    		organisationType = getOrganisationTypeDao().create(organisationType);
-    	} else{
-    		getOrganisationTypeDao().update(organisationType);
-    	}
-    	
-    	return getOrganisationTypeDao().toOrganisationTypeVO(organisationType);
+        // TODO implement protected  OrganisationTypeVO handleSaveOrganisationType(OrganisationTypeVO organisationTypeVO)
+        throw new UnsupportedOperationException("com.systemsjr.jrbase.organisation.service.OrganisationService.handleSaveOrganisationType(OrganisationTypeVO organisationTypeVO) Not implemented!");
     }
 
     /**
      * @see com.systemsjr.jrbase.organisation.service.OrganisationService#getAllOrganisations()
      */
-    @Override
-	protected  OrganisationVO[] handleGetAllOrganisations()
-        throws java.lang.Exception
+    protected  OrganisationVO[] handleGetAllOrganisations()
+        throws Exception
     {
-    	Collection orgs = getOrganisationDao().loadAll();
-    	return getOrganisationDao().toOrganisationVOArray(orgs);
+        // TODO implement protected  OrganisationVO[] handleGetAllOrganisations()
+        throw new UnsupportedOperationException("com.systemsjr.jrbase.organisation.service.OrganisationService.handleGetAllOrganisations() Not implemented!");
     }
 
     /**
      * @see com.systemsjr.jrbase.organisation.service.OrganisationService#getAllOrganisationTypes()
      */
-    @Override
-	protected  OrganisationTypeVO[] handleGetAllOrganisationTypes()
-        throws java.lang.Exception
+    protected  OrganisationTypeVO[] handleGetAllOrganisationTypes()
+        throws Exception
     {
-    	Collection orgTypes = getOrganisationTypeDao().loadAll();
-    	
-    	return getOrganisationTypeDao().toOrganisationTypeVOArray(orgTypes);
+        // TODO implement protected  OrganisationTypeVO[] handleGetAllOrganisationTypes()
+        throw new UnsupportedOperationException("com.systemsjr.jrbase.organisation.service.OrganisationService.handleGetAllOrganisationTypes() Not implemented!");
     }
 
-	@Override
-	protected void handleRemoveOrganisation(OrganisationVO organisationVO)
-			throws Exception {
+    /**
+     * @see com.systemsjr.jrbase.organisation.service.OrganisationService#removeOrganisation(OrganisationVO)
+     */
+    protected  void handleRemoveOrganisation(OrganisationVO organisationVO)
+        throws Exception
+    {
+        // TODO implement protected  void handleRemoveOrganisation(OrganisationVO organisationVO)
+        throw new UnsupportedOperationException("com.systemsjr.jrbase.organisation.service.OrganisationService.handleRemoveOrganisation(OrganisationVO organisationVO) Not implemented!");
+    }
 
-		if(organisationVO.getId() != null){
-			getOrganisationDao().remove(organisationVO.getId());
-		}
-		
-	}
+    /**
+     * @see com.systemsjr.jrbase.organisation.service.OrganisationService#removeOrganisationType(OrganisationTypeVO)
+     */
+    protected  void handleRemoveOrganisationType(OrganisationTypeVO organisationTypeVO)
+        throws Exception
+    {
+        // TODO implement protected  void handleRemoveOrganisationType(OrganisationTypeVO organisationTypeVO)
+        throw new UnsupportedOperationException("com.systemsjr.jrbase.organisation.service.OrganisationService.handleRemoveOrganisationType(OrganisationTypeVO organisationTypeVO) Not implemented!");
+    }
 
-	@Override
-	protected void handleRemoveOrganisationType(
-			OrganisationTypeVO organisationTypeVO) throws Exception {
-		
-		if(organisationTypeVO.getId() != null){
-			getOrganisationTypeDao().remove(organisationTypeVO.getId());
-		}		
-	}
 }

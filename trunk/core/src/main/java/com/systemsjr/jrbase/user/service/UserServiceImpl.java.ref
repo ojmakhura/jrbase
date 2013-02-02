@@ -15,7 +15,7 @@ public class UserServiceImpl
     /**
      * The serial version UID of this class. Needed for serialization.
      */
-    private static final long serialVersionUID = 5028191251037864882L;
+    private static final long serialVersionUID = 5540117156620720851L;
 
     /**
      * @see com.systemsjr.jrbase.user.service.UserService#saveUser(com.systemsjr.jrbase.user.vo.UserVO)
@@ -38,45 +38,45 @@ public class UserServiceImpl
     /**
      * @see com.systemsjr.jrbase.user.service.UserService#getAllUsers()
      */
-    public java.util.List getAllUsers()
+    public com.systemsjr.jrbase.user.vo.UserVO[] getAllUsers()
     {
-        // TODO implement public java.util.List getAllUsers()
+        // TODO implement public com.systemsjr.jrbase.user.vo.UserVO[] getAllUsers()
         return null;
     }
 
     /**
      * @see com.systemsjr.jrbase.user.service.UserService#getUsersByStatus(com.systemsjr.jrbase.user.UserStatus)
      */
-    public java.util.List getUsersByStatus(com.systemsjr.jrbase.user.UserStatus status)
+    public com.systemsjr.jrbase.user.vo.UserVO[] getUsersByStatus(com.systemsjr.jrbase.user.UserStatus status)
     {
-        // TODO implement public java.util.List getUsersByStatus(com.systemsjr.jrbase.user.UserStatus status)
-        return null;
-    }
-
-    /**
-     * @see com.systemsjr.jrbase.user.service.UserService#getUserDetails(java.lang.String)
-     */
-    public com.systemsjr.jrbase.user.vo.UserVO getUserDetails(java.lang.String username)
-    {
-        // TODO implement public com.systemsjr.jrbase.user.vo.UserVO getUserDetails(java.lang.String username)
+        // TODO implement public com.systemsjr.jrbase.user.vo.UserVO[] getUsersByStatus(com.systemsjr.jrbase.user.UserStatus status)
         return null;
     }
 
     /**
      * @see com.systemsjr.jrbase.user.service.UserService#getUserLocations(com.systemsjr.jrbase.user.vo.UserVO)
      */
-    public java.util.List getUserLocations(com.systemsjr.jrbase.user.vo.UserVO userVO)
+    public com.systemsjr.jrbase.location.vo.LocationVO[] getUserLocations(com.systemsjr.jrbase.user.vo.UserVO userVO)
     {
-        // TODO implement public java.util.List getUserLocations(com.systemsjr.jrbase.user.vo.UserVO userVO)
+        // TODO implement public com.systemsjr.jrbase.location.vo.LocationVO[] getUserLocations(com.systemsjr.jrbase.user.vo.UserVO userVO)
         return null;
     }
 
     /**
      * @see com.systemsjr.jrbase.user.service.UserService#getUserCurrentLocation(com.systemsjr.jrbase.user.vo.UserVO)
      */
-    public com.systemsjr.jrbase.user.vo.UserVO getUserCurrentLocation(com.systemsjr.jrbase.user.vo.UserVO userVO)
+    public com.systemsjr.jrbase.location.vo.LocationVO getUserCurrentLocation(com.systemsjr.jrbase.user.vo.UserVO userVO)
     {
-        // TODO implement public com.systemsjr.jrbase.user.vo.UserVO getUserCurrentLocation(com.systemsjr.jrbase.user.vo.UserVO userVO)
+        // TODO implement public com.systemsjr.jrbase.location.vo.LocationVO getUserCurrentLocation(com.systemsjr.jrbase.user.vo.UserVO userVO)
+        return null;
+    }
+
+    /**
+     * @see com.systemsjr.jrbase.user.service.UserService#doLogin(com.systemsjr.jrbase.user.vo.UserVO)
+     */
+    public com.systemsjr.jrbase.user.vo.UserVO doLogin(com.systemsjr.jrbase.user.vo.UserVO userVO)
+    {
+        // TODO implement public com.systemsjr.jrbase.user.vo.UserVO doLogin(com.systemsjr.jrbase.user.vo.UserVO userVO)
         return null;
     }
 }

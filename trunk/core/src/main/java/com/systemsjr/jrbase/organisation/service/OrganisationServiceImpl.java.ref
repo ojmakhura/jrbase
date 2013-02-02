@@ -15,14 +15,14 @@ public class OrganisationServiceImpl
     /**
      * The serial version UID of this class. Needed for serialization.
      */
-    private static final long serialVersionUID = -3544473106251870729L;
+    private static final long serialVersionUID = -972361280238928477L;
 
     /**
      * @see com.systemsjr.jrbase.organisation.service.OrganisationService#getOrganisationBranches(com.systemsjr.jrbase.organisation.vo.OrganisationVO)
      */
-    public java.util.List getOrganisationBranches(com.systemsjr.jrbase.organisation.vo.OrganisationVO organisationVO)
+    public com.systemsjr.jrbase.organisation.vo.OrganisationVO[] getOrganisationBranches(com.systemsjr.jrbase.organisation.vo.OrganisationVO organisationVO)
     {
-        // TODO implement public java.util.List getOrganisationBranches(com.systemsjr.jrbase.organisation.vo.OrganisationVO organisationVO)
+        // TODO implement public com.systemsjr.jrbase.organisation.vo.OrganisationVO[] getOrganisationBranches(com.systemsjr.jrbase.organisation.vo.OrganisationVO organisationVO)
         return null;
     }
 
@@ -47,18 +47,18 @@ public class OrganisationServiceImpl
     /**
      * @see com.systemsjr.jrbase.organisation.service.OrganisationService#getAllOrganisations()
      */
-    public java.util.List getAllOrganisations()
+    public com.systemsjr.jrbase.organisation.vo.OrganisationVO[] getAllOrganisations()
     {
-        // TODO implement public java.util.List getAllOrganisations()
+        // TODO implement public com.systemsjr.jrbase.organisation.vo.OrganisationVO[] getAllOrganisations()
         return null;
     }
 
     /**
      * @see com.systemsjr.jrbase.organisation.service.OrganisationService#getAllOrganisationTypes()
      */
-    public java.util.List getAllOrganisationTypes()
+    public com.systemsjr.jrbase.organisation.vo.OrganisationTypeVO[] getAllOrganisationTypes()
     {
-        // TODO implement public java.util.List getAllOrganisationTypes()
+        // TODO implement public com.systemsjr.jrbase.organisation.vo.OrganisationTypeVO[] getAllOrganisationTypes()
         return null;
     }
 

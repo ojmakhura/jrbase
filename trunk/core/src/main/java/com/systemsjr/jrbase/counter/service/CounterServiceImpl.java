@@ -2,64 +2,59 @@
 /**
  * This is only generated once! It will never be overwritten.
  * You can (and have to!) safely modify it by hand.
+ * TEMPLATE:    SpringServiceImpl.vsl in andromda-spring cartridge
+ * MODEL CLASS: AndroMDAModel::jrbase::com.systemsjr.jrbase::counter::service::CounterService
+ * STEREOTYPE:  Service
  */
 package com.systemsjr.jrbase.counter.service;
 
-import java.util.Collection;
-
-import com.systemsjr.jrbase.counter.Counter;
 import com.systemsjr.jrbase.counter.vo.CounterVO;
 
 /**
  * @see com.systemsjr.jrbase.counter.service.CounterService
  */
 public class CounterServiceImpl
-    extends com.systemsjr.jrbase.counter.service.CounterServiceBase
+    extends CounterServiceBase
 {
 
     /**
-     * @see com.systemsjr.jrbase.counter.service.CounterService#createCounter(com.systemsjr.jrbase.counter.vo.CounterVO)
+     * @see com.systemsjr.jrbase.counter.service.CounterService#saveCounter(CounterVO)
      */
-    @Override
-	protected  com.systemsjr.jrbase.counter.vo.CounterVO handleSaveCounter(com.systemsjr.jrbase.counter.vo.CounterVO counterVO)
-        throws java.lang.Exception
-    { 	
-    	Counter counter;// = getCounterDao().counterVOToEntity(counterVO);
-    	
-    	if(counterVO.getId() == null){
-    		counter = getCounterDao().create(getCounterDao().counterVOToEntity(counterVO));
-    	} else{
-    		counter = getCounterDao().counterVOToEntity(counterVO);
-    		getCounterDao().update(counter);
-    	}
-    	
-    	return getCounterDao().toCounterVO(counter);
+    protected  CounterVO handleSaveCounter(CounterVO counterVO)
+        throws Exception
+    {
+        // TODO implement protected  CounterVO handleSaveCounter(CounterVO counterVO)
+        throw new UnsupportedOperationException("com.systemsjr.jrbase.counter.service.CounterService.handleSaveCounter(CounterVO counterVO) Not implemented!");
     }
 
     /**
-     * @see com.systemsjr.jrbase.counter.service.CounterService#getCount(java.lang.String)
+     * @see com.systemsjr.jrbase.counter.service.CounterService#getCount(String)
      */
-    @Override
-	protected  String handleGetCount(java.lang.String counterName)
-        throws java.lang.Exception
+    protected  String handleGetCount(String counterName)
+        throws Exception
     {
-        // @todo implement protected  String handleGetCount(java.lang.String counterName)
-        throw new java.lang.UnsupportedOperationException("com.systemsjr.jrbase.counter.service.CounterService.handleGetCount(java.lang.String counterName) Not implemented!");
+        // TODO implement protected  String handleGetCount(String counterName)
+        throw new UnsupportedOperationException("com.systemsjr.jrbase.counter.service.CounterService.handleGetCount(String counterName) Not implemented!");
     }
 
-	@Override
-	protected void handleRemoveCounter(CounterVO counterVO) throws Exception {
-		
-		if(counterVO.getId() != null){
-			getCounterDao().remove(counterVO.getId());
-		}
-		
-	}
+    /**
+     * @see com.systemsjr.jrbase.counter.service.CounterService#removeCounter(CounterVO)
+     */
+    protected  void handleRemoveCounter(CounterVO counterVO)
+        throws Exception
+    {
+        // TODO implement protected  void handleRemoveCounter(CounterVO counterVO)
+        throw new UnsupportedOperationException("com.systemsjr.jrbase.counter.service.CounterService.handleRemoveCounter(CounterVO counterVO) Not implemented!");
+    }
 
-	@Override
-	protected CounterVO[] handleGetAllCounters() throws Exception {
-		Collection counters = getCounterDao().loadAll(); 
-		return getCounterDao().toCounterVOArray(counters);
-	}
+    /**
+     * @see com.systemsjr.jrbase.counter.service.CounterService#getAllCounters()
+     */
+    protected  CounterVO[] handleGetAllCounters()
+        throws Exception
+    {
+        // TODO implement protected  CounterVO[] handleGetAllCounters()
+        throw new UnsupportedOperationException("com.systemsjr.jrbase.counter.service.CounterService.handleGetAllCounters() Not implemented!");
+    }
 
 }

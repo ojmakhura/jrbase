@@ -2,58 +2,49 @@
 /**
  * This is only generated once! It will never be overwritten.
  * You can (and have to!) safely modify it by hand.
+ * TEMPLATE:    SpringServiceImpl.vsl in andromda-spring cartridge
+ * MODEL CLASS: AndroMDAModel::jrbase::com.systemsjr.jrbase::clearancelevel::service::ClearanceLevelService
+ * STEREOTYPE:  Service
  */
 package com.systemsjr.jrbase.clearancelevel.service;
 
-import java.util.Collection;
-
-import com.systemsjr.jrbase.clearancelevel.ClearanceLevel;
 import com.systemsjr.jrbase.clearancelevel.vo.ClearanceLevelVO;
 
 /**
  * @see com.systemsjr.jrbase.clearancelevel.service.ClearanceLevelService
  */
 public class ClearanceLevelServiceImpl
-    extends com.systemsjr.jrbase.clearancelevel.service.ClearanceLevelServiceBase
+    extends ClearanceLevelServiceBase
 {
 
     /**
-     * @see com.systemsjr.jrbase.clearancelevel.service.ClearanceLevelService#saveClearanceLevel(com.systemsjr.jrbase.clearancelevel.vo.ClearanceLevelVO)
+     * @see com.systemsjr.jrbase.clearancelevel.service.ClearanceLevelService#saveClearanceLevel(ClearanceLevelVO)
      */
-    @Override
-	protected  com.systemsjr.jrbase.clearancelevel.vo.ClearanceLevelVO handleSaveClearanceLevel(com.systemsjr.jrbase.clearancelevel.vo.ClearanceLevelVO clearanceLevelVO)
-        throws java.lang.Exception
+    protected  ClearanceLevelVO handleSaveClearanceLevel(ClearanceLevelVO clearanceLevelVO)
+        throws Exception
     {
-    	ClearanceLevel clearanceLevel;// = getClearanceLevelDao().clearanceLevelVOToEntity(clearanceLevelVO);
-    	
-    	if(clearanceLevelVO.getId() == null){
-    		clearanceLevel = getClearanceLevelDao().create(getClearanceLevelDao().clearanceLevelVOToEntity(clearanceLevelVO));
-    	} else{
-    		clearanceLevel = getClearanceLevelDao().clearanceLevelVOToEntity(clearanceLevelVO);
-    		getClearanceLevelDao().update(clearanceLevel);
-    	}
-    	
-        return getClearanceLevelDao().toClearanceLevelVO(clearanceLevel);
+        // TODO implement protected  ClearanceLevelVO handleSaveClearanceLevel(ClearanceLevelVO clearanceLevelVO)
+        throw new UnsupportedOperationException("com.systemsjr.jrbase.clearancelevel.service.ClearanceLevelService.handleSaveClearanceLevel(ClearanceLevelVO clearanceLevelVO) Not implemented!");
     }
 
     /**
      * @see com.systemsjr.jrbase.clearancelevel.service.ClearanceLevelService#getAllClearanceLevels()
      */
-    @Override
-	protected  ClearanceLevelVO[] handleGetAllClearanceLevels()
-        throws java.lang.Exception
+    protected  ClearanceLevelVO[] handleGetAllClearanceLevels()
+        throws Exception
     {
-    	Collection levels = getClearanceLevelDao().loadAll();
-    	return getClearanceLevelDao().toClearanceLevelVOArray(levels);
+        // TODO implement protected  ClearanceLevelVO[] handleGetAllClearanceLevels()
+        throw new UnsupportedOperationException("com.systemsjr.jrbase.clearancelevel.service.ClearanceLevelService.handleGetAllClearanceLevels() Not implemented!");
     }
 
-	@Override
-	protected void handleRemoveClearanceLevel(ClearanceLevelVO clearanceLevelVO)
-			throws Exception {
-		
-		if(clearanceLevelVO.getId() != null){
-			getClearanceLevelDao().remove(clearanceLevelVO.getId());
-		}
-	}
+    /**
+     * @see com.systemsjr.jrbase.clearancelevel.service.ClearanceLevelService#removeClearanceLevel(ClearanceLevelVO)
+     */
+    protected  void handleRemoveClearanceLevel(ClearanceLevelVO clearanceLevelVo)
+        throws Exception
+    {
+        // TODO implement protected  void handleRemoveClearanceLevel(ClearanceLevelVO clearanceLevelVo)
+        throw new UnsupportedOperationException("com.systemsjr.jrbase.clearancelevel.service.ClearanceLevelService.handleRemoveClearanceLevel(ClearanceLevelVO clearanceLevelVo) Not implemented!");
+    }
 
 }

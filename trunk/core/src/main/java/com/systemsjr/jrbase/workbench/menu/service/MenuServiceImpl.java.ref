@@ -15,32 +15,32 @@ public class MenuServiceImpl
     /**
      * The serial version UID of this class. Needed for serialization.
      */
-    private static final long serialVersionUID = 7262754542673739868L;
+    private static final long serialVersionUID = 4017135030079996616L;
 
     /**
      * @see com.systemsjr.jrbase.workbench.menu.service.MenuService#getAllMenus()
      */
-    public java.util.List getAllMenus()
+    public com.systemsjr.jrbase.workbench.menu.vo.MenuVO[] getAllMenus()
     {
-        // TODO implement public java.util.List getAllMenus()
+        // TODO implement public com.systemsjr.jrbase.workbench.menu.vo.MenuVO[] getAllMenus()
         return null;
     }
 
     /**
      * @see com.systemsjr.jrbase.workbench.menu.service.MenuService#getMenuBycode(java.lang.String)
      */
-    public java.util.List getMenuBycode(java.lang.String code)
+    public com.systemsjr.jrbase.workbench.menu.vo.MenuVO[] getMenuBycode(java.lang.String code)
     {
-        // TODO implement public java.util.List getMenuBycode(java.lang.String code)
+        // TODO implement public com.systemsjr.jrbase.workbench.menu.vo.MenuVO[] getMenuBycode(java.lang.String code)
         return null;
     }
 
     /**
      * @see com.systemsjr.jrbase.workbench.menu.service.MenuService#getMenuByName(java.lang.String)
      */
-    public java.util.List getMenuByName(java.lang.String name)
+    public com.systemsjr.jrbase.workbench.menu.vo.MenuVO[] getMenuByName(java.lang.String name)
     {
-        // TODO implement public java.util.List getMenuByName(java.lang.String name)
+        // TODO implement public com.systemsjr.jrbase.workbench.menu.vo.MenuVO[] getMenuByName(java.lang.String name)
         return null;
     }
 

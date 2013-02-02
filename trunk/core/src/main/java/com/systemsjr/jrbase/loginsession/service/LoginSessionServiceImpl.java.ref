@@ -15,7 +15,7 @@ public class LoginSessionServiceImpl
     /**
      * The serial version UID of this class. Needed for serialization.
      */
-    private static final long serialVersionUID = -4051269636737806383L;
+    private static final long serialVersionUID = -1604051329414642048L;
 
     /**
      * @see com.systemsjr.jrbase.loginsession.service.LoginSessionService#saveLoginSession(com.systemsjr.jrbase.loginsession.vo.LoginSessionVO)
@@ -29,9 +29,9 @@ public class LoginSessionServiceImpl
     /**
      * @see com.systemsjr.jrbase.loginsession.service.LoginSessionService#getAllLoginSessions()
      */
-    public java.util.Collection<java.util.List> getAllLoginSessions()
+    public java.util.Collection<com.systemsjr.jrbase.loginsession.vo.LoginSessionVO[]> getAllLoginSessions()
     {
-        // TODO implement public java.util.Collection<java.util.List> getAllLoginSessions()
+        // TODO implement public java.util.Collection<com.systemsjr.jrbase.loginsession.vo.LoginSessionVO[]> getAllLoginSessions()
         return null;
     }
 

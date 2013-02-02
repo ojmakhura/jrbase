@@ -15,86 +15,95 @@ public class LocationServiceImpl
     /**
      * The serial version UID of this class. Needed for serialization.
      */
-    private static final long serialVersionUID = -4371106615062265789L;
+    private static final long serialVersionUID = 3860286692909479836L;
 
     /**
-     * @see com.systemsjr.jrbase.location.service.LocationService#getAllAreasByType(com.systemsjr.jrbase.location.vo.LocationTypeVO)
+     * @see com.systemsjr.jrbase.location.service.LocationService#getAllLocations()
      */
-    public java.util.List getAllAreasByType(com.systemsjr.jrbase.location.vo.LocationTypeVO areaTypeVO)
+    public com.systemsjr.jrbase.location.vo.LocationVO[] getAllLocations()
     {
-        // TODO implement public java.util.List getAllAreasByType(com.systemsjr.jrbase.location.vo.LocationTypeVO areaTypeVO)
+        // TODO implement public com.systemsjr.jrbase.location.vo.LocationVO[] getAllLocations()
         return null;
     }
 
     /**
-     * @see com.systemsjr.jrbase.location.service.LocationService#getAreasInArea(com.systemsjr.jrbase.location.vo.LocationVO)
+     * @see com.systemsjr.jrbase.location.service.LocationService#getLocationsInLocation(com.systemsjr.jrbase.location.vo.LocationVO)
      */
-    public java.util.List getAreasInArea(com.systemsjr.jrbase.location.vo.LocationVO areaVO)
+    public com.systemsjr.jrbase.location.vo.LocationVO[] getLocationsInLocation(com.systemsjr.jrbase.location.vo.LocationVO areaVO)
     {
-        // TODO implement public java.util.List getAreasInArea(com.systemsjr.jrbase.location.vo.LocationVO areaVO)
+        // TODO implement public com.systemsjr.jrbase.location.vo.LocationVO[] getLocationsInLocation(com.systemsjr.jrbase.location.vo.LocationVO areaVO)
         return null;
     }
 
     /**
-     * @see com.systemsjr.jrbase.location.service.LocationService#removeArea(com.systemsjr.jrbase.location.vo.LocationVO)
+     * @see com.systemsjr.jrbase.location.service.LocationService#removeLocation(com.systemsjr.jrbase.location.vo.LocationVO)
      */
-    public void removeArea(com.systemsjr.jrbase.location.vo.LocationVO areaVO)
+    public void removeLocation(com.systemsjr.jrbase.location.vo.LocationVO locationVO)
     {
-        // TODO implement public void removeArea(com.systemsjr.jrbase.location.vo.LocationVO areaVO)
-        throw new UnsupportedOperationException("com.systemsjr.jrbase.location.service.LocationService.removeArea(com.systemsjr.jrbase.location.vo.LocationVO areaVO) Not implemented!");
+        // TODO implement public void removeLocation(com.systemsjr.jrbase.location.vo.LocationVO locationVO)
+        throw new UnsupportedOperationException("com.systemsjr.jrbase.location.service.LocationService.removeLocation(com.systemsjr.jrbase.location.vo.LocationVO locationVO) Not implemented!");
     }
 
     /**
-     * @see com.systemsjr.jrbase.location.service.LocationService#saveArea(com.systemsjr.jrbase.location.vo.LocationVO)
+     * @see com.systemsjr.jrbase.location.service.LocationService#saveLocation(com.systemsjr.jrbase.location.vo.LocationVO)
      */
-    public com.systemsjr.jrbase.location.vo.LocationVO saveArea(com.systemsjr.jrbase.location.vo.LocationVO areaVO)
+    public com.systemsjr.jrbase.location.vo.LocationVO saveLocation(com.systemsjr.jrbase.location.vo.LocationVO locationVO)
     {
-        // TODO implement public com.systemsjr.jrbase.location.vo.LocationVO saveArea(com.systemsjr.jrbase.location.vo.LocationVO areaVO)
+        // TODO implement public com.systemsjr.jrbase.location.vo.LocationVO saveLocation(com.systemsjr.jrbase.location.vo.LocationVO locationVO)
         return null;
     }
 
     /**
-     * @see com.systemsjr.jrbase.location.service.LocationService#removeAreaType(com.systemsjr.jrbase.location.vo.LocationTypeVO)
+     * @see com.systemsjr.jrbase.location.service.LocationService#removeLocationType(com.systemsjr.jrbase.location.vo.LocationTypeVO)
      */
-    public void removeAreaType(com.systemsjr.jrbase.location.vo.LocationTypeVO areaTypeVO)
+    public void removeLocationType(com.systemsjr.jrbase.location.vo.LocationTypeVO locationTypeVO)
     {
-        // TODO implement public void removeAreaType(com.systemsjr.jrbase.location.vo.LocationTypeVO areaTypeVO)
-        throw new UnsupportedOperationException("com.systemsjr.jrbase.location.service.LocationService.removeAreaType(com.systemsjr.jrbase.location.vo.LocationTypeVO areaTypeVO) Not implemented!");
+        // TODO implement public void removeLocationType(com.systemsjr.jrbase.location.vo.LocationTypeVO locationTypeVO)
+        throw new UnsupportedOperationException("com.systemsjr.jrbase.location.service.LocationService.removeLocationType(com.systemsjr.jrbase.location.vo.LocationTypeVO locationTypeVO) Not implemented!");
     }
 
     /**
-     * @see com.systemsjr.jrbase.location.service.LocationService#saveAreaType(com.systemsjr.jrbase.location.vo.LocationTypeVO)
+     * @see com.systemsjr.jrbase.location.service.LocationService#saveLocationType(com.systemsjr.jrbase.location.vo.LocationTypeVO)
      */
-    public com.systemsjr.jrbase.location.vo.LocationTypeVO saveAreaType(com.systemsjr.jrbase.location.vo.LocationTypeVO areaTypeVO)
+    public com.systemsjr.jrbase.location.vo.LocationTypeVO saveLocationType(com.systemsjr.jrbase.location.vo.LocationTypeVO areaTypeVO)
     {
-        // TODO implement public com.systemsjr.jrbase.location.vo.LocationTypeVO saveAreaType(com.systemsjr.jrbase.location.vo.LocationTypeVO areaTypeVO)
+        // TODO implement public com.systemsjr.jrbase.location.vo.LocationTypeVO saveLocationType(com.systemsjr.jrbase.location.vo.LocationTypeVO areaTypeVO)
         return null;
     }
 
     /**
-     * @see com.systemsjr.jrbase.location.service.LocationService#getAllAreaTypes()
+     * @see com.systemsjr.jrbase.location.service.LocationService#getAllLocationTypes()
      */
-    public java.util.List getAllAreaTypes()
+    public com.systemsjr.jrbase.location.vo.LocationTypeVO[] getAllLocationTypes()
     {
-        // TODO implement public java.util.List getAllAreaTypes()
+        // TODO implement public com.systemsjr.jrbase.location.vo.LocationTypeVO[] getAllLocationTypes()
         return null;
     }
 
     /**
-     * @see com.systemsjr.jrbase.location.service.LocationService#getAreasByStatus(com.systemsjr.jrbase.location.LocationStatus)
+     * @see com.systemsjr.jrbase.location.service.LocationService#getLocationByStatus(com.systemsjr.jrbase.location.LocationStatus)
      */
-    public java.util.List getAreasByStatus(com.systemsjr.jrbase.location.LocationStatus status)
+    public com.systemsjr.jrbase.location.vo.LocationVO[] getLocationByStatus(com.systemsjr.jrbase.location.LocationStatus status)
     {
-        // TODO implement public java.util.List getAreasByStatus(com.systemsjr.jrbase.location.LocationStatus status)
+        // TODO implement public com.systemsjr.jrbase.location.vo.LocationVO[] getLocationByStatus(com.systemsjr.jrbase.location.LocationStatus status)
         return null;
     }
 
     /**
-     * @see com.systemsjr.jrbase.location.service.LocationService#getAreaTypesByStatus(com.systemsjr.jrbase.location.LocationStatus)
+     * @see com.systemsjr.jrbase.location.service.LocationService#getLocationTypesByStatus(com.systemsjr.jrbase.location.LocationStatus)
      */
-    public java.util.List getAreaTypesByStatus(com.systemsjr.jrbase.location.LocationStatus status)
+    public com.systemsjr.jrbase.location.vo.LocationTypeVO[] getLocationTypesByStatus(com.systemsjr.jrbase.location.LocationStatus status)
     {
-        // TODO implement public java.util.List getAreaTypesByStatus(com.systemsjr.jrbase.location.LocationStatus status)
+        // TODO implement public com.systemsjr.jrbase.location.vo.LocationTypeVO[] getLocationTypesByStatus(com.systemsjr.jrbase.location.LocationStatus status)
+        return null;
+    }
+
+    /**
+     * @see com.systemsjr.jrbase.location.service.LocationService#getAllCountries()
+     */
+    public com.systemsjr.jrbase.location.vo.LocationVO[] getAllCountries()
+    {
+        // TODO implement public com.systemsjr.jrbase.location.vo.LocationVO[] getAllCountries()
         return null;
     }
 }

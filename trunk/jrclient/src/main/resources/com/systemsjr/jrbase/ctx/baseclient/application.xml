@@ -230,5 +230,5 @@
     </property>
   </bean>
   
-  <bean id="rulesSource" class="com.systemsjr.jrbase.user.validation.UserValidationRules"/>
+  <!-- bean id="rulesSource" class="com.systemsjr.jrbase.user.validation.UserValidationRules"/-->
 </beans>

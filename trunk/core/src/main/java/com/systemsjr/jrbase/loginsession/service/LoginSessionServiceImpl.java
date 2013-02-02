@@ -2,88 +2,50 @@
 /**
  * This is only generated once! It will never be overwritten.
  * You can (and have to!) safely modify it by hand.
+ * TEMPLATE:    SpringServiceImpl.vsl in andromda-spring cartridge
+ * MODEL CLASS: AndroMDAModel::jrbase::com.systemsjr.jrbase::loginsession::service::LoginSessionService
+ * STEREOTYPE:  Service
  */
 package com.systemsjr.jrbase.loginsession.service;
 
-import java.util.List;
-
-import com.systemsjr.jrbase.loginsession.LoginSession;
-import com.systemsjr.jrbase.loginsession.LoginSessionDao;
 import com.systemsjr.jrbase.loginsession.vo.LoginSessionVO;
-import com.systemsjr.jrbase.user.vo.UserSearchCriteria;
-import com.systemsjr.jrbase.user.vo.UserVO;
+import java.util.Collection;
 
 /**
  * @see com.systemsjr.jrbase.loginsession.service.LoginSessionService
  */
 public class LoginSessionServiceImpl
-    extends com.systemsjr.jrbase.loginsession.service.LoginSessionServiceBase
+    extends LoginSessionServiceBase
 {
 
     /**
-     * @see com.systemsjr.jrbase.loginsession.service.LoginSessionService#saveLoginSession(com.systemsjr.jrbase.loginsession.vo.LoginSessionVO)
+     * @see com.systemsjr.jrbase.loginsession.service.LoginSessionService#saveLoginSession(LoginSessionVO)
      */
-    @Override
-	protected  com.systemsjr.jrbase.loginsession.vo.LoginSessionVO handleSaveLoginSession(com.systemsjr.jrbase.loginsession.vo.LoginSessionVO loginSessionVO)
-        throws java.lang.Exception
+    protected  LoginSessionVO handleSaveLoginSession(LoginSessionVO loginSessionVO)
+        throws Exception
     {
-    	LoginSession loginSession = getLoginSessionDao().loginSessionVOToEntity(loginSessionVO);
-    	
-    	if(loginSession.getId() == null){
-    		loginSession = getLoginSessionDao().create(loginSession);
-    	} else {
-    		getLoginSessionDao().update(loginSession);
-    	}
-    	
-    	return getLoginSessionDao().toLoginSessionVO(loginSession);
+        // TODO implement protected  LoginSessionVO handleSaveLoginSession(LoginSessionVO loginSessionVO)
+        throw new UnsupportedOperationException("com.systemsjr.jrbase.loginsession.service.LoginSessionService.handleSaveLoginSession(LoginSessionVO loginSessionVO) Not implemented!");
     }
 
     /**
      * @see com.systemsjr.jrbase.loginsession.service.LoginSessionService#getAllLoginSessions()
      */
-    @Override
-	protected  LoginSessionVO[] handleGetAllLoginSessions()
-        throws java.lang.Exception
+    protected  Collection<LoginSessionVO[]> handleGetAllLoginSessions()
+        throws Exception
     {
-        
-    	
-        return (LoginSessionVO[])getLoginSessionDao().loadAll(LoginSessionDao.TRANSFORM_LOGINSESSIONVO).toArray();
+        // TODO implement protected  Collection<LoginSessionVO[]> handleGetAllLoginSessions()
+        throw new UnsupportedOperationException("com.systemsjr.jrbase.loginsession.service.LoginSessionService.handleGetAllLoginSessions() Not implemented!");
     }
 
     /**
-     * @see com.systemsjr.jrbase.loginsession.service.LoginSessionService#verifyLoginDetails(java.lang.String, java.lang.String)
+     * @see com.systemsjr.jrbase.loginsession.service.LoginSessionService#verifyLoginDetails(String, String)
      */
-    @Override
-	protected  com.systemsjr.jrbase.loginsession.vo.LoginSessionVO handleVerifyLoginDetails(java.lang.String username, java.lang.String encryptedPassword)
-        throws java.lang.Exception
+    protected  LoginSessionVO handleVerifyLoginDetails(String username, String password)
+        throws Exception
     {
-        UserSearchCriteria searchCriteria = new UserSearchCriteria();
-        LoginSessionVO loginSessionVO;
-                
-        searchCriteria.setUsername(username);
-        searchCriteria.setPassword(encryptedPassword);
-        
-        List<UserVO> user = getUserDao().findByCriteria(searchCriteria);
-        
-        if(user.isEmpty()){
-        	loginSessionVO = null;
-        } else{
-        	loginSessionVO = new LoginSessionVO();
-        	loginSessionVO.setUser(user.get(0));
-        	//loginSessionVO.setArea(user.get(0).get)
-        }
-        
-        return loginSessionVO;
-    }
-
-    /**
-     * @see com.systemsjr.jrbase.loginsession.service.LoginSessionService#getUserName()
-     */
-    protected  java.lang.String handleGetUserName()
-        throws java.lang.Exception
-    {
-        // @todo implement protected  java.lang.String handleGetUserName()
-        throw new java.lang.UnsupportedOperationException("com.systemsjr.jrbase.loginsession.service.LoginSessionService.handleGetUserName() Not implemented!");
+        // TODO implement protected  LoginSessionVO handleVerifyLoginDetails(String username, String password)
+        throw new UnsupportedOperationException("com.systemsjr.jrbase.loginsession.service.LoginSessionService.handleVerifyLoginDetails(String username, String password) Not implemented!");
     }
 
 }

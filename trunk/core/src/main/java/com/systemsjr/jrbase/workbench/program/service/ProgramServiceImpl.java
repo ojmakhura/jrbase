@@ -2,55 +2,49 @@
 /**
  * This is only generated once! It will never be overwritten.
  * You can (and have to!) safely modify it by hand.
+ * TEMPLATE:    SpringServiceImpl.vsl in andromda-spring cartridge
+ * MODEL CLASS: AndroMDAModel::jrbase::com.systemsjr.jrbase.workbench::program::service::ProgramService
+ * STEREOTYPE:  Service
  */
 package com.systemsjr.jrbase.workbench.program.service;
 
-import java.util.Collection;
-
-import com.systemsjr.jrbase.workbench.program.Program;
-import com.systemsjr.jrbase.workbench.program.ProgramDao;
 import com.systemsjr.jrbase.workbench.program.vo.ProgramVO;
 
 /**
  * @see com.systemsjr.jrbase.workbench.program.service.ProgramService
  */
 public class ProgramServiceImpl
-    extends com.systemsjr.jrbase.workbench.program.service.ProgramServiceBase
+    extends ProgramServiceBase
 {
 
     /**
      * @see com.systemsjr.jrbase.workbench.program.service.ProgramService#getAllPrograms()
      */
-    @Override
-	protected  ProgramVO[] handleGetAllPrograms()
-        throws java.lang.Exception
+    protected  ProgramVO[] handleGetAllPrograms()
+        throws Exception
     {
-    	Collection roles = getProgramDao().loadAll();
-    	return getProgramDao().toProgramVOArray(roles);
+        // TODO implement protected  ProgramVO[] handleGetAllPrograms()
+        throw new UnsupportedOperationException("com.systemsjr.jrbase.workbench.program.service.ProgramService.handleGetAllPrograms() Not implemented!");
     }
 
-	@Override
-	protected ProgramVO handleSaveProgram(ProgramVO programVO) throws Exception {
-		
-		Program program = getProgramDao().programVOToEntity(programVO);
-		
-		if(programVO.getId() == null){
-			//program = getProgramDao().programVOToEntity(programVO);
-			program = getProgramDao().create(program);
-		} else{
-			getProgramDao().update(program);
-		}
-		
-		return getProgramDao().toProgramVO(program);
-	}
+    /**
+     * @see com.systemsjr.jrbase.workbench.program.service.ProgramService#saveProgram(ProgramVO)
+     */
+    protected  ProgramVO handleSaveProgram(ProgramVO programVO)
+        throws Exception
+    {
+        // TODO implement protected  ProgramVO handleSaveProgram(ProgramVO programVO)
+        throw new UnsupportedOperationException("com.systemsjr.jrbase.workbench.program.service.ProgramService.handleSaveProgram(ProgramVO programVO) Not implemented!");
+    }
 
-	@Override
-	protected void handleRemoveProgram(ProgramVO programVO) throws Exception {
-		
-		if(programVO.getId() != null){
-			getProgramDao().remove(getProgramDao().programVOToEntity(programVO));
-		}
-		
-	}
+    /**
+     * @see com.systemsjr.jrbase.workbench.program.service.ProgramService#removeProgram(ProgramVO)
+     */
+    protected  void handleRemoveProgram(ProgramVO programVo)
+        throws Exception
+    {
+        // TODO implement protected  void handleRemoveProgram(ProgramVO programVo)
+        throw new UnsupportedOperationException("com.systemsjr.jrbase.workbench.program.service.ProgramService.handleRemoveProgram(ProgramVO programVo) Not implemented!");
+    }
 
 }

@@ -266,6 +266,6 @@
   -->
   <bean id="aboutCommand" class="org.springframework.richclient.command.support.AboutCommand" />
   
-  <bean id="loginCommand" class="org.springframework.richclient.security.LoginCommand"/>
+  <bean id="loginCommand" class="com.systemsjr.jrbase.login.command.LoginCommand"/>
   
 </beans>

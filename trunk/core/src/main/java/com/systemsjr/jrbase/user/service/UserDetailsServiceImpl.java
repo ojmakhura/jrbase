@@ -2,37 +2,29 @@
 /**
  * This is only generated once! It will never be overwritten.
  * You can (and have to!) safely modify it by hand.
+ * TEMPLATE:    SpringServiceImpl.vsl in andromda-spring cartridge
+ * MODEL CLASS: AndroMDAModel::jrbase::com.systemsjr.jrbase::user::service::UserDetailsService
+ * STEREOTYPE:  Service
  */
 package com.systemsjr.jrbase.user.service;
 
-import org.acegisecurity.userdetails.UsernameNotFoundException;
-
-import com.systemsjr.jrbase.ServiceLocator;
-import com.systemsjr.jrbase.user.vo.UserDetailsVO;
 import com.systemsjr.jrbase.user.vo.UserVO;
 
 /**
  * @see com.systemsjr.jrbase.user.service.UserDetailsService
  */
 public class UserDetailsServiceImpl
-    extends com.systemsjr.jrbase.user.service.UserDetailsServiceBase
+    extends UserDetailsServiceBase
 {
 
     /**
-     * @see com.systemsjr.jrbase.user.service.UserDetailsService#getUserDetails(java.lang.String)
+     * @see com.systemsjr.jrbase.user.service.UserDetailsService#getUserDetails(String)
      */
-    protected  com.systemsjr.jrbase.user.vo.UserVO handleGetUserDetails(java.lang.String username)
-        throws java.lang.Exception
+    protected  UserVO handleGetUserDetails(String username)
+        throws Exception
     {
-    	SecurityService service = ServiceLocator.instance().getSecurityService();
-    	UserDetailsVO userDetailsVO = service.getUserDetails(username);
-    	
-    	if (userDetailsVO == null) {
-            throw new UsernameNotFoundException("User " + username + " not found");
-        }
-    	
-    	//UserVO userVO = new UserVO(userDetailsVO.getStatus(), userDetailsVO.getName(), userDetailsVO.getUserId(), userDetailsVO.getId(), userDetailsVO.getUsername(), userDetailsVO.getIndividual());
-        return userDetailsVO;
+        // TODO implement protected  UserVO handleGetUserDetails(String username)
+        throw new UnsupportedOperationException("com.systemsjr.jrbase.user.service.UserDetailsService.handleGetUserDetails(String username) Not implemented!");
     }
 
 }

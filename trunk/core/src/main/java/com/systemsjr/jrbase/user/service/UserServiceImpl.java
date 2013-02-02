@@ -2,112 +2,91 @@
 /**
  * This is only generated once! It will never be overwritten.
  * You can (and have to!) safely modify it by hand.
+ * TEMPLATE:    SpringServiceImpl.vsl in andromda-spring cartridge
+ * MODEL CLASS: AndroMDAModel::jrbase::com.systemsjr.jrbase::user::service::UserService
+ * STEREOTYPE:  Service
  */
 package com.systemsjr.jrbase.user.service;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
-
-import org.apache.commons.lang.ArrayUtils;
-
 import com.systemsjr.jrbase.location.vo.LocationVO;
-import com.systemsjr.jrbase.user.User;
-import com.systemsjr.jrbase.user.UserDao;
-import com.systemsjr.jrbase.user.UserLocationStatus;
 import com.systemsjr.jrbase.user.UserStatus;
-import com.systemsjr.jrbase.user.vo.UserLocationSearchCriteria;
-import com.systemsjr.jrbase.user.vo.UserLocationVO;
-import com.systemsjr.jrbase.user.vo.UserSearchCriteria;
 import com.systemsjr.jrbase.user.vo.UserVO;
 
 /**
  * @see com.systemsjr.jrbase.user.service.UserService
  */
 public class UserServiceImpl
-    extends com.systemsjr.jrbase.user.service.UserServiceBase
+    extends UserServiceBase
 {
 
     /**
-     * @see com.systemsjr.jrbase.user.service.UserService#saveUser(com.systemsjr.jrbase.user.vo.UserVO)
+     * @see com.systemsjr.jrbase.user.service.UserService#saveUser(UserVO)
      */
-    @Override
-	protected  com.systemsjr.jrbase.user.vo.UserVO handleSaveUser(com.systemsjr.jrbase.user.vo.UserVO userVO)
-        throws java.lang.Exception
+    protected  UserVO handleSaveUser(UserVO userVO)
+        throws Exception
     {
-    	User user;
-    	
-    	if(userVO.getId() == null){
-    		user = getUserDao().create(getUserDao().userVOToEntity(userVO));
-    	} else{
-    		user = getUserDao().userVOToEntity(userVO);
-    		getUserDao().update(user);
-    	}
-    	
-    	return getUserDao().toUserVO(user);
-    }    
+        // TODO implement protected  UserVO handleSaveUser(UserVO userVO)
+        throw new UnsupportedOperationException("com.systemsjr.jrbase.user.service.UserService.handleSaveUser(UserVO userVO) Not implemented!");
+    }
 
-	@Override
-	protected void handleRemoveUser(UserVO userVO) throws Exception {
-		
-		if(userVO.getId() != null){
-			getUserDao().remove(userVO.getId());
-		}
-		
-	}
+    /**
+     * @see com.systemsjr.jrbase.user.service.UserService#removeUser(UserVO)
+     */
+    protected  void handleRemoveUser(UserVO userVO)
+        throws Exception
+    {
+        // TODO implement protected  void handleRemoveUser(UserVO userVO)
+        throw new UnsupportedOperationException("com.systemsjr.jrbase.user.service.UserService.handleRemoveUser(UserVO userVO) Not implemented!");
+    }
 
-	@Override
-	protected LocationVO[] handleGetUserLocations(UserVO userVO) throws Exception {
-		ArrayList<LocationVO> locations = new ArrayList<LocationVO>();
-		UserLocationVO[] userLocations = getUserLocationDao().toUserLocationVOArray(getUserDao().getUserDetails(userVO.getUsername()).getUserLocations());//userVO.getUserLocations();
-		
-		if(!ArrayUtils.isEmpty(userLocations)){
-			for(UserLocationVO userLocation : userLocations){
-				locations.add(userLocation.getLocation());
-			}
-		} else{
-			locations = null;
-		}
-		
-		return (LocationVO[]) locations.toArray();
-	}
+    /**
+     * @see com.systemsjr.jrbase.user.service.UserService#getAllUsers()
+     */
+    protected  UserVO[] handleGetAllUsers()
+        throws Exception
+    {
+        // TODO implement protected  UserVO[] handleGetAllUsers()
+        throw new UnsupportedOperationException("com.systemsjr.jrbase.user.service.UserService.handleGetAllUsers() Not implemented!");
+    }
 
-	@Override
-	protected UserVO[] handleGetAllUsers() throws Exception {
-		Collection users = getUserDao().loadAll();
-		return getUserDao().toUserVOArray(users);
-	}
+    /**
+     * @see com.systemsjr.jrbase.user.service.UserService#getUsersByStatus(UserStatus)
+     */
+    protected  UserVO[] handleGetUsersByStatus(UserStatus status)
+        throws Exception
+    {
+        // TODO implement protected  UserVO[] handleGetUsersByStatus(UserStatus status)
+        throw new UnsupportedOperationException("com.systemsjr.jrbase.user.service.UserService.handleGetUsersByStatus(UserStatus status) Not implemented!");
+    }
 
-	@Override
-	protected UserVO[] handleGetUsersByStatus(UserStatus status) throws Exception {
-		
-		UserSearchCriteria searchCriteria = new UserSearchCriteria();
-		
-		searchCriteria.setStatus(status);
-		List users = getUserDao().findByCriteria(searchCriteria);
-				
-		return getUserDao().toUserVOArray(users);
-	}
+    /**
+     * @see com.systemsjr.jrbase.user.service.UserService#getUserLocations(UserVO)
+     */
+    protected  LocationVO[] handleGetUserLocations(UserVO userVO)
+        throws Exception
+    {
+        // TODO implement protected  LocationVO[] handleGetUserLocations(UserVO userVO)
+        throw new UnsupportedOperationException("com.systemsjr.jrbase.user.service.UserService.handleGetUserLocations(UserVO userVO) Not implemented!");
+    }
 
-	@Override
-	protected LocationVO handleGetUserCurrentLocation(UserVO userVO) throws Exception {
-		UserLocationSearchCriteria searchCriteria = new UserLocationSearchCriteria();
-		
-		if(userVO != null && userVO.getId() != null){
-			searchCriteria.setUser(userVO);
-			searchCriteria.setStatus(UserLocationStatus.ACTIVE);
-		} else{
-			return null;
-		}
-		
-		return  getUserLocationDao().toUserLocationVOArray(getUserLocationDao().findByCriteria(searchCriteria))[0].getLocation();
-	}
+    /**
+     * @see com.systemsjr.jrbase.user.service.UserService#getUserCurrentLocation(UserVO)
+     */
+    protected  LocationVO handleGetUserCurrentLocation(UserVO userVO)
+        throws Exception
+    {
+        // TODO implement protected  LocationVO handleGetUserCurrentLocation(UserVO userVO)
+        throw new UnsupportedOperationException("com.systemsjr.jrbase.user.service.UserService.handleGetUserCurrentLocation(UserVO userVO) Not implemented!");
+    }
 
-	@Override
-	protected UserVO handleDoLogin(UserVO userVO) throws Exception {
-		//User user = getUserDao().userLogin(userVO.getUsername(), getUserDao().guserVO.getPassword());
-		
-		return null;//getUserDao().toUserVO(user);
-	}
+    /**
+     * @see com.systemsjr.jrbase.user.service.UserService#doLogin(UserVO)
+     */
+    protected  UserVO handleDoLogin(UserVO userVO)
+        throws Exception
+    {
+        // TODO implement protected  UserVO handleDoLogin(UserVO userVO)
+        throw new UnsupportedOperationException("com.systemsjr.jrbase.user.service.UserService.handleDoLogin(UserVO userVO) Not implemented!");
+    }
 
 }

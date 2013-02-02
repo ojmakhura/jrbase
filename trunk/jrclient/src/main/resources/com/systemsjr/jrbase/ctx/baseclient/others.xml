@@ -11,4 +11,5 @@
 	<bean id="organisationVO" class="com.systemsjr.jrbase.organisation.vo.OrganisationVO"/>
 	<bean id="userVO" class="com.systemsjr.jrbase.user.vo.UserVO"/>
 	<bean id="counterVO" class="com.systemsjr.jrbase.counter.vo.CounterVO"/>
+	<bean id="loginSessionVO" class="com.systemsjr.jrbase.loginsession.vo.LoginSessionVO"/>
 </beans>

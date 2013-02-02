@@ -2,24 +2,29 @@
 /**
  * This is only generated once! It will never be overwritten.
  * You can (and have to!) safely modify it by hand.
+ * TEMPLATE:    SpringServiceImpl.vsl in andromda-spring cartridge
+ * MODEL CLASS: AndroMDAModel::jrbase::com.systemsjr.jrbase::user::service::SecurityService
+ * STEREOTYPE:  Service
  */
 package com.systemsjr.jrbase.user.service;
+
+import com.systemsjr.jrbase.user.vo.UserDetailsVO;
 
 /**
  * @see com.systemsjr.jrbase.user.service.SecurityService
  */
 public class SecurityServiceImpl
-    extends com.systemsjr.jrbase.user.service.SecurityServiceBase
+    extends SecurityServiceBase
 {
 
     /**
-     * @see com.systemsjr.jrbase.user.service.SecurityService#getUserDetails(java.lang.String)
+     * @see com.systemsjr.jrbase.user.service.SecurityService#getUserDetails(String)
      */
-    protected  com.systemsjr.jrbase.user.vo.UserDetailsVO handleGetUserDetails(java.lang.String username)
-        throws java.lang.Exception
+    protected  UserDetailsVO handleGetUserDetails(String username)
+        throws Exception
     {
-        // @todo implement protected  com.systemsjr.jrbase.user.vo.UserDetailsVO handleGetUserDetails(java.lang.String username)
-        throw new java.lang.UnsupportedOperationException("com.systemsjr.jrbase.user.service.SecurityService.handleGetUserDetails(java.lang.String username) Not implemented!");
+        // TODO implement protected  UserDetailsVO handleGetUserDetails(String username)
+        throw new UnsupportedOperationException("com.systemsjr.jrbase.user.service.SecurityService.handleGetUserDetails(String username) Not implemented!");
     }
 
 }
