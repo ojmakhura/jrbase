@@ -63,7 +63,7 @@
     <bean id="exceptionTranslationFilter" class="org.acegisecurity.ui.ExceptionTranslationFilter">
         <property name="authenticationEntryPoint">
             <bean class="org.acegisecurity.ui.webapp.AuthenticationProcessingFilterEntryPoint">
-                <property name="loginFormUrl" value="/login/login-form.jsp"/>
+                <property name="loginFormUrl" value="/login.xhtml"/>
                 <property name="forceHttps" value="false"/>
             </bean>
         </property>

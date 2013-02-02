@@ -39,7 +39,6 @@
             <br />
             <input class="button" type="submit" name="submit" value="Log In" />
         </form>
-
     </tiles:put>
 
 </tiles:insert>
