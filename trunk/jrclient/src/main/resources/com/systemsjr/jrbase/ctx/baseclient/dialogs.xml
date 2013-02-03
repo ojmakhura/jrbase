@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+	
+	
+	<bean id="individualDialog" class="com.systemsjr.jrbase.individual.IndividualDialog">
+		<property name="itemForm" ref="individualForm"/>
+	</bean>
+	
+	<bean id="userDialog" class="com.systemsjr.jrbase.user.UserDialog">
+		<property name="itemForm" ref="userForm"/>
+	</bean>
+	
+	<bean id="counterDialog" class="com.systemsjr.jrbase.counter.CounterDialog">
+		<property name="itemForm" ref="counterForm"/>
+	</bean>
+	
+	<bean id="clearanceLevelDialog" class="com.systemsjr.jrbase.clearancelevel.ClearanceLevelDialog">
+		<property name="itemForm" ref="clearanceLevelForm"/>
+	</bean>
+	
+	<bean id="roleDialog" class="com.systemsjr.jrbase.role.RoleDialog">
+		<property name="itemForm" ref="roleForm"/>
+	</bean>
+	
+	<bean id="locationDialog" class="com.systemsjr.jrbase.location.LocationDialog">
+		<property name="itemForm" ref="locationForm"/>
+	</bean>
+	
+	<bean id="locationTypeDialog" class="com.systemsjr.jrbase.location.LocationTypeDialog">
+		<property name="itemForm" ref="locationTypeForm"/>
+	</bean>
+	
+	<bean id="organisationDialog" class="com.systemsjr.jrbase.organisation.OrganisationDialog">
+		<property name="itemForm" ref="organisationForm"/>
+	</bean>
+	
+	<bean id="organisationTypeDialog" class="com.systemsjr.jrbase.organisation.OrganisationTypeDialog">
+		<property name="itemForm" ref="organisationTypeForm"/>
+	</bean>
+	
+	<bean id="loginDialog" class="com.systemsjr.jrbase.login.LoginDialog"/>
+</beans>

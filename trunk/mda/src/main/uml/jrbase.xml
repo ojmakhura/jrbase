@@ -2720,10 +2720,7 @@
 								<ownedParameter xmi:type='uml:Parameter' xmi:id='_16_0_1_90e0298_1359736999195_623560_2489' name='loginSessionVO' visibility='public' direction='in' type='_16_0_1_90e0298_1359736994965_250813_1275'/>
 							</ownedOperation>
 							<ownedOperation xmi:type='uml:Operation' xmi:id='_16_0_1_90e0298_1359736999140_444272_1999' name='getAllLoginSessions' visibility='public'>
-								<ownedParameter xmi:type='uml:Parameter' xmi:id='_16_0_1_90e0298_1359736999196_154388_2490' visibility='public' direction='return' type='_16_0_1_90e0298_1359736994965_197531_1276'>
-									<upperValue xmi:type='uml:LiteralUnlimitedNatural' xmi:id='_16_0_1_90e0298_1359736999205_222356_2641' visibility='public' value='*'/>
-									<lowerValue xmi:type='uml:LiteralInteger' xmi:id='_16_0_1_90e0298_1359736999205_764565_2640' visibility='public'/>
-								</ownedParameter>
+								<ownedParameter xmi:type='uml:Parameter' xmi:id='_16_0_1_90e0298_1359736999196_154388_2490' visibility='public' direction='return' type='_16_0_1_90e0298_1359736994965_197531_1276'/>
 							</ownedOperation>
 							<ownedOperation xmi:type='uml:Operation' xmi:id='_16_0_1_90e0298_1359736999140_608215_2000' name='verifyLoginDetails' visibility='public'>
 								<ownedParameter xmi:type='uml:Parameter' xmi:id='_16_0_1_90e0298_1359736999196_554920_2491' visibility='public' direction='return' type='_16_0_1_90e0298_1359736994965_250813_1275'/>
@@ -8392,7 +8389,7 @@
 						<mdElement elementClass='StringProperty'>
 							<propertyID>INFO_PROPERTY</propertyID>
 							<propertyDescriptionID>INFO_PROPERTY_DESCRIPTION</propertyDescriptionID>
-							<value>3a 11 13 49 29 11 6a 55 79 c f8 7a 79 4c d1 5 56 fe 47 ca 3d 79 57 8 65 5f d0 da 93 d2 14 32 59 b1 e0 97 d4 a2 b 17 af 1f 13 de bf cf f2 6c 15 fc 5b 55 70 94 d fb c3 9a f9 77 d5 ac 0 7f 44 d 8b 1a cd e6 c3 8d f6 95 81 b2 bf 1 b6 12 87 12 c5 2c ba 10 26 b7 67 3 ff 57 ae 3e 18 94 13 b4 79 4e da c9 14 fc e2 e </value>
+							<value>3a 11 13 49 29 11 6a 55 79 c f8 7a 79 4c d1 5 56 fe 47 ca 3d 79 57 6 65 58 d4 da 92 d6 14 32 59 b1 e0 97 d4 a2 b 17 bf 11 8 d6 ae de fa 7b d e7 5b 5c 70 83 1b f8 c4 86 ef 78 d0 ac 62 49 77 2e a8 3a 95 f1 d5 fd cf b2 ba 9e e1 b a8 1 86 1f ce 24 b6 1f 3d a1 6b 1c f9 57 b2 25 14 81 18 b5 68 2a 81 dc a fa e2 e </value>
 						</mdElement>
 						<mdElement elementClass='LIST_PROPERTY'>
 							<propertyID>ADDITIONAL_CONTAINMENT_TREES</propertyID>

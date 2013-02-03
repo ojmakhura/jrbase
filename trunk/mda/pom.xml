@@ -87,7 +87,7 @@
     <build>
         <sourceDirectory>${project.basedir}/src/main/uml</sourceDirectory>
         <plugins>
-            <plugin>
+            <!--plugin>
                 <groupId>org.andromda.maven.plugins</groupId>
                 <artifactId>andromda-maven-plugin</artifactId>
                 <version>${andromda.version}</version>
@@ -99,11 +99,11 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <configurationUri>${project.basedir}/src/main/config/andromda.xml</configurationUri>
+                    <configurationUri>${project.basedir}/src/main/config/andromda.xml</configurationUri-->
                     <!-- Check model dates vs output file dates from previous gen, skip if files are later -->
-                    <lastModifiedCheck>true</lastModifiedCheck>
+                    <!-- lastModifiedCheck>true</lastModifiedCheck>
                 </configuration>
-            </plugin>
+            </plugin-->
         </plugins>
     </build>
     <properties>

@@ -29,9 +29,9 @@ public class LoginSessionServiceImpl
     /**
      * @see com.systemsjr.jrbase.loginsession.service.LoginSessionService#getAllLoginSessions()
      */
-    public java.util.Collection<com.systemsjr.jrbase.loginsession.vo.LoginSessionVO[]> getAllLoginSessions()
+    public com.systemsjr.jrbase.loginsession.vo.LoginSessionVO[] getAllLoginSessions()
     {
-        // TODO implement public java.util.Collection<com.systemsjr.jrbase.loginsession.vo.LoginSessionVO[]> getAllLoginSessions()
+        // TODO implement public com.systemsjr.jrbase.loginsession.vo.LoginSessionVO[] getAllLoginSessions()
         return null;
     }
 

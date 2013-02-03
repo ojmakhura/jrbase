@@ -10,7 +10,6 @@ import java.util.List;
 
 import org.hibernate.Criteria;
 import org.hibernate.criterion.Restrictions;
-import org.springframework.security.crypto.password.StandardPasswordEncoder;
 
 import com.systemsjr.jrbase.role.Role;
 import com.systemsjr.jrbase.role.vo.RoleVO;
@@ -123,9 +122,9 @@ public class UserDaoImpl
 		Criteria criteria = getSession().createCriteria(User.class);
 		
 		criteria.add(Restrictions.eq("username", username));
-		criteria.add(Restrictions.eq("password", new StandardPasswordEncoder().encode(password)));
+		//criteria.add(Restrictions.eq("password", new StandardPasswordEncoder().encode(password)));
 		
-		System.out.println("username = " + username + " password = " + new StandardPasswordEncoder().encode(password));
+		//System.out.println("username = " + username + " password = " + new StandardPasswordEncoder().encode(password));
 		
 		List users = criteria.list();
 		
