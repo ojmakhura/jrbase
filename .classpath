@@ -60,6 +60,7 @@
   <classpathentry kind="var" path="M2_REPO/net/java/dev/glazedlists/glazedlists_java15/1.8.0/glazedlists_java15-1.8.0.jar"/>
   <classpathentry kind="var" path="M2_REPO/net/sf/ehcache/ehcache-core/2.6.0/ehcache-core-2.6.0.jar"/>
   <classpathentry kind="var" path="M2_REPO/net/sf/swingdocking/swingdocking-core/1.0.0/swingdocking-core-1.0.0.jar"/>
+  <classpathentry kind="var" path="M2_REPO/ognl/ognl/2.6.9/ognl-2.6.9.jar"/>
   <classpathentry kind="var" path="M2_REPO/org/andromda/andromda-core/3.4/andromda-core-3.4.jar"/>
   <classpathentry kind="var" path="M2_REPO/org/andromda/andromda-script-wrappers/3.4/andromda-script-wrappers-3.4.jar"/>
   <classpathentry kind="var" path="M2_REPO/org/andromda/andromda-utils/3.4/andromda-utils-3.4.jar"/>
@@ -118,17 +119,18 @@
   <classpathentry kind="var" path="M2_REPO/org/jdesktop/xswingx/xswingx/0.2/xswingx-0.2.jar"/>
   <classpathentry kind="var" path="M2_REPO/org/slf4j/slf4j-api/1.7.0/slf4j-api-1.7.0.jar"/>
   <classpathentry kind="var" path="M2_REPO/org/slf4j/slf4j-log4j12/1.7.0/slf4j-log4j12-1.7.0.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/springframework/richclient/spring-richclient-core/1.1.0/spring-richclient-core-1.1.0.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/springframework/richclient/spring-richclient-core/1.1.1/spring-richclient-core-1.1.1.jar"/>
   <classpathentry kind="var" path="M2_REPO/org/springframework/richclient/spring-richclient-jdk6/1.1.0/spring-richclient-jdk6-1.1.0.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/springframework/richclient/spring-richclient-resources/1.1.0/spring-richclient-resources-1.1.0.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/springframework/richclient/spring-richclient-sandbox/1.1.0/spring-richclient-sandbox-1.1.0.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/springframework/richclient/spring-richclient-swingdocking/1.1.0/spring-richclient-swingdocking-1.1.0.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/springframework/richclient/spring-richclient-resources/1.1.1/spring-richclient-resources-1.1.1.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/springframework/richclient/spring-richclient-sandbox/1.1.1/spring-richclient-sandbox-1.1.1.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/springframework/richclient/spring-richclient-swingdocking/1.1.1/spring-richclient-swingdocking-1.1.1.jar"/>
   <classpathentry kind="var" path="M2_REPO/org/springframework/security/spring-security-config/3.1.2.RELEASE/spring-security-config-3.1.2.RELEASE.jar"/>
   <classpathentry kind="var" path="M2_REPO/org/springframework/security/spring-security-core/3.1.2.RELEASE/spring-security-core-3.1.2.RELEASE.jar"/>
   <classpathentry kind="var" path="M2_REPO/org/springframework/security/spring-security-web/3.1.2.RELEASE/spring-security-web-3.1.2.RELEASE.jar"/>
   <classpathentry kind="var" path="M2_REPO/org/springframework/spring-aop/3.1.2.RELEASE/spring-aop-3.1.2.RELEASE.jar"/>
   <classpathentry kind="var" path="M2_REPO/org/springframework/spring-asm/3.1.2.RELEASE/spring-asm-3.1.2.RELEASE.jar"/>
   <classpathentry kind="var" path="M2_REPO/org/springframework/spring-beans/3.1.2.RELEASE/spring-beans-3.1.2.RELEASE.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/springframework/spring-binding/1.0.6/spring-binding-1.0.6.jar"/>
   <classpathentry kind="var" path="M2_REPO/org/springframework/spring-context-support/3.1.2.RELEASE/spring-context-support-3.1.2.RELEASE.jar"/>
   <classpathentry kind="var" path="M2_REPO/org/springframework/spring-context/3.1.2.RELEASE/spring-context-3.1.2.RELEASE.jar"/>
   <classpathentry kind="var" path="M2_REPO/org/springframework/spring-core/3.1.2.RELEASE/spring-core-3.1.2.RELEASE.jar"/>
@@ -137,7 +139,7 @@
   <classpathentry kind="var" path="M2_REPO/org/springframework/spring-orm/3.1.2.RELEASE/spring-orm-3.1.2.RELEASE.jar"/>
   <classpathentry kind="var" path="M2_REPO/org/springframework/spring-tx/3.1.2.RELEASE/spring-tx-3.1.2.RELEASE.jar"/>
   <classpathentry kind="var" path="M2_REPO/org/springframework/spring-web/3.1.2.RELEASE/spring-web-3.1.2.RELEASE.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/springframework/spring/2.5.6.SEC03/spring-2.5.6.SEC03.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/springframework/spring/2.5.6/spring-2.5.6.jar"/>
   <classpathentry kind="var" path="M2_REPO/org/swinglabs/swing-worker/1.1/swing-worker-1.1.jar"/>
   <classpathentry kind="var" path="M2_REPO/org/swinglabs/swingx/1.6/swingx-1.6.jar"/>
   <classpathentry kind="var" path="M2_REPO/oro/oro/2.0.8/oro-2.0.8.jar"/>
