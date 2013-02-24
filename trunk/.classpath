@@ -1,12 +1,12 @@
 <classpath>
+  <classpathentry kind="src" path="common/target/src/main/java"/>
   <classpathentry kind="src" path="core/src/main/java"/>
   <classpathentry kind="src" path="core/target/src/main/java"/>
   <classpathentry kind="src" path="jrclient/src/main/java"/>
   <classpathentry kind="src" path="jrclient/src/test/java"/>
-  <classpathentry kind="src" path="common/target/src/main/java"/>
+  <classpathentry kind="src" path="mda/src/main/uml"/>
   <classpathentry kind="src" path="web/src/main/java"/>
   <classpathentry kind="src" path="web/target/src/main/java"/>
-  <classpathentry kind="src" path="mda/src/main/uml"/>
   <classpathentry kind="var" path="M2_REPO/antlr/antlr/2.7.6/antlr-2.7.6.jar"/>
   <classpathentry kind="var" path="M2_REPO/aopalliance/aopalliance/1.0/aopalliance-1.0.jar"/>
   <classpathentry kind="var" path="M2_REPO/asm/asm/3.1/asm-3.1.jar"/>
