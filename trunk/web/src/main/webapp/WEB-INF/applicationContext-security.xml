@@ -1,0 +1,45 @@
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+	xmlns:beans="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+           http://www.springframework.org/schema/security
+           http://www.springframework.org/schema/security/spring-security-3.1.xsd">
+
+	<http auto-config='true'>
+		<intercept-url pattern="/**" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+		<form-login login-page='/login.jsf' default-target-url='/crud-index.jsf' />
+	</http>
+
+	<authentication-manager alias="authenticationManager">
+		<authentication-provider ref='daoAuthenticationProvider' />
+	</authentication-manager>
+
+	<beans:bean id="userDetailsService"
+		class="com.systemsjr.matlo.user.security.UserDetailsImpl">
+	</beans:bean>
+
+	<beans:bean id="daoAuthenticationProvider"
+		class="org.springframework.security.authentication.dao.DaoAuthenticationProvider">
+		<beans:property name="userDetailsService" ref="userDetailsService" />
+		<beans:property name="passwordEncoder" ref="passwordEncoder" />
+	</beans:bean>
+
+	<http access-decision-manager-ref="accessDecisionManager" />
+	<beans:bean id="accessDecisionManager"
+		class="org.springframework.security.vote.AffirmativeBased">
+		<beans:property name="decisionVoters">
+			<beans:list>
+				<beans:ref bean="roleVoter" />
+				<beans:ref bean="authenticatedVoter" />
+			</beans:list>
+		</beans:property>
+	</beans:bean>
+
+	<beans:bean id="roleVoter" class="org.springframework.security.vote.RoleVoter">
+		<beans:property name="rolePrefix" value="" />
+	</beans:bean>
+
+	<beans:bean id="authenticatedVoter"
+		class="org.springframework.security.vote.AuthenticatedVoter">
+	</beans:bean>
+</beans:beans>

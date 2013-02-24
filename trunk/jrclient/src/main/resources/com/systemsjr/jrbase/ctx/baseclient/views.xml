@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+		
+	<!-- Defines the base abstract BaseView -->
+	<bean id="baseView" class="org.springframework.richclient.application.support.DefaultViewDescriptor">
+		<property name="viewClass" value="com.systemsjr.jrbase.BaseView" />		
+	</bean>
+	
+	<bean id="splitPane" class="javax.swing.JSplitPane">
+		<property name="dividerSize" value="2"/>
+		<property name="oneTouchExpandable" value="true"/>
+	</bean>
+	
+	<bean id="clearanceLevelView" class="org.springframework.richclient.application.support.DefaultViewDescriptor">
+		<property name="viewClass" value="com.systemsjr.jrbase.clearancelevel.ClearanceLevelView"/>
+		<property name="viewProperties">
+			<map>
+				<entry key="itemForm" value-ref="clearanceLevelForm"/>
+			</map>
+		</property>
+	</bean>
+	
+	<bean id="individualView" class="org.springframework.richclient.application.support.DefaultViewDescriptor">
+		<property name="viewClass" value="com.systemsjr.jrbase.individual.IndividualView"/>
+		<property name="viewProperties">
+			<map>
+				<entry key="itemForm" value-ref="individualForm"/>
+			</map>
+		</property>
+	</bean>
+	<bean id="roleView" class="org.springframework.richclient.application.support.DefaultViewDescriptor">
+		<property name="viewClass" value="com.systemsjr.jrbase.role.RoleView"/>
+		<property name="viewProperties">
+			<map>
+				<entry key="itemForm" value-ref="roleForm"/>
+			</map>
+		</property>
+	</bean>
+	<bean id="counterView" class="org.springframework.richclient.application.support.DefaultViewDescriptor">
+		<property name="viewClass" value="com.systemsjr.jrbase.counter.CounterView"/>
+		<property name="viewProperties">
+			<map>
+				<entry key="itemForm" value-ref="counterForm"/>
+			</map>
+		</property>
+	</bean>
+	<bean id="locationTypeView" class="org.springframework.richclient.application.support.DefaultViewDescriptor">
+		<property name="viewClass" value="com.systemsjr.jrbase.location.LocationTypeView"/>
+		<property name="viewProperties">
+			<map>
+				<entry key="itemForm" value-ref="locationTypeForm"/>
+			</map>
+		</property>
+	</bean>
+	<bean id="locationView" class="org.springframework.richclient.application.support.DefaultViewDescriptor">
+		<property name="viewClass" value="com.systemsjr.jrbase.location.LocationView"/>
+		<property name="viewProperties">
+			<map>
+				<entry key="itemForm" value-ref="locationForm"/>
+			</map>
+		</property>
+	</bean>
+	<bean id="organisationTypeView" class="org.springframework.richclient.application.support.DefaultViewDescriptor">
+		<property name="viewClass" value="com.systemsjr.jrbase.organisation.OrganisationTypeView"/>
+		<property name="viewProperties">
+			<map>
+				<entry key="itemForm" value-ref="organisationTypeForm"/>
+			</map>
+		</property>
+	</bean>
+	<bean id="organisationView" class="org.springframework.richclient.application.support.DefaultViewDescriptor">
+		<property name="viewClass" value="com.systemsjr.jrbase.organisation.OrganisationView"/>
+		<property name="viewProperties">
+			<map>
+				<entry key="itemForm" value-ref="organisationForm"/>
+			</map>
+		</property>
+	</bean>
+	
+	<bean id="userView" class="org.springframework.richclient.application.support.DefaultViewDescriptor">
+		<property name="viewClass" value="com.systemsjr.jrbase.user.UserView"/>
+		<property name="viewProperties">
+			<map>
+				<entry key="itemForm" value-ref="userForm"/>
+			</map>
+		</property>
+	</bean>
+	
+	<bean id="loginView" class="org.springframework.richclient.application.support.DefaultViewDescriptor">
+		<property name="viewClass" value="com.systemsjr.jrbase.login.LoginView"/>
+		<property name="viewProperties">
+			<map>
+				<entry key="itemForm" value-ref="loginForm"/>
+			</map>
+		</property>
+	</bean>
+	<!--************************************************************************************************* 
+		Workbench application views
+	 **************************************************************************************************-->
+	<bean id="menuView" class="org.springframework.richclient.application.support.DefaultViewDescriptor">
+		<property name="viewClass" value="com.systemsjr.jrbase.workbench.menu.MenuView"/>
+		<property name="viewProperties">
+			<map>
+				<entry key="itemForm" value-ref="menuForm"/>
+			</map>
+		</property>
+	</bean>
+	
+	<bean id="programView" class="org.springframework.richclient.application.support.DefaultViewDescriptor">
+		<property name="viewClass" value="com.systemsjr.jrbase.workbench.program.ProgramView"/>
+		<property name="viewProperties">
+			<map>
+				<entry key="itemForm" value-ref="programForm"/>
+			</map>
+		</property>
+	</bean>
+</beans>
