@@ -16,7 +16,7 @@ public class JRLoginCommand extends LoginCommand {
 	@Override
 	protected void postLogin() {
 		ApplicationSecurityManager sm = (DefaultApplicationSecurityManager)Application.instance().getApplicationContext().getBean("applicationSecurityManager");
-		Authentication auth = sm.getAuthentication();
+		//Authentication auth = sm.getAuthentication();
 	}	
 
 }

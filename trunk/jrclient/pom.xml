@@ -199,9 +199,8 @@
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
-			<version>5.1.18</version>
+			<version>5.1.20</version>
 		</dependency>
-		<!-- Components -->
 		<dependency>
 			<groupId>com.jgoodies</groupId>
 			<artifactId>forms</artifactId>
@@ -212,10 +211,6 @@
 			<artifactId>looks</artifactId>
 			<version>2.0.4</version>
 		</dependency>
-		<!-- <dependency> -->
-		<!-- <groupId>javax.help</groupId> -->
-		<!-- <artifactId>jhelp</artifactId> -->
-		<!-- </dependency> -->
 		<dependency>
 			<groupId>javax.activation</groupId>
 			<artifactId>activation</artifactId>
@@ -226,39 +221,11 @@
 			<artifactId>mail</artifactId>
 			<version>1.4</version>
 		</dependency>
-		<dependency>
-			<groupId>lti.civil</groupId>
-			<artifactId>lti-civil</artifactId>
-			<version>1.0</version>
-		</dependency>
-		<dependency>
+		<!-- dependency>
 			<groupId>opensymphony</groupId>
 			<artifactId>quartz</artifactId>
 			<version>1.6.0</version>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.security</groupId>
-			<artifactId>spring-security-core</artifactId>
-			<version>3.1.2.RELEASE</version>
-			<exclusions>
-				<exclusion>
-					<artifactId>spring-beans</artifactId>
-					<groupId>org.springframework</groupId>
-				</exclusion>
-				<exclusion>
-					<artifactId>spring-context</artifactId>
-					<groupId>org.springframework</groupId>
-				</exclusion>
-				<exclusion>
-					<artifactId>spring-core</artifactId>
-					<groupId>org.springframework</groupId>
-				</exclusion>
-				<exclusion>
-					<artifactId>spring-aop</artifactId>
-					<groupId>org.springframework</groupId>
-				</exclusion>
-			</exclusions>
-		</dependency>
+		</dependency-->
 		<dependency>
 			<groupId>com.thoughtworks.xstream</groupId>
 			<artifactId>xstream</artifactId>
@@ -285,13 +252,11 @@
 			<artifactId>l2fprod-common-tasks</artifactId>
 			<version>7.3</version>
 		</dependency>
-		<dependency>
+		<!-- dependency>
 			<groupId>org.supercsv</groupId>
 			<artifactId>supercsv</artifactId>
 			<version>1.52</version>
-		</dependency>
-		<!-- <dependency> <groupId>net.sf.barcode4j</groupId> <artifactId>barcode4j</artifactId> 
-			</dependency> -->
+		</dependency-->
 		<dependency>
 			<groupId>foxtrot</groupId>
 			<artifactId>foxtrot</artifactId>
@@ -301,11 +266,6 @@
 			<groupId>com.kenai.nbpwr</groupId>
 			<artifactId>org-apache-batik-all</artifactId>
 			<version>1.7-201002241055</version>
-		</dependency>
-		<dependency>
-			<groupId>org.jpos</groupId>
-			<artifactId>jpos</artifactId>
-			<version>1.5.0</version>
 		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
