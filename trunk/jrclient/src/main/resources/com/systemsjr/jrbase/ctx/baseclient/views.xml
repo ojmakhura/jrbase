@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
-		
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+	
 	<!-- Defines the base abstract BaseView -->
 	<bean id="baseView" class="org.springframework.richclient.application.support.DefaultViewDescriptor">
 		<property name="viewClass" value="com.systemsjr.jrbase.BaseView" />		
@@ -16,7 +17,7 @@
 		<property name="viewClass" value="com.systemsjr.jrbase.clearancelevel.ClearanceLevelView"/>
 		<property name="viewProperties">
 			<map>
-				<entry key="itemForm" value-ref="clearanceLevelForm"/>
+				<entry key="itemControl" value-ref="clearanceLevelControl"/>
 			</map>
 		</property>
 	</bean>
@@ -25,7 +26,7 @@
 		<property name="viewClass" value="com.systemsjr.jrbase.individual.IndividualView"/>
 		<property name="viewProperties">
 			<map>
-				<entry key="itemForm" value-ref="individualForm"/>
+				<entry key="itemControl" value-ref="individualControl"/>
 			</map>
 		</property>
 	</bean>
@@ -33,7 +34,7 @@
 		<property name="viewClass" value="com.systemsjr.jrbase.role.RoleView"/>
 		<property name="viewProperties">
 			<map>
-				<entry key="itemForm" value-ref="roleForm"/>
+				<entry key="itemControl" value-ref="roleControl"/>
 			</map>
 		</property>
 	</bean>
@@ -41,7 +42,7 @@
 		<property name="viewClass" value="com.systemsjr.jrbase.counter.CounterView"/>
 		<property name="viewProperties">
 			<map>
-				<entry key="itemForm" value-ref="counterForm"/>
+				<entry key="itemControl" value-ref="counterControl"/>
 			</map>
 		</property>
 	</bean>
@@ -49,7 +50,7 @@
 		<property name="viewClass" value="com.systemsjr.jrbase.location.LocationTypeView"/>
 		<property name="viewProperties">
 			<map>
-				<entry key="itemForm" value-ref="locationTypeForm"/>
+				<entry key="itemControl" value-ref="locationTypeControl"/>
 			</map>
 		</property>
 	</bean>
@@ -57,7 +58,7 @@
 		<property name="viewClass" value="com.systemsjr.jrbase.location.LocationView"/>
 		<property name="viewProperties">
 			<map>
-				<entry key="itemForm" value-ref="locationForm"/>
+				<entry key="itemControl" value-ref="locationControl"/>
 			</map>
 		</property>
 	</bean>
@@ -65,7 +66,7 @@
 		<property name="viewClass" value="com.systemsjr.jrbase.organisation.OrganisationTypeView"/>
 		<property name="viewProperties">
 			<map>
-				<entry key="itemForm" value-ref="organisationTypeForm"/>
+				<entry key="itemControl" value-ref="organisationTypeControl"/>
 			</map>
 		</property>
 	</bean>
@@ -73,7 +74,7 @@
 		<property name="viewClass" value="com.systemsjr.jrbase.organisation.OrganisationView"/>
 		<property name="viewProperties">
 			<map>
-				<entry key="itemForm" value-ref="organisationForm"/>
+				<entry key="itemControl" value-ref="organisationControl"/>
 			</map>
 		</property>
 	</bean>
@@ -82,19 +83,19 @@
 		<property name="viewClass" value="com.systemsjr.jrbase.user.UserView"/>
 		<property name="viewProperties">
 			<map>
-				<entry key="itemForm" value-ref="userForm"/>
+				<entry key="itemControl" value-ref="userControl"/>
 			</map>
 		</property>
 	</bean>
 	
-	<bean id="loginView" class="org.springframework.richclient.application.support.DefaultViewDescriptor">
+	<!-- <bean id="loginView" class="org.springframework.richclient.application.support.DefaultViewDescriptor">
 		<property name="viewClass" value="com.systemsjr.jrbase.login.LoginView"/>
 		<property name="viewProperties">
 			<map>
 				<entry key="itemForm" value-ref="loginForm"/>
 			</map>
 		</property>
-	</bean>
+	</bean> -->
 	<!--************************************************************************************************* 
 		Workbench application views
 	 **************************************************************************************************-->
@@ -102,7 +103,7 @@
 		<property name="viewClass" value="com.systemsjr.jrbase.workbench.menu.MenuView"/>
 		<property name="viewProperties">
 			<map>
-				<entry key="itemForm" value-ref="menuForm"/>
+				<entry key="itemControl" value-ref="menuControl"/>
 			</map>
 		</property>
 	</bean>
@@ -111,7 +112,16 @@
 		<property name="viewClass" value="com.systemsjr.jrbase.workbench.program.ProgramView"/>
 		<property name="viewProperties">
 			<map>
-				<entry key="itemForm" value-ref="programForm"/>
+				<entry key="itemControl" value-ref="programControl"/>
+			</map>
+		</property>
+	</bean>
+	
+	<bean id="applicationView" class="org.springframework.richclient.application.support.DefaultViewDescriptor">
+		<property name="viewClass" value="com.systemsjr.jrbase.workbench.application.ApplicationView"/>
+		<property name="viewProperties">
+			<map>
+				<entry key="itemControl" value-ref="applicationControl"/>
 			</map>
 		</property>
 	</bean>

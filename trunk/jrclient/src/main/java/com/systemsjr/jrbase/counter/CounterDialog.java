@@ -1,7 +1,7 @@
 package com.systemsjr.jrbase.counter;
 
-import com.systemsjr.jrbase.common.BaseItemDialog;
 import com.systemsjr.jrbase.counter.vo.CounterVO;
+import com.systemsjr.jrlib.richclient.BaseItemDialog;
 
 public class CounterDialog extends BaseItemDialog<CounterVO> {
 

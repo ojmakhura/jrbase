@@ -1,28 +1,14 @@
 package com.systemsjr.jrbase.location;
 
-import javax.swing.JComponent;
+import com.systemsjr.jrbase.workbench.application.WorkbenchView;
 
-import com.systemsjr.jrbase.common.BaseItemView;
-import com.systemsjr.jrbase.location.vo.LocationVO;
-import com.systemsjr.jrbase.utils.BaseServiceUtils;
+public class LocationView extends WorkbenchView {
 
-public class LocationView extends BaseItemView<LocationVO> {
-
-	@Override
-	protected JComponent createControl() {
-		setItemForm(new LocationForm());
-		
-		return getItemForm().getControl();
+	public LocationView(){
+		super("locationView");
 	}
 
-	@Override
-	protected LocationVO newItem() {
-		getItemForm().setFormObject(new LocationVO());
-		getItemForm().getFormModel().commit();
-		return (LocationVO) getItemForm().getFormObject();
-	}
-
-	@Override
+	/*@Override
 	protected LocationVO handleSaveItem(LocationVO object) {
 		setAction(object.getId());
 		object = BaseServiceUtils.getLocationService().saveLocation(object);
@@ -37,5 +23,5 @@ public class LocationView extends BaseItemView<LocationVO> {
 	@Override
 	protected LocationVO handleNewItem() {
 		return BaseServiceUtils.createDefaultLocation();
-	}
+	}*/
 }

@@ -1,16 +1,22 @@
 package com.systemsjr.jrbase.workbench.menu;
 
-import java.util.ArrayList;
-
 import javax.swing.JComponent;
 
-import com.systemsjr.jrbase.common.BaseTabbedForm;
+import com.systemsjr.jrbase.role.RoleTable;
+import com.systemsjr.jrbase.user.UserTable;
 import com.systemsjr.jrbase.utils.BaseServiceUtils;
 import com.systemsjr.jrbase.workbench.menu.vo.MenuVO;
+import com.systemsjr.jrbase.workbench.program.ProgramTable;
+import com.systemsjr.jrlib.richclient.BaseItemDetail;
+import com.systemsjr.jrlib.richclient.table.JRTableUtils;
 
-public class MenuDetails extends BaseTabbedForm<MenuVO> {
+public class MenuDetails extends BaseItemDetail<MenuVO> {
+	private MenuTable subMenusTable;
+	private ProgramTable programsTable;
+	private UserTable usersTable;
+	private RoleTable rolesTable;
 
-	public MenuDetails(Object item, String formId) {
+	public MenuDetails(MenuVO item, String formId) {
 		super(item, formId);
 		// TODO Auto-generated constructor stub
 	}
@@ -21,27 +27,69 @@ public class MenuDetails extends BaseTabbedForm<MenuVO> {
 
 	@Override
 	protected Tab[] getTabs() {
-		ArrayList<Tab> tabs = new ArrayList<Tab>();
-		tabs.add(new Tab("Sub Menus", createSubMenusTab()));
-		tabs.add(new Tab("Programs", createProgramsTab()));
-		tabs.add(new Tab("Users", createUsersTab()));
-		tabs.add(new Tab("Roles", createRolesTab()));
-		return tabs.toArray(new Tab[0]);
+		return new Tab[]{
+				new Tab("Sub Menus", createSubMenusTab()),
+				new Tab("Programs", createProgramsTab()),
+				new Tab("Users", createUsersTab()),
+				new Tab("Roles", createRolesTab())
+		};
 	}
 	
 	 private JComponent createSubMenusTab(){
-		 return super.createTabComponent("menuTable", "Sub Menus");
+		 JRTableUtils.refreshTable(subMenusTable, BaseServiceUtils.getMenuService().searchMenus(null));
+		 return super.createTabComponent(subMenusTable, "Sub Menus");
 	 }
 	 
 	 private JComponent createProgramsTab(){
-		 return super.createTabComponent("programTable", "Programs");
+		 JRTableUtils.refreshTable(programsTable, BaseServiceUtils.getProgramService().searchPrograms(null));
+		 return super.createTabComponent(programsTable, "Programs");
 	 }
 	 
 	 private JComponent createUsersTab(){
-		 return super.createTabComponent("userTable", "Users");
+		 JRTableUtils.refreshTable(usersTable, BaseServiceUtils.getUserService().searchUsers(null));
+		 return super.createTabComponent(usersTable, "Users");
 	 }
 
 	 private JComponent createRolesTab(){
-		 return super.createTabComponent("userTable", "Users");
+		 JRTableUtils.refreshTable(rolesTable, BaseServiceUtils.getRoleService().searchRoles(null));
+		 return super.createTabComponent(rolesTable, "Users");
 	 }
+
+	public MenuTable getSubMenusTable() {
+		return subMenusTable;
+	}
+
+	public void setSubMenusTable(MenuTable subMenusTable) {
+		this.subMenusTable = subMenusTable;
+	}
+
+	public ProgramTable getProgramsTable() {
+		return programsTable;
+	}
+
+	public void setProgramsTable(ProgramTable programsTable) {
+		this.programsTable = programsTable;
+	}
+
+	public UserTable getUsersTable() {
+		return usersTable;
+	}
+
+	public void setUsersTable(UserTable usersTable) {
+		this.usersTable = usersTable;
+	}
+
+	public RoleTable getRolesTable() {
+		return rolesTable;
+	}
+
+	public void setRolesTable(RoleTable rolesTable) {
+		this.rolesTable = rolesTable;
+	}
+
+	@Override
+	public MenuVO handleGetNewItem() {
+		
+		return null;
+	}
 }

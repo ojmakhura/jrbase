@@ -15,7 +15,7 @@ public class MenuServiceImpl
     /**
      * The serial version UID of this class. Needed for serialization.
      */
-    private static final long serialVersionUID = 4017135030079996616L;
+    private static final long serialVersionUID = 7668506007139339112L;
 
     /**
      * @see com.systemsjr.jrbase.workbench.menu.service.MenuService#getAllMenus()
@@ -60,5 +60,14 @@ public class MenuServiceImpl
     {
         // TODO implement public void removeMenu(com.systemsjr.jrbase.workbench.menu.vo.MenuVO menuVO)
         throw new UnsupportedOperationException("com.systemsjr.jrbase.workbench.menu.service.MenuService.removeMenu(com.systemsjr.jrbase.workbench.menu.vo.MenuVO menuVO) Not implemented!");
+    }
+
+    /**
+     * @see com.systemsjr.jrbase.workbench.menu.service.MenuService#searchMenus(com.systemsjr.jrbase.workbench.menu.vo.MenuSearchCriteria)
+     */
+    public com.systemsjr.jrbase.workbench.menu.vo.MenuVO[] searchMenus(com.systemsjr.jrbase.workbench.menu.vo.MenuSearchCriteria searchCriteria)
+    {
+        // TODO implement public com.systemsjr.jrbase.workbench.menu.vo.MenuVO[] searchMenus(com.systemsjr.jrbase.workbench.menu.vo.MenuSearchCriteria searchCriteria)
+        return null;
     }
 }

@@ -1,20 +1,19 @@
 package com.systemsjr.jrbase.workbench.menu;
 
-import javax.swing.JComponent;
+import com.systemsjr.jrbase.workbench.application.ApplicationView;
 
-import com.systemsjr.jrbase.common.BaseItemView;
-import com.systemsjr.jrbase.utils.BaseServiceUtils;
-import com.systemsjr.jrbase.workbench.menu.vo.MenuVO;
+public class MenuView extends ApplicationView{
 
-public class MenuView extends BaseItemView<MenuVO> {
-
-	@Override
-	protected JComponent createControl() {
-		setItemForm(new MenuForm());
-		return getItemForm().getControl();
+	public MenuView(){
+		super("menuView");
 	}
+	
+	/*@Override
+	protected JComponent createControl() {
+		return getItemForm().getControl();
+	}*/
 
-	@Override
+	/*@Override
 	protected MenuVO handleSaveItem(MenuVO object) {
 		setAction(object.getId());
 		object = BaseServiceUtils.getMenuService().saveMenu(object);
@@ -29,5 +28,5 @@ public class MenuView extends BaseItemView<MenuVO> {
 	@Override
 	protected MenuVO handleNewItem() {
 		return BaseServiceUtils.createDefaultMenu();
-	}
+	}*/
 }

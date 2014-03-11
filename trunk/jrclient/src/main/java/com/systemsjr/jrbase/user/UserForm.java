@@ -4,18 +4,17 @@ import javax.swing.JComponent;
 
 import org.springframework.binding.value.support.RefreshableValueHolder;
 
-import com.systemsjr.jrbase.common.BaseItemForm;
-import com.systemsjr.jrbase.user.vo.UserVO;
-import com.systemsjr.jrbase.utils.BaseServiceUtils;
+import com.systemsjr.jrbase.user.vo.UserDetailsVO;
 import com.systemsjr.jrbase.utils.BaseUIUtils;
+import com.systemsjr.jrlib.richclient.BaseItemForm;
 
-public class UserForm extends BaseItemForm<UserVO> {
+public class UserForm extends BaseItemForm<UserDetailsVO> {
 	RefreshableValueHolder individualHolder;
 	/**
 	 * @wbp.parser.entryPoint
 	 */
 	public UserForm() {
-		super(BaseServiceUtils.createDefaultUser(), "userForm");
+		super(new UserDetailsVO(), "userForm");
 	}
 
 	/**
@@ -23,16 +22,16 @@ public class UserForm extends BaseItemForm<UserVO> {
 	 */
 	@Override
 	protected JComponent createFormControl() {
-		super.initForm("userTable", null);
-		valueHolder = BaseUIUtils.getUserValueHolder();
+		super.initForm();
 		individualHolder = BaseUIUtils.getIndividualValueHolder();
 		
-		builder.add(sbf.createBoundComboBox("status", UserStatus.literals()), "colSpec=70dlu");
+		builder.add(sbf.createBoundComboBox("status", UserStatus.literals()), "colSpan=1");
 		builder.row();
 		builder.add("userId", "colSpan=1");
 		builder.add("username", "colSpan=1");
 		builder.row();
-		builder.add(sbf.createBoundComboBox("individual", individualHolder, "idNumber"), "colSpan=1");
+		builder.add(sbf.createBinding("individual", BaseUIUtils.getIndividualContext()), "colSpan=1");
+		//builder.add(sbf.createBoundComboBox("individual", individualHolder, "idNumber"), "colSpan=1");
 		builder.add("name", "colSpec=40dlu:grow");
 		builder.row();
 		builder.addPasswordField("password1", "colSpan=1");
@@ -43,5 +42,4 @@ public class UserForm extends BaseItemForm<UserVO> {
 		super.endFormCreate("");
 		return itemPanel;
 	}
-	
 }

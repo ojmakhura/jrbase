@@ -33,6 +33,11 @@
                     </table:table-cell>
                     <table:table-cell office:value-type="string">
                         <text:p>
+                            <h:outputText value="#{messages['application.view.title']}" escape="false"/>
+                        </text:p>
+                    </table:table-cell>
+                    <table:table-cell office:value-type="string">
+                        <text:p>
                             <h:outputText value="#{messages['menu.view.title']}" escape="false"/>
                         </text:p>
                     </table:table-cell>
@@ -51,6 +56,9 @@
                     </table:table-cell>
                     <table:table-cell office:value-type="string">
                         <text:p><h:outputText value="#{row.menuDescription}" escape="false"/></text:p>
+                    </table:table-cell>
+                    <table:table-cell office:value-type="string">
+                        <text:p><h:outputText value="#{row.application}" converter="com.systemsjr.jrbase.workbench.application.crud.ApplicationJsfConverter" escape="false"/></text:p>
                     </table:table-cell>
                     <table:table-cell office:value-type="string">
                         <text:p><h:outputText value="#{row.menu}" converter="com.systemsjr.jrbase.workbench.menu.crud.MenuJsfConverter" escape="false"/></text:p>

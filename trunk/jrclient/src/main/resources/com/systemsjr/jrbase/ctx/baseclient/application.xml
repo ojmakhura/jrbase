@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+<beans xmlns="http://www.springframework.org/schema/beans" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+					http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+					http://www.springframework.org/schema/util 
+					http://www.springframework.org/schema/util/spring-util-3.0.xsd">
 
 	<!--
     The application context is used to configure components and services within
@@ -62,12 +67,12 @@
     AWT event thread as the handler to receive uncaught exceptions that occur
     on the event thread.
   -->
-  <bean id="lifecycleAdvisor" class="com.systemsjr.jrbase.BaseLifecycleAdvisor">
+  <bean id="lifecycleAdvisor" class="com.systemsjr.jrlib.BaseLifecycleAdvisor">
     <property name="windowCommandBarDefinitions" value="com/systemsjr/jrbase/ui/baseclient/commands-context.xml" />
     <property name="windowCommandManagerBeanName" value="windowCommandManager" />
     <property name="menubarBeanName" value="menuBar" />
     <property name="toolbarBeanName" value="toolBar" />
-    <property name="startingPageId" value="baseView"/>
+    <property name="startingPageId" value="applicationView"/>
   </bean>
 
   <!--
@@ -183,14 +188,20 @@
     image resources locations.  This factory uses the specified properties
     files to map image resource keys to image locations.
   -->
-  <bean id="imageResourcesFactory" class="org.springframework.context.support.ResourceMapFactoryBean">
-    <property name="locations">
-      <list>
-        <!-- value>classpath:org/springframework/richclient/image/images.properties</value-->
-        <value>classpath:com/systemsjr/jrbase/ui/baseclient/images.properties</value>
-      </list>
-    </property>
-  </bean>
+  	<!-- <util:map id="imageResourcesFactory">
+		<entry key="spring" value="classpath:org/springframework/richclient/image/images.properties" />
+		<entry key="jrbase" value="classpath:com/systemsjr/jrbase/ui/baseclient/images.properties" />
+	</util:map>  -->
+	
+	<bean id="imageResourcesFactory"
+		class="org.springframework.context.support.ResourceMapFactoryBean">
+		<property name="locations">
+			<list>
+				<value>classpath:org/springframework/richclient/image/images.properties</value>
+				<value>classpath:com/systemsjr/jrbase/ui/baseclient/images.properties</value>
+			</list>
+		</property>
+	</bean>
 
   <!--
     Bean: imageSource
@@ -201,10 +212,15 @@
     a "broken image" image for any requested image that can't be found or fails
     to load.
   -->
-  <bean id="imageSource" class="org.springframework.richclient.image.DefaultImageSource">
-    <constructor-arg index="0" ref="imageResourcesFactory" />
-    <!-- <property name="brokenImageIndicator" value="/org/springframework/richclient/images/alert/error_obj.gif" /> -->
-  </bean>
+  <!-- <bean id="imageSource" class="org.springframework.richclient.image.DefaultImageSource">
+		<constructor-arg index="0" type="java.util.Properties" value="imageResourcesFactory" />
+	</bean> -->
+	
+	<bean id="imageSource" class="org.springframework.richclient.image.DefaultImageSource">
+		<constructor-arg index="0" ref="imageResourcesFactory" />
+		<property name="brokenImageIndicator"
+			value="/org/springframework/richclient/images/alert/error_obj.gif" />
+	</bean>
 
   <!--
     Bean: formComponentInterceptorFactory
@@ -220,9 +236,6 @@
     class="org.springframework.richclient.form.builder.support.ChainedInterceptorFactory">
     <property name="interceptorFactories">
       <list>
-        <bean class="org.springframework.richclient.form.builder.support.ColorValidationInterceptorFactory">
-          <property name="errorColor" value="255,245,245" />
-        </bean>
         <bean class="org.springframework.richclient.form.builder.support.OverlayValidationInterceptorFactory" />
         <bean class="org.springframework.richclient.text.TextComponentPopupInterceptorFactory" />
         <bean class="org.springframework.richclient.list.ComboBoxAutoCompletionInterceptorFactory" />
@@ -230,5 +243,115 @@
     </property>
   </bean>
   
-  <!-- bean id="rulesSource" class="com.systemsjr.jrbase.user.validation.UserValidationRules"/-->
+	<!-- bean id="rulesSource" class="com.systemsjr.jrbase.user.validation.UserValidationRules"/ -->
+	<bean id="timePickerBinder"
+		class="org.springframework.richclient.form.binding.swing.date.JCalendarDateFieldBinder">
+		<property name="dateFormat" value="dd/MM/yyyy HH:mm" />
+	</bean>
+	
+	<bean id="deliveryCycleDateBinder"
+		class="org.springframework.richclient.form.binding.swing.date.JCalendarDateFieldBinder">
+		<property name="dateFormat" value="dd/MM/yyyy" />
+	</bean>
+	
+	<bean id="binderSelectionStrategy"
+		class="org.springframework.richclient.form.binding.swing.SwingBinderSelectionStrategy">
+		
+		<property name="bindersForPropertyNames">
+			<list>
+				<props>
+					<prop key="objectClass">com.systemsjr.jrbase.user.vo.UserDetailsVO</prop>
+					<prop key="propertyName">individual</prop>
+					<prop key="binder">org.springframework.richclient.selection.binding.ListSelectionDialogBinder
+					</prop>
+				</props>
+				<props>
+					<prop key="objectClass">com.systemsjr.jrbase.clearancelevel.vo.ClearanceLevelVO</prop>
+					<prop key="propertyName">upperLevel</prop>
+					<prop key="binder">org.springframework.richclient.selection.binding.ListSelectionDialogBinder
+					</prop>
+				</props>
+				<props>
+					<prop key="objectClass">com.systemsjr.jrbase.clearancelevel.vo.ClearanceLevelVO</prop>
+					<prop key="propertyName">lowerLevel</prop>
+					<prop key="binder">org.springframework.richclient.selection.binding.ListSelectionDialogBinder
+					</prop>
+				</props>
+				<props>
+					<prop key="objectClass">com.systemsjr.jrbase.individual.vo.IndividualVO</prop>
+					<prop key="propertyName">countryOfBirth</prop>
+					<prop key="binder">org.springframework.richclient.selection.binding.ListSelectionDialogBinder
+					</prop>
+				</props>
+				<props>
+					<prop key="objectClass">com.systemsjr.jrbase.individual.vo.IndividualVO</prop>
+					<prop key="propertyName">countryOfCitizenship</prop>
+					<prop key="binder">org.springframework.richclient.selection.binding.ListSelectionDialogBinder
+					</prop>
+				</props>
+				<props>
+					<prop key="objectClass">com.systemsjr.jrbase.location.vo.LocationVO</prop>
+					<prop key="propertyName">locationType</prop>
+					<prop key="binder">org.springframework.richclient.selection.binding.ListSelectionDialogBinder
+					</prop>
+				</props>
+				<props>
+					<prop key="objectClass">com.systemsjr.jrbase.location.vo.LocationVO</prop>
+					<prop key="propertyName">fallsWithinLocation</prop>
+					<prop key="binder">org.springframework.richclient.selection.binding.ListSelectionDialogBinder
+					</prop>
+				</props>
+				<props>
+					<prop key="objectClass">com.systemsjr.jrbase.location.vo.LocationTypeVO</prop>
+					<prop key="propertyName">fallsWithinLocationType</prop>
+					<prop key="binder">org.springframework.richclient.selection.binding.ListSelectionDialogBinder
+					</prop>
+				</props>
+				<props>
+					<prop key="objectClass">com.systemsjr.jrbase.organisation.vo.OrganisationVO</prop>
+					<prop key="propertyName">organisationType</prop>
+					<prop key="binder">org.springframework.richclient.selection.binding.ListSelectionDialogBinder
+					</prop>
+				</props>
+				<props>
+					<prop key="objectClass">com.systemsjr.jrbase.workbench.menu.vo.MenuVO</prop>
+					<prop key="propertyName">menu</prop>
+					<prop key="binder">org.springframework.richclient.selection.binding.ListSelectionDialogBinder
+					</prop>
+				</props>
+				<props>
+					<prop key="objectClass">com.systemsjr.jrbase.workbench.program.vo.ProgramVO</prop>
+					<prop key="propertyName">menu</prop>
+					<prop key="binder">org.springframework.richclient.selection.binding.ListSelectionDialogBinder
+					</prop>
+				</props>
+			</list>
+		</property>
+		
+		<property name="bindersForPropertyTypes">
+			<map>
+				<entry>
+					<key>
+						<value type="java.lang.Class">java.util.Date</value>
+					</key>
+					<bean
+						class="org.springframework.richclient.form.binding.swing.date.JCalendarDateFieldBinder">
+					</bean>
+				</entry>
+				<!-- <entry>
+					<key>
+						<value type="java.lang.Class">java.io.File</value>
+					</key>
+					<bean class="com.dess.binding.FileBinder" />
+				</entry> -->
+				<!-- <entry>
+					<key>
+						<value type="java.lang.Class">java.math.BigDecimal</value>
+					</key>
+					<bean class="com.dess.binding.BigDecimalBinder" />
+				</entry> -->
+			</map>
+		</property>
+	</bean>
+	
 </beans>

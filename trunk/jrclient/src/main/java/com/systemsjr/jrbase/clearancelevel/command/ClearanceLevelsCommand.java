@@ -5,7 +5,10 @@ import org.springframework.richclient.command.ActionCommand;
 
 
 public class ClearanceLevelsCommand extends ActionCommand {
-
+	
+	public ClearanceLevelsCommand(){
+		
+	}
 	@Override
 	public void doExecuteCommand() {
 		Application.instance().getActiveWindow().getPage().showView("clearanceLevelView");

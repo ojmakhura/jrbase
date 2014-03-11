@@ -1,7 +1,7 @@
 package com.systemsjr.jrbase.workbench.program;
 
-import com.systemsjr.jrbase.common.BaseItemDialog;
 import com.systemsjr.jrbase.user.vo.UserVO;
+import com.systemsjr.jrlib.richclient.BaseItemDialog;
 
 public class ProgramDialog extends BaseItemDialog<UserVO> {
 

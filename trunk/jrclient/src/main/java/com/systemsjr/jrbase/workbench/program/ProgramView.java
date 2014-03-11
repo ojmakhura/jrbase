@@ -1,20 +1,14 @@
 package com.systemsjr.jrbase.workbench.program;
 
-import javax.swing.JComponent;
+import com.systemsjr.jrbase.workbench.application.ApplicationView;
 
-import com.systemsjr.jrbase.common.BaseItemView;
-import com.systemsjr.jrbase.utils.BaseServiceUtils;
-import com.systemsjr.jrbase.workbench.program.vo.ProgramVO;
+public class ProgramView extends ApplicationView {
 
-public class ProgramView extends BaseItemView<ProgramVO> {
-
-	@Override
-	protected JComponent createControl() {
-		setItemForm(new ProgramForm());
-		return getItemForm().getControl();
+	public ProgramView(){
+		super("programView");
 	}
 
-	@Override
+	/*@Override
 	protected ProgramVO handleSaveItem(ProgramVO object) {
 		setAction(object.getId());
 		object = BaseServiceUtils.getProgramService().saveProgram(object);
@@ -31,5 +25,5 @@ public class ProgramView extends BaseItemView<ProgramVO> {
 	protected ProgramVO handleNewItem() {
 		
 		return BaseServiceUtils.createDefaultProgram();
-	}
+	}*/
 }

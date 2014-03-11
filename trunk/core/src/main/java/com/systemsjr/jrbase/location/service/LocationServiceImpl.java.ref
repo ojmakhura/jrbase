@@ -15,7 +15,7 @@ public class LocationServiceImpl
     /**
      * The serial version UID of this class. Needed for serialization.
      */
-    private static final long serialVersionUID = 3860286692909479836L;
+    private static final long serialVersionUID = 2641026562865115110L;
 
     /**
      * @see com.systemsjr.jrbase.location.service.LocationService#getAllLocations()
@@ -104,6 +104,24 @@ public class LocationServiceImpl
     public com.systemsjr.jrbase.location.vo.LocationVO[] getAllCountries()
     {
         // TODO implement public com.systemsjr.jrbase.location.vo.LocationVO[] getAllCountries()
+        return null;
+    }
+
+    /**
+     * @see com.systemsjr.jrbase.location.service.LocationService#searchLocations(com.systemsjr.jrbase.location.vo.LocationSearchCriteria)
+     */
+    public com.systemsjr.jrbase.location.vo.LocationVO[] searchLocations(com.systemsjr.jrbase.location.vo.LocationSearchCriteria searchCriteria)
+    {
+        // TODO implement public com.systemsjr.jrbase.location.vo.LocationVO[] searchLocations(com.systemsjr.jrbase.location.vo.LocationSearchCriteria searchCriteria)
+        return null;
+    }
+
+    /**
+     * @see com.systemsjr.jrbase.location.service.LocationService#searchLocationTypes(com.systemsjr.jrbase.location.vo.LocationTypeSearchCriteria)
+     */
+    public com.systemsjr.jrbase.location.vo.LocationTypeVO[] searchLocationTypes(com.systemsjr.jrbase.location.vo.LocationTypeSearchCriteria searchCriteria)
+    {
+        // TODO implement public com.systemsjr.jrbase.location.vo.LocationTypeVO[] searchLocationTypes(com.systemsjr.jrbase.location.vo.LocationTypeSearchCriteria searchCriteria)
         return null;
     }
 }

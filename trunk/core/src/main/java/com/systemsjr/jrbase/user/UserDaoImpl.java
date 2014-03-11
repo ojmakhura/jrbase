@@ -112,9 +112,9 @@ public class UserDaoImpl
         boolean copyIfNull)
     {
         super.userVOToEntity(source, target, copyIfNull);
-        target.setIndividual(getIndividualDao().individualVOToEntity(source.getIndividual()));
-        //StandardPasswordEncoder encoder = new StandardPasswordEncoder();
-        //target.setPassword(encoder.encode(source.getPassword1()));
+        if(source.getIndividual() != null){
+        	target.setIndividual(getIndividualDao().individualVOToEntity(source.getIndividual()));
+        }
     }
 
 	@Override
@@ -122,9 +122,6 @@ public class UserDaoImpl
 		Criteria criteria = getSession().createCriteria(User.class);
 		
 		criteria.add(Restrictions.eq("username", username));
-		//criteria.add(Restrictions.eq("password", new StandardPasswordEncoder().encode(password)));
-		
-		//System.out.println("username = " + username + " password = " + new StandardPasswordEncoder().encode(password));
 		
 		List users = criteria.list();
 		
@@ -137,8 +134,13 @@ public class UserDaoImpl
 
 	@Override
 	public User userDetailsVOToEntity(UserDetailsVO userDetailsVO) {
-		// TODO Auto-generated method stub
-		return null;
+		User user = this.userVOToEntity(userDetailsVO);
+		
+		user.setPassword(userDetailsVO.getPassword());
+		user.setEmail(userDetailsVO.getEmail());
+		user.setPhoto(userDetailsVO.getPhoto());
+		user.setPasswordLength(userDetailsVO.getPasswordLength());
+		return user;
 	}
 	
 	
@@ -155,6 +157,16 @@ public class UserDaoImpl
         	i++;
         }
         target.setUserRoles(targetRoles);
+        
+        /*if(source.getUserLocations() != null){
+        	UserLocationSearchCriteria searchCriteria = new UserLocationSearchCriteria();
+        	
+        	searchCriteria.setUser(target);
+        	
+        	//target.setUserLocations(getUserLocationDao().toUserLocationVOArray(getUserLocationDao().findByCriteria(searchCriteria)));
+        	
+        	//target.setUserLocations(getUserLocationDao().toUserLocationVOArray(source.getUserLocations()));
+        }*/
 
 	}
 

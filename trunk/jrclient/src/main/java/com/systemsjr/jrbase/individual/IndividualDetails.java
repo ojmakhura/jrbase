@@ -6,17 +6,19 @@ import javax.swing.BorderFactory;
 import javax.swing.JComponent;
 import javax.swing.JScrollPane;
 
-import org.springframework.richclient.application.Application;
 import org.springframework.richclient.form.binding.swing.SwingBindingFactory;
 import org.springframework.richclient.form.builder.TableFormBuilder;
 
-import com.systemsjr.jrbase.common.BaseTabbedForm;
 import com.systemsjr.jrbase.individual.vo.IndividualVO;
 import com.systemsjr.jrbase.role.RoleTable;
+import com.systemsjr.jrbase.utils.BaseServiceUtils;
+import com.systemsjr.jrlib.richclient.BaseItemDetail;
+import com.systemsjr.jrlib.richclient.BaseTabbedForm;
+import com.systemsjr.jrlib.richclient.table.JRTableUtils;
 
-public class IndividualDetails extends BaseTabbedForm<IndividualVO> {
-
-	public IndividualDetails(Object item, String formId) {
+public class IndividualDetails extends BaseItemDetail<IndividualVO> {
+	private NextOfKinTable nextOfKin;
+	public IndividualDetails(IndividualVO item, String formId) {
 		super(item, formId);
 	}
 
@@ -28,17 +30,14 @@ public class IndividualDetails extends BaseTabbedForm<IndividualVO> {
 	}
 	
 	protected JComponent createNextOfKinTab(){
-		
-		SwingBindingFactory sbf = (SwingBindingFactory) getBindingFactory();
-		TableFormBuilder builder = new TableFormBuilder(sbf);
-		RoleTable table = (RoleTable) Application.instance().getApplicationContext().getBean("nextOfKinTable");
-		JScrollPane scrollPane = getComponentFactory().createScrollPane();
-		builder.setLabelAttributes("colGrId=label colSpec=right:pref");
-		scrollPane.setViewportView(table.getControl());
-		scrollPane.setBorder(BorderFactory.createTitledBorder("Next Of Kin"));
-		builder.getLayoutBuilder().cell(scrollPane);
-		
-		return builder.getForm();
+		//JRTableUtils.refreshTable(nextOfKin, BaseServiceUtils.getIndividualService().se)
+		return super.createTabComponent(nextOfKin, "Next Of Kin");
+	}
+
+	@Override
+	public IndividualVO handleGetNewItem() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

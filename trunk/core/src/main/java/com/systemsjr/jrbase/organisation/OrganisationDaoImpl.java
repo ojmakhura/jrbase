@@ -108,6 +108,9 @@ public class OrganisationDaoImpl
     {
         // @todo verify behavior of organisationVOToEntity
         super.organisationVOToEntity(source, target, copyIfNull);
+        if(source.getOrganisationType() != null){
+        	target.setOrganisationType(getOrganisationTypeDao().organisationTypeVOToEntity(source.getOrganisationType()));
+        }
     }
 
 }

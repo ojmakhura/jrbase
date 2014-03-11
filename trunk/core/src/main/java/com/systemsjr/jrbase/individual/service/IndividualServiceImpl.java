@@ -8,7 +8,10 @@ package com.systemsjr.jrbase.individual.service;
 import java.util.Collection;
 
 import com.systemsjr.jrbase.individual.Individual;
+import com.systemsjr.jrbase.individual.vo.IndividualSearchCriteria;
 import com.systemsjr.jrbase.individual.vo.IndividualVO;
+import com.systemsjr.jrbase.individual.vo.KinSearchCriteria;
+import com.systemsjr.jrbase.individual.vo.NextOfKinVO;
 
 /**
  * @see com.systemsjr.jrbase.individual.service.IndividualService
@@ -57,5 +60,42 @@ public class IndividualServiceImpl
     		getIndividualDao().remove(individualVO.getId());
     	}
     }
+
+	@Override
+	protected IndividualVO[] handleSearchIndividuals(
+			IndividualSearchCriteria searchCriteria) throws Exception {
+		
+		if(searchCriteria == null){
+			return new IndividualVO[]{};
+		}
+		
+		return getIndividualDao().toIndividualVOArray(getIndividualDao().findByCriteria(searchCriteria));
+	}
+
+	@Override
+	protected NextOfKinVO handleSaveKin(NextOfKinVO kin) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	protected NextOfKinVO handleGetAllKin(IndividualVO individualVO)
+			throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	protected void handleRemoveKin(NextOfKinVO kin) throws Exception {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	protected NextOfKinVO[] handleSearchKin(KinSearchCriteria searchCriteria)
+			throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 }

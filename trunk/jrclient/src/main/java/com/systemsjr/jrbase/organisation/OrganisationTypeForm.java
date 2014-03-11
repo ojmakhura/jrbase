@@ -2,9 +2,8 @@ package com.systemsjr.jrbase.organisation;
 
 import javax.swing.JComponent;
 
-import com.systemsjr.jrbase.common.BaseItemForm;
 import com.systemsjr.jrbase.organisation.vo.OrganisationTypeVO;
-import com.systemsjr.jrbase.utils.BaseUIUtils;
+import com.systemsjr.jrlib.richclient.BaseItemForm;
 
 public class OrganisationTypeForm extends BaseItemForm<OrganisationTypeVO> {
 
@@ -18,9 +17,8 @@ public class OrganisationTypeForm extends BaseItemForm<OrganisationTypeVO> {
 	
 	@Override
 	protected JComponent createFormControl() {
-		super.initForm("organisationTypeTable", null);
+		super.initForm();
 				
-		valueHolder = BaseUIUtils.getOrganisationTypeValueHolder();
 		builder.add("levelCode", "colSpec=40dlu");
 		builder.add("name", "colSpec=40:grow");
 		builder.row();

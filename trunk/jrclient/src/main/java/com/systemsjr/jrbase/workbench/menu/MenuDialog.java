@@ -1,7 +1,7 @@
 package com.systemsjr.jrbase.workbench.menu;
 
-import com.systemsjr.jrbase.common.BaseItemDialog;
 import com.systemsjr.jrbase.user.vo.UserVO;
+import com.systemsjr.jrlib.richclient.BaseItemDialog;
 
 public class MenuDialog extends BaseItemDialog<UserVO> {
 

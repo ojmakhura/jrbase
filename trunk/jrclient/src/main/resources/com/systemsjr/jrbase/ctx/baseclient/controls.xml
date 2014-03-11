@@ -1,7 +1,115 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+	<bean id="counterControl" class="com.systemsjr.jrbase.counter.CounterControl">
+		<property name="scrollPane">
+			<bean class="javax.swing.JScrollPane" lazy-init="false" />
+		</property>
+		<property name="itemList" ref="counterListTable"/>
+		<property name="itemForm" ref="counterForm"/>
+	</bean>
 	
+	<bean id="clearanceLevelControl" class="com.systemsjr.jrbase.clearancelevel.ClearanceLevelControl">
+		<property name="scrollPane">
+			<bean class="javax.swing.JScrollPane" lazy-init="false" />
+		</property>
+		<property name="itemList" ref="clearanceLevelTable"/>
+		<property name="itemForm" ref="clearanceLevelForm"/>
+		<property name="searchForm" ref="clearanceSearchForm"/>
+	</bean>
 	
+	<bean id="individualControl" class="com.systemsjr.jrbase.individual.IndividualControl">
+		<property name="scrollPane">
+			<bean class="javax.swing.JScrollPane" lazy-init="false" />
+		</property>
+		<property name="itemList" ref="individualListTable"/>
+		<property name="itemForm" ref="individualForm"/>
+		<property name="searchForm" ref="individualSearchForm"/>
+	</bean>
 	
+	<bean id="roleControl" class="com.systemsjr.jrbase.role.RoleControl">
+		<property name="scrollPane">
+			<bean class="javax.swing.JScrollPane" lazy-init="false" />
+		</property>
+		<property name="itemList" ref="roleListTable"/>
+		<property name="itemForm" ref="roleForm"/>
+		<property name="searchForm" ref="roleSearchForm"/>
+	</bean>
+	
+	<bean id="locationTypeControl" class="com.systemsjr.jrbase.location.LocationTypeControl">
+		<property name="scrollPane">
+			<bean class="javax.swing.JScrollPane" lazy-init="false" />
+		</property>
+		<property name="itemList" ref="locationTypeTable"/>
+		<property name="itemForm" ref="locationTypeForm"/>
+		<property name="searchForm" ref="locationTypeSearchForm"/>
+	</bean>
+	
+	<bean id="locationControl" class="com.systemsjr.jrbase.location.LocationControl">
+		<property name="scrollPane">
+			<bean class="javax.swing.JScrollPane" lazy-init="false" />
+		</property>
+		<property name="itemList" ref="locationListTable"/>
+		<property name="itemForm" ref="locationForm"/>
+		<property name="searchForm" ref="locationSearchForm"/>
+	</bean>
+	
+	<bean id="organisationTypeControl" class="com.systemsjr.jrbase.organisation.OrganisationTypeControl">
+		<property name="scrollPane">
+			<bean class="javax.swing.JScrollPane" lazy-init="false" />
+		</property>
+		<property name="itemList" ref="organisationTypeTable"/>
+		<property name="itemForm" ref="organisationTypeForm"/>
+		<property name="searchForm" ref="organisationTypeSearchForm"/>
+	</bean>
+	
+	<bean id="organisationControl" class="com.systemsjr.jrbase.organisation.OrganisationControl">
+		<property name="scrollPane">
+			<bean class="javax.swing.JScrollPane" lazy-init="false" />
+		</property>
+		<property name="itemList" ref="organisationTable"/>
+		<property name="itemForm" ref="organisationForm"/>
+		<property name="searchForm" ref="organisationSearchForm"/>
+	</bean>
+	
+	<bean id="userControl" class="com.systemsjr.jrbase.user.UserControl">
+		<property name="scrollPane">
+			<bean class="javax.swing.JScrollPane" lazy-init="false" />
+		</property>
+		<property name="itemList" ref="userTable"/>
+		<property name="itemForm" ref="userForm"/>
+		<property name="searchForm" ref="userSearchForm"/>
+	</bean>
+	
+	<!--************************************************************************************************* 
+		Workbench application controls
+	 **************************************************************************************************-->
+	<bean id="menuControl" class="com.systemsjr.jrbase.workbench.menu.MenuControl">
+		<property name="scrollPane">
+			<bean class="javax.swing.JScrollPane" lazy-init="false" />
+		</property>
+		<property name="itemList" ref="menuTable"/>
+		<property name="itemForm" ref="menuForm"/>
+		<property name="searchForm" ref="menuSearchForm"/>
+	</bean>
+	
+	<bean id="programControl" class="com.systemsjr.jrbase.workbench.program.ProgramControl">
+		<property name="scrollPane">
+			<bean class="javax.swing.JScrollPane" lazy-init="false" />
+		</property>
+		<property name="itemList" ref="programTable"/>
+		<property name="itemForm" ref="programForm"/>
+		<property name="searchForm" ref="programSearchForm"/>
+	</bean>
+	
+	<bean id="applicationControl" class="com.systemsjr.jrbase.workbench.application.ApplicationControl">
+		<property name="scrollPane">
+			<bean class="javax.swing.JScrollPane" lazy-init="false" />
+		</property>
+		<property name="itemList" ref="applicationTable"/>
+		<property name="itemForm" ref="applicationForm"/>
+		<property name="searchForm" ref="applicationSearchForm"/>
+	</bean>
 </beans>

@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
-	
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:security="http://www.springframework.org/schema/security"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd">
+
 	<bean id = "counterForm" class="com.systemsjr.jrbase.counter.CounterForm"/>
 	<bean id="individualForm" class="com.systemsjr.jrbase.individual.IndividualForm"/>
 	<bean id="locationForm" class="com.systemsjr.jrbase.location.LocationForm"/>
@@ -10,12 +12,30 @@
 	<bean id="organisationTypeForm" class="com.systemsjr.jrbase.organisation.OrganisationTypeForm"/>
 	<bean id="roleForm" class="com.systemsjr.jrbase.role.RoleForm"/>
 	<bean id="userForm" class="com.systemsjr.jrbase.user.UserForm"/>
-	<bean id="clearanceLevelForm" class="com.systemsjr.jrbase.clearancelevel.ClearanceLevelForm"/>
-	<bean id="loginForm" class="com.systemsjr.jrbase.login.LoginForm"/>
+	<bean id="clearanceLevelForm" class="com.systemsjr.jrbase.clearancelevel.ClearanceLevelForm">
+		<property name="details" ref="clearanceLevelDetails"/>
+	</bean>
+	
+	<bean id="individualSearchForm" class="com.systemsjr.jrbase.individual.IndividualSearchForm"/>
+	<bean id="locationSearchForm" class="com.systemsjr.jrbase.location.LocationSearchForm"/>
+	<bean id="locationTypeSearchForm" class="com.systemsjr.jrbase.location.LocationTypeSearchForm"/>
+	<bean id="organisationSearchForm" class="com.systemsjr.jrbase.organisation.OrganisationSearchForm"/>
+	<bean id="organisationTypeSearchForm" class="com.systemsjr.jrbase.organisation.OrganisationTypeSearchForm"/>
+	<bean id="roleSearchForm" class="com.systemsjr.jrbase.role.RoleSearchForm"/>
+	<bean id="userSearchForm" class="com.systemsjr.jrbase.user.UserSearchForm"/>
+	<bean id="clearanceSearchForm" class="com.systemsjr.jrbase.clearancelevel.ClearanceLevelSearchForm"/>
+	<!-- bean id="loginForm" class="com.systemsjr.jrbase.login.LoginForm"/-->
 	
 	<!-- **********************************************************************************
 		Workbench application forms
 	 **************************************************************************************-->
-	 <bean id="menuForm" class="com.systemsjr.jrbase.workbench.menu.MenuForm"/>
+	 <bean id="menuForm" class="com.systemsjr.jrbase.workbench.menu.MenuForm">
+	 	<property name="details" ref="menuDetails"/>
+	 </bean>
 	 <bean id="programForm" class="com.systemsjr.jrbase.workbench.program.ProgramForm"/>
+	 <bean id="applicationForm" class="com.systemsjr.jrbase.workbench.application.ApplicationForm"/>
+	 
+	 <bean id="menuSearchForm" class="com.systemsjr.jrbase.workbench.menu.MenuSearchForm"/>
+	 <bean id="programSearchForm" class="com.systemsjr.jrbase.workbench.program.ProgramSearchForm"/>
+	 <bean id="applicationSearchForm" class="com.systemsjr.jrbase.workbench.application.ApplicationSearchForm"/>
 </beans>

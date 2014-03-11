@@ -37,9 +37,9 @@
         </tr:inputText>
         <tr:inputText id="searchForm_userId" value="#{manageUserForm.searchForm.userId}" label="#{messages['user.user.id']}:" required="false" readOnly="false">
         </tr:inputText>
-        <tr:selectManyListbox id="searchForm_userLocations" value="#{manageUserForm.searchForm.userLocations}" label="#{messages['user.user.locations']}:" required="false" readOnly="false" size="3">
-            <c:if test="${!empty manageUserForm.userLocationsBackingList}">
-                <c:forEach var="row" items="#{manageUserForm.userLocationsBackingList}">
+        <tr:selectManyListbox id="searchForm_applications" value="#{manageUserForm.searchForm.applications}" label="#{messages['user.applications']}:" required="false" readOnly="false" size="3">
+            <c:if test="${!empty manageUserForm.applicationsBackingList}">
+                <c:forEach var="row" items="#{manageUserForm.applicationsBackingList}">
                     <f:selectItem itemLabel="#{row[1]}" itemValue="#{row[0]}" />
                 </c:forEach>
             </c:if>
@@ -65,6 +65,13 @@
                 </c:forEach>
             </c:if>
         </tr:selectOneChoice>
+        <tr:selectManyListbox id="searchForm_userLocations" value="#{manageUserForm.searchForm.userLocations}" label="#{messages['user.user.locations']}:" required="false" readOnly="false" size="3">
+            <c:if test="${!empty manageUserForm.userLocationsBackingList}">
+                <c:forEach var="row" items="#{manageUserForm.userLocationsBackingList}">
+                    <f:selectItem itemLabel="#{row[1]}" itemValue="#{row[0]}" />
+                </c:forEach>
+            </c:if>
+        </tr:selectManyListbox>
         <tr:selectManyListbox id="searchForm_loginSessions" value="#{manageUserForm.searchForm.loginSessions}" label="#{messages['user.login.sessions']}:" required="false" readOnly="false" size="3">
             <c:if test="${!empty manageUserForm.loginSessionsBackingList}">
                 <c:forEach var="row" items="#{manageUserForm.loginSessionsBackingList}">
@@ -211,9 +218,9 @@
         <tr:inputText id="userId" value="#{manageUserForm.userId}" label="#{messages['user.user.id']}:" required="true" readOnly="false">
         </tr:inputText>
             <tr:inputHidden id="id" value="#{manageUserForm.id}"/>
-            <tr:selectManyListbox id="userLocations" value="#{manageUserForm.userLocations}" label="#{messages['user.user.locations']}:" required="false" readOnly="false" size="3">
-                   <c:if test="${!empty manageUserForm.userLocationsBackingList}">
-                       <c:forEach var="row" items="#{manageUserForm.userLocationsBackingList}">
+            <tr:selectManyListbox id="applications" value="#{manageUserForm.applications}" label="#{messages['user.applications']}:" required="false" readOnly="false" size="3">
+                   <c:if test="${!empty manageUserForm.applicationsBackingList}">
+                       <c:forEach var="row" items="#{manageUserForm.applicationsBackingList}">
                            <f:selectItem itemLabel="#{row[1]}" itemValue="#{row[0]}" />
                        </c:forEach>
                    </c:if>
@@ -232,13 +239,20 @@
                        </c:forEach>
                    </c:if>
             </tr:selectManyListbox>
-            <tr:selectOneChoice id="individual" value="#{manageUserForm.individual}" label="#{messages['user.individual']}:" required="true" readOnly="false" unselectedLabel="">
+            <tr:selectOneChoice id="individual" value="#{manageUserForm.individual}" label="#{messages['user.individual']}:" required="false" readOnly="false" unselectedLabel="">
                    <c:if test="${!empty manageUserForm.individualBackingList}">
                        <c:forEach var="row" items="#{manageUserForm.individualBackingList}">
                            <f:selectItem itemLabel="#{row[1]}" itemValue="#{row[0]}" />
                        </c:forEach>
                    </c:if>
             </tr:selectOneChoice>
+            <tr:selectManyListbox id="userLocations" value="#{manageUserForm.userLocations}" label="#{messages['user.user.locations']}:" required="false" readOnly="false" size="3">
+                   <c:if test="${!empty manageUserForm.userLocationsBackingList}">
+                       <c:forEach var="row" items="#{manageUserForm.userLocationsBackingList}">
+                           <f:selectItem itemLabel="#{row[1]}" itemValue="#{row[0]}" />
+                       </c:forEach>
+                   </c:if>
+            </tr:selectManyListbox>
             <tr:selectManyListbox id="loginSessions" value="#{manageUserForm.loginSessions}" label="#{messages['user.login.sessions']}:" required="false" readOnly="false" size="3">
                    <c:if test="${!empty manageUserForm.loginSessionsBackingList}">
                        <c:forEach var="row" items="#{manageUserForm.loginSessionsBackingList}">

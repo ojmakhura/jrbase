@@ -1,20 +1,14 @@
 package com.systemsjr.jrbase.counter;
 
-import javax.swing.JComponent;
+import com.systemsjr.jrbase.workbench.application.WorkbenchView;
 
-import com.systemsjr.jrbase.common.BaseItemView;
-import com.systemsjr.jrbase.counter.vo.CounterVO;
-import com.systemsjr.jrbase.utils.BaseServiceUtils;
+public class CounterView extends WorkbenchView {
 
-public class CounterView extends BaseItemView<CounterVO> {
-
-	@Override
-	protected JComponent createControl() {
-		setItemForm(new CounterForm());
-		return getItemForm().getControl();
+	public CounterView(){
+		super("counterView");
 	}
 
-	@Override
+	/*@Override
 	protected CounterVO handleSaveItem(CounterVO object) {
 		setAction(object.getId());
 		return BaseServiceUtils.getCounterService().saveCounter(object);
@@ -28,5 +22,5 @@ public class CounterView extends BaseItemView<CounterVO> {
 	@Override
 	protected CounterVO handleNewItem() {
 		return BaseServiceUtils.createDefaultCounter();
-	}
+	}*/
 }

@@ -4,8 +4,6 @@ import javax.swing.JComponent;
 import javax.swing.JPanel;
 
 import org.springframework.richclient.application.support.AbstractView;
-import org.springframework.richclient.command.ActionCommand;
-import org.springframework.richclient.command.CommandGroup;
 
 import com.jgoodies.forms.builder.PanelBuilder;
 import com.jgoodies.forms.debug.FormDebugPanel;
@@ -13,6 +11,7 @@ import com.jgoodies.forms.layout.CellConstraints;
 import com.jgoodies.forms.layout.FormLayout;
 
 public class BaseView extends AbstractView {
+	
 	private CellConstraints cc = new CellConstraints();
 	@Override
 	protected JComponent createControl() {
@@ -33,12 +32,15 @@ public class BaseView extends AbstractView {
 		FormLayout layout = new FormLayout("10dlu, pref:grow, 10dlu", 
 				"40dlu, 5dlu, 40dlu");
 		PanelBuilder builder = new PanelBuilder(layout, new JPanel());
-		builder.add(CommandGroup.createCommandGroup(new ActionCommand[]{
+		//CommandGroup group = new CommandGroup
+		//builder.add(get  createCommandGroup(new ActionCommand[]{
 				//getSettingsCommand(),
 				//getLicenseSettingsCommand(),
 				//getClientSettingsCommand(),
-		}).createButtonBar(), cc.xy(2, 1));
+	//	}).createButtonBar(), cc.xy(2, 1));
 		return builder.getPanel();
 	}
+	
+	
 
 }

@@ -1,14 +1,16 @@
 package com.systemsjr.jrbase.role.command;
 
-import org.springframework.richclient.application.Application;
-import org.springframework.richclient.command.ActionCommand;
+import org.springframework.richclient.command.support.ShowViewCommand;
 
 
 
-public class NewRoleCommand extends ActionCommand {
+public class NewRoleCommand extends ShowViewCommand {
 
 	@Override
 	protected void doExecuteCommand() {
-		Application.instance().getActiveWindow().getPage().showView("roleView");
+		//get
+		//getActiveWindow().getPage().showView("roleView");
+		getApplicationWindow().getPage().showView("roleView");
+		
 	}
 }

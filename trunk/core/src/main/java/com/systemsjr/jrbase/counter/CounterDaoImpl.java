@@ -44,12 +44,9 @@ public class CounterDaoImpl
     private com.systemsjr.jrbase.counter.Counter loadCounterFromCounterVO(com.systemsjr.jrbase.counter.vo.CounterVO counterVO)
     {        
         com.systemsjr.jrbase.counter.Counter counter = null;//this.load(counterVO.getId());
-        logger.warn("$$$$$ $$$$$ counter = null");
         if (counterVO.getId() != null)
         {
-        	logger.warn("$$$$$ $$$$$ counter != null");
         	counter = this.load(counterVO.getId());
-        	logger.warn("$$$$$ $$$$$ counter is " + counter.getId());
             //return counter;
         } else{
         	counter = Counter.Factory.newInstance();

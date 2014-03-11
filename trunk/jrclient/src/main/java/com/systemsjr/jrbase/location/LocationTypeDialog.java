@@ -1,7 +1,7 @@
 package com.systemsjr.jrbase.location;
 
-import com.systemsjr.jrbase.common.BaseItemDialog;
 import com.systemsjr.jrbase.location.vo.LocationTypeVO;
+import com.systemsjr.jrlib.richclient.BaseItemDialog;
 
 public class LocationTypeDialog extends BaseItemDialog<LocationTypeVO> {
 

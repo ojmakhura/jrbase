@@ -3,8 +3,8 @@ package com.systemsjr.jrbase.individual;
 import javax.swing.JTable;
 import javax.swing.table.TableColumnModel;
 
-import com.systemsjr.jrbase.common.BaseItemTable;
 import com.systemsjr.jrbase.individual.vo.NextOfKinVO;
+import com.systemsjr.jrlib.richclient.BaseItemTable;
 
 public class NextOfKinTable extends BaseItemTable<NextOfKinVO>{
 	public NextOfKinTable(){

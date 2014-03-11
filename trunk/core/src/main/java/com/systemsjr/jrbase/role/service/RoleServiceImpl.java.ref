@@ -15,7 +15,7 @@ public class RoleServiceImpl
     /**
      * The serial version UID of this class. Needed for serialization.
      */
-    private static final long serialVersionUID = -2298876024064723246L;
+    private static final long serialVersionUID = -3103293913088923950L;
 
     /**
      * @see com.systemsjr.jrbase.role.service.RoleService#saveRole(com.systemsjr.jrbase.role.vo.RoleVO)
@@ -60,5 +60,14 @@ public class RoleServiceImpl
     {
         // TODO implement public void removeRole(com.systemsjr.jrbase.role.vo.RoleVO roleVO)
         throw new UnsupportedOperationException("com.systemsjr.jrbase.role.service.RoleService.removeRole(com.systemsjr.jrbase.role.vo.RoleVO roleVO) Not implemented!");
+    }
+
+    /**
+     * @see com.systemsjr.jrbase.role.service.RoleService#searchRoles(com.systemsjr.jrbase.role.vo.RoleSearchCriteria)
+     */
+    public com.systemsjr.jrbase.role.vo.RoleVO[] searchRoles(com.systemsjr.jrbase.role.vo.RoleSearchCriteria searchCriteria)
+    {
+        // TODO implement public com.systemsjr.jrbase.role.vo.RoleVO[] searchRoles(com.systemsjr.jrbase.role.vo.RoleSearchCriteria searchCriteria)
+        return null;
     }
 }

@@ -15,10 +15,10 @@ import com.systemsjr.jrbase.location.vo.LocationVO;
 import com.systemsjr.jrbase.user.User;
 import com.systemsjr.jrbase.user.UserLocationStatus;
 import com.systemsjr.jrbase.user.UserStatus;
+import com.systemsjr.jrbase.user.vo.UserDetailsVO;
 import com.systemsjr.jrbase.user.vo.UserLocationSearchCriteria;
 import com.systemsjr.jrbase.user.vo.UserLocationVO;
 import com.systemsjr.jrbase.user.vo.UserSearchCriteria;
-import com.systemsjr.jrbase.user.vo.UserVO;
 
 /**
  * @see com.systemsjr.jrbase.user.service.UserService
@@ -31,7 +31,7 @@ public class UserServiceImpl
      * @see com.systemsjr.jrbase.user.service.UserService#saveUser(com.systemsjr.jrbase.user.vo.UserVO)
      */
     @Override
-	protected  com.systemsjr.jrbase.user.vo.UserVO handleSaveUser(com.systemsjr.jrbase.user.vo.UserVO userVO)
+	protected  com.systemsjr.jrbase.user.vo.UserVO handleSaveUser(com.systemsjr.jrbase.user.vo.UserDetailsVO userVO)
         throws java.lang.Exception
     {
     	User user;
@@ -39,7 +39,7 @@ public class UserServiceImpl
     	if(userVO.getId() == null){
     		user = getUserDao().create(getUserDao().userVOToEntity(userVO));
     	} else{
-    		user = getUserDao().userVOToEntity(userVO);
+    		user = getUserDao().userDetailsVOToEntity(userVO);
     		getUserDao().update(user);
     	}
     	
@@ -47,7 +47,7 @@ public class UserServiceImpl
     }    
 
 	@Override
-	protected void handleRemoveUser(UserVO userVO) throws Exception {
+	protected void handleRemoveUser(UserDetailsVO userVO) throws Exception {
 		
 		if(userVO.getId() != null){
 			getUserDao().remove(userVO.getId());
@@ -56,7 +56,7 @@ public class UserServiceImpl
 	}
 
 	@Override
-	protected LocationVO[] handleGetUserLocations(UserVO userVO) throws Exception {
+	protected LocationVO[] handleGetUserLocations(UserDetailsVO userVO) throws Exception {
 		ArrayList<LocationVO> locations = new ArrayList<LocationVO>();
 		UserLocationVO[] userLocations = getUserLocationDao().toUserLocationVOArray(getUserDao().getUserDetails(userVO.getUsername()).getUserLocations());//userVO.getUserLocations();
 		
@@ -72,24 +72,24 @@ public class UserServiceImpl
 	}
 
 	@Override
-	protected UserVO[] handleGetAllUsers() throws Exception {
+	protected UserDetailsVO[] handleGetAllUsers() throws Exception {
 		Collection users = getUserDao().loadAll();
-		return getUserDao().toUserVOArray(users);
+		return getUserDao().toUserDetailsVOArray(users);
 	}
 
 	@Override
-	protected UserVO[] handleGetUsersByStatus(UserStatus status) throws Exception {
+	protected UserDetailsVO[] handleGetUsersByStatus(UserStatus status) throws Exception {
 		
 		UserSearchCriteria searchCriteria = new UserSearchCriteria();
 		
 		searchCriteria.setStatus(status);
 		List users = getUserDao().findByCriteria(searchCriteria);
 				
-		return getUserDao().toUserVOArray(users);
+		return getUserDao().toUserDetailsVOArray(users);
 	}
 
 	@Override
-	protected LocationVO handleGetUserCurrentLocation(UserVO userVO) throws Exception {
+	protected LocationVO handleGetUserCurrentLocation(UserDetailsVO userVO) throws Exception {
 		UserLocationSearchCriteria searchCriteria = new UserLocationSearchCriteria();
 		
 		if(userVO != null && userVO.getId() != null){
@@ -103,10 +103,30 @@ public class UserServiceImpl
 	}
 
 	@Override
-	protected UserVO handleDoLogin(UserVO userVO) throws Exception {
+	protected UserDetailsVO handleDoLogin(UserDetailsVO userVO) throws Exception {
 		//User user = getUserDao().userLogin(userVO.getUsername(), getUserDao().guserVO.getPassword());
 		
 		return null;//getUserDao().toUserVO(user);
+	}
+
+	@Override
+	protected UserDetailsVO[] handleSearchUsers(
+			UserSearchCriteria searchCriteria) throws Exception {
+		if(searchCriteria == null){
+			return new UserDetailsVO[]{};
+		}
+		List users = getUserDao().findByCriteria(searchCriteria);
+		return getUserDao().toUserDetailsVOArray(users);
+	}
+
+	@Override
+	protected UserLocationVO[] handleSearchUserLocation(
+			UserLocationSearchCriteria searchCriteria) throws Exception {
+		if(searchCriteria == null){
+			return new UserLocationVO[]{};
+		}
+		List userLocations = getUserLocationDao().findByCriteria(searchCriteria);
+		return getUserLocationDao().toUserLocationVOArray(userLocations);
 	}
 
 }

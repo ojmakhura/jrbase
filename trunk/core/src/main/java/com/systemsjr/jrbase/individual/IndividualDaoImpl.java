@@ -145,6 +145,15 @@ public class IndividualDaoImpl
     {
         // @todo verify behavior of individualVOToEntity
         super.individualVOToEntity(source, target, copyIfNull);
+        
+        if(source.getCountryOfBirth() != null){
+        	target.setCountryOfBirth(getLocationDao().locationVOToEntity(source.getCountryOfBirth()));
+        }
+        
+        if(source.getCountryOfCitizenship() != null){
+        	target.setCountryOfCitizenship(getLocationDao().locationVOToEntity(source.getCountryOfCitizenship()));
+        }
+        
     }
 
 }

@@ -15,68 +15,86 @@ public class UserServiceImpl
     /**
      * The serial version UID of this class. Needed for serialization.
      */
-    private static final long serialVersionUID = 5540117156620720851L;
+    private static final long serialVersionUID = 7470645520239010097L;
 
     /**
-     * @see com.systemsjr.jrbase.user.service.UserService#saveUser(com.systemsjr.jrbase.user.vo.UserVO)
+     * @see com.systemsjr.jrbase.user.service.UserService#saveUser(com.systemsjr.jrbase.user.vo.UserDetailsVO)
      */
-    public com.systemsjr.jrbase.user.vo.UserVO saveUser(com.systemsjr.jrbase.user.vo.UserVO userVO)
+    public com.systemsjr.jrbase.user.vo.UserVO saveUser(com.systemsjr.jrbase.user.vo.UserDetailsVO userVO)
     {
-        // TODO implement public com.systemsjr.jrbase.user.vo.UserVO saveUser(com.systemsjr.jrbase.user.vo.UserVO userVO)
+        // TODO implement public com.systemsjr.jrbase.user.vo.UserVO saveUser(com.systemsjr.jrbase.user.vo.UserDetailsVO userVO)
         return null;
     }
 
     /**
-     * @see com.systemsjr.jrbase.user.service.UserService#removeUser(com.systemsjr.jrbase.user.vo.UserVO)
+     * @see com.systemsjr.jrbase.user.service.UserService#removeUser(com.systemsjr.jrbase.user.vo.UserDetailsVO)
      */
-    public void removeUser(com.systemsjr.jrbase.user.vo.UserVO userVO)
+    public void removeUser(com.systemsjr.jrbase.user.vo.UserDetailsVO userVO)
     {
-        // TODO implement public void removeUser(com.systemsjr.jrbase.user.vo.UserVO userVO)
-        throw new UnsupportedOperationException("com.systemsjr.jrbase.user.service.UserService.removeUser(com.systemsjr.jrbase.user.vo.UserVO userVO) Not implemented!");
+        // TODO implement public void removeUser(com.systemsjr.jrbase.user.vo.UserDetailsVO userVO)
+        throw new UnsupportedOperationException("com.systemsjr.jrbase.user.service.UserService.removeUser(com.systemsjr.jrbase.user.vo.UserDetailsVO userVO) Not implemented!");
     }
 
     /**
      * @see com.systemsjr.jrbase.user.service.UserService#getAllUsers()
      */
-    public com.systemsjr.jrbase.user.vo.UserVO[] getAllUsers()
+    public com.systemsjr.jrbase.user.vo.UserDetailsVO[] getAllUsers()
     {
-        // TODO implement public com.systemsjr.jrbase.user.vo.UserVO[] getAllUsers()
+        // TODO implement public com.systemsjr.jrbase.user.vo.UserDetailsVO[] getAllUsers()
         return null;
     }
 
     /**
      * @see com.systemsjr.jrbase.user.service.UserService#getUsersByStatus(com.systemsjr.jrbase.user.UserStatus)
      */
-    public com.systemsjr.jrbase.user.vo.UserVO[] getUsersByStatus(com.systemsjr.jrbase.user.UserStatus status)
+    public com.systemsjr.jrbase.user.vo.UserDetailsVO[] getUsersByStatus(com.systemsjr.jrbase.user.UserStatus status)
     {
-        // TODO implement public com.systemsjr.jrbase.user.vo.UserVO[] getUsersByStatus(com.systemsjr.jrbase.user.UserStatus status)
+        // TODO implement public com.systemsjr.jrbase.user.vo.UserDetailsVO[] getUsersByStatus(com.systemsjr.jrbase.user.UserStatus status)
         return null;
     }
 
     /**
-     * @see com.systemsjr.jrbase.user.service.UserService#getUserLocations(com.systemsjr.jrbase.user.vo.UserVO)
+     * @see com.systemsjr.jrbase.user.service.UserService#getUserLocations(com.systemsjr.jrbase.user.vo.UserDetailsVO)
      */
-    public com.systemsjr.jrbase.location.vo.LocationVO[] getUserLocations(com.systemsjr.jrbase.user.vo.UserVO userVO)
+    public com.systemsjr.jrbase.location.vo.LocationVO[] getUserLocations(com.systemsjr.jrbase.user.vo.UserDetailsVO userVO)
     {
-        // TODO implement public com.systemsjr.jrbase.location.vo.LocationVO[] getUserLocations(com.systemsjr.jrbase.user.vo.UserVO userVO)
+        // TODO implement public com.systemsjr.jrbase.location.vo.LocationVO[] getUserLocations(com.systemsjr.jrbase.user.vo.UserDetailsVO userVO)
         return null;
     }
 
     /**
-     * @see com.systemsjr.jrbase.user.service.UserService#getUserCurrentLocation(com.systemsjr.jrbase.user.vo.UserVO)
+     * @see com.systemsjr.jrbase.user.service.UserService#getUserCurrentLocation(com.systemsjr.jrbase.user.vo.UserDetailsVO)
      */
-    public com.systemsjr.jrbase.location.vo.LocationVO getUserCurrentLocation(com.systemsjr.jrbase.user.vo.UserVO userVO)
+    public com.systemsjr.jrbase.location.vo.LocationVO getUserCurrentLocation(com.systemsjr.jrbase.user.vo.UserDetailsVO userVO)
     {
-        // TODO implement public com.systemsjr.jrbase.location.vo.LocationVO getUserCurrentLocation(com.systemsjr.jrbase.user.vo.UserVO userVO)
+        // TODO implement public com.systemsjr.jrbase.location.vo.LocationVO getUserCurrentLocation(com.systemsjr.jrbase.user.vo.UserDetailsVO userVO)
         return null;
     }
 
     /**
-     * @see com.systemsjr.jrbase.user.service.UserService#doLogin(com.systemsjr.jrbase.user.vo.UserVO)
+     * @see com.systemsjr.jrbase.user.service.UserService#doLogin(com.systemsjr.jrbase.user.vo.UserDetailsVO)
      */
-    public com.systemsjr.jrbase.user.vo.UserVO doLogin(com.systemsjr.jrbase.user.vo.UserVO userVO)
+    public com.systemsjr.jrbase.user.vo.UserDetailsVO doLogin(com.systemsjr.jrbase.user.vo.UserDetailsVO userVO)
     {
-        // TODO implement public com.systemsjr.jrbase.user.vo.UserVO doLogin(com.systemsjr.jrbase.user.vo.UserVO userVO)
+        // TODO implement public com.systemsjr.jrbase.user.vo.UserDetailsVO doLogin(com.systemsjr.jrbase.user.vo.UserDetailsVO userVO)
+        return null;
+    }
+
+    /**
+     * @see com.systemsjr.jrbase.user.service.UserService#searchUsers(com.systemsjr.jrbase.user.vo.UserSearchCriteria)
+     */
+    public com.systemsjr.jrbase.user.vo.UserDetailsVO[] searchUsers(com.systemsjr.jrbase.user.vo.UserSearchCriteria searchCriteria)
+    {
+        // TODO implement public com.systemsjr.jrbase.user.vo.UserDetailsVO[] searchUsers(com.systemsjr.jrbase.user.vo.UserSearchCriteria searchCriteria)
+        return null;
+    }
+
+    /**
+     * @see com.systemsjr.jrbase.user.service.UserService#searchUserLocation(com.systemsjr.jrbase.user.vo.UserLocationSearchCriteria)
+     */
+    public com.systemsjr.jrbase.user.vo.UserLocationVO[] searchUserLocation(com.systemsjr.jrbase.user.vo.UserLocationSearchCriteria searchCriteria)
+    {
+        // TODO implement public com.systemsjr.jrbase.user.vo.UserLocationVO[] searchUserLocation(com.systemsjr.jrbase.user.vo.UserLocationSearchCriteria searchCriteria)
         return null;
     }
 }

@@ -8,6 +8,7 @@ package com.systemsjr.jrbase.clearancelevel.service;
 import java.util.Collection;
 
 import com.systemsjr.jrbase.clearancelevel.ClearanceLevel;
+import com.systemsjr.jrbase.clearancelevel.vo.ClearanceLevelSearchCriteria;
 import com.systemsjr.jrbase.clearancelevel.vo.ClearanceLevelVO;
 
 /**
@@ -54,6 +55,17 @@ public class ClearanceLevelServiceImpl
 		if(clearanceLevelVO.getId() != null){
 			getClearanceLevelDao().remove(clearanceLevelVO.getId());
 		}
+	}
+
+	@Override
+	protected ClearanceLevelVO[] handleSearchClearenceLevel(
+			ClearanceLevelSearchCriteria searchCriteria) throws Exception {
+		
+		if(searchCriteria == null){
+			return new ClearanceLevelVO[]{};
+		}
+		
+		return getClearanceLevelDao().toClearanceLevelVOArray(getClearanceLevelDao().findByCriteria(searchCriteria));
 	}
 
 }

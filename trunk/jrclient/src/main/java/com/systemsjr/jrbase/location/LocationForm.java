@@ -4,9 +4,9 @@ import javax.swing.JComponent;
 
 import org.springframework.binding.value.support.RefreshableValueHolder;
 
-import com.systemsjr.jrbase.common.BaseItemForm;
 import com.systemsjr.jrbase.location.vo.LocationVO;
 import com.systemsjr.jrbase.utils.BaseUIUtils;
+import com.systemsjr.jrlib.richclient.BaseItemForm;
 
 public class LocationForm extends BaseItemForm<LocationVO> {
 	
@@ -21,14 +21,13 @@ public class LocationForm extends BaseItemForm<LocationVO> {
 
 	@Override
 	protected JComponent createFormControl() {
-		super.initForm("locationListTable", null);
+		super.initForm();
 		locationTypeHolder = BaseUIUtils.getLocationTypeValueHolder();
-		valueHolder = BaseUIUtils.getLocationValueHolder();
 		
 		builder.add(sbf.createBoundComboBox("status", LocationStatus.literals().toArray()), "colSpan=1");
 		builder.row();
 		builder.add(sbf.createBoundComboBox("type", new Object[]{Type.AREA, Type.FACILITY}), "colSpec=40dlu:grow");
-		builder.add(sbf.createBoundComboBox("locationType", locationTypeHolder, "name"), "colSpec=40dlu:grow");
+		builder.add(sbf.createBinding("locationType", BaseUIUtils.getLocationTypeContext()), "colSpec=40dlu:grow");
 		builder.row();
 		builder.add("levelCode", "colSpec=20dlu");
 		builder.add("uniqueCode", "colSpec=40dlu:grow");
@@ -37,11 +36,9 @@ public class LocationForm extends BaseItemForm<LocationVO> {
 		builder.row();
 		builder.addTextArea("description", "colSpec=40dlu:grow");
 		builder.row();
-		builder.add(sbf.createBoundComboBox("fallsWithinLocation", valueHolder, "locationName"), "colSpan=1");
+		builder.add(sbf.createBinding("fallsWithinLocation", BaseUIUtils.getLocationContext()), "colSpan=1");
 		
 		super.endFormCreate("");
 		return itemPanel;
 	}
-	
-	
 }

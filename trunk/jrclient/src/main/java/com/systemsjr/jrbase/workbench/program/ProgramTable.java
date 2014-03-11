@@ -3,9 +3,9 @@ package com.systemsjr.jrbase.workbench.program;
 import javax.swing.JTable;
 import javax.swing.table.TableColumnModel;
 
-import com.systemsjr.jrbase.common.BaseItemTable;
 import com.systemsjr.jrbase.utils.BaseServiceUtils;
 import com.systemsjr.jrbase.workbench.program.vo.ProgramVO;
+import com.systemsjr.jrlib.richclient.BaseItemTable;
 
 public class ProgramTable extends BaseItemTable<ProgramVO> {
 	

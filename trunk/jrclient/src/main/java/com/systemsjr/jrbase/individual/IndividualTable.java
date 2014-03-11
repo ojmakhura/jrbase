@@ -3,9 +3,9 @@ package com.systemsjr.jrbase.individual;
 import javax.swing.JTable;
 import javax.swing.table.TableColumnModel;
 
-import com.systemsjr.jrbase.common.BaseItemTable;
 import com.systemsjr.jrbase.individual.vo.IndividualVO;
 import com.systemsjr.jrbase.utils.BaseServiceUtils;
+import com.systemsjr.jrlib.richclient.BaseItemTable;
 
 public class IndividualTable extends BaseItemTable<IndividualVO> {
 
@@ -18,8 +18,7 @@ public class IndividualTable extends BaseItemTable<IndividualVO> {
 		super(new IndividualVO[]{}, "individuals", new String[]{
 				"idNumber",
 				"surname",
-				"firstName",
-				"dob"
+				"firstName"
 		});
 		
 	}
@@ -31,7 +30,7 @@ public class IndividualTable extends BaseItemTable<IndividualVO> {
 		tcm.getColumn(0).setPreferredWidth(30);
 		tcm.getColumn(1).setPreferredWidth(100);
 		tcm.getColumn(2).setPreferredWidth(100);
-		tcm.getColumn(3).setPreferredWidth(30);
+		//tcm.getColumn(3).setPreferredWidth(30);
 	}
 
 	@Override

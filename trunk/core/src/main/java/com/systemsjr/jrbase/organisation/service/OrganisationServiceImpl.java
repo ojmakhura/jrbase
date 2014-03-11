@@ -6,9 +6,12 @@
 package com.systemsjr.jrbase.organisation.service;
 
 import java.util.Collection;
+import java.util.List;
 
 import com.systemsjr.jrbase.organisation.Organisation;
 import com.systemsjr.jrbase.organisation.OrganisationType;
+import com.systemsjr.jrbase.organisation.vo.OrganisationSearchCriteria;
+import com.systemsjr.jrbase.organisation.vo.OrganisationTypeSearchCriteria;
 import com.systemsjr.jrbase.organisation.vo.OrganisationTypeVO;
 import com.systemsjr.jrbase.organisation.vo.OrganisationVO;
 
@@ -110,5 +113,24 @@ public class OrganisationServiceImpl
 		if(organisationTypeVO.getId() != null){
 			getOrganisationTypeDao().remove(organisationTypeVO.getId());
 		}		
+	}
+
+	@Override
+	protected OrganisationVO[] handleSearchOrganisations(OrganisationSearchCriteria searchCriteria) throws Exception {
+		if(searchCriteria == null){
+			return new OrganisationVO[]{};
+		}
+		List orgs = getOrganisationDao().findByCriteria(searchCriteria);
+		return getOrganisationDao().toOrganisationVOArray(orgs);
+	}
+
+	@Override
+	protected OrganisationTypeVO[] handleSearchOrganisationTypes(
+			OrganisationTypeSearchCriteria searchCriteria) throws Exception {
+		if(searchCriteria == null){
+			return new OrganisationTypeVO[]{};
+		}
+		List types = getOrganisationTypeDao().findByCriteria(searchCriteria);
+		return getOrganisationTypeDao().toOrganisationTypeVOArray(types);
 	}
 }

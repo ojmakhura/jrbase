@@ -1,20 +1,14 @@
 package com.systemsjr.jrbase.organisation;
 
-import javax.swing.JComponent;
+import com.systemsjr.jrbase.workbench.application.WorkbenchView;
 
-import com.systemsjr.jrbase.common.BaseItemView;
-import com.systemsjr.jrbase.organisation.vo.OrganisationVO;
-import com.systemsjr.jrbase.utils.BaseServiceUtils;
-
-public class OrganisationView extends BaseItemView<OrganisationVO> {
+public class OrganisationView extends WorkbenchView {
 	
-	@Override
-	protected JComponent createControl() {
-		setItemForm(new OrganisationForm());
-		return getItemForm().getControl();
+	public OrganisationView(){
+		super("organisationView");
 	}
 
-	@Override
+	/*@Override
 	protected OrganisationVO handleSaveItem(OrganisationVO object) {
 		setAction(object.getId());
 		object = BaseServiceUtils.getOrgService().saveOrganisation(object);
@@ -29,5 +23,5 @@ public class OrganisationView extends BaseItemView<OrganisationVO> {
 	@Override
 	protected OrganisationVO handleNewItem() {
 		return BaseServiceUtils.createDefaultOrganisation(null);
-	}
+	}*/
 }

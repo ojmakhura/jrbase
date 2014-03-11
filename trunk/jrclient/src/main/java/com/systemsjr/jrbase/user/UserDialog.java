@@ -5,16 +5,16 @@ import java.awt.BorderLayout;
 import javax.swing.JComponent;
 import javax.swing.JPanel;
 
-import com.systemsjr.jrbase.common.BaseItemDialog;
-import com.systemsjr.jrbase.user.vo.UserVO;
+import com.systemsjr.jrbase.user.vo.UserDetailsVO;
+import com.systemsjr.jrlib.richclient.BaseItemDialog;
 
-public class UserDialog extends BaseItemDialog<UserVO> {
+public class UserDialog extends BaseItemDialog<UserDetailsVO> {
 
 	public UserDialog() {
 		super("userDialog");
 	}
 	
-	public UserDialog(UserVO userVO) {
+	public UserDialog(UserDetailsVO userVO) {
 		super("userDialog");
 		setItem(userVO);
 	}

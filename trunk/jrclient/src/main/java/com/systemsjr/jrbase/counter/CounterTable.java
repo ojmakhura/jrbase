@@ -3,9 +3,9 @@ package com.systemsjr.jrbase.counter;
 import javax.swing.JTable;
 import javax.swing.table.TableColumnModel;
 
-import com.systemsjr.jrbase.common.BaseItemTable;
 import com.systemsjr.jrbase.counter.vo.CounterVO;
 import com.systemsjr.jrbase.utils.BaseServiceUtils;
+import com.systemsjr.jrlib.richclient.BaseItemTable;
 
 public class CounterTable extends BaseItemTable<CounterVO> {
 

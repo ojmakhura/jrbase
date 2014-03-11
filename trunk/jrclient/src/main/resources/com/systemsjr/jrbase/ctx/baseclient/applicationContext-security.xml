@@ -1,6 +1,7 @@
 <beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
            http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+           http://www.springframework.org/schema/security
            http://www.springframework.org/schema/security/spring-security-3.0.xsd">
 
 	<bean id="applicationSecurityManager"
@@ -8,7 +9,7 @@
 		<property name="authenticationManager" ref="authenticationManager" />
 	</bean>
 
-	<bean id="authenticationManager" class="org.springframework.security.providers.ProviderManager">
+	<bean id="authenticationManager" class="org.springframework.security.authentication.ProviderManager">
 		<property name="providers">
 			<list>
 				<ref bean="daoAuthenticationProvider" />
@@ -16,9 +17,7 @@
 		</property>
 	</bean>
 
-	<bean id="userDetailsService"
-		class="com.systemsjr.matlo.user.security.UserDetailsImpl">
-	</bean>
+	<bean id="userDetailsService" class="com.systemsjr.jrlib.security.UserDetailsServiceImpl"/>
 
 	<bean id="daoAuthenticationProvider"
 		class="org.springframework.security.authentication.dao.DaoAuthenticationProvider">
@@ -26,10 +25,10 @@
 		<property name="passwordEncoder" ref="passwordEncoder" />
 	</bean>
 	
-	<bean id="passwordEncoder" class="org.springframework.security.authentication.encoding.Md5PasswordEncoder"/>
+	<bean id="passwordEncoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder"/>
 
 	<bean id="accessDecisionManager"
-		class="org.springframework.security.vote.AffirmativeBased">
+		class="org.springframework.security.access.vote.AffirmativeBased">
 		<property name="decisionVoters">
 			<list>
 				<ref bean="roleVoter" />
@@ -38,11 +37,11 @@
 		</property>
 	</bean>
 
-	<bean id="roleVoter" class="org.springframework.security.vote.RoleVoter">
+	<bean id="roleVoter" class="org.springframework.security.access.vote.RoleVoter">
 		<property name="rolePrefix" value="" />
 	</bean>
 
 	<bean id="authenticatedVoter"
-		class="org.springframework.security.vote.AuthenticatedVoter">
+		class="org.springframework.security.access.vote.AuthenticatedVoter">
 	</bean>
 </beans>

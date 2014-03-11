@@ -4,10 +4,10 @@ import javax.swing.JComponent;
 
 import org.springframework.binding.value.support.RefreshableValueHolder;
 
-import com.systemsjr.jrbase.common.BaseItemForm;
 import com.systemsjr.jrbase.individual.vo.IndividualVO;
 import com.systemsjr.jrbase.utils.BaseServiceUtils;
 import com.systemsjr.jrbase.utils.BaseUIUtils;
+import com.systemsjr.jrlib.richclient.BaseItemForm;
 
 public class IndividualForm extends BaseItemForm<IndividualVO> {
 	RefreshableValueHolder countryHolder;
@@ -21,9 +21,8 @@ public class IndividualForm extends BaseItemForm<IndividualVO> {
 
 	@Override
 	protected JComponent createFormControl() {
-		super.initForm("individualListTable", null);
-		valueHolder = BaseUIUtils.getIndividualValueHolder();
-		countryHolder = BaseUIUtils.getCountriesValueHolder();
+		super.initForm();
+		countryHolder = BaseUIUtils.getCountryValueHolder();
 		
 		builder.setLabelAttributes("colSpec=right:pref");
 		
@@ -47,12 +46,12 @@ public class IndividualForm extends BaseItemForm<IndividualVO> {
 		builder.add ("dob", "colSpan=1"); // Month Day, Year
 		builder.add("email", "colSpan=1");
 		builder.row();
-		builder.add(sbf.createBoundComboBox("countryOfBirth", countryHolder, "locationName"), "colSpan=1");
-		builder.add(sbf.createBoundComboBox("countryOfCitizenship", countryHolder, "locationName"), "colSpan=1");
+		builder.add(sbf.createBinding("countryOfBirth", BaseUIUtils.getCountriesContext()));
+		builder.row();
+		builder.add(sbf.createBinding("countryOfCitizenship", BaseUIUtils.getCountriesContext()));
 		
 		super.endFormCreate("");
 		
 		return itemPanel;
 	}
-
 }
