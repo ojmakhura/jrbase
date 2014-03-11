@@ -254,14 +254,14 @@
                 <f:selectItems value="#{ajsfc:getEnumSelectItems('idtype.','com.systemsjr.jrbase.individual.IDType')}"/>
             </tr:selectOneChoice>
             <tr:inputHidden id="id" value="#{manageIndividualForm.id}"/>
-            <tr:selectOneChoice id="countryOfBirth" value="#{manageIndividualForm.countryOfBirth}" label="#{messages['individual.country.of.birth']}:" required="true" readOnly="false" unselectedLabel="">
+            <tr:selectOneChoice id="countryOfBirth" value="#{manageIndividualForm.countryOfBirth}" label="#{messages['individual.country.of.birth']}:" required="false" readOnly="false" unselectedLabel="">
                    <c:if test="${!empty manageIndividualForm.countryOfBirthBackingList}">
                        <c:forEach var="row" items="#{manageIndividualForm.countryOfBirthBackingList}">
                            <f:selectItem itemLabel="#{row[1]}" itemValue="#{row[0]}" />
                        </c:forEach>
                    </c:if>
             </tr:selectOneChoice>
-            <tr:selectOneChoice id="countryOfCitizenship" value="#{manageIndividualForm.countryOfCitizenship}" label="#{messages['individual.country.of.citizenship']}:" required="true" readOnly="false" unselectedLabel="">
+            <tr:selectOneChoice id="countryOfCitizenship" value="#{manageIndividualForm.countryOfCitizenship}" label="#{messages['individual.country.of.citizenship']}:" required="false" readOnly="false" unselectedLabel="">
                    <c:if test="${!empty manageIndividualForm.countryOfCitizenshipBackingList}">
                        <c:forEach var="row" items="#{manageIndividualForm.countryOfCitizenshipBackingList}">
                            <f:selectItem itemLabel="#{row[1]}" itemValue="#{row[0]}" />

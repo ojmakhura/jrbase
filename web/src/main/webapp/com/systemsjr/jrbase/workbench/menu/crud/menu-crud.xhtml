@@ -31,9 +31,9 @@
         </tr:inputText>
         <tr:inputText id="searchForm_menuDescription" value="#{manageMenuForm.searchForm.menuDescription}" label="#{messages['menu.menu.description']}:" required="false" readOnly="false">
         </tr:inputText>
-        <tr:selectOneChoice id="searchForm_menu" value="#{manageMenuForm.searchForm.menu}" label="#{messages['menu.menu']}:" required="false" readOnly="false" unselectedLabel="">
-            <c:if test="${!empty manageMenuForm.menuBackingList}">
-                <c:forEach var="row" items="#{manageMenuForm.menuBackingList}">
+        <tr:selectOneChoice id="searchForm_application" value="#{manageMenuForm.searchForm.application}" label="#{messages['menu.application']}:" required="false" readOnly="false" unselectedLabel="">
+            <c:if test="${!empty manageMenuForm.applicationBackingList}">
+                <c:forEach var="row" items="#{manageMenuForm.applicationBackingList}">
                     <f:selectItem itemLabel="#{row[1]}" itemValue="#{row[0]}" />
                 </c:forEach>
             </c:if>
@@ -66,6 +66,13 @@
                 </c:forEach>
             </c:if>
         </tr:selectManyListbox>
+        <tr:selectOneChoice id="searchForm_menu" value="#{manageMenuForm.searchForm.menu}" label="#{messages['menu.menu']}:" required="false" readOnly="false" unselectedLabel="">
+            <c:if test="${!empty manageMenuForm.menuBackingList}">
+                <c:forEach var="row" items="#{manageMenuForm.menuBackingList}">
+                    <f:selectItem itemLabel="#{row[1]}" itemValue="#{row[0]}" />
+                </c:forEach>
+            </c:if>
+        </tr:selectOneChoice>
         <f:facet name="footer">
             <tr:panelButtonBar>
                 <tr:commandButton id="searchAction" text="#{messages['action.search']}" action="#{menuController.search}" accessKey="#{messages['action.search.access.key']}" partialSubmit="true"/>
@@ -142,6 +149,12 @@
             </tr:column>
             <tr:column sortable="false">
                 <f:facet name="header">
+                    <tr:outputText value="#{messages['application.view.title']}"/>
+                </f:facet>
+                <tr:outputText value="#{row.application}" converter="com.systemsjr.jrbase.workbench.application.crud.ApplicationJsfConverter"/>
+            </tr:column>
+            <tr:column sortable="false">
+                <f:facet name="header">
                     <tr:outputText value="#{messages['menu.view.title']}"/>
                 </f:facet>
                 <tr:outputText value="#{row.menu}" converter="com.systemsjr.jrbase.workbench.menu.crud.MenuJsfConverter"/>
@@ -163,9 +176,9 @@
         <tr:inputText id="menuDescription" value="#{manageMenuForm.menuDescription}" label="#{messages['menu.menu.description']}:" required="false" readOnly="false">
         </tr:inputText>
             <tr:inputHidden id="id" value="#{manageMenuForm.id}"/>
-            <tr:selectOneChoice id="menu" value="#{manageMenuForm.menu}" label="#{messages['menu.menu']}:" required="false" readOnly="false" unselectedLabel="">
-                   <c:if test="${!empty manageMenuForm.menuBackingList}">
-                       <c:forEach var="row" items="#{manageMenuForm.menuBackingList}">
+            <tr:selectOneChoice id="application" value="#{manageMenuForm.application}" label="#{messages['menu.application']}:" required="true" readOnly="false" unselectedLabel="">
+                   <c:if test="${!empty manageMenuForm.applicationBackingList}">
+                       <c:forEach var="row" items="#{manageMenuForm.applicationBackingList}">
                            <f:selectItem itemLabel="#{row[1]}" itemValue="#{row[0]}" />
                        </c:forEach>
                    </c:if>
@@ -198,6 +211,13 @@
                        </c:forEach>
                    </c:if>
             </tr:selectManyListbox>
+            <tr:selectOneChoice id="menu" value="#{manageMenuForm.menu}" label="#{messages['menu.menu']}:" required="false" readOnly="false" unselectedLabel="">
+                   <c:if test="${!empty manageMenuForm.menuBackingList}">
+                       <c:forEach var="row" items="#{manageMenuForm.menuBackingList}">
+                           <f:selectItem itemLabel="#{row[1]}" itemValue="#{row[0]}" />
+                       </c:forEach>
+                   </c:if>
+            </tr:selectOneChoice>
 
             <f:facet name="footer">
                    <tr:panelButtonBar>

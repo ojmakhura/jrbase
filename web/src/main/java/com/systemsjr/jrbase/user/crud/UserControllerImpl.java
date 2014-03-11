@@ -10,7 +10,6 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 import com.systemsjr.jrbase.ManageableServiceLocator;
-import com.systemsjr.jrbase.user.crud.ManageUserForm;
 
 /**
  * @see com.systemsjr.jrbase.user.crud.UserController
@@ -22,54 +21,63 @@ public class UserControllerImpl extends UserController implements Serializable {
 	private static final long serialVersionUID = -4828360535682586692L;
 
 	/**
-	 * Saves instance action.
-	 * 
-	 * @param form
-	 * @throws Exception
-	 */
-	public void doSave(ManageUserForm form) throws Exception {
+     * Saves instance action.
+     * @param form
+     * @throws Exception
+     */
+    public void doSave(ManageUserForm form)
+        throws Exception
+    {
 		PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
-		if (form.getId() == null || form.getId() == 0) {
-			form.setId(ManageableServiceLocator
-					.instance()
-					.getUserManageableService()
-					.create(form.getStatus(),
-							form.getUsername(),
-							passwordEncoder.encode(form.getPassword()),
-							form.getPhoto() == null ? null : IOUtils
-									.toByteArray(form.getPhoto()
-											.getInputStream()), form.getName(),
-							form.getEmail(), form.getPasswordLength(),
-							form.getUserId(), null, form.getUserLocations(),
-							form.getUserRoles(), form.getUserClearanceLevels(),
-							form.getIndividual(), form.getLoginSessions(),
-							form.getPrograms(), form.getMenus()).getId());
-			this.addInfoMessage(Messages.get("manageable.entity.created",
-					new Object[] { Messages.get("user") }));
-		} else {
-			ManageableServiceLocator
-					.instance()
-					.getUserManageableService()
-					.update(form.getStatus(),
-							form.getUsername(),
-							passwordEncoder.encode(form.getPassword()),
-							form.getPhoto() == null ? null : IOUtils
-									.toByteArray(form.getPhoto()
-											.getInputStream()), form.getName(),
-							form.getEmail(), form.getPasswordLength(),
-							form.getUserId(), form.getId(),
-							form.getUserLocations(), form.getUserRoles(),
-							form.getUserClearanceLevels(),
-							form.getIndividual(), form.getLoginSessions(),
-							form.getPrograms(), form.getMenus());
-			this.addInfoMessage(Messages.get("manageable.entity.changed",
-					new Object[] { Messages.get("user") }));
-		}
-		if (form.getManageableList() != null) // only searches again if there
-												// was an old search
-			doSearch(form); // search again to show the updated item (if it fits
-							// the search criteria)
+        if(form.getId() == null || form.getId()==0){
+            form.setId(
+                ManageableServiceLocator.instance().getUserManageableService().create(
+                    form.getStatus()
+                    , form.getUsername()
+                    , passwordEncoder.encode(form.getPassword())
+                    , form.getPhoto()==null?null:IOUtils.toByteArray(form.getPhoto().getInputStream())
+                    , form.getName()
+                    , form.getEmail()
+                    , form.getPasswordLength()
+                    , form.getUserId()
+                    , null
+                    , form.getApplications()
+                    , form.getUserRoles()
+                    , form.getUserClearanceLevels()
+                    , form.getIndividual()
+                    , form.getUserLocations()
+                    , form.getLoginSessions()
+                    , form.getPrograms()
+                    , form.getMenus()
+                ).getId()
+            );
+            this.addInfoMessage(Messages.get("manageable.entity.created", new Object[]{Messages.get("user")}));
+        }
+        else{
+            ManageableServiceLocator.instance().getUserManageableService().update(
+                form.getStatus()
+                , form.getUsername()
+                , form.getPassword()
+                , form.getPhoto()==null?null:IOUtils.toByteArray(form.getPhoto().getInputStream())
+                , form.getName()
+                , form.getEmail()
+                , form.getPasswordLength()
+                , form.getUserId()
+                , form.getId()
+                , form.getApplications()
+                , form.getUserRoles()
+                , form.getUserClearanceLevels()
+                , form.getIndividual()
+                , form.getUserLocations()
+                , form.getLoginSessions()
+                , form.getPrograms()
+                , form.getMenus()
+            );
+            this.addInfoMessage(Messages.get("manageable.entity.changed", new Object[]{Messages.get("user")}));
+        }
+        if(form.getManageableList() != null) //only searches again if there was an old search
+            doSearch(form); //search again to show the updated item (if it fits the search criteria)
 
-		form.setEditState(false);
-	}
+        form.setEditState(false);
+    }
 }

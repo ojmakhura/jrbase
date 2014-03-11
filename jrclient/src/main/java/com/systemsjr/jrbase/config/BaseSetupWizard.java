@@ -2,7 +2,6 @@ package com.systemsjr.jrbase.config;
 
 import java.awt.Dimension;
 
-import org.springframework.richclient.application.setup.SetupWizardDialog;
 import org.springframework.richclient.command.ActionCommandExecutor;
 import org.springframework.richclient.wizard.AbstractWizard;
 import org.springframework.richclient.wizard.WizardDialog;
@@ -18,7 +17,7 @@ public class BaseSetupWizard extends AbstractWizard implements
 	@Override
 	public void execute() {
 		if (wizardDialog == null) {
-			wizardDialog = new SetupWizardDialog(this);
+			wizardDialog = new WizardDialog();
 			wizardDialog.setPreferredSize(new Dimension(500, 300));
 			wizardDialog.setResizable(true);
 		}

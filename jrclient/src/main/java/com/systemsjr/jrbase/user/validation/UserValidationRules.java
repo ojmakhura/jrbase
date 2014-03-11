@@ -24,9 +24,16 @@ public class UserValidationRules extends DefaultRulesSource {
 		super();
 		addRules(createUserRules());
 	}
+	
+	/*public Map getUserRules(){
+		
+		HashMap ruleMap = new HashMap();
+		
+		return ruleMap;
+	}*/
 
 	private Rules createUserRules() {
-		return new org.springframework.rules.Rules(UserVO.class){
+		return new Rules(UserVO.class){
 			@Override
 			protected void initRules(){
 				add("username", USERNAME_CONSTRAINT);

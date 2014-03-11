@@ -10,6 +10,8 @@ import java.util.List;
 import org.hibernate.Criteria;
 import org.hibernate.criterion.Restrictions;
 
+import com.systemsjr.jrbase.location.vo.LocationTypeVO;
+
 /**
  * @see com.systemsjr.jrbase.location.LocationType
  */
@@ -54,6 +56,17 @@ public class LocationTypeDaoImpl
     {
         // @todo verify behavior of toLocationTypeVO
         super.toLocationTypeVO(source, target);
+        if(source.getFallsWithinLocationType() != null){
+        	com.systemsjr.jrbase.location.vo.LocationTypeVO type = new LocationTypeVO();
+        	type.setDescription(source.getFallsWithinLocationType().getDescription());
+        	type.setId(source.getFallsWithinLocationType().getId());
+        	type.setLevelCode(source.getFallsWithinLocationType().getLevelCode());
+        	type.setName(source.getFallsWithinLocationType().getName());
+        	type.setStatus(source.getFallsWithinLocationType().getStatus());
+        	type.setType(source.getFallsWithinLocationType().getType());
+        	type.setUniqueCode(source.getFallsWithinLocationType().getUniqueCode());
+        	target.setFallsWithinLocationType(type);
+        }
     }
 
 
@@ -111,6 +124,10 @@ public class LocationTypeDaoImpl
     {
         // @todo verify behavior of locationTypeVOToEntity
         super.locationTypeVOToEntity(source, target, copyIfNull);
+        if(source.getFallsWithinLocationType() != null){
+        	LocationType type = this.loadLocationTypeFromLocationTypeVO(source.getFallsWithinLocationType());
+        	target.setFallsWithinLocationType(type);
+        }
     }
 
 }

@@ -5,8 +5,12 @@
  */
 package com.systemsjr.jrbase.location.service;
 
+import java.util.List;
+
 import com.systemsjr.jrbase.location.Location;
 import com.systemsjr.jrbase.location.LocationType;
+import com.systemsjr.jrbase.location.vo.LocationSearchCriteria;
+import com.systemsjr.jrbase.location.vo.LocationTypeSearchCriteria;
 import com.systemsjr.jrbase.location.vo.LocationTypeVO;
 import com.systemsjr.jrbase.location.vo.LocationVO;
 
@@ -141,6 +145,20 @@ public class LocationServiceImpl
 			locations = new LocationVO[]{};
 		}
 		return locations;
+	}
+
+	@Override
+	protected LocationVO[] handleSearchLocations(
+			LocationSearchCriteria searchCriteria) throws Exception {
+		List locations = getLocationDao().findByCriteria(searchCriteria);
+		return getLocationDao().toLocationVOArray(locations);
+	}
+
+	@Override
+	protected LocationTypeVO[] handleSearchLocationTypes(
+			LocationTypeSearchCriteria searchCriteria) throws Exception {
+		List types = getLocationTypeDao().findByCriteria(searchCriteria);
+		return getLocationTypeDao().toLocationTypeVOArray(types);
 	}
 
 }

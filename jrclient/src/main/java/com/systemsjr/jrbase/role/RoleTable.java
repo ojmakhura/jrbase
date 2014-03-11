@@ -3,9 +3,9 @@ package com.systemsjr.jrbase.role;
 import javax.swing.JTable;
 import javax.swing.table.TableColumnModel;
 
-import com.systemsjr.jrbase.common.BaseItemTable;
 import com.systemsjr.jrbase.role.vo.RoleVO;
 import com.systemsjr.jrbase.utils.BaseServiceUtils;
+import com.systemsjr.jrlib.richclient.BaseItemTable;
 
 public class RoleTable extends BaseItemTable<RoleVO> {
 
@@ -15,7 +15,7 @@ public class RoleTable extends BaseItemTable<RoleVO> {
 	}
 	
 	public RoleTable() {
-		super(new RoleVO[]{}, "roles", new String[]{
+		this(new RoleVO[]{}, "roles", new String[]{
 				"roleCode",
 				"role"
 		});		

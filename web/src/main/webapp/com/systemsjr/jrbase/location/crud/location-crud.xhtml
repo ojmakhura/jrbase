@@ -21,6 +21,10 @@
         <tr:panelGroupLayout layout="vertical" inlineStyle="display:#{manageLocationForm.editState?'none':''}">
         <tr:subform id="manageLocationForm_search">
         <tr:panelFormLayout>
+        <tr:inputText id="searchForm_uniqueCode" value="#{manageLocationForm.searchForm.uniqueCode}" label="#{messages['location.unique.code']}:" required="false" readOnly="false">
+        </tr:inputText>
+        <tr:inputText id="searchForm_locationName" value="#{manageLocationForm.searchForm.locationName}" label="#{messages['location.location.name']}:" required="false" readOnly="false">
+        </tr:inputText>
         <tr:selectOneChoice id="searchForm_status" value="#{manageLocationForm.searchForm.status}" label="#{messages['location.status']}:" required="false" readOnly="false" unselectedLabel="">
             <f:converter converterId="com.systemsjr.jrbase.location.LocationStatus"/>
             <f:selectItems value="#{ajsfc:getEnumSelectItems('location.status.','com.systemsjr.jrbase.location.LocationStatus')}"/>
@@ -29,11 +33,7 @@
             <f:converter converterId="com.systemsjr.jrbase.location.Type"/>
             <f:selectItems value="#{ajsfc:getEnumSelectItems('type.','com.systemsjr.jrbase.location.Type')}"/>
         </tr:selectOneChoice>
-        <tr:inputText id="searchForm_uniqueCode" value="#{manageLocationForm.searchForm.uniqueCode}" label="#{messages['location.unique.code']}:" required="false" readOnly="false">
-        </tr:inputText>
         <tr:inputText id="searchForm_levelCode" value="#{manageLocationForm.searchForm.levelCode}" label="#{messages['location.level.code']}:" required="false" readOnly="false">
-        </tr:inputText>
-        <tr:inputText id="searchForm_locationName" value="#{manageLocationForm.searchForm.locationName}" label="#{messages['location.location.name']}:" required="false" readOnly="false">
         </tr:inputText>
         <tr:inputText id="searchForm_description" value="#{manageLocationForm.searchForm.description}" label="#{messages['location.description']}:" required="false" readOnly="false">
         </tr:inputText>
@@ -132,6 +132,20 @@
                     </tr:commandLink>
                 </h:panelGroup>
             </tr:column>
+            <tr:column sortable="true" sortProperty="uniqueCode">
+                <f:facet name="header">
+                    <tr:outputText value="#{messages['location.unique.code']}"/>
+                </f:facet>
+                <tr:outputText value="#{row.uniqueCode}">
+                </tr:outputText>
+            </tr:column>
+            <tr:column sortable="true" sortProperty="locationName">
+                <f:facet name="header">
+                    <tr:outputText value="#{messages['location.location.name']}"/>
+                </f:facet>
+                <tr:outputText value="#{row.locationName}">
+                </tr:outputText>
+            </tr:column>
             <tr:column sortable="true" sortProperty="status">
                 <f:facet name="header">
                     <tr:outputText value="#{messages['location.status']}"/>
@@ -146,25 +160,11 @@
                 <tr:outputText value="#{ajsfc:getEnumMessage('type.',row.type)}">
                 </tr:outputText>
             </tr:column>
-            <tr:column sortable="true" sortProperty="uniqueCode">
-                <f:facet name="header">
-                    <tr:outputText value="#{messages['location.unique.code']}"/>
-                </f:facet>
-                <tr:outputText value="#{row.uniqueCode}">
-                </tr:outputText>
-            </tr:column>
             <tr:column sortable="true" sortProperty="levelCode">
                 <f:facet name="header">
                     <tr:outputText value="#{messages['location.level.code']}"/>
                 </f:facet>
                 <tr:outputText value="#{row.levelCode}">
-                </tr:outputText>
-            </tr:column>
-            <tr:column sortable="true" sortProperty="locationName">
-                <f:facet name="header">
-                    <tr:outputText value="#{messages['location.location.name']}"/>
-                </f:facet>
-                <tr:outputText value="#{row.locationName}">
                 </tr:outputText>
             </tr:column>
             <tr:column sortable="true" sortProperty="description">
@@ -192,6 +192,10 @@
         <tr:panelGroupLayout layout="vertical" inlineStyle="display:#{manageLocationForm.editState?'':'none'}">
         <tr:subform id="manageLocationForm_edit" >
             <tr:panelFormLayout>
+        <tr:inputText id="uniqueCode" value="#{manageLocationForm.uniqueCode}" label="#{messages['location.unique.code']}:" required="true" readOnly="false">
+        </tr:inputText>
+        <tr:inputText id="locationName" value="#{manageLocationForm.locationName}" label="#{messages['location.location.name']}:" required="true" readOnly="false">
+        </tr:inputText>
             <tr:selectOneChoice id="status" value="#{manageLocationForm.status}" label="#{messages['location.status']}:" required="true" readOnly="false" unselectedLabel="">
                 <f:converter converterId="com.systemsjr.jrbase.location.LocationStatus"/>
                 <f:selectItems value="#{ajsfc:getEnumSelectItems('location.status.','com.systemsjr.jrbase.location.LocationStatus')}"/>
@@ -200,11 +204,7 @@
                 <f:converter converterId="com.systemsjr.jrbase.location.Type"/>
                 <f:selectItems value="#{ajsfc:getEnumSelectItems('type.','com.systemsjr.jrbase.location.Type')}"/>
             </tr:selectOneChoice>
-        <tr:inputText id="uniqueCode" value="#{manageLocationForm.uniqueCode}" label="#{messages['location.unique.code']}:" required="true" readOnly="false">
-        </tr:inputText>
         <tr:inputText id="levelCode" value="#{manageLocationForm.levelCode}" label="#{messages['location.level.code']}:" required="true" readOnly="false">
-        </tr:inputText>
-        <tr:inputText id="locationName" value="#{manageLocationForm.locationName}" label="#{messages['location.location.name']}:" required="true" readOnly="false">
         </tr:inputText>
         <tr:inputText id="description" value="#{manageLocationForm.description}" label="#{messages['location.description']}:" required="false" readOnly="false">
         </tr:inputText>

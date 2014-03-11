@@ -10,8 +10,8 @@ import java.util.List;
 import com.systemsjr.jrbase.loginsession.LoginSession;
 import com.systemsjr.jrbase.loginsession.LoginSessionDao;
 import com.systemsjr.jrbase.loginsession.vo.LoginSessionVO;
+import com.systemsjr.jrbase.user.vo.UserDetailsVO;
 import com.systemsjr.jrbase.user.vo.UserSearchCriteria;
-import com.systemsjr.jrbase.user.vo.UserVO;
 
 /**
  * @see com.systemsjr.jrbase.loginsession.service.LoginSessionService
@@ -29,7 +29,7 @@ public class LoginSessionServiceImpl
     {
     	LoginSession loginSession = getLoginSessionDao().loginSessionVOToEntity(loginSessionVO);
     	
-    	if(loginSession.getId() == null){
+    	if(loginSessionVO.getId() == null){  
     		loginSession = getLoginSessionDao().create(loginSession);
     	} else {
     		getLoginSessionDao().update(loginSession);
@@ -45,7 +45,6 @@ public class LoginSessionServiceImpl
 	protected  LoginSessionVO[] handleGetAllLoginSessions()
         throws java.lang.Exception
     {
-        
     	
         return (LoginSessionVO[])getLoginSessionDao().loadAll(LoginSessionDao.TRANSFORM_LOGINSESSIONVO).toArray();
     }
@@ -63,14 +62,13 @@ public class LoginSessionServiceImpl
         searchCriteria.setUsername(username);
         searchCriteria.setPassword(encryptedPassword);
         
-        List<UserVO> user = getUserDao().findByCriteria(searchCriteria);
+        List<UserDetailsVO> user = getUserDao().findByCriteria(searchCriteria);
         
         if(user.isEmpty()){
         	loginSessionVO = null;
         } else{
         	loginSessionVO = new LoginSessionVO();
         	loginSessionVO.setUser(user.get(0));
-        	//loginSessionVO.setArea(user.get(0).get)
         }
         
         return loginSessionVO;

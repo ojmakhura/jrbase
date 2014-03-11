@@ -3,19 +3,19 @@ package com.systemsjr.jrbase.user;
 import javax.swing.JTable;
 import javax.swing.table.TableColumnModel;
 
-import com.systemsjr.jrbase.common.BaseItemTable;
-import com.systemsjr.jrbase.user.vo.UserVO;
+import com.systemsjr.jrbase.user.vo.UserDetailsVO;
 import com.systemsjr.jrbase.utils.BaseServiceUtils;
+import com.systemsjr.jrlib.richclient.BaseItemTable;
 
 
-public class UserTable extends BaseItemTable<UserVO>{
+public class UserTable extends BaseItemTable<UserDetailsVO>{
 
 	public UserTable(String modelId, String[] columnPropertyNames) {
 		super(modelId, columnPropertyNames);
 	}
 	
 	public UserTable(){
-		super(new UserVO[]{}, "users", new String[]{
+		super(new UserDetailsVO[]{}, "users", new String[]{
 				"username",
 				"name",
 				"status"

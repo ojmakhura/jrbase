@@ -1,7 +1,7 @@
 package com.systemsjr.jrbase.role;
 
-import com.systemsjr.jrbase.common.BaseItemDialog;
 import com.systemsjr.jrbase.role.vo.RoleVO;
+import com.systemsjr.jrlib.richclient.BaseItemDialog;
 
 public class RoleDialog extends BaseItemDialog<RoleVO> {
 

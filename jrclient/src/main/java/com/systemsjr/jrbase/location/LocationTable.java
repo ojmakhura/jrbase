@@ -3,9 +3,9 @@ package com.systemsjr.jrbase.location;
 import javax.swing.JTable;
 import javax.swing.table.TableColumnModel;
 
-import com.systemsjr.jrbase.common.BaseItemTable;
 import com.systemsjr.jrbase.location.vo.LocationVO;
 import com.systemsjr.jrbase.utils.BaseServiceUtils;
+import com.systemsjr.jrlib.richclient.BaseItemTable;
 
 public class LocationTable extends BaseItemTable<LocationVO> {
 

@@ -6,6 +6,7 @@
 package com.systemsjr.jrbase.role.service;
 
 import java.util.Collection;
+import java.util.List;
 
 import com.systemsjr.jrbase.clearancelevel.vo.ClearanceLevelVO;
 import com.systemsjr.jrbase.role.Role;
@@ -87,6 +88,16 @@ public class RoleServiceImpl
 		if(roleVO.getId() != null){
 			getRoleDao().remove(getRoleDao().roleVOToEntity(roleVO));
 		}
+	}
+
+	@Override
+	protected RoleVO[] handleSearchRoles(RoleSearchCriteria searchCriteria)
+			throws Exception {
+		if(searchCriteria == null){
+			return new RoleVO[]{};
+		}
+		List roles = getRoleDao().findByCriteria(searchCriteria); 
+		return getRoleDao().toRoleVOArray(roles);
 	}
 
 }

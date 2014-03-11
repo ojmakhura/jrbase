@@ -1,7 +1,5 @@
 package com.systemsjr.jrbase.utils;
 
-import java.util.Calendar;
-
 import org.apache.commons.lang.StringUtils;
 
 import com.systemsjr.jrbase.ServiceLocator;
@@ -14,40 +12,34 @@ import com.systemsjr.jrbase.individual.vo.IndividualVO;
 import com.systemsjr.jrbase.location.service.LocationService;
 import com.systemsjr.jrbase.location.vo.LocationTypeVO;
 import com.systemsjr.jrbase.location.vo.LocationVO;
-import com.systemsjr.jrbase.loginsession.service.LoginSessionService;
-import com.systemsjr.jrbase.loginsession.vo.LoginSessionVO;
 import com.systemsjr.jrbase.organisation.service.OrganisationService;
 import com.systemsjr.jrbase.organisation.vo.OrganisationTypeVO;
 import com.systemsjr.jrbase.organisation.vo.OrganisationVO;
 import com.systemsjr.jrbase.role.service.RoleService;
 import com.systemsjr.jrbase.role.vo.RoleVO;
 import com.systemsjr.jrbase.user.service.UserDetailsService;
-import com.systemsjr.jrbase.user.service.UserService;
 import com.systemsjr.jrbase.user.vo.UserVO;
+import com.systemsjr.jrbase.workbench.application.service.ApplicationService;
+import com.systemsjr.jrbase.workbench.application.vo.ApplicationVO;
 import com.systemsjr.jrbase.workbench.menu.service.MenuService;
 import com.systemsjr.jrbase.workbench.menu.vo.MenuVO;
 import com.systemsjr.jrbase.workbench.program.service.ProgramService;
 import com.systemsjr.jrbase.workbench.program.vo.ProgramVO;
+import com.systemsjr.jrlib.utils.JRLibServiceUtils;
 
-public class BaseServiceUtils {
-	private static ServiceLocator serviceLocator = ServiceLocator.instance();
-	private static UserService userService;
+public class BaseServiceUtils extends JRLibServiceUtils{
+	
 	private static ClearanceLevelService clearanceService;
 	private static CounterService counterService;
 	private static IndividualService individualService;
 	private static LocationService locationService;
-	private static LoginSessionService sessionService;
 	private static OrganisationService orgService;
-	private static RoleService roleService;
-	private static LoginSessionService loginService;
-	private static LoginSessionVO loginSession;
+	private static RoleService roleService;	
 	private static MenuService menuService;
+	private static ApplicationService applicationService;
 	private static ProgramService programService;
 	private static UserDetailsService userDetailsService;
-	
-	public static final String dateFormat = "dd-MMM-yyyy HH:mm:ss";
-	
-	public static Calendar calendar = Calendar.getInstance();
+	//private static Userloca
 	
 	/**
 	 * Creates a default role
@@ -147,39 +139,6 @@ public class BaseServiceUtils {
 		LocationTypeVO locationType = new LocationTypeVO();
 		return locationType;
 	}
-	
-	/**
-	 * Gets the username of the currently logged in user
-	 * @return
-	 */
-	public static String getCurrentUsername() {
-		/*ApplicationSecurityManager sm = (ApplicationSecurityManager) Application
-			.services().getService(ApplicationSecurityManager.class);
-		/*if (sm.getAuthentication() != null) {
-			return sm.getAuthentication().getName();
-		}*/
-		return "Initial_User";
-	}
-	
-	/**
-	 * Gets the service locator
-	 * @return
-	 */
-	public static ServiceLocator getServiceLocator() {
-		return serviceLocator;
-	}
-
-	/**
-	 * Gets the user service.
-	 * If the user service is null, we retrieve it from the service locator
-	 * @return UserService
-	 */
-	public static UserService getUserService() {
-		if(userService == null){
-			userService = serviceLocator.getUserService();
-		}
-		return userService;
-	}
 
 	/**
 	 * Gets the clearance level service.
@@ -214,14 +173,6 @@ public class BaseServiceUtils {
 		return locationService;
 	}
 
-
-	public static LoginSessionService getSessionService() {
-		if(sessionService == null){
-			sessionService = serviceLocator.getLoginSessionService();
-		}
-		return sessionService;
-	}
-
 	public static OrganisationService getOrgService() {
 		if(orgService == null){
 			orgService = serviceLocator.getOrganisationService();
@@ -231,7 +182,9 @@ public class BaseServiceUtils {
 
 	public static RoleService getRoleService() {
 		if(roleService == null){
-			roleService = serviceLocator.getRoleService();
+			ServiceLocator locator = serviceLocator;
+			RoleService service = serviceLocator.getRoleService();
+			roleService = service;
 		}
 		return roleService;
 	}
@@ -259,14 +212,6 @@ public class BaseServiceUtils {
 		
 		return programService;
 	}
-	
-	public static LoginSessionService getLoginService(){
-		if(loginService == null){
-			loginService = serviceLocator.getLoginSessionService();
-		}
-		
-		return loginService;
-	}
 
 	public static OrganisationVO createDefaultOrganisation(OrganisationVO organisation) {
 		OrganisationVO org = new OrganisationVO();
@@ -291,5 +236,17 @@ public class BaseServiceUtils {
 	public static ProgramVO createDefaultProgram() {
 		ProgramVO programVO = new ProgramVO();
 		return programVO;
+	}
+
+	public static ApplicationService getApplicationService() {
+		if(applicationService == null){
+			applicationService = serviceLocator.getApplicationService();
+		}
+		return applicationService;
+	}
+
+	public static ApplicationVO createDefaultApplication() {
+		ApplicationVO application = new ApplicationVO();
+		return application;
 	}
 }

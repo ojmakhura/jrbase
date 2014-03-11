@@ -1,7 +1,7 @@
 package com.systemsjr.jrbase.organisation;
 
-import com.systemsjr.jrbase.common.BaseItemDialog;
 import com.systemsjr.jrbase.organisation.vo.OrganisationTypeVO;
+import com.systemsjr.jrlib.richclient.BaseItemDialog;
 
 public class OrganisationTypeDialog extends BaseItemDialog<OrganisationTypeVO> {
 

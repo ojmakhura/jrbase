@@ -79,77 +79,89 @@
     </property>
   </bean>
   
+  <bean id="menusCommand" class="com.systemsjr.jrbase.workbench.menu.command.MenusCommand"/>
+  
   <bean id="menusMenu" class="org.springframework.richclient.command.CommandGroupFactoryBean">
     <property name="members">
       <list>
-      	<bean id="menusCommand" class="com.systemsjr.jrbase.workbench.menu.command.MenusCommand"/>
+      	<ref bean="menusCommand"/>
       </list>
     </property>
   </bean>
   
+  <bean id="programsCommand" class="com.systemsjr.jrbase.workbench.program.command.ProgramsCommand"/>
+    
   <bean id="programMenu" class="org.springframework.richclient.command.CommandGroupFactoryBean">
     <property name="members">
       <list>
-      	<bean id="programsCommand" class="com.systemsjr.jrbase.workbench.program.command.ProgramsCommand"/>
+      	<ref bean="programsCommand"/>
       </list>
     </property>
   </bean>
   
+  <bean id="individualsCommand" class="com.systemsjr.jrbase.individual.command.IndividualsCommand"/>
   <bean id="individualMenu" class="org.springframework.richclient.command.CommandGroupFactoryBean">
     <property name="members">
       <list>
-      	<bean id="individualsCommand" class="com.systemsjr.jrbase.individual.command.IndividualsCommand"/>
-        <!--bean id="newIndividualCommand" class="com.systemsjr.jrbase.individual.command.NewIndividualCommand"/-->
+      	<ref bean="individualsCommand"/>
       </list>
     </property>
   </bean>
   
+  <bean id="clearanceLevelsCommand" class="com.systemsjr.jrbase.clearancelevel.command.ClearanceLevelsCommand"/>
   <bean id="clearanceLevelMenu" class="org.springframework.richclient.command.CommandGroupFactoryBean">
     <property name="members">
       <list>
-      	<bean id="clearanceLevelsCommand" class="com.systemsjr.jrbase.clearancelevel.command.ClearanceLevelsCommand"/>
-        </list>
+      	<ref bean="clearanceLevelsCommand"/>
+      </list>
     </property>
   </bean>
 
+  <bean id="locationCommand" class="com.systemsjr.jrbase.location.command.LocationsCommand"/>
+  <bean id="locationTypeCommand" class="com.systemsjr.jrbase.location.command.LocationTypesCommand"/>
   <bean id="locationMenu" class="org.springframework.richclient.command.CommandGroupFactoryBean">
     <property name="members">
       <list>
-        <bean id="locationCommand" class="com.systemsjr.jrbase.location.command.LocationsCommand"/>
-        <bean id="locationTypeCommand" class="com.systemsjr.jrbase.location.command.LocationTypesCommand"/>
+  		<ref bean="locationCommand"/>
+  		<ref bean="locationTypeCommand"/>         
       </list>
     </property>
   </bean>
   
+  <bean id="organisationsCommand" class="com.systemsjr.jrbase.organisation.command.OrganisationsCommand"/>
+  <bean id="organisationTypesCommand" class="com.systemsjr.jrbase.organisation.command.OrganisationTypesCommand"/>
   <bean id="organisationMenu" class="org.springframework.richclient.command.CommandGroupFactoryBean">
     <property name="members">
       <list>
-        <bean id="organisationsCommand" class="com.systemsjr.jrbase.organisation.command.OrganisationsCommand"/>
-        <bean id="organisationTypesCommand" class="com.systemsjr.jrbase.organisation.command.OrganisationTypesCommand"/>
+        <ref bean="organisationsCommand"/>
+  		<ref bean="organisationTypesCommand"/>  
       </list>
     </property>
   </bean>
   
+  <bean id="usersCommand" class="com.systemsjr.jrbase.user.command.UsersCommand"/>
   <bean id="userMenu" class="org.springframework.richclient.command.CommandGroupFactoryBean">
     <property name="members">
       <list>
-        <bean id="usersCommand" class="com.systemsjr.jrbase.user.command.UsersCommand"/>
+        <ref bean="usersCommand"/>
       </list>
     </property>
   </bean>
 
+  <bean id="rolesCommand" class="com.systemsjr.jrbase.role.command.RolesCommand"/>
   <bean id="roleMenu" class="org.springframework.richclient.command.CommandGroupFactoryBean">
     <property name="members">
       <list>
-        <bean id="rolesCommand" class="com.systemsjr.jrbase.role.command.RolesCommand"/>
+        <ref bean="rolesCommand"/>
       </list>
     </property>
   </bean>
 
+  <bean id="countersCommand" class="com.systemsjr.jrbase.counter.command.CountersCommand"/>
   <bean id="counterMenu" class="org.springframework.richclient.command.CommandGroupFactoryBean">
     <property name="members">
       <list>
-      	<bean id="countersCommand" class="com.systemsjr.jrbase.counter.command.CountersCommand"/>
+      	<ref bean="countersCommand"/>
       </list>
     </property>
   </bean>
@@ -168,15 +180,39 @@
   <bean id="toolBar" class="org.springframework.richclient.command.CommandGroupFactoryBean">
     <property name="members">
       <list>
-        <value>newCommand</value>
-        <value>saveCommand</value>
-        <value>printCommand</value>
-        <value>deleteCommand</value>
-        <bean class="org.springframework.richclient.command.support.ExitCommand" />
+      	<bean id="applicationCommand" class="com.systemsjr.jrbase.workbench.application.command.ApplicationsCommand"/>
+      	<bean id="workbenchCommand" class="com.systemsjr.jrbase.counter.command.CountersCommand"/>
         <value>separator</value>
-        <value>propertiesCommand</value>
+        <bean class="org.springframework.richclient.command.support.ExitCommand" />
       </list>
     </property>
+  </bean>
+  
+  <bean id="applicationManager" class="com.systemsjr.jrbase.workbench.application.command.ManageApplications"/>
+  
+  <bean id="applicationMenu" class="org.springframework.richclient.command.CommandGroupFactoryBean"  depends-on="application">
+  	<property name="members">
+  		<list>
+  			<ref bean="applicationManager"/>
+        	<ref bean="programsCommand"/>
+  			<ref bean="menusCommand"/>
+  		</list>
+  	</property>
+  </bean>
+  
+  <bean id="controlCommands" class="org.springframework.richclient.command.CommandGroupFactoryBean"  depends-on="application">
+  	<property name="members">
+  		<list>
+  			<value>newCommand</value>
+	        <value>separator</value>
+	        <value>saveCommand</value>
+	        <value>saveAsCommand</value>
+	        <value>separator</value>
+	        <value>printCommand</value>
+	        <value>separator</value>
+	        <value>propertiesCommand</value>
+  		</list>
+  	</property>
   </bean>
 
   <!-- 
@@ -266,6 +302,11 @@
   -->
   <bean id="aboutCommand" class="org.springframework.richclient.command.support.AboutCommand" />
   
-  <bean id="loginCommand" class="com.systemsjr.jrbase.login.command.LoginCommand"/>
+  <bean id="loginCommand" class="org.springframework.richclient.security.LoginCommand">
+		<property name="displaySuccess" value="false" />
+  </bean>
+	
+	<!-- <bean id="userMenu" class="">
+	</bean> -->
   
 </beans>

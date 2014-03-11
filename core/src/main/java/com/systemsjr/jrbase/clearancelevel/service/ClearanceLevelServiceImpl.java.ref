@@ -15,7 +15,7 @@ public class ClearanceLevelServiceImpl
     /**
      * The serial version UID of this class. Needed for serialization.
      */
-    private static final long serialVersionUID = -2491053534874255990L;
+    private static final long serialVersionUID = 2059614881699989704L;
 
     /**
      * @see com.systemsjr.jrbase.clearancelevel.service.ClearanceLevelService#saveClearanceLevel(com.systemsjr.jrbase.clearancelevel.vo.ClearanceLevelVO)
@@ -42,5 +42,14 @@ public class ClearanceLevelServiceImpl
     {
         // TODO implement public void removeClearanceLevel(com.systemsjr.jrbase.clearancelevel.vo.ClearanceLevelVO clearanceLevelVo)
         throw new UnsupportedOperationException("com.systemsjr.jrbase.clearancelevel.service.ClearanceLevelService.removeClearanceLevel(com.systemsjr.jrbase.clearancelevel.vo.ClearanceLevelVO clearanceLevelVo) Not implemented!");
+    }
+
+    /**
+     * @see com.systemsjr.jrbase.clearancelevel.service.ClearanceLevelService#searchClearenceLevel(com.systemsjr.jrbase.clearancelevel.vo.ClearanceLevelSearchCriteria)
+     */
+    public com.systemsjr.jrbase.clearancelevel.vo.ClearanceLevelVO[] searchClearenceLevel(com.systemsjr.jrbase.clearancelevel.vo.ClearanceLevelSearchCriteria searchCriteria)
+    {
+        // TODO implement public com.systemsjr.jrbase.clearancelevel.vo.ClearanceLevelVO[] searchClearenceLevel(com.systemsjr.jrbase.clearancelevel.vo.ClearanceLevelSearchCriteria searchCriteria)
+        return null;
     }
 }

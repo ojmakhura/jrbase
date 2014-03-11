@@ -80,4 +80,14 @@ public class MenuServiceImpl
 		
 	}
 
+	@Override
+	protected MenuVO[] handleSearchMenus(MenuSearchCriteria searchCriteria)
+			throws Exception {
+		
+		if(searchCriteria == null){
+			return new MenuVO[]{};
+		}
+		return getMenuDao().toMenuVOArray(getMenuDao().findByCriteria(searchCriteria));
+	}
+
 }

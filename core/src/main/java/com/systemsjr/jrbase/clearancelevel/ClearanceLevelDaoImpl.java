@@ -5,12 +5,10 @@
  */
 package com.systemsjr.jrbase.clearancelevel;
 
-import java.util.Collection;
 import java.util.List;
 
 import org.hibernate.Criteria;
 import org.hibernate.criterion.Restrictions;
-import org.springframework.util.CollectionUtils;
 
 import com.systemsjr.jrbase.clearancelevel.vo.ClearanceLevelSearchCriteria;
 import com.systemsjr.jrbase.clearancelevel.vo.ClearanceLevelVO;
@@ -41,6 +39,7 @@ public class ClearanceLevelDaoImpl extends
 		}
 		
 		if(source.getUpperLevel() != null){
+			
 			target.setUpperLevel(new ClearanceLevelVO());
 			target.getUpperLevel().setId(source.getUpperLevel().getId());
 			target.getUpperLevel().setLevelCode(source.getUpperLevel().getLevelCode());
@@ -109,13 +108,15 @@ public class ClearanceLevelDaoImpl extends
 			boolean copyIfNull) {
 		// @todo verify behavior of clearanceLevelVOToEntity
 		super.clearanceLevelVOToEntity(source, target, copyIfNull);
-		Collection roles = CollectionUtils.arrayToList(source.getClearedRoles());
-		getRoleDao().roleVOToEntityCollection(roles);
-		target.setClearedRoles(roles);
 		
-		Collection users = CollectionUtils.arrayToList(source.getClearedUsers());
-		getUserDao().userVOToEntityCollection(users);
-		target.setClearedUsers(users);
+		if(source.getUpperLevel() != null){
+			target.setUpperLevel(getClearanceLevelDao().clearanceLevelVOToEntity(source.getUpperLevel()));
+		}
+		
+		if(source.getLowerLevel() != null){
+			target.setLowerLevel(getClearanceLevelDao().clearanceLevelVOToEntity(source.getLowerLevel()));
+		}
+		
 	} 
 	
 	@Override

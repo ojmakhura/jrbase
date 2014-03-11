@@ -1,37 +1,27 @@
 package com.systemsjr.jrbase.clearancelevel;
 
-import javax.swing.JComponent;
+import com.systemsjr.jrbase.workbench.application.WorkbenchView;
 
-import com.systemsjr.jrbase.clearancelevel.vo.ClearanceLevelVO;
-import com.systemsjr.jrbase.common.BaseItemView;
-import com.systemsjr.jrbase.utils.BaseServiceUtils;
-
-public class ClearanceLevelView extends BaseItemView<ClearanceLevelVO> {
+public class ClearanceLevelView extends WorkbenchView {
 	
-	  /**
-	   * @wbp.parser.entryPoint
-	   */
-	@Override
-	protected JComponent createControl() {
-		setItemForm(new ClearanceLevelForm());
-
-		return getItemForm().getControl();
+	public ClearanceLevelView(){
+		super("clearenceLevelView");
 	}
-
-	@Override
+	
+	/*@Override
 	protected ClearanceLevelVO saveItem() {
 		if(getItemForm().isDirty()){
-			getItemForm().getFormModel().commit();
+			getItemForm().commit();
 			ClearanceLevelVO levelVO = (ClearanceLevelVO) getItemForm().getFormObject();
-			setAction(levelVO.getId());
+			getItemForm().setAction(levelVO.getId());
 			levelVO = BaseServiceUtils.getClearanceService().saveClearanceLevel(levelVO);
 			getItemForm().getValueholder().refresh();
 			return levelVO;
 		}
 		return null;
-	}
+	}*/
 
-	@Override
+	/*@Override
 	protected ClearanceLevelVO handleSaveItem(ClearanceLevelVO object) {
 		setAction(object.getId());
 		object = BaseServiceUtils.getClearanceService().saveClearanceLevel(object);
@@ -46,7 +36,7 @@ public class ClearanceLevelView extends BaseItemView<ClearanceLevelVO> {
 	@Override
 	protected ClearanceLevelVO handleNewItem() {
 		return BaseServiceUtils.createDefaultLevel();
-	}
+	}*/
 	
 	
 }

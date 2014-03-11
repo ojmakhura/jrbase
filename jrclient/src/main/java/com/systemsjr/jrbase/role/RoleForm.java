@@ -4,9 +4,8 @@ import javax.swing.JComponent;
 
 import org.springframework.richclient.form.builder.TableFormBuilder;
 
-import com.systemsjr.jrbase.common.BaseItemForm;
 import com.systemsjr.jrbase.role.vo.RoleVO;
-import com.systemsjr.jrbase.utils.BaseUIUtils;
+import com.systemsjr.jrlib.richclient.BaseItemForm;
 
 public class RoleForm extends BaseItemForm<RoleVO> {
 
@@ -21,9 +20,7 @@ public class RoleForm extends BaseItemForm<RoleVO> {
 	@SuppressWarnings("unchecked")
 	@Override
 	protected JComponent createFormControl() {
-		super.initForm("roleListTable", null);
-		
-		valueHolder = BaseUIUtils.getRoleValueHolder();
+		super.initForm();
 		
 		builder = new TableFormBuilder(sbf);
 		builder.setLabelAttributes("colSpec=right:pref");

@@ -1,6 +1,6 @@
 package com.systemsjr.jrbase.individual;
 
-import com.systemsjr.jrbase.common.BaseItemDialog;
+import com.systemsjr.jrlib.richclient.BaseItemDialog;
 
 public class IndividualDialog extends BaseItemDialog {
 

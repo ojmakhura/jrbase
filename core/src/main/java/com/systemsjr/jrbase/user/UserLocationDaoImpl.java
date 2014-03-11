@@ -4,6 +4,14 @@
  * You can (and have to!) safely modify it by hand.
  */
 package com.systemsjr.jrbase.user;
+
+import java.util.List;
+
+import org.hibernate.Criteria;
+import org.hibernate.criterion.Restrictions;
+
+import com.systemsjr.jrbase.user.vo.UserLocationSearchCriteria;
+
 /**
  * @see com.systemsjr.jrbase.user.UserLocation
  */
@@ -21,7 +29,15 @@ public class UserLocationDaoImpl
         // @todo verify behavior of toUserLocationVO
         super.toUserLocationVO(source, target);
         // WARNING! No conversion for target.user (can't convert source.getUser():com.systemsjr.jrbase.user.User to com.systemsjr.jrbase.user.vo.UserVO
+        if(source.getUser() != null){
+        	target.setUser(getUserDao().toUserDetailsVO(source.getUser()));
+        }
+        
         // WARNING! No conversion for target.location (can't convert source.getLocation():com.systemsjr.jrbase.location.Location to com.systemsjr.jrbase.location.vo.LocationVO
+        if(source.getLocation() != null){
+        	target.setLocation(getLocationDao().toLocationVO(source.getLocation()));
+        }
+        
     }
 
 
@@ -43,17 +59,15 @@ public class UserLocationDaoImpl
      */
     private com.systemsjr.jrbase.user.UserLocation loadUserLocationFromUserLocationVO(com.systemsjr.jrbase.user.vo.UserLocationVO userLocationVO)
     {
-        // @todo implement loadUserLocationFromUserLocationVO
-        throw new java.lang.UnsupportedOperationException("com.systemsjr.jrbase.user.loadUserLocationFromUserLocationVO(com.systemsjr.jrbase.user.vo.UserLocationVO) not yet implemented.");
-
-        /* A typical implementation looks like this:
-        com.systemsjr.jrbase.user.UserLocation userLocation = this.load(userLocationVO.getId());
-        if (userLocation == null)
+        com.systemsjr.jrbase.user.UserLocation userLocation;
+        if (userLocationVO.getId() == null)
         {
             userLocation = com.systemsjr.jrbase.user.UserLocation.Factory.newInstance();
+        } else{
+        	userLocation = this.load(userLocationVO.getId());
         }
         return userLocation;
-        */
+        
     }
 
     
@@ -81,6 +95,34 @@ public class UserLocationDaoImpl
     {
         // @todo verify behavior of userLocationVOToEntity
         super.userLocationVOToEntity(source, target, copyIfNull);
+        if(source.getUser() != null){
+        	target.setUser(getUserDao().userDetailsVOToEntity(source.getUser()));
+        }
+        
+        if(source.getLocation() != null){        	
+        	target.setLocation(getLocationDao().locationVOToEntity(source.getLocation()));
+        }
     }
+
+
+	@Override
+	protected List<?> handleFindByCriteria(
+			UserLocationSearchCriteria searchCriteria) throws Exception {
+		Criteria criteria = getSession().createCriteria(UserLocation.class);
+		
+		if(searchCriteria.getStatus() != null){
+			criteria.add(Restrictions.ilike("status", searchCriteria.getStatus()));
+		}
+		
+		if(searchCriteria.getLocation() != null){
+			criteria.add(Restrictions.eq("location.id", searchCriteria.getLocation().getId()));
+		}
+		
+		if(searchCriteria.getUser() != null){
+			criteria.add(Restrictions.eq("user.id", searchCriteria.getUser().getId()));
+		}
+		
+		return criteria.list();
+	}
 
 }

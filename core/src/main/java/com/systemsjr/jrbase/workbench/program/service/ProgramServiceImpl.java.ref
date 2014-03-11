@@ -15,7 +15,7 @@ public class ProgramServiceImpl
     /**
      * The serial version UID of this class. Needed for serialization.
      */
-    private static final long serialVersionUID = 9132545481509261572L;
+    private static final long serialVersionUID = -6110907102091553213L;
 
     /**
      * @see com.systemsjr.jrbase.workbench.program.service.ProgramService#getAllPrograms()
@@ -42,5 +42,14 @@ public class ProgramServiceImpl
     {
         // TODO implement public void removeProgram(com.systemsjr.jrbase.workbench.program.vo.ProgramVO programVo)
         throw new UnsupportedOperationException("com.systemsjr.jrbase.workbench.program.service.ProgramService.removeProgram(com.systemsjr.jrbase.workbench.program.vo.ProgramVO programVo) Not implemented!");
+    }
+
+    /**
+     * @see com.systemsjr.jrbase.workbench.program.service.ProgramService#searchPrograms(com.systemsjr.jrbase.workbench.program.vo.ProgramSearchCriteria)
+     */
+    public com.systemsjr.jrbase.workbench.program.vo.ProgramVO[] searchPrograms(com.systemsjr.jrbase.workbench.program.vo.ProgramSearchCriteria searchCriteria)
+    {
+        // TODO implement public com.systemsjr.jrbase.workbench.program.vo.ProgramVO[] searchPrograms(com.systemsjr.jrbase.workbench.program.vo.ProgramSearchCriteria searchCriteria)
+        return null;
     }
 }

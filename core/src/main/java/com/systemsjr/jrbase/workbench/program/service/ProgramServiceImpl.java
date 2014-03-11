@@ -8,6 +8,7 @@ package com.systemsjr.jrbase.workbench.program.service;
 import java.util.Collection;
 
 import com.systemsjr.jrbase.workbench.program.Program;
+import com.systemsjr.jrbase.workbench.program.vo.ProgramSearchCriteria;
 import com.systemsjr.jrbase.workbench.program.vo.ProgramVO;
 
 /**
@@ -50,6 +51,16 @@ public class ProgramServiceImpl
 			getProgramDao().remove(getProgramDao().programVOToEntity(programVO));
 		}
 		
+	}
+
+	@Override
+	protected ProgramVO[] handleSearchPrograms(
+			ProgramSearchCriteria searchCriteria) throws Exception {
+		
+		if(searchCriteria == null){
+			return new ProgramVO[]{};
+		}
+		return getProgramDao().toProgramVOArray(getProgramDao().findByCriteria(searchCriteria));
 	}
 
 }

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
 	
 	<!-- Basic workbench tables  -->
 	<bean id = "clearanceLevelTable" class="com.systemsjr.jrbase.clearancelevel.ClearanceLevelTable" depends-on="application"/> 
@@ -16,4 +17,5 @@
 	<!-- Main workbench application tables -->
 	<bean id = "menuTable" class="com.systemsjr.jrbase.workbench.menu.MenuTable" depends-on="application"/>
 	<bean id = "programTable" class="com.systemsjr.jrbase.workbench.program.ProgramTable" depends-on="application"/>
+	<bean id = "applicationTable" class="com.systemsjr.jrbase.workbench.application.ApplicationTable" depends-on="application"/>
 </beans>

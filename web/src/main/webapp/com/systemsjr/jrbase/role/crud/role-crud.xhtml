@@ -34,6 +34,13 @@
                 </c:forEach>
             </c:if>
         </tr:selectManyListbox>
+        <tr:selectManyListbox id="searchForm_applications" value="#{manageRoleForm.searchForm.applications}" label="#{messages['role.applications']}:" required="false" readOnly="false" size="3">
+            <c:if test="${!empty manageRoleForm.applicationsBackingList}">
+                <c:forEach var="row" items="#{manageRoleForm.applicationsBackingList}">
+                    <f:selectItem itemLabel="#{row[1]}" itemValue="#{row[0]}" />
+                </c:forEach>
+            </c:if>
+        </tr:selectManyListbox>
         <tr:selectManyListbox id="searchForm_programs" value="#{manageRoleForm.searchForm.programs}" label="#{messages['role.programs']}:" required="false" readOnly="false" size="3">
             <c:if test="${!empty manageRoleForm.programsBackingList}">
                 <c:forEach var="row" items="#{manageRoleForm.programsBackingList}">
@@ -131,6 +138,13 @@
             <tr:selectManyListbox id="roleClearanceLevels" value="#{manageRoleForm.roleClearanceLevels}" label="#{messages['role.role.clearance.levels']}:" required="false" readOnly="false" size="3">
                    <c:if test="${!empty manageRoleForm.roleClearanceLevelsBackingList}">
                        <c:forEach var="row" items="#{manageRoleForm.roleClearanceLevelsBackingList}">
+                           <f:selectItem itemLabel="#{row[1]}" itemValue="#{row[0]}" />
+                       </c:forEach>
+                   </c:if>
+            </tr:selectManyListbox>
+            <tr:selectManyListbox id="applications" value="#{manageRoleForm.applications}" label="#{messages['role.applications']}:" required="false" readOnly="false" size="3">
+                   <c:if test="${!empty manageRoleForm.applicationsBackingList}">
+                       <c:forEach var="row" items="#{manageRoleForm.applicationsBackingList}">
                            <f:selectItem itemLabel="#{row[1]}" itemValue="#{row[0]}" />
                        </c:forEach>
                    </c:if>

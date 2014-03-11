@@ -158,9 +158,9 @@ public class LocationDaoImpl
     	LocationTypeSearchCriteria typeCriteria = new LocationTypeSearchCriteria();
     	typeCriteria.setLevelCode("CTR");
     	LocationTypeVO[] types = getLocationTypeDao().toLocationTypeVOArray(getLocationTypeDao().findByCriteria(typeCriteria));
-    	
-    	searchCritera.setLocationTypeVO(types[0]);
-    	
+    	if(types.length > 0){
+    		searchCritera.setLocationTypeVO(types[0]);
+    	}
         return findByCriteria(searchCritera);
 	}
     

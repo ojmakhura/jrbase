@@ -4,13 +4,18 @@ import java.util.ArrayList;
 
 import javax.swing.JComponent;
 
-import com.systemsjr.jrbase.common.BaseTabbedForm;
 import com.systemsjr.jrbase.utils.BaseServiceUtils;
 import com.systemsjr.jrbase.workbench.program.vo.ProgramVO;
+import com.systemsjr.jrlib.richclient.BaseItemDetail;
+import com.systemsjr.jrlib.richclient.BaseItemTable;
+import com.systemsjr.jrlib.richclient.table.JRTableUtils;
 
-public class ProgramDetails extends BaseTabbedForm<ProgramVO> {
+public class ProgramDetails extends BaseItemDetail<ProgramVO> {
 
-	public ProgramDetails(Object item, String formId) {
+	private BaseItemTable usersTable;
+	private BaseItemTable rolesTable;
+
+	public ProgramDetails(ProgramVO item, String formId) {
 		super(item, formId);
 	}
 	
@@ -29,12 +34,34 @@ public class ProgramDetails extends BaseTabbedForm<ProgramVO> {
 	}
 	
 	private JComponent createUsersTab(){
-		
-		return super.createTabComponent("userTable", "Cleared Users");
+		JRTableUtils.refreshTable(usersTable, BaseServiceUtils.getUserService().searchUsers(null));
+		return super.createTabComponent(usersTable, "Cleared Users");
 	}
 	
 	private JComponent createRolesTab(){
-		
-		return super.createTabComponent("userTable", "Cleared Roles");
+		JRTableUtils.refreshTable(rolesTable, BaseServiceUtils.getRoleService().searchRoles(null));
+		return super.createTabComponent(rolesTable, "Cleared Roles");
+	}
+
+	@Override
+	public ProgramVO handleGetNewItem() {
+		//getTabbedPane().get
+		return null;
+	}
+
+	public BaseItemTable getUsersTable() {
+		return usersTable;
+	}
+
+	public void setUsersTable(BaseItemTable usersTable) {
+		this.usersTable = usersTable;
+	}
+
+	public BaseItemTable getRolesTable() {
+		return rolesTable;
+	}
+
+	public void setRolesTable(BaseItemTable rolesTable) {
+		this.rolesTable = rolesTable;
 	}
 }

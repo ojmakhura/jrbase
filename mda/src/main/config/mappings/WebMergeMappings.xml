@@ -47,7 +47,6 @@
         </init-param>
     </filter>
     -->
-    -->
     			
 			<!--filter>
 				<filter-name>springSecurityFilterChain</filter-name>

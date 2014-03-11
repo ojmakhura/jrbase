@@ -15,7 +15,7 @@ public class OrganisationServiceImpl
     /**
      * The serial version UID of this class. Needed for serialization.
      */
-    private static final long serialVersionUID = -972361280238928477L;
+    private static final long serialVersionUID = -3322526709253779201L;
 
     /**
      * @see com.systemsjr.jrbase.organisation.service.OrganisationService#getOrganisationBranches(com.systemsjr.jrbase.organisation.vo.OrganisationVO)
@@ -78,5 +78,23 @@ public class OrganisationServiceImpl
     {
         // TODO implement public void removeOrganisationType(com.systemsjr.jrbase.organisation.vo.OrganisationTypeVO organisationTypeVO)
         throw new UnsupportedOperationException("com.systemsjr.jrbase.organisation.service.OrganisationService.removeOrganisationType(com.systemsjr.jrbase.organisation.vo.OrganisationTypeVO organisationTypeVO) Not implemented!");
+    }
+
+    /**
+     * @see com.systemsjr.jrbase.organisation.service.OrganisationService#searchOrganisations(com.systemsjr.jrbase.organisation.vo.OrganisationSearchCriteria)
+     */
+    public com.systemsjr.jrbase.organisation.vo.OrganisationVO[] searchOrganisations(com.systemsjr.jrbase.organisation.vo.OrganisationSearchCriteria searchCriteria)
+    {
+        // TODO implement public com.systemsjr.jrbase.organisation.vo.OrganisationVO[] searchOrganisations(com.systemsjr.jrbase.organisation.vo.OrganisationSearchCriteria searchCriteria)
+        return null;
+    }
+
+    /**
+     * @see com.systemsjr.jrbase.organisation.service.OrganisationService#searchOrganisationTypes(com.systemsjr.jrbase.organisation.vo.OrganisationTypeSearchCriteria)
+     */
+    public com.systemsjr.jrbase.organisation.vo.OrganisationTypeVO[] searchOrganisationTypes(com.systemsjr.jrbase.organisation.vo.OrganisationTypeSearchCriteria searchCriteria)
+    {
+        // TODO implement public com.systemsjr.jrbase.organisation.vo.OrganisationTypeVO[] searchOrganisationTypes(com.systemsjr.jrbase.organisation.vo.OrganisationTypeSearchCriteria searchCriteria)
+        return null;
     }
 }
