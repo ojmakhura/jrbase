@@ -1,7 +1,6 @@
 package com.systemsjr.jrbase;
 
 import org.apache.commons.logging.Log;
-import org.jdesktop.beansbinding.BindingGroup;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.richclient.application.ApplicationLauncher;
 
