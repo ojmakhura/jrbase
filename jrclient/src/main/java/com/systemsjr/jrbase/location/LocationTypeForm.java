@@ -21,18 +21,46 @@ public class LocationTypeForm extends BaseItemForm<LocationTypeVO> {
 	protected JComponent createFormControl() {
 		super.initForm();
 		
-		builder.add(sbf.createBoundComboBox("type", new Object[]{Type.AREATYPE, Type.FACILITYTYPE}), "colSpan=1");
-		builder.add(sbf.createBoundComboBox("status", LocationStatus.literals().toArray()), "colSpan=1");
+		builder.add(sbf.createBoundComboBox("type", new Object[]{Type.AREATYPE, Type.FACILITYTYPE}), colSpec);
+		builder.add(sbf.createBoundComboBox("status", LocationStatus.literals().toArray()), colSpec);
 		builder.row();
-		builder.add("levelCode", "colSpec=40dlu:grow");
-		builder.add("uniqueCode", "colSpec=40dlu:grow");
+		builder.add("levelCode", colSpec);
+		builder.add("uniqueCode", colSpec);
 		builder.row();
-		builder.add("name", "colSpec=1:grow");
+		builder.add("name", colSpec);
 		builder.row();
-		builder.addTextArea("description", "colSpec=40dlu:grow");
+		builder.addTextArea("description", colSpec);
 		builder.row();
+<<<<<<< .mine
+		builder.add(sbf.createBinding("fallsWithinLocationType", BaseUIUtils.getLocationTypeContext()));
+=======
 		builder.add(sbf.createBinding("fallsWithinLocationType", BaseUIUtils.getLocationTypeContext()),"colSpan=1");
+>>>>>>> .r69
 		
+<<<<<<< .mine
+		new ValueChangeMonitor(getValueModel("fallsWithinLocationType"), true) {
+			
+			@Override
+			public void onValueChange(Object newValue, Object oldValue) {
+				if(newValue != null){
+					LocationTypeVO type = (LocationTypeVO)newValue;
+					getValueModel("uniqueCode").setValue(
+							type.getLevelCode() + "/" +getValueModel("levelCode").getValue());
+				}
+			}
+		};
+		
+		new ValueChangeMonitor(getValueModel("levelCode"), true) {
+			
+			@Override
+			public void onValueChange(Object newValue, Object oldValue) {
+				
+				getValueModel("uniqueCode").setValue(newValue);
+			}
+		};
+		
+		return super.endFormCreate("");
+=======
 		new ValueChangeMonitor(getValueModel("fallsWithinLocationType"), true) {
 			
 			@Override
@@ -56,5 +84,6 @@ public class LocationTypeForm extends BaseItemForm<LocationTypeVO> {
 		
 		super.endFormCreate("");
 		return itemPanel;
+>>>>>>> .r69
 	}
 }
