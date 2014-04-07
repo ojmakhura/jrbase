@@ -2,10 +2,10 @@ package com.systemsjr.jrbase.login;
 
 import javax.swing.JComponent;
 
-import com.systemsjr.jrbase.common.BaseItemView;
 import com.systemsjr.jrbase.loginsession.vo.LoginSessionVO;
+import com.systemsjr.jrlib.richclient.BaseItemView;
 
-public class LoginView extends BaseItemView<LoginSessionVO> {
+public class LoginView extends BaseItemView {
 
 	@Override
 	protected JComponent createControl() {
@@ -15,38 +15,8 @@ public class LoginView extends BaseItemView<LoginSessionVO> {
 	}
 
 	@Override
-	protected LoginSessionVO saveItem() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	protected LoginSessionVO newItem() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	protected LoginSessionVO deleteItem() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	protected LoginSessionVO handleSaveItem(LoginSessionVO object) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	protected void handleDeleteItem(LoginSessionVO object) {
+	public void addTasks() {
 		// TODO Auto-generated method stub
 		
-	}
-
-	@Override
-	protected LoginSessionVO handleNewItem() {
-		// TODO Auto-generated method stub
-		return null;
 	}
 }
