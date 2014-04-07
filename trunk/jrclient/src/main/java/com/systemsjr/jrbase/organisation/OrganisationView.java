@@ -7,6 +7,8 @@ public class OrganisationView extends WorkbenchView {
 	public OrganisationView(){
 		super("organisationView");
 	}
+<<<<<<< .mine
+=======
 
 	/*@Override
 	protected OrganisationVO handleSaveItem(OrganisationVO object) {
@@ -24,4 +26,5 @@ public class OrganisationView extends WorkbenchView {
 	protected OrganisationVO handleNewItem() {
 		return BaseServiceUtils.createDefaultOrganisation(null);
 	}*/
+>>>>>>> .r69
 }
