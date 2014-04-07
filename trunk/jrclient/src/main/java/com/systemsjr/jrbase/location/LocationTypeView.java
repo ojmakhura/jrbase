@@ -7,6 +7,8 @@ public class LocationTypeView extends WorkbenchView {
 	public LocationTypeView(){
 		super("locationTypeView");
 	}
+<<<<<<< .mine
+=======
 
 	/*@Override
 	protected LocationTypeVO handleSaveItem(LocationTypeVO object) {
@@ -24,4 +26,5 @@ public class LocationTypeView extends WorkbenchView {
 	protected LocationTypeVO handleNewItem() {
 		return BaseServiceUtils.createDefaultLocationType();
 	}*/
+>>>>>>> .r69
 }
