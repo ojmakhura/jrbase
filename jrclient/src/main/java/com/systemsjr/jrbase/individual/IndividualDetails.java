@@ -2,15 +2,17 @@ package com.systemsjr.jrbase.individual;
 
 import java.util.ArrayList;
 
-import javax.swing.BorderFactory;
 import javax.swing.JComponent;
-import javax.swing.JScrollPane;
+import javax.swing.JPanel;
 
+<<<<<<< .mine
+=======
 import org.springframework.richclient.form.binding.swing.SwingBindingFactory;
 import org.springframework.richclient.form.builder.TableFormBuilder;
 
+>>>>>>> .r69
 import com.systemsjr.jrbase.individual.vo.IndividualVO;
-import com.systemsjr.jrbase.role.RoleTable;
+import com.systemsjr.jrlib.richclient.BaseItemDetail;
 import com.systemsjr.jrbase.utils.BaseServiceUtils;
 import com.systemsjr.jrlib.richclient.BaseItemDetail;
 import com.systemsjr.jrlib.richclient.BaseTabbedForm;
@@ -30,14 +32,27 @@ public class IndividualDetails extends BaseItemDetail<IndividualVO> {
 	}
 	
 	protected JComponent createNextOfKinTab(){
+<<<<<<< .mine
+		//JRTableUtils.refreshTable(nextOfKin, BaseServiceUtils.getIndividualService().se)
+		return new JPanel();
+=======
 		//JRTableUtils.refreshTable(nextOfKin, BaseServiceUtils.getIndividualService().se)
 		return super.createTabComponent(nextOfKin, "Next Of Kin");
+>>>>>>> .r69
 	}
 
+<<<<<<< .mine
+	@Override
+	public IndividualVO handleGetNewItem() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+=======
 	@Override
 	public IndividualVO handleGetNewItem() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
+>>>>>>> .r69
 }
