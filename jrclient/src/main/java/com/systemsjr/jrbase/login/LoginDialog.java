@@ -52,9 +52,9 @@ public class LoginDialog extends ApplicationDialog {
 		UserDetailsVO userVO = (UserDetailsVO) form.getFormObject();
 		userVO.setStatus(UserStatus.ACTIVE);
 		if (userVO == null) {
-			BaseUIUtils.showMessage("Login Error",
+			/*BaseUIUtils.showMessage("Login Error",
 					"Could not log in.\nPlease Check your details.",
-					org.springframework.richclient.core.Severity.ERROR);
+					org.springframework.richclient.core.Severity.ERROR);*/
 			return false;
 		}
 		//org.springframework.context.support.ResourceMapFactoryBean
@@ -80,9 +80,9 @@ public class LoginDialog extends ApplicationDialog {
 
 	@Override
 	protected JComponent createDialogContentPane() {
-		BaseUIUtils.addGuardedCommandsToForm(
+		/*BaseUIUtils.addGuardedCommandsToForm(
 				new ActionCommand[] { getFinishCommand() }, form,
-				FormGuard.ON_NOERRORS);
+				FormGuard.ON_NOERRORS);*/
 		JPanel panel = new JPanel(new BorderLayout());
 		panel.add(form.getControl(), BorderLayout.CENTER);
 		panel.setBorder(BorderFactory.createTitledBorder("Bordered Dialog"));
