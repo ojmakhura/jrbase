@@ -4,6 +4,10 @@ import com.systemsjr.jrbase.workbench.application.ApplicationView;
 
 public class MenuView extends ApplicationView{
 
+<<<<<<< .mine
+	public MenuView(){
+		super("menuView");
+=======
 	public MenuView(){
 		super("menuView");
 	}
@@ -11,7 +15,10 @@ public class MenuView extends ApplicationView{
 	/*@Override
 	protected JComponent createControl() {
 		return getItemForm().getControl();
+>>>>>>> .r69
 	}*/
+<<<<<<< .mine
+=======
 
 	/*@Override
 	protected MenuVO handleSaveItem(MenuVO object) {
@@ -29,4 +36,5 @@ public class MenuView extends ApplicationView{
 	protected MenuVO handleNewItem() {
 		return BaseServiceUtils.createDefaultMenu();
 	}*/
+>>>>>>> .r69
 }

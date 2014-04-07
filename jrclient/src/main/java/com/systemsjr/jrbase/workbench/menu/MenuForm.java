@@ -24,10 +24,17 @@ public class MenuForm extends BaseItemForm<MenuVO> {
 		
 		menuHolder = BaseUIUtils.getMenuValueHolder();
 		
+<<<<<<< .mine
+		builder.add(sbf.createBoundComboBox("type", PlatformType.values()), colSpec);
+=======
 		builder.add(sbf.createBoundComboBox("type", PlatformType.values()), "colSpan=1");
 		builder.row();
 		builder.add("menuCode", "colSpan=1");
 		builder.add("menuName", "colSpan=1");
+>>>>>>> .r69
+		builder.row();
+		builder.add("menuCode", colSpec);
+		builder.add("menuName", colSpec);
 		builder.row();
 		builder.addTextArea("menuDescription", "colSpan=3");
 		builder.row();
@@ -35,8 +42,7 @@ public class MenuForm extends BaseItemForm<MenuVO> {
 		
 		builder.row();
 		
-		super.endFormCreate("Menu Details");
-		return itemPanel;
+		return super.endFormCreate("Menu Details");
 	}
 	
 }
