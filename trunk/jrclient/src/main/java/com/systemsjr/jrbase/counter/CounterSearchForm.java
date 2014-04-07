@@ -14,6 +14,7 @@ public class CounterSearchForm extends BaseItemFilterForm {
 		super("counterSearchForm");
 	}
 
+<<<<<<< .mine
 	@Override
 	protected JComponent createFormControl() {
 		SwingBindingFactory sbf = (SwingBindingFactory) getBindingFactory();
@@ -31,4 +32,29 @@ public class CounterSearchForm extends BaseItemFilterForm {
 		return super.newFormObject();
 	}
 
+	@Override
+	protected void doSearch() {
+		commit();
+		
+	}
+
+=======
+	@Override
+	protected JComponent createFormControl() {
+		SwingBindingFactory sbf = (SwingBindingFactory) getBindingFactory();
+		TableFormBuilder builder = new TableFormBuilder(sbf);
+		return builder.getForm();
+	}
+
+	@Override
+	public void onApplicationEvent(ApplicationEvent arg0) {
+		
+	}
+	
+	@Override
+	protected Object newFormObject() {
+		return super.newFormObject();
+	}
+
+>>>>>>> .r69
 }
