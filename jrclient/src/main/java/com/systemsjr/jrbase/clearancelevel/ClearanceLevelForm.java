@@ -28,8 +28,18 @@ public class ClearanceLevelForm extends BaseItemForm<ClearanceLevelVO> {
 		builder.add(sbf.createBinding("lowerLevel", BaseUIUtils.getClearenceContext()));
 		builder.row();
 		
-		super.endFormCreate("Clearance Level Details");
+		return super.endFormCreate("Clearance Level Details");
 		
+<<<<<<< .mine
+	}
+
+	@Override
+	public void setFormObject(Object formObject) {
+		super.setFormObject(formObject);
+		
+		
+	}
+=======
 		return itemPanel;
 	}
 
@@ -42,4 +52,5 @@ public class ClearanceLevelForm extends BaseItemForm<ClearanceLevelVO> {
 	
 	
 
+>>>>>>> .r69
 }

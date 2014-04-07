@@ -5,8 +5,8 @@ import java.util.ArrayList;
 import javax.swing.JComponent;
 
 import com.systemsjr.jrbase.clearancelevel.vo.ClearanceLevelVO;
-import com.systemsjr.jrbase.common.BaseTabbedForm;
 import com.systemsjr.jrbase.utils.BaseServiceUtils;
+import com.systemsjr.jrlib.richclient.BaseTabbedForm;
 
 public class LevelDetails extends BaseTabbedForm<ClearanceLevelVO>{
 

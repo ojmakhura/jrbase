@@ -7,6 +7,8 @@ public class ClearanceLevelView extends WorkbenchView {
 	public ClearanceLevelView(){
 		super("clearenceLevelView");
 	}
+<<<<<<< .mine
+=======
 	
 	/*@Override
 	protected ClearanceLevelVO saveItem() {
@@ -39,4 +41,5 @@ public class ClearanceLevelView extends WorkbenchView {
 	}*/
 	
 	
+>>>>>>> .r69
 }
