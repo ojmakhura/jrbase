@@ -7,8 +7,6 @@ public class ProgramView extends ApplicationView {
 	public ProgramView(){
 		super("programView");
 	}
-<<<<<<< .mine
-=======
 
 	/*@Override
 	protected ProgramVO handleSaveItem(ProgramVO object) {
@@ -28,5 +26,4 @@ public class ProgramView extends ApplicationView {
 		
 		return BaseServiceUtils.createDefaultProgram();
 	}*/
->>>>>>> .r69
 }

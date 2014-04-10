@@ -3,19 +3,12 @@ package com.systemsjr.jrbase.user;
 import javax.swing.JTable;
 import javax.swing.table.TableColumnModel;
 
-<<<<<<< .mine
 import com.systemsjr.jrbase.role.vo.RoleVO;
 import com.systemsjr.jrbase.user.vo.UserDetailsVO;
-=======
-import com.systemsjr.jrbase.user.vo.UserDetailsVO;
->>>>>>> .r69
 import com.systemsjr.jrbase.utils.BaseServiceUtils;
-<<<<<<< .mine
 import com.systemsjr.jrlib.richclient.BaseItemDetail;
 import com.systemsjr.jrlib.richclient.BaseItemTable;
-=======
-import com.systemsjr.jrlib.richclient.BaseItemTable;
->>>>>>> .r69
+
 
 
 public class UserTable extends BaseItemTable<UserDetailsVO>{
@@ -47,7 +40,7 @@ public class UserTable extends BaseItemTable<UserDetailsVO>{
 		return getInitialData();
 	}
 
-	@Override
+	/*@Override
 	public void doMore(BaseItemDetail detail, UserDetailsVO user) {
 		UserDetails userDetail = (UserDetails) detail;
 		BaseItemTable table = userDetail.getUserRolesForm().getListTable();
@@ -55,6 +48,6 @@ public class UserTable extends BaseItemTable<UserDetailsVO>{
 		for(RoleVO role : user.getUserRoles()){
 			table.getFinalEventList().add(role);
 		}
-	}
+	}*/
 	
 }

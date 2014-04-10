@@ -37,43 +37,23 @@ public class MenuDetails extends BaseItemDetail<MenuVO> {
 	}
 	
 	 private JComponent createSubMenusTab(){
-<<<<<<< .mine
-		 JRTableUtils.refreshTable(subMenusTable, BaseServiceUtils.getMenuService().searchMenus(null));
-		 return new JPanel();
-=======
 		 JRTableUtils.refreshTable(subMenusTable, BaseServiceUtils.getMenuService().searchMenus(null));
 		 return super.createTabComponent(subMenusTable, "Sub Menus");
->>>>>>> .r69
 	 }
 	 
 	 private JComponent createProgramsTab(){
-<<<<<<< .mine
-		 JRTableUtils.refreshTable(programsTable, BaseServiceUtils.getProgramService().searchPrograms(null));
-		 return new JPanel();
-=======
 		 JRTableUtils.refreshTable(programsTable, BaseServiceUtils.getProgramService().searchPrograms(null));
 		 return super.createTabComponent(programsTable, "Programs");
->>>>>>> .r69
 	 }
 	 
 	 private JComponent createUsersTab(){
-<<<<<<< .mine
-		 JRTableUtils.refreshTable(usersTable, BaseServiceUtils.getUserService().searchUsers(null));
-		 return new JPanel();
-=======
 		 JRTableUtils.refreshTable(usersTable, BaseServiceUtils.getUserService().searchUsers(null));
 		 return super.createTabComponent(usersTable, "Users");
->>>>>>> .r69
 	 }
 
 	 private JComponent createRolesTab(){
-<<<<<<< .mine
-		 JRTableUtils.refreshTable(rolesTable, BaseServiceUtils.getRoleService().searchRoles(null));
-		 return new JPanel();
-=======
 		 JRTableUtils.refreshTable(rolesTable, BaseServiceUtils.getRoleService().searchRoles(null));
 		 return super.createTabComponent(rolesTable, "Users");
->>>>>>> .r69
 	 }
 
 	public MenuTable getSubMenusTable() {

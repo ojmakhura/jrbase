@@ -3,8 +3,6 @@ package com.systemsjr.jrbase.clearancelevel;
 import org.springframework.richclient.command.ActionCommand;
 import org.springframework.richclient.command.ActionCommandExecutor;
 
-import com.systemsjr.jrlib.richclient.BaseDetailTable;
-import com.systemsjr.jrlib.richclient.BaseItemView;
 
 public class ClearedRolesTable extends ClearanceLevelTable {
 

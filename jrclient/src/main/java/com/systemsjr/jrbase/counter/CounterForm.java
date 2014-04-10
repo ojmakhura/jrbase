@@ -18,14 +18,10 @@ public class CounterForm extends BaseItemForm<CounterVO> {
 	@SuppressWarnings("unchecked")
 	@Override
 	protected JComponent createFormControl() {
-<<<<<<< .mine
 		super.initForm();
 	
-=======
-		super.initForm();
 	
 		builder.setLabelAttributes("colSpec=right:pref");
->>>>>>> .r69
 		builder.row();
 		builder.add("counterName", colSpan);
 		builder.row();
@@ -33,7 +29,6 @@ public class CounterForm extends BaseItemForm<CounterVO> {
 		builder.row();
 		builder.add("currentCount", colSpan);
 
-		super.endFormCreate("");
-		return itemPanel;
+		return super.endFormCreate("");
 	}
 }

@@ -13,6 +13,8 @@ import org.springframework.richclient.util.CustomizableFocusTraversalPolicy;
 
 import com.jgoodies.forms.layout.CellConstraints;
 import com.systemsjr.jrbase.utils.BaseUIUtils;
+import com.systemsjr.jrlib.richclient.BaseItemForm;
+import com.systemsjr.jrlib.utils.JRLibUIUtils;
 
 public abstract class BaseItemDialog<T> extends ApplicationDialog {
 
@@ -28,7 +30,7 @@ public abstract class BaseItemDialog<T> extends ApplicationDialog {
 	
 	@Override
 	protected JComponent createDialogContentPane() {
-		BaseUIUtils.addGuardedCommandsToForm(new ActionCommand[]{
+		JRLibUIUtils.addGuardedCommandsToForm(new ActionCommand[]{
 				getFinishCommand()
 		}, itemForm, FormGuard.ON_NOERRORS);
 		//set border

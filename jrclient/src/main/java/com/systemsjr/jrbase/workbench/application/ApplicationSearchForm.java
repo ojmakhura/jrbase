@@ -16,11 +16,6 @@ public class ApplicationSearchForm extends BaseItemFilterForm {
 	}
 
 	@Override
-	public void onApplicationEvent(ApplicationEvent arg0) {
-		
-	}
-
-	@Override
 	protected JComponent createFormControl() {
 		SwingBindingFactory sbf = (SwingBindingFactory) getBindingFactory();
 		TableFormBuilder builder = new TableFormBuilder(sbf);
@@ -30,6 +25,12 @@ public class ApplicationSearchForm extends BaseItemFilterForm {
 	@Override
 	protected Object newFormObject() {
 		return new ApplicationSearchCriteria();
+	}
+
+	@Override
+	protected void doSearch() {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

@@ -18,6 +18,7 @@ import com.systemsjr.jrbase.organisation.vo.OrganisationVO;
 import com.systemsjr.jrbase.role.service.RoleService;
 import com.systemsjr.jrbase.role.vo.RoleVO;
 import com.systemsjr.jrbase.user.service.UserDetailsService;
+import com.systemsjr.jrbase.user.vo.UserDetailsVO;
 import com.systemsjr.jrbase.user.vo.UserVO;
 import com.systemsjr.jrbase.workbench.application.service.ApplicationService;
 import com.systemsjr.jrbase.workbench.application.vo.ApplicationVO;
@@ -56,8 +57,8 @@ public class BaseServiceUtils extends JRLibServiceUtils{
 	 * Creates a default user
 	 * @return
 	 */
-	public static UserVO createDefaultUser(){
-		UserVO user = new UserVO();
+	public static UserDetailsVO createDefaultUser(){
+		UserDetailsVO user = new UserDetailsVO();
 		//user.setUserId(counterService.getCount("userCounter"));
 		//user.setCreatedBy(getCurrentUsername());
 		return user;

@@ -25,12 +25,12 @@ public class LevelDetails extends BaseTabbedForm<ClearanceLevelVO>{
 	
 	private JComponent getClearedRolesTab(){
 		
-		return super.createTabComponent("roleListTable", "Cleared Roles");
+		return null;//super.createTabComponent("roleListTable", "Cleared Roles");
 	}
 	
 	private JComponent getClearedUsersTab(){
 		
-		return super.createTabComponent("userTable", "Cleared Users");
+		return null;//super.createTabComponent("userTable", "Cleared Users");
 	}
 	
 }

@@ -3,12 +3,7 @@ package com.systemsjr.jrbase.location;
 import java.util.ArrayList;
 
 import com.systemsjr.jrbase.location.vo.LocationTypeVO;
-<<<<<<< .mine
 import com.systemsjr.jrlib.richclient.BaseItemDetail;
-=======
-import com.systemsjr.jrlib.richclient.BaseItemDetail;
-import com.systemsjr.jrlib.richclient.BaseTabbedForm;
->>>>>>> .r69
 
 public class LocationTypeDetails extends BaseItemDetail<LocationTypeVO>{
 
