@@ -3,6 +3,7 @@ package com.systemsjr.jrlib.richclient;
 import java.awt.BorderLayout;
 import java.util.List;
 
+import javax.swing.JComponent;
 import javax.swing.JPanel;
 
 import org.slf4j.Logger;
@@ -23,6 +24,7 @@ public abstract class BaseItemForm<T> extends AbstractForm implements Applicatio
 	protected BaseItemDetail<T> details;
 	protected T item;
 	private Logger logger = LoggerFactory.getLogger(getClass());
+	protected String colSpan="", colSpec="";
 	
 	
 	public BaseItemForm(T item, String formId){
@@ -87,8 +89,9 @@ public abstract class BaseItemForm<T> extends AbstractForm implements Applicatio
 	/***
 	 * This method gets called at the end of the overriden method createControl.
 	 * It just adds the builder and scrollpane to their respective location on the itempanel
+	 * @return 
 	 */
-	protected void endFormCreate(String separatorName){
+	protected JComponent endFormCreate(String separatorName){
 		builder.row();
 		if(details != null){
 			builder.addSeparator(separatorName);
@@ -96,6 +99,7 @@ public abstract class BaseItemForm<T> extends AbstractForm implements Applicatio
 			builder.getLayoutBuilder().cell(details.getControl());
 		}
 		itemPanel.add(builder.getForm(), BorderLayout.CENTER);
+		return itemPanel;
 	}
 
 	public void initForm() {

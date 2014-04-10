@@ -8,10 +8,11 @@ import org.springframework.richclient.command.ActionCommand;
 import org.springframework.richclient.command.CommandGroup;
 import org.springframework.richclient.form.FilterForm;
 
-public abstract class BaseItemFilterForm<T> extends FilterForm implements ApplicationListener  {
+public abstract class BaseItemFilterForm<T> extends FilterForm {
 
 	private ActionCommand searchCommand;
 	private ActionCommand clearCommand;
+	protected BaseItemTable<T> table;
 	
 	public BaseItemFilterForm(String formId){
 		super(formId);
@@ -55,17 +56,11 @@ public abstract class BaseItemFilterForm<T> extends FilterForm implements Applic
 	}
 
 	@Override
-	public void onApplicationEvent(ApplicationEvent arg0) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
 	protected JComponent createFormControl() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 	
-	
+	protected abstract void doSearch();
 
 }
