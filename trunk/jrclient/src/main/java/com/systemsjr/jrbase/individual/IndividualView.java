@@ -7,8 +7,6 @@ public class IndividualView extends WorkbenchView {
 	public IndividualView(){
 		super("individualView");
 	}
-<<<<<<< .mine
-=======
 
 	/*@Override
 	protected IndividualVO handleSaveItem(IndividualVO object) {
@@ -26,5 +24,4 @@ public class IndividualView extends WorkbenchView {
 	protected IndividualVO handleNewItem() {
 		return BaseServiceUtils.createDefaultIndividual();
 	}*/
->>>>>>> .r69
 }

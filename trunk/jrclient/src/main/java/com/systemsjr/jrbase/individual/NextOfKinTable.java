@@ -3,17 +3,12 @@ package com.systemsjr.jrbase.individual;
 import javax.swing.JTable;
 import javax.swing.table.TableColumnModel;
 
-<<<<<<< .mine
-import com.systemsjr.jrbase.individual.vo.KinVO;
-import com.systemsjr.jrlib.richclient.BaseItemTable;
-=======
 import com.systemsjr.jrbase.individual.vo.NextOfKinVO;
->>>>>>> .r69
 import com.systemsjr.jrlib.richclient.BaseItemTable;
 
-public class NextOfKinTable extends BaseItemTable<KinVO>{
+public class NextOfKinTable extends BaseItemTable<NextOfKinVO>{
 	public NextOfKinTable(){
-		super(new KinVO[]{}, "nextOfKin", new String[]{
+		super(new NextOfKinVO[]{}, "nextOfKin", new String[]{
 				"kinType",
 				"individual.idNumber",
 				"individual.surname",

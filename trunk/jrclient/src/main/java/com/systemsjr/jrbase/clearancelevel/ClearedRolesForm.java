@@ -9,10 +9,4 @@ public class ClearedRolesForm extends BaseDetailForm<RoleVO>{
 	public ClearedRolesForm(){
 		super(BaseServiceUtils.createDefaultRole(), "clearedRolesForm", new ClearedRolesDialog());
 	}
-
-	/*@Override
-	protected void doAdd() {
-		// TODO Auto-generated method stub
-		
-	}*/	
 }

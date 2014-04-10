@@ -17,6 +17,6 @@ public class RoleUsersDialog extends BaseDetailDialog {
 			searchForm = new UserSearchForm();
 		}
 		
-		return super.createDialogContentPane();
+		return null;
 	}	
 }

@@ -17,17 +17,7 @@ public class ProgramForm extends BaseItemForm<ProgramVO> {
 	@Override
 	protected JComponent createFormControl() {
 		super.initForm();
-		
-<<<<<<< .mine
 		builder.add(sbf.createBoundComboBox("type", PlatformType.values()), colSpec);
-=======
-		builder.add(sbf.createBoundComboBox("type", PlatformType.values()), "colSpan=1");
-		builder.row();
-		builder.add(sbf.createBinding("menu", BaseUIUtils.getMenuContext()));
-		builder.row();
-		builder.add("programId", "colSpan=1");
-		builder.add("programName", "colSpan=1");
->>>>>>> .r69
 		builder.row();
 		builder.add(sbf.createBinding("menu", BaseUIUtils.getMenuContext()));
 		builder.row();

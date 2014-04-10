@@ -23,14 +23,14 @@ public class ClearanceLevelSearchForm extends BaseItemFilterForm{
         }
 
         @Override
-        public void onApplicationEvent(ApplicationEvent arg0) {
-                // TODO Auto-generated method stub
-               
-        }
-
-        @Override
         protected Object newFormObject() {
                 // TODO Auto-generated method stub
                 return new ClearanceLevelSearchCriteria();
         }
+
+		@Override
+		protected void doSearch() {
+			// TODO Auto-generated method stub
+			
+		}
 }

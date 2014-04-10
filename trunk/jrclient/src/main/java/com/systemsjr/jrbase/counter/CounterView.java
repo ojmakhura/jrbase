@@ -7,8 +7,6 @@ public class CounterView extends WorkbenchView {
 	public CounterView(){
 		super("counterView");
 	}
-<<<<<<< .mine
-=======
 
 	/*@Override
 	protected CounterVO handleSaveItem(CounterVO object) {
@@ -25,5 +23,4 @@ public class CounterView extends WorkbenchView {
 	protected CounterVO handleNewItem() {
 		return BaseServiceUtils.createDefaultCounter();
 	}*/
->>>>>>> .r69
 }

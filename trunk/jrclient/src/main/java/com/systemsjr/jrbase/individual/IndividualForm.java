@@ -2,18 +2,16 @@ package com.systemsjr.jrbase.individual;
 
 import javax.swing.JComponent;
 
-<<<<<<< .mine
-=======
 import org.springframework.binding.value.support.RefreshableValueHolder;
 
->>>>>>> .r69
 import com.systemsjr.jrbase.individual.vo.IndividualVO;
 import com.systemsjr.jrbase.utils.BaseServiceUtils;
 import com.systemsjr.jrbase.utils.BaseUIUtils;
 import com.systemsjr.jrlib.richclient.BaseItemForm;
 
 public class IndividualForm extends BaseItemForm<IndividualVO> {
-		
+	RefreshableValueHolder countryHolder;
+
 	public IndividualForm(IndividualVO item, String formId) {
 		super(item, formId);
 	}
@@ -24,12 +22,8 @@ public class IndividualForm extends BaseItemForm<IndividualVO> {
 
 	@Override
 	protected JComponent createFormControl() {
-<<<<<<< .mine
-		super.initForm();
-=======
 		super.initForm();
 		countryHolder = BaseUIUtils.getCountryValueHolder();
->>>>>>> .r69
 		
 		builder.setLabelAttributes("colSpec=right:pref");
 		
