@@ -47,6 +47,7 @@ public abstract class BaseItemDetail<T> extends BaseTabbedForm{
 				}
 			};
 		}
+		addCommand.setLabel("Add");
 		return addCommand;
 	}
 
@@ -67,6 +68,7 @@ public abstract class BaseItemDetail<T> extends BaseTabbedForm{
 				}
 			};
 		}
+		removeCommand.setLabel("Remove");
 		return removeCommand;
 	}	
 }

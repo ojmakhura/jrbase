@@ -5,6 +5,8 @@
  */
 package com.systemsjr.jrbase.user.service;
 
+import java.util.List;
+
 import com.systemsjr.jrbase.user.vo.UserDetailsVO;
 import com.systemsjr.jrbase.user.vo.UserSearchCriteria;
 
@@ -25,7 +27,8 @@ public class SecurityServiceImpl
     	UserSearchCriteria searchCriteria = new UserSearchCriteria();
     	searchCriteria.setUsername(username);
     	
-    	UserDetailsVO[] users = getUserDao().toUserDetailsVOArray(getUserDao().findByCriteria(searchCriteria));
+    	List userList = getUserDao().findByCriteria(searchCriteria);
+    	UserDetailsVO[] users = getUserDao().toUserDetailsVOArray(userList);
     	
     	if(users.length > 0){
     		return users[0];
