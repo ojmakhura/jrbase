@@ -11,8 +11,6 @@ import org.springframework.richclient.form.builder.TableFormBuilder;
 
 
 public abstract class BaseTabbedForm<T> extends TabbedForm {
-	protected T item;
-	private BaseItemTable table;
 	private BaseItemDialog<T> addDialog;
 	//protect
 	
@@ -23,7 +21,6 @@ public abstract class BaseTabbedForm<T> extends TabbedForm {
 	public JComponent createTabComponent(BaseItemTable table, String title){
 		SwingBindingFactory sbf = new SwingBindingFactory(getFormModel());
 		TableFormBuilder builder = new TableFormBuilder(sbf);
-		this.table = table;
 		JScrollPane scrollPane = getComponentFactory().createScrollPane();
 		builder.setLabelAttributes("colGrId=label colSpec=right:pref");
 		scrollPane.setViewportView(table.getControl());
