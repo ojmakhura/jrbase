@@ -38,6 +38,7 @@ public abstract class BaseItemFilterForm<T> extends FilterForm {
 				}
 			};
 		}
+		searchCommand.setLabel("Search");
 		return searchCommand;
 	}
 
@@ -52,6 +53,7 @@ public abstract class BaseItemFilterForm<T> extends FilterForm {
 				}
 			};
 		}
+		clearCommand.setLabel("Clear");
 		return clearCommand;
 	}
 

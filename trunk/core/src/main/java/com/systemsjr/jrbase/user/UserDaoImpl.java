@@ -29,8 +29,8 @@ public class UserDaoImpl
     {
     	Criteria criteria = getSession().createCriteria(User.class);
     	
-    	if(searchCriteria.getUserId() != null){
-    		criteria.add(Restrictions.ilike("userId", searchCriteria.getUserId()));
+    	if(searchCriteria.getUsername() != null){
+    		criteria.add(Restrictions.ilike("username", searchCriteria.getUsername()));
     	}
     	
     	if(searchCriteria.getName() != null){
