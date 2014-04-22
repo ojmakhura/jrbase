@@ -2,9 +2,14 @@ package com.systemsjr.jrbase.counter;
 
 import com.systemsjr.jrbase.counter.vo.CounterVO;
 import com.systemsjr.jrbase.utils.BaseServiceUtils;
+import com.systemsjr.jrbase.utils.BaseUIUtils;
 import com.systemsjr.jrlib.richclient.BaseItemControl;
 
 public class CounterControl extends BaseItemControl<CounterVO> {
+	
+	public CounterControl(){
+		valueHolder = BaseUIUtils.getCounterValueHolder();
+	}
 
 	@Override
 	public void handleDeleteItem(CounterVO item) {
@@ -23,5 +28,4 @@ public class CounterControl extends BaseItemControl<CounterVO> {
 		item = BaseServiceUtils.getCounterService().saveCounter(item);
 		return item;
 	}
-
 }

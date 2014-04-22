@@ -16,9 +16,8 @@ public class RoleSearchForm extends BaseItemFilterForm {
 
 	public RoleSearchForm() {
 		super("roleSearchForm");
-		// TODO Auto-generated constructor stub
 	}
-
+	
 	@Override
 	protected JComponent createFormControl() {
 		SwingBindingFactory sbf = (SwingBindingFactory) getBindingFactory();
@@ -50,4 +49,5 @@ public class RoleSearchForm extends BaseItemFilterForm {
 		RoleVO[] roles = BaseServiceUtils.getRoleService().searchRoles(object);	
 		JRTableUtils.refreshTable(table, roles);
 	}
+
 }

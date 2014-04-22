@@ -25,11 +25,12 @@ public class RoleForm extends BaseItemForm<RoleVO> {
 		builder = new TableFormBuilder(sbf);
 		builder.setLabelAttributes("colSpec=right:pref");
 		builder.row();
-		builder.add("roleCode", colSpec);
-		builder.add("role", colSpec);
+		builder.add("roleCode", "colSpan=1");
+		builder.add("role", "colSpan=1");
 		builder.row();
-		builder.addTextArea("roleDescription", colSpec);
+		builder.addTextArea("roleDescription", "colSpan=3");
 		
-		return super.endFormCreate("");
+		super.endFormCreate("");
+		return itemPanel;
 	}
 }

@@ -16,6 +16,7 @@ public class UserDetails extends BaseItemDetail<UserDetailsVO>{
 	public UserDetails(){
 		this(BaseServiceUtils.createDefaultUser(), "userDetails");
 	}
+
 	public UserDetails(UserDetailsVO item, String formId) {
 		super(item, formId);
 	}

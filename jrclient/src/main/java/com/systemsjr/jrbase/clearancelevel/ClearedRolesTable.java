@@ -1,27 +1,12 @@
 package com.systemsjr.jrbase.clearancelevel;
 
-import org.springframework.richclient.command.ActionCommand;
-import org.springframework.richclient.command.ActionCommandExecutor;
+import com.systemsjr.jrlib.richclient.BaseItemTable;
 
+public class ClearedRolesTable extends BaseItemTable {
 
-public class ClearedRolesTable extends ClearanceLevelTable {
-
-	public ClearedRolesTable() {
-		super();
+	public ClearedRolesTable(String modelId, String[] columnPropertyNames) {
+		super(modelId, columnPropertyNames);
 		// TODO Auto-generated constructor stub
 	}
 
-	@Override
-	protected ActionCommandExecutor getDetailsCommand() {
-		if(detailsCommand == null){
-			detailsCommand = new ActionCommand("detailsCommand") {				
-				@Override
-				protected void doExecuteCommand() {
-					
-				}
-			};
-		}
-		return detailsCommand;
-	}
-	
 }

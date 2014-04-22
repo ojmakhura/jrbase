@@ -20,15 +20,15 @@ public class CounterForm extends BaseItemForm<CounterVO> {
 	protected JComponent createFormControl() {
 		super.initForm();
 	
-	
 		builder.setLabelAttributes("colSpec=right:pref");
 		builder.row();
-		builder.add("counterName", colSpan);
+		builder.add("counterName", "colSpan=1");
 		builder.row();
-		builder.add("format", colSpan);
+		builder.add("format", "colSpan=1");
 		builder.row();
-		builder.add("currentCount", colSpan);
+		builder.add("currentCount", "colSpan=1");
 
-		return super.endFormCreate("");
+		super.endFormCreate("");
+		return itemPanel;
 	}
 }

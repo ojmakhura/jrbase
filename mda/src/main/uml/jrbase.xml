@@ -2,7 +2,7 @@
 <!-- This xmi file is optimized for MagicDraw UML. Some references are not saved. -->
 <!-- Change MagicDraw UML environment options property General->.Save Rich XMI -->
 
-<xmi:XMI xmi:version='2.1' xmlns:uml='http://schema.omg.org/spec/UML/2.1.2' xmlns:xmi='http://schema.omg.org/spec/XMI/2.1' xmlns:andromda_webservice='http://www.magicdraw.com/schemas/andromda_webservice.xmi' xmlns:andromda_xml='http://www.magicdraw.com/schemas/andromda_xml.xmi' xmlns:andromda_service='http://www.magicdraw.com/schemas/andromda_service.xmi' xmlns:UML_Standard_Profile='http://www.magicdraw.com/schemas/UML_Standard_Profile.xmi' xmlns:andromda_common='http://www.magicdraw.com/schemas/andromda_common.xmi' xmlns:DSL_Customization='http://www.magicdraw.com/schemas/DSL_Customization.xmi' xmlns:andromda_process='http://www.magicdraw.com/schemas/andromda_process.xmi' xmlns:andromda_presentation='http://www.magicdraw.com/schemas/andromda_presentation.xmi' xmlns:StandardProfileL3='http://www.magicdraw.com/schemas/StandardProfileL3.xmi' xmlns:Validation_Profile='http://www.magicdraw.com/schemas/Validation_Profile.xmi' xmlns:MagicDraw_Profile='http://www.magicdraw.com/schemas/MagicDraw_Profile.xmi' xmlns:andromda_messaging='http://www.magicdraw.com/schemas/andromda_messaging.xmi' xmlns:andromda_persistence='http://www.magicdraw.com/schemas/andromda_persistence.xmi'>
+<xmi:XMI xmi:version='2.1' xmlns:uml='http://schema.omg.org/spec/UML/2.1.2' xmlns:xmi='http://schema.omg.org/spec/XMI/2.1' xmlns:andromda_webservice='http://www.magicdraw.com/schemas/andromda_webservice.xmi' xmlns:andromda_xml='http://www.magicdraw.com/schemas/andromda_xml.xmi' xmlns:andromda_service='http://www.magicdraw.com/schemas/andromda_service.xmi' xmlns:UML_Standard_Profile='http://www.magicdraw.com/schemas/UML_Standard_Profile.xmi' xmlns:StandardProfileL3='http://www.magicdraw.com/schemas/StandardProfileL3.xmi' xmlns:MagicDraw_Profile='http://www.magicdraw.com/schemas/MagicDraw_Profile.xmi' xmlns:andromda_common='http://www.magicdraw.com/schemas/andromda_common.xmi' xmlns:DSL_Customization='http://www.magicdraw.com/schemas/DSL_Customization.xmi' xmlns:andromda_process='http://www.magicdraw.com/schemas/andromda_process.xmi' xmlns:andromda_presentation='http://www.magicdraw.com/schemas/andromda_presentation.xmi' xmlns:Validation_Profile='http://www.magicdraw.com/schemas/Validation_Profile.xmi' xmlns:andromda_persistence='http://www.magicdraw.com/schemas/andromda_persistence.xmi' xmlns:andromda_messaging='http://www.magicdraw.com/schemas/andromda_messaging.xmi'>
 	<xmi:Documentation exporter='MagicDraw UML' exporterVersion='16.0'/>
 	<xmi:Extension extender='MagicDraw UML 16.0' extenderID='MagicDraw UML 16.0'>
 		<shareTable/>
@@ -7085,7 +7085,7 @@
 							</properties>
 							<linkFirstEndID xmi:idref='_16_0_1_90e0298_1359736999221_956851_2383'/>
 							<linkSecondEndID xmi:idref='_16_0_1_90e0298_1359736999221_489691_2381'/>
-							<geometry>410, 511; 410, 194; </geometry>
+							<geometry>336, 511; 336, 194; </geometry>
 							<nameVisible xmi:value='true'/>
 						</mdElement>
 						<mdElement elementClass='Association' xmi:id='_16_0_1_90e0298_1359736999221_521445_2402'>
@@ -9338,7 +9338,7 @@
 						<mdElement elementClass='StringProperty'>
 							<propertyID>INFO_PROPERTY</propertyID>
 							<propertyDescriptionID>INFO_PROPERTY_DESCRIPTION</propertyDescriptionID>
-							<value>0 2e 50 1b c 72 5d 73 f 4b 58 b8 37 25 dd 21 d4 e4 75 99 c7 d da 6b 51 a4 59 55 b6 b1 d3 86 86 2e d ec fa 51 f2 72 24 a6 73 ff e0 24 7f d1 30 67 5c 3d 88 5c ed a5 f 78 95 ba 68 de 2a 22 37 b4 e2 9e c0 67 d8 e4 a7 a a8 c6 8c 63 4 2c 4c b8 d fd 49 5a bb b6 ec 4b d 3b b3 ed 93 59 27 47 ba ed 13 89 1c 5b 5b 74 </value>
+							<value>0 2e 50 1b c 72 5d 73 f 4b 58 aa 2d 39 dd 21 d4 e4 75 99 c6 d da 6a 51 a4 59 55 b6 b0 d3 86 86 2e d ec fa 51 f2 72 24 a6 73 ff e0 24 7f d1 30 67 5c 3d 88 5c ed a5 f 78 95 ba 68 de 2a 22 37 b4 e2 9e c0 67 d8 e4 a7 a a8 c6 8c 63 4 2c 4c b8 d fd 49 5a bb b6 ec 4b d 3b b3 ed 93 59 27 47 ba ed 13 89 1c 5b 5b 74 </value>
 						</mdElement>
 						<mdElement elementClass='LIST_PROPERTY'>
 							<propertyID>ADDITIONAL_CONTAINMENT_TREES</propertyID>

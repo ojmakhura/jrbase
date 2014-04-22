@@ -14,10 +14,10 @@ import com.systemsjr.jrbase.utils.BaseUIUtils;
 import com.systemsjr.jrlib.richclient.BaseItemFilterForm;
 import com.systemsjr.jrlib.richclient.table.JRTableUtils;
 
-
 public class IndividualSearchForm extends BaseItemFilterForm {
 
 	private RefreshableValueHolder salutationsValueHolder = BaseUIUtils.getAllSalutations();
+	
 	public IndividualSearchForm() {
 		super("individualSearchForm");
 	}
@@ -29,12 +29,12 @@ public class IndividualSearchForm extends BaseItemFilterForm {
 		builder.setLabelAttributes("colSpec=right:pref");
 		
 		builder.row();
-		builder.add("idNumber", "colSpan=1");
+		builder.add("idNumber");
 		//builder.add(sbf.createBoundComboBox("salutation", salutationsValueHolder), "colSpan=1");
 		builder.row();
-		builder.add("firstName", "colSpan=1");
+		builder.add("firstName");
 		builder.row();
-		builder.add("middleNames", "colSpan=1");
+		builder.add("middleNames");
 		builder.row();
 		builder.add("surname");
 		builder.row();
@@ -57,5 +57,4 @@ public class IndividualSearchForm extends BaseItemFilterForm {
 			
 		JRTableUtils.refreshTable(table, individuals);
 	}
-
 }

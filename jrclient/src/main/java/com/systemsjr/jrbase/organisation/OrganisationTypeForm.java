@@ -20,11 +20,11 @@ public class OrganisationTypeForm extends BaseItemForm<OrganisationTypeVO> {
 		super.initForm();
 				
 		builder.add("levelCode", "colSpec=40dlu");
+		builder.add("name", "colSpec=40:grow");
 		builder.row();
-		builder.add("name", colSpec);
-		builder.row();
-		builder.addTextArea("description", colSpec);
+		builder.addTextArea("description", "colSpec=40dlu:grow");
 		
-		return super.endFormCreate("");
+		super.endFormCreate("");
+		return itemPanel;
 	}
 }

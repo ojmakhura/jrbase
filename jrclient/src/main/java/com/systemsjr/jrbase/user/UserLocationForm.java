@@ -1,13 +1,13 @@
 package com.systemsjr.jrbase.user;
 
-import com.systemsjr.jrbase.location.vo.LocationVO;
 import com.systemsjr.jrbase.utils.BaseServiceUtils;
 import com.systemsjr.jrlib.richclient.BaseDetailForm;
 
-public class UserLocationForm extends BaseDetailForm<LocationVO> {
+public class UserLocationForm extends BaseDetailForm {
 
 	public UserLocationForm() {
 		super(BaseServiceUtils.createDefaultLocation(), "userLocationForm", new UserLocationDialog());
+		// TODO Auto-generated constructor stub
 	}
 
 	/*@Override

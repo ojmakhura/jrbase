@@ -1,10 +1,15 @@
 package com.systemsjr.jrbase.workbench.program;
 
 import com.systemsjr.jrbase.utils.BaseServiceUtils;
+import com.systemsjr.jrbase.utils.BaseUIUtils;
 import com.systemsjr.jrbase.workbench.program.vo.ProgramVO;
 import com.systemsjr.jrlib.richclient.BaseItemControl;
 
 public class ProgramControl extends BaseItemControl<ProgramVO> {
+	
+	public ProgramControl(){
+		valueHolder = BaseUIUtils.getProgramValueHolder();
+	}
 
 	@Override
 	public void handleDeleteItem(ProgramVO item) {
@@ -24,5 +29,4 @@ public class ProgramControl extends BaseItemControl<ProgramVO> {
 		setAction(item.getId());
 		return BaseServiceUtils.getProgramService().saveProgram(item);
 	}
-
 }

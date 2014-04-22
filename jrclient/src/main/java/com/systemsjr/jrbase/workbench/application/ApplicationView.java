@@ -18,23 +18,6 @@ public class ApplicationView extends BaseItemView {
 	public ApplicationView(String id) {
 		super(id);
 	}
-
-	/*@Override
-	protected ApplicationVO handleSaveItem(ApplicationVO applicationVO) {
-		setAction(applicationVO.getId());
-		applicationVO = BaseServiceUtils.getApplicationService().saveApplication(applicationVO);
-		return applicationVO;
-	}
-
-	@Override
-	protected void handleDeleteItem(ApplicationVO object) {
-		BaseServiceUtils.getApplicationService().removeApplication(object);
-	}
-
-	@Override
-	protected ApplicationVO handleNewItem() {
-		return BaseServiceUtils.createDefaultApplication();
-	}*/
 	
 	public ActionCommand getMenuCommand() {
 		if(menuCommand == null){
