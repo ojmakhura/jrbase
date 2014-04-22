@@ -2,9 +2,14 @@ package com.systemsjr.jrbase.location;
 
 import com.systemsjr.jrbase.location.vo.LocationTypeVO;
 import com.systemsjr.jrbase.utils.BaseServiceUtils;
+import com.systemsjr.jrbase.utils.BaseUIUtils;
 import com.systemsjr.jrlib.richclient.BaseItemControl;
 
 public class LocationTypeControl extends BaseItemControl<LocationTypeVO> {
+	
+	public LocationTypeControl(){
+		valueHolder = BaseUIUtils.getLocationTypeValueHolder();
+	}
 
 	@Override
 	public void handleDeleteItem(LocationTypeVO item) {
@@ -23,5 +28,4 @@ public class LocationTypeControl extends BaseItemControl<LocationTypeVO> {
 		setAction(item.getId());
 		return BaseServiceUtils.getLocationService().saveLocationType(item);
 	}
-
 }

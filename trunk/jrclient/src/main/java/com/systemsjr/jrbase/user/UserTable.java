@@ -10,7 +10,6 @@ import com.systemsjr.jrlib.richclient.BaseItemDetail;
 import com.systemsjr.jrlib.richclient.BaseItemTable;
 
 
-
 public class UserTable extends BaseItemTable<UserDetailsVO>{
 
 	public UserTable(String modelId, String[] columnPropertyNames) {
@@ -48,6 +47,6 @@ public class UserTable extends BaseItemTable<UserDetailsVO>{
 		for(RoleVO role : user.getUserRoles()){
 			table.getFinalEventList().add(role);
 		}
-	}*/
-	
+	}
+	*/
 }

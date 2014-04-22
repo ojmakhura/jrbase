@@ -41,13 +41,12 @@ public class LocationSearchForm extends BaseItemFilterForm {
 	protected Object newFormObject() {
 		return new LocationSearchCriteria();
 	}
-
+	
 	@Override
 	protected void doSearch() {
 		commit();
 		LocationSearchCriteria object = (LocationSearchCriteria) getFormObject();
-		LocationVO[] locations = BaseServiceUtils.getLocationService()
-				.searchLocations(object);
+		LocationVO[] locations = BaseServiceUtils.getLocationService().searchLocations(object);	
 		JRTableUtils.refreshTable(table, locations);
 	}
 

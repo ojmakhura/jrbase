@@ -2,9 +2,14 @@ package com.systemsjr.jrbase.individual;
 
 import com.systemsjr.jrbase.individual.vo.IndividualVO;
 import com.systemsjr.jrbase.utils.BaseServiceUtils;
+import com.systemsjr.jrbase.utils.BaseUIUtils;
 import com.systemsjr.jrlib.richclient.BaseItemControl;
 
 public class IndividualControl extends BaseItemControl<IndividualVO> {
+	
+	public IndividualControl(){
+		valueHolder = BaseUIUtils.getIndividualValueHolder();
+	}
 
 	@Override
 	public void handleDeleteItem(IndividualVO item) {
@@ -13,8 +18,7 @@ public class IndividualControl extends BaseItemControl<IndividualVO> {
 	}
 
 	@Override
-	public IndividualVO handleNewItem() {
-		
+	public IndividualVO handleNewItem() {		
 		return BaseServiceUtils.createDefaultIndividual();
 	}
 
@@ -24,5 +28,4 @@ public class IndividualControl extends BaseItemControl<IndividualVO> {
 		setAction(item.getId());
 		return BaseServiceUtils.getIndividualService().saveIndividual(item);
 	}
-
 }

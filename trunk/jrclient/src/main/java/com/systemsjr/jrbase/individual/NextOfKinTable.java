@@ -6,7 +6,7 @@ import javax.swing.table.TableColumnModel;
 import com.systemsjr.jrbase.individual.vo.NextOfKinVO;
 import com.systemsjr.jrlib.richclient.BaseItemTable;
 
-public class NextOfKinTable extends BaseItemTable<NextOfKinVO>{
+public class NextOfKinTable extends BaseItemTable{
 	public NextOfKinTable(){
 		super(new NextOfKinVO[]{}, "nextOfKin", new String[]{
 				"kinType",

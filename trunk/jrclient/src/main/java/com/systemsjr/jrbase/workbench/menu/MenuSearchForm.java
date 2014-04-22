@@ -12,13 +12,11 @@ import com.systemsjr.jrbase.workbench.menu.vo.MenuVO;
 import com.systemsjr.jrlib.richclient.BaseItemFilterForm;
 import com.systemsjr.jrlib.richclient.table.JRTableUtils;
 
-
 public class MenuSearchForm extends BaseItemFilterForm {
 
 	public MenuSearchForm() {
 		super("menuSearchForm");
 	}
-
 
 	@Override
 	protected JComponent createFormControl() {

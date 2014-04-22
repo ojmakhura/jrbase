@@ -3,12 +3,15 @@ package com.systemsjr.jrbase.workbench.menu;
 import javax.swing.JComponent;
 
 import com.systemsjr.jrbase.utils.BaseServiceUtils;
+import com.systemsjr.jrbase.utils.BaseUIUtils;
 import com.systemsjr.jrbase.workbench.menu.vo.MenuVO;
 import com.systemsjr.jrlib.richclient.BaseItemControl;
 
 public class MenuControl extends BaseItemControl<MenuVO> {
 	
-	
+	public MenuControl(){
+		valueHolder = BaseUIUtils.getMenuValueHolder();
+	}
 
 	@Override
 	protected JComponent createControl() {

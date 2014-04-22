@@ -19,7 +19,6 @@ public class OrganisationSearchForm extends BaseItemFilterForm {
 		// TODO Auto-generated constructor stub
 	}
 
-
 	@Override
 	protected JComponent createFormControl() {
 		SwingBindingFactory sbf = (SwingBindingFactory) getBindingFactory();

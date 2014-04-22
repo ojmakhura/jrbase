@@ -8,7 +8,6 @@ import com.systemsjr.jrbase.utils.BaseServiceUtils;
 import com.systemsjr.jrbase.workbench.application.vo.ApplicationVO;
 import com.systemsjr.jrlib.richclient.BaseItemDetail;
 import com.systemsjr.jrlib.richclient.BaseItemTable;
-import com.systemsjr.jrlib.richclient.BaseTabbedForm;
 import com.systemsjr.jrlib.richclient.table.JRTableUtils;
 
 public class ApplicationDetails extends BaseItemDetail<ApplicationVO> {
@@ -65,6 +64,4 @@ public class ApplicationDetails extends BaseItemDetail<ApplicationVO> {
 		// TODO Auto-generated method stub
 		return null;
 	}
-	 
-	 
 }

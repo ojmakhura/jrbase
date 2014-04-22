@@ -2,6 +2,7 @@ package com.systemsjr.jrbase.user;
 
 import javax.swing.JComponent;
 
+import org.springframework.context.ApplicationEvent;
 import org.springframework.richclient.form.binding.swing.SwingBindingFactory;
 import org.springframework.richclient.form.builder.TableFormBuilder;
 
@@ -10,7 +11,6 @@ import com.systemsjr.jrbase.user.vo.UserVO;
 import com.systemsjr.jrbase.utils.BaseServiceUtils;
 import com.systemsjr.jrlib.richclient.BaseItemFilterForm;
 import com.systemsjr.jrlib.richclient.table.JRTableUtils;
-
 
 public class UserSearchForm extends BaseItemFilterForm {
 
@@ -49,4 +49,5 @@ public class UserSearchForm extends BaseItemFilterForm {
 		UserVO[] users = BaseServiceUtils.getUserService().searchUsers(object);		
 		JRTableUtils.refreshTable(table, users);
 	}
+
 }

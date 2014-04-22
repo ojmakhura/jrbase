@@ -24,15 +24,16 @@ public class OrganisationForm extends BaseItemForm<OrganisationVO> {
 		
 		typesValueHolder = BaseUIUtils.getOrganisationTypeValueHolder();
 		
-		builder.add(sbf.createBinding("organisationType", BaseUIUtils.getOrganisationTypeContext()), colSpec);
+		builder.add(sbf.createBinding("organisationType", BaseUIUtils.getOrganisationTypeContext()), "colSpec=40dlu:grow");
 		builder.row();
-		builder.add("registrationRef", colSpec);
+		builder.add("registrationRef", "colSpec=40dlu:grow");
 		builder.row();
-		builder.add("name", colSpec);
+		builder.add("name", "colSpec=40dlu:grow");
 		builder.row();
-		builder.addTextArea("description", colSpec);
+		builder.addTextArea("description", "colSpec=40dlu:grow");
 		
-		return super.endFormCreate(null);
+		super.endFormCreate(null);
+		return itemPanel;
 	}
 
 	public RefreshableValueHolder getTypesValueHolder() {

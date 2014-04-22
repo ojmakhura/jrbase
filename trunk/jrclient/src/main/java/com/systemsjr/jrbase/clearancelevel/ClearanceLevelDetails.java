@@ -12,8 +12,11 @@ import com.systemsjr.jrlib.richclient.BaseItemDetail;
 import com.systemsjr.jrlib.richclient.table.JRTableUtils;
 
 public class ClearanceLevelDetails extends BaseItemDetail<ClearanceLevelVO>{
+
 	private RoleTable roleListTable;
 	private UserTable usersTable;
+	private ClearedRolesForm clearedRolesForm;
+	private ClearedUsersForm clearedUsersForm;
 	
 	public ClearanceLevelDetails() {
 		super(BaseServiceUtils.createDefaultLevel(), "clearanceLevelDetails");
@@ -23,24 +26,23 @@ public class ClearanceLevelDetails extends BaseItemDetail<ClearanceLevelVO>{
 	protected Tab[] getTabs() {
 		ArrayList<Tab> tabs = new ArrayList<Tab>();
 		tabs.add(new Tab("Cleared Roles", getClearedRolesTab()));
-		tabs.add(new Tab("Cleared Users", getClearedUsersTab()));
+		/*tabs.add(new Tab("Cleared Users", getClearedUsersTab()));*/
 		
 		return tabs.toArray(new Tab[0]);
 	}
 	
 	private JComponent getClearedRolesTab(){
-		JRTableUtils.refreshTable(roleListTable, BaseServiceUtils.getRoleService().searchRoles(null));
-		return super.createTabComponent(roleListTable, "Cleared Roles");
+		JRTableUtils.refreshTable(clearedRolesForm.getListTable(), BaseServiceUtils.getRoleService().searchRoles(null));
+		return clearedRolesForm.getControl();
 	}
 	
 	private JComponent getClearedUsersTab(){
-		JRTableUtils.refreshTable(usersTable, BaseServiceUtils.getUserService().searchUsers(null));
-		return super.createTabComponent(usersTable, "Cleared Users");
+		JRTableUtils.refreshTable(clearedUsersForm.getListTable(), BaseServiceUtils.getUserService().searchUsers(null));
+		return clearedUsersForm.getControl();
 	}
 
 	@Override
 	public ClearanceLevelVO handleGetNewItem() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
@@ -59,6 +61,11 @@ public class ClearanceLevelDetails extends BaseItemDetail<ClearanceLevelVO>{
 	public void setUsersTable(UserTable usersTable) {
 		this.usersTable = usersTable;
 	}
-	
-	
+	public ClearedRolesForm getClearedRolesForm() {
+		return clearedRolesForm;
+	}
+
+	public void setClearedRolesForm(ClearedRolesForm clearedRolesForm) {
+		this.clearedRolesForm = clearedRolesForm;
+	}
 }

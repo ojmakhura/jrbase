@@ -1,7 +1,6 @@
 package com.systemsjr.jrbase.workbench.menu;
 
 import javax.swing.JComponent;
-import javax.swing.JPanel;
 
 import com.systemsjr.jrbase.role.RoleTable;
 import com.systemsjr.jrbase.user.UserTable;

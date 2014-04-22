@@ -3,7 +3,6 @@ package com.systemsjr.jrbase.workbench.program;
 import java.util.ArrayList;
 
 import javax.swing.JComponent;
-import javax.swing.JPanel;
 
 import com.systemsjr.jrbase.utils.BaseServiceUtils;
 import com.systemsjr.jrbase.workbench.program.vo.ProgramVO;

@@ -1,10 +1,15 @@
 package com.systemsjr.jrbase.workbench.application;
 
 import com.systemsjr.jrbase.utils.BaseServiceUtils;
+import com.systemsjr.jrbase.utils.BaseUIUtils;
 import com.systemsjr.jrbase.workbench.application.vo.ApplicationVO;
 import com.systemsjr.jrlib.richclient.BaseItemControl;
 
 public class ApplicationControl extends BaseItemControl<ApplicationVO> {
+	
+	public ApplicationControl(){
+		valueHolder = BaseUIUtils.getApplicationValueHolder();
+	}
 
 	@Override
 	public void handleDeleteItem(ApplicationVO item) {
@@ -23,5 +28,4 @@ public class ApplicationControl extends BaseItemControl<ApplicationVO> {
 		setAction(item.getId());
 		return BaseServiceUtils.getApplicationService().saveApplication(item);
 	}
-
 }
