@@ -95,11 +95,13 @@
 			<groupId>${pom.groupId}</groupId>
 			<artifactId>jrbase-common</artifactId>
 			<version>0.1</version>
+			<scope>compile</scope>
 		</dependency>
 		<dependency>
 			<groupId>${pom.groupId}</groupId>
 			<artifactId>jrbase-core</artifactId>
 			<version>0.1</version>
+			<scope>compile</scope>
 		</dependency>
 		<dependency>
 			<groupId>com.toedter</groupId>
