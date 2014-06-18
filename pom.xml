@@ -300,7 +300,7 @@
 			<dependency>
 				<groupId>org.hibernate</groupId>
 				<artifactId>hibernate-validator</artifactId>
-				<version>4.3.0.Final</version>
+				<version>5.1.1.Final</version>
 			</dependency>
 			<dependency>
 				<groupId>net.sf.ehcache</groupId>
@@ -737,8 +737,9 @@
 		<dataSource.name>jdbc/${application.id}</dataSource.name>
 		<dataSource>java:comp/env/${dataSource.name}</dataSource>
 		<!-- Set andromda.xml hibernateVersion=4, sessionFactory and localTransactionManager 
-			to hibernate4 Spring cartridge only works with hibernate3. <hibernate.version>4.1.7.Final</hibernate.version -->
-		<hibernate.version>3.6.9.Final</hibernate.version>
+			to hibernate4 Spring cartridge only works with hibernate3.--> 
+		<hibernate.version>4.3.5.Final</hibernate.version>
+		<!-- <hibernate.version>3.6.9.Final</hibernate.version> -->
 		<spring.version>3.1.2.RELEASE</spring.version>
 		<!-- SCM user ID and Password here, or in user specific settings.xml file -->
 		<username />
