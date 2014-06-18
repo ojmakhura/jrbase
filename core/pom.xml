@@ -62,14 +62,14 @@
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-entitymanager</artifactId>
-			<version>3.6.9.Final</version>
+			<!-- <version>3.6.9.final</version> -->
 			<type>jar</type>
 			<scope>compile</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-validator</artifactId>
-			<version>4.3.0.Final</version>
+			<!-- <version>4.3.0.Final</version> -->
 			<type>jar</type>
 			<scope>compile</scope>
 		</dependency>
