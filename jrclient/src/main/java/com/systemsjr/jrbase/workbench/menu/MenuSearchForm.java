@@ -19,6 +19,12 @@ public class MenuSearchForm extends BaseItemFilterForm {
 	}
 
 	@Override
+	public void onApplicationEvent(ApplicationEvent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
 	protected JComponent createFormControl() {
 		SwingBindingFactory sbf = (SwingBindingFactory) getBindingFactory();
 		TableFormBuilder builder = new TableFormBuilder(sbf);

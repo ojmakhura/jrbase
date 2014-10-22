@@ -39,7 +39,7 @@ public class UserTable extends BaseItemTable<UserDetailsVO>{
 		return getInitialData();
 	}
 
-	/*@Override
+	@Override
 	public void doMore(BaseItemDetail detail, UserDetailsVO user) {
 		UserDetails userDetail = (UserDetails) detail;
 		BaseItemTable table = userDetail.getUserRolesForm().getListTable();
@@ -48,5 +48,5 @@ public class UserTable extends BaseItemTable<UserDetailsVO>{
 			table.getFinalEventList().add(role);
 		}
 	}
-	*/
+	
 }

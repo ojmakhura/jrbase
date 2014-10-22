@@ -180,7 +180,7 @@
   <bean id="toolBar" class="org.springframework.richclient.command.CommandGroupFactoryBean">
     <property name="members">
       <list>
-      	<bean id="applicationCommand" class="com.systemsjr.jrbase.workbench.application.command.ApplicationsCommand"/>
+      	<!-- <bean id="applicationCommand" class="com.systemsjr.jrbase.workbench.application.command.ApplicationsCommand"/> -->
       	<bean id="workbenchCommand" class="com.systemsjr.jrbase.counter.command.CountersCommand"/>
         <value>separator</value>
         <bean class="org.springframework.richclient.command.support.ExitCommand" />

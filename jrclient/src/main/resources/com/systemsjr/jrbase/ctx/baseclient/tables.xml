@@ -18,4 +18,11 @@
 	<bean id = "menuTable" class="com.systemsjr.jrbase.workbench.menu.MenuTable" depends-on="application"/>
 	<bean id = "programTable" class="com.systemsjr.jrbase.workbench.program.ProgramTable" depends-on="application"/>
 	<bean id = "applicationTable" class="com.systemsjr.jrbase.workbench.application.ApplicationTable" depends-on="application"/>
+	
+	<!-- Detail Tables -->
+	<bean id="userRolesTable" class="com.systemsjr.jrbase.role.RoleTable" depends-on="application"/>
+	<bean id="levelRoleTable" class="com.systemsjr.jrbase.role.RoleTable" depends-on="application"/>
+	<bean id="userClearenceTable" class="com.systemsjr.jrbase.clearancelevel.ClearanceLevelTable" depends-on="application"/>
+	<bean id="userLocationTable" class="com.systemsjr.jrbase.user.UserLocationTable" depends-on="application"/>
+	<bean id="clearedRolesTable" class="com.systemsjr.jrbase.role.RoleTable" depends-on="application"/>
 </beans>

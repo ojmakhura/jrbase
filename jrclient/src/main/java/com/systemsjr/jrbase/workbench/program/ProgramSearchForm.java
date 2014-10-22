@@ -19,6 +19,10 @@ public class ProgramSearchForm extends BaseItemFilterForm {
 	}
 
 	@Override
+	public void onApplicationEvent(ApplicationEvent arg0) {
+	}
+
+	@Override
 	protected JComponent createFormControl() {
 		SwingBindingFactory sbf = (SwingBindingFactory) getBindingFactory();
 		TableFormBuilder builder = new TableFormBuilder(sbf);

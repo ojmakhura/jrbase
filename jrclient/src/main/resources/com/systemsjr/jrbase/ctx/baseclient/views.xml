@@ -99,7 +99,7 @@
 	<!--************************************************************************************************* 
 		Workbench application views
 	 **************************************************************************************************-->
-	<bean id="menuView" class="org.springframework.richclient.application.support.DefaultViewDescriptor">
+	<!-- <bean id="menuView" class="org.springframework.richclient.application.support.DefaultViewDescriptor">
 		<property name="viewClass" value="com.systemsjr.jrbase.workbench.menu.MenuView"/>
 		<property name="viewProperties">
 			<map>
@@ -124,5 +124,5 @@
 				<entry key="itemControl" value-ref="applicationControl"/>
 			</map>
 		</property>
-	</bean>
+	</bean> -->
 </beans>
