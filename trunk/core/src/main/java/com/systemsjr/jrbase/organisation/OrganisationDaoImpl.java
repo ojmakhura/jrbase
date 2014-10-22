@@ -25,15 +25,15 @@ public class OrganisationDaoImpl
     	Criteria criteria = getSession().createCriteria(Organisation.class);
     	
     	if(searchCriteria.getRegistrationRef() != null){
-    		criteria.add(Restrictions.ilike("registrationRef", searchCriteria.getRegistrationRef()));
+    		criteria.add(Restrictions.ilike("registrationRef", "%" + searchCriteria.getRegistrationRef() + "%"));
     	}
     	
     	if(searchCriteria.getName() != null){
-    		criteria.add(Restrictions.ilike("name", searchCriteria.getName()));
+    		criteria.add(Restrictions.ilike("name", "%" + searchCriteria.getName() + "%"));
     	}
     	
     	if(searchCriteria.getDescription() != null){
-    		criteria.add(Restrictions.ilike("description", searchCriteria.getDescription()));
+    		criteria.add(Restrictions.ilike("description", "%" + searchCriteria.getDescription() + "%"));
     	}
     	
         return criteria.list();

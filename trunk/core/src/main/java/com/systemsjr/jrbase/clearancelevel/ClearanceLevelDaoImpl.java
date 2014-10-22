@@ -65,7 +65,7 @@ public class ClearanceLevelDaoImpl extends
 	private com.systemsjr.jrbase.clearancelevel.ClearanceLevel loadClearanceLevelFromClearanceLevelVO(
 			com.systemsjr.jrbase.clearancelevel.vo.ClearanceLevelVO clearanceLevelVO) {
 		// A typical implementation looks like this:
-		com.systemsjr.jrbase.clearancelevel.ClearanceLevel clearanceLevel;
+		com.systemsjr.jrbase.clearancelevel.ClearanceLevel clearanceLevel = null;
 		if (clearanceLevelVO.getId() == null) {
 			clearanceLevel = com.systemsjr.jrbase.clearancelevel.ClearanceLevel.Factory
 					.newInstance();
@@ -125,12 +125,12 @@ public class ClearanceLevelDaoImpl extends
 		Criteria criteria = getSession().createCriteria(ClearanceLevel.class);
 		if (searchCriteria.getLevelCode() != null) {
 			criteria.add(Restrictions.ilike("levelCode",
-					searchCriteria.getLevelCode()));
+					"%" + searchCriteria.getLevelCode() + "%"));
 		}
 
 		if (searchCriteria.getLevelDescription() != null) {
 			criteria.add(Restrictions.ilike("levelDescription",
-					searchCriteria.getLevelDescription()));
+					"%" + searchCriteria.getLevelDescription() + "%"));
 		}
 
 		return null;

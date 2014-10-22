@@ -5,6 +5,7 @@
  */
 package com.systemsjr.jrbase.user;
 
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 
@@ -29,16 +30,16 @@ public class UserDaoImpl
     {
     	Criteria criteria = getSession().createCriteria(User.class);
     	
-    	if(searchCriteria.getUsername() != null){
-    		criteria.add(Restrictions.ilike("username", searchCriteria.getUsername()));
+    	if(searchCriteria.getUserId() != null){
+    		criteria.add(Restrictions.ilike("userId", "%" + searchCriteria.getUserId() + "%"));
     	}
     	
     	if(searchCriteria.getName() != null){
-    		criteria.add(Restrictions.ilike("name", searchCriteria.getName()));
+    		criteria.add(Restrictions.ilike("name", "%" + searchCriteria.getName() + "%"));
     	}
     	
     	if(searchCriteria.getStatus() != null){
-    		criteria.add(Restrictions.eq("status", searchCriteria.getStatus()));
+    		criteria.add(Restrictions.eq("status", "%" + searchCriteria.getStatus() + "%"));
     	}
         
     	return criteria.list();
@@ -55,8 +56,6 @@ public class UserDaoImpl
         super.toUserVO(source, target);
         target.setStatus(source.getStatus());
         target.setIndividual(getIndividualDao().toIndividualVO(source.getIndividual()));
-        target.setUserId(source.getUserId());
-        StringBuffer passRep = new StringBuffer();
     }
 
 
@@ -115,6 +114,8 @@ public class UserDaoImpl
         if(source.getIndividual() != null){
         	target.setIndividual(getIndividualDao().individualVOToEntity(source.getIndividual()));
         }
+        
+        //if(source.get){}
     }
 
 	@Override
@@ -139,7 +140,19 @@ public class UserDaoImpl
 		user.setPassword(userDetailsVO.getPassword());
 		user.setEmail(userDetailsVO.getEmail());
 		user.setPhoto(userDetailsVO.getPhoto());
-		user.setPasswordLength(userDetailsVO.getPasswordLength());
+		if(userDetailsVO.getPassword1() != null){
+			user.setPasswordLength(userDetailsVO.getPassword1().length());
+		}
+		
+		if(userDetailsVO.getUserRoles() != null){
+			Collection<RoleVO> list = Arrays.asList(userDetailsVO.getUserRoles());
+			for(RoleVO role : list){
+				user.getUserRoles().add(getRoleDao().roleVOToEntity(role));
+			}			
+		}
+		
+		
+		
 		return user;
 	}
 	
@@ -148,6 +161,8 @@ public class UserDaoImpl
 	@Override
 	public void toUserDetailsVO(User source, UserDetailsVO target) {
 		super.toUserDetailsVO(source, target);
+        target.setStatus(source.getStatus());
+        target.setIndividual(getIndividualDao().toIndividualVO(source.getIndividual()));
 		Collection srcRoles = source.getUserRoles();
         RoleVO[] targetRoles = new RoleVO[srcRoles.size()];
         int i=0;

@@ -7,6 +7,9 @@ package com.systemsjr.jrbase.workbench.menu;
 
 import java.util.List;
 
+import org.hibernate.Criteria;
+import org.hibernate.criterion.Restrictions;
+
 /**
  * @see com.systemsjr.jrbase.workbench.menu.Menu
  */
@@ -17,10 +20,23 @@ public class MenuDaoImpl
      * @see com.systemsjr.jrbase.workbench.menu.MenuDao#findByCriteria(com.systemsjr.jrbase.workbench.menu.vo.MenuSearchCriteria)
      */
     @Override
-	protected List handleFindByCriteria(com.systemsjr.jrbase.workbench.menu.vo.MenuSearchCriteria criteria)
+	protected List handleFindByCriteria(com.systemsjr.jrbase.workbench.menu.vo.MenuSearchCriteria searchCriteria)
     {
-        // @todo implement public com.systemsjr.jrbase.workbench.menu.vo.MenuVO[] handleFindByCriteria(com.systemsjr.jrbase.workbench.menu.vo.MenuSearchCriteria criteria)
-        return null;
+    	Criteria criteria = getSession().createCriteria(Menu.class);
+    	
+    	if(searchCriteria.getMenuCode() != null){
+    		criteria.add(Restrictions.ilike("menuCode", "%" + searchCriteria.getMenuCode() + "%"));
+    	}
+    	
+    	if(searchCriteria.getMenuName() != null){
+    		criteria.add(Restrictions.ilike("menuName", "%" + searchCriteria.getMenuName() + "%"));
+    	}
+    	
+    	if(searchCriteria.getMenuDescription() != null){
+    		criteria.add(Restrictions.ilike("menuDescription", "%" + searchCriteria.getMenuDescription() + "%"));
+    	}
+    	
+        return criteria.list();
 }
 
     /**
@@ -55,16 +71,19 @@ public class MenuDaoImpl
     private com.systemsjr.jrbase.workbench.menu.Menu loadMenuFromMenuVO(com.systemsjr.jrbase.workbench.menu.vo.MenuVO menuVO)
     {
         // @todo implement loadMenuFromMenuVO
-        throw new java.lang.UnsupportedOperationException("com.systemsjr.jrbase.workbench.menu.loadMenuFromMenuVO(com.systemsjr.jrbase.workbench.menu.vo.MenuVO) not yet implemented.");
-
-        /* A typical implementation looks like this:
-        com.systemsjr.jrbase.workbench.menu.Menu menu = this.load(menuVO.getId());
-        if (menu == null)
+        
+        com.systemsjr.jrbase.workbench.menu.Menu menu = null; //this.load(menuVO.getId());
+        if (menuVO.getId() == null)
         {
             menu = com.systemsjr.jrbase.workbench.menu.Menu.Factory.newInstance();
+            
+        } else {
+        	menu = this.load(menuVO.getId());
         }
+        
+        
         return menu;
-        */
+        
     }
 
     

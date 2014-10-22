@@ -15,7 +15,7 @@ public class IndividualServiceImpl
     /**
      * The serial version UID of this class. Needed for serialization.
      */
-    private static final long serialVersionUID = 7227687976698748902L;
+    private static final long serialVersionUID = 387630637855891565L;
 
     /**
      * @see com.systemsjr.jrbase.individual.service.IndividualService#saveIndividual(com.systemsjr.jrbase.individual.vo.IndividualVO)
@@ -54,38 +54,38 @@ public class IndividualServiceImpl
     }
 
     /**
-     * @see com.systemsjr.jrbase.individual.service.IndividualService#saveKin(com.systemsjr.jrbase.individual.vo.NextOfKinVO)
+     * @see com.systemsjr.jrbase.individual.service.IndividualService#saveKin(com.systemsjr.jrbase.individual.vo.KinVO)
      */
-    public com.systemsjr.jrbase.individual.vo.NextOfKinVO saveKin(com.systemsjr.jrbase.individual.vo.NextOfKinVO kin)
+    public com.systemsjr.jrbase.individual.vo.KinVO saveKin(com.systemsjr.jrbase.individual.vo.KinVO kin)
     {
-        // TODO implement public com.systemsjr.jrbase.individual.vo.NextOfKinVO saveKin(com.systemsjr.jrbase.individual.vo.NextOfKinVO kin)
+        // TODO implement public com.systemsjr.jrbase.individual.vo.KinVO saveKin(com.systemsjr.jrbase.individual.vo.KinVO kin)
         return null;
     }
 
     /**
      * @see com.systemsjr.jrbase.individual.service.IndividualService#getAllKin(com.systemsjr.jrbase.individual.vo.IndividualVO)
      */
-    public com.systemsjr.jrbase.individual.vo.NextOfKinVO getAllKin(com.systemsjr.jrbase.individual.vo.IndividualVO individualVO)
+    public com.systemsjr.jrbase.individual.vo.KinVO getAllKin(com.systemsjr.jrbase.individual.vo.IndividualVO individualVO)
     {
-        // TODO implement public com.systemsjr.jrbase.individual.vo.NextOfKinVO getAllKin(com.systemsjr.jrbase.individual.vo.IndividualVO individualVO)
+        // TODO implement public com.systemsjr.jrbase.individual.vo.KinVO getAllKin(com.systemsjr.jrbase.individual.vo.IndividualVO individualVO)
         return null;
     }
 
     /**
-     * @see com.systemsjr.jrbase.individual.service.IndividualService#removeKin(com.systemsjr.jrbase.individual.vo.NextOfKinVO)
+     * @see com.systemsjr.jrbase.individual.service.IndividualService#removeKin(com.systemsjr.jrbase.individual.vo.KinVO)
      */
-    public void removeKin(com.systemsjr.jrbase.individual.vo.NextOfKinVO kin)
+    public void removeKin(com.systemsjr.jrbase.individual.vo.KinVO kin)
     {
-        // TODO implement public void removeKin(com.systemsjr.jrbase.individual.vo.NextOfKinVO kin)
-        throw new UnsupportedOperationException("com.systemsjr.jrbase.individual.service.IndividualService.removeKin(com.systemsjr.jrbase.individual.vo.NextOfKinVO kin) Not implemented!");
+        // TODO implement public void removeKin(com.systemsjr.jrbase.individual.vo.KinVO kin)
+        throw new UnsupportedOperationException("com.systemsjr.jrbase.individual.service.IndividualService.removeKin(com.systemsjr.jrbase.individual.vo.KinVO kin) Not implemented!");
     }
 
     /**
      * @see com.systemsjr.jrbase.individual.service.IndividualService#searchKin(com.systemsjr.jrbase.individual.vo.KinSearchCriteria)
      */
-    public com.systemsjr.jrbase.individual.vo.NextOfKinVO[] searchKin(com.systemsjr.jrbase.individual.vo.KinSearchCriteria searchCriteria)
+    public com.systemsjr.jrbase.individual.vo.KinVO[] searchKin(com.systemsjr.jrbase.individual.vo.KinSearchCriteria searchCriteria)
     {
-        // TODO implement public com.systemsjr.jrbase.individual.vo.NextOfKinVO[] searchKin(com.systemsjr.jrbase.individual.vo.KinSearchCriteria searchCriteria)
+        // TODO implement public com.systemsjr.jrbase.individual.vo.KinVO[] searchKin(com.systemsjr.jrbase.individual.vo.KinSearchCriteria searchCriteria)
         return null;
     }
 }

@@ -26,15 +26,15 @@ public class RoleDaoImpl
     	Criteria criteria = getSession().createCriteria(Role.class);
     	
     	if(searchCriteria.getRole() != null){
-    		criteria.add(Restrictions.ilike("role", searchCriteria.getRole()));
+    		criteria.add(Restrictions.ilike("role", "%" + searchCriteria.getRole() + "%"));
     	}
     	
     	if(searchCriteria.getRoleCode() != null){
-    		criteria.add(Restrictions.ilike("roleCode", searchCriteria.getRoleCode()));
+    		criteria.add(Restrictions.ilike("roleCode", "%" + searchCriteria.getRoleCode() + "%"));
     	}
         
     	if(searchCriteria.getRoleDescription() != null){
-    		criteria.add(Restrictions.ilike("roleDescription", searchCriteria.getRoleDescription()));
+    		criteria.add(Restrictions.ilike("roleDescription", "%" + searchCriteria.getRoleDescription() + "%"));
     	}
     	
     	return Arrays.asList(toRoleVOArray(criteria.list()));
@@ -76,7 +76,6 @@ public class RoleDaoImpl
         	role = this.load(roleVO.getId());
         } else{
         	role = Role.Factory.newInstance();
-        	roleVOToEntity(roleVO, role, true);
         }
         return role;
         

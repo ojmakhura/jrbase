@@ -25,47 +25,47 @@ public class IndividualDaoImpl
     	Criteria criteria = getSession().createCriteria(Individual.class);
         
     	if(searchCriteria.getEmail() != null){
-    		criteria.add(Restrictions.ilike("email", searchCriteria.getEmail()));
+    		criteria.add(Restrictions.ilike("email", "%" + searchCriteria.getEmail() + "%"));
     	}
     	
     	if(searchCriteria.getFirstName() != null){
-    		criteria.add(Restrictions.ilike("firstName", searchCriteria.getFirstName()));
+    		criteria.add(Restrictions.ilike("firstName", "%" + searchCriteria.getFirstName() + "%"));
     	}
     	
     	if(searchCriteria.getIdNumber() != null){
-    		criteria.add(Restrictions.ilike("idNumber", searchCriteria.getIdNumber()));
+    		criteria.add(Restrictions.ilike("idNumber", "%" + searchCriteria.getIdNumber() + "%"));
     	}
     	
     	if(searchCriteria.getIndividualId() != null){
-    		criteria.add(Restrictions.ilike("individualId", searchCriteria.getIndividualId()));
+    		criteria.add(Restrictions.ilike("individualId", "%" + searchCriteria.getIndividualId() + "%"));
     	}
     	
     	if(searchCriteria.getMiddleNames() != null){
-    		criteria.add(Restrictions.ilike("middleNames", searchCriteria.getMiddleNames()));
+    		criteria.add(Restrictions.ilike("middleNames", "%" + searchCriteria.getMiddleNames() + "%"));
     	}
     	
     	if(searchCriteria.getPhysicalAddress() != null){
-    		criteria.add(Restrictions.ilike("physicalAddress", searchCriteria.getPhysicalAddress()));
+    		criteria.add(Restrictions.ilike("physicalAddress", "%" + searchCriteria.getPhysicalAddress() + "%"));
     	}
     	
     	if(searchCriteria.getPostalAddress() != null){
-    		criteria.add(Restrictions.ilike("postalAddress", searchCriteria.getPostalAddress()));
+    		criteria.add(Restrictions.ilike("postalAddress", "%" + searchCriteria.getPostalAddress() + "%"));
     	}
     	
     	if(searchCriteria.getPostalAddress() != null){
-    		criteria.add(Restrictions.ilike("postalAddress", searchCriteria.getPostalAddress()));
+    		criteria.add(Restrictions.ilike("postalAddress", "%" + searchCriteria.getPostalAddress() + "%"));
     	}
     	
     	if(searchCriteria.getSalutation() != null){
-    		criteria.add(Restrictions.ilike("surname", searchCriteria.getSurname()));
+    		criteria.add(Restrictions.ilike("surname", "%" + searchCriteria.getSurname() + "%"));
     	}
     	
     	if(searchCriteria.getSalutation() != null){
-    		criteria.add(Restrictions.ilike("salutation", searchCriteria.getSalutation()));
+    		criteria.add(Restrictions.ilike("salutation", "%" + searchCriteria.getSalutation() + "%"));
     	}
     	
     	if(searchCriteria.getSex() != null){
-    		criteria.add(Restrictions.ilike("sex", searchCriteria.getSex()));
+    		criteria.add(Restrictions.ilike("sex", "%" + searchCriteria.getSex() + "%"));
     	}
     	
     	return criteria.list();
@@ -83,7 +83,7 @@ public class IndividualDaoImpl
         super.toIndividualVO(source, target);
         
         // WARNING! No conversion for target.nextOfKin (can't convert source.getNextOfKin():com.systemsjr.jrbase.individual.Individual to com.systemsjr.jrbase.individual.vo.IndividualVO
-        target.setNextOfKins(getNextOfKinDao().toNextOfKinVOArray(source.getNextOfKins()));
+        target.setNextOfKins(getKinDao().toKinVOArray(source.getNextOfKins()));
         // WARNING! No conversion for target.countryOfBirth (can't convert source.getCountryOfBirth():com.systemsjr.jrbase.location.Location to com.systemsjr.jrbase.location.vo.LocationVO
         target.setCountryOfBirth(getLocationDao().toLocationVO(source.getCountryOfBirth()));
         // WARNING! No conversion for target.countryOfCitizenship (can't convert source.getCountryOfCitizenship():com.systemsjr.jrbase.location.Location to com.systemsjr.jrbase.location.vo.LocationVO
