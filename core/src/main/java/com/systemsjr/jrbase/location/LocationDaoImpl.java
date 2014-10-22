@@ -30,15 +30,15 @@ public class LocationDaoImpl
     	Criteria criteria = getSession().createCriteria(Location.class);
     	
     	if(searchCriteria.getLevelCode() != null){
-    		criteria.add(Restrictions.ilike("levelCode", searchCriteria.getLevelCode()));
+    		criteria.add(Restrictions.ilike("levelCode", "%" + searchCriteria.getLevelCode() + "%"));
     	}
     	
     	if(searchCriteria.getUniqueCode() != null){
-    		criteria.add(Restrictions.ilike("uniqueCode", searchCriteria.getUniqueCode()));
+    		criteria.add(Restrictions.ilike("uniqueCode", "%" + searchCriteria.getUniqueCode() + "%"));
     	}
     	
     	if(searchCriteria.getLocationName() != null){
-    		criteria.add(Restrictions.ilike("locationName", searchCriteria.getLocationName()));
+    		criteria.add(Restrictions.ilike("locationName", "%" + searchCriteria.getLocationName() + "%"));
     	}
     	
     	if(searchCriteria.getStatus() != null){
@@ -101,12 +101,13 @@ public class LocationDaoImpl
     private com.systemsjr.jrbase.location.Location loadLocationFromLocationVO(com.systemsjr.jrbase.location.vo.LocationVO locationVO)
     {
         // A typical implementation looks like this:
-        com.systemsjr.jrbase.location.Location location;
-        if (locationVO.getId() == null)
+        com.systemsjr.jrbase.location.Location location = null;
+        if (locationVO.getId() != null)
         {
-            location = com.systemsjr.jrbase.location.Location.Factory.newInstance();
-        } else{
         	location = this.load(locationVO.getId());
+        } else{
+        	
+        	location = com.systemsjr.jrbase.location.Location.Factory.newInstance();
         }
         	
         return location;
@@ -135,20 +136,24 @@ public class LocationDaoImpl
         boolean copyIfNull)
     {
         super.locationVOToEntity(source, target, copyIfNull);
-        if(copyIfNull || source.getLevelCode() != null){
+        if(source.getLevelCode() != null){
         	target.setLevelCode(source.getLevelCode());
         }
         
-        if(copyIfNull || source.getLocationName() != null){
+        if(source.getLocationName() != null){
         	target.setLocationName(source.getLocationName());
         }
         
-        if(copyIfNull || source.getDescription() != null){
+        if(source.getDescription() != null){
         	target.setDescription(source.getDescription());
         }
         
-        if(copyIfNull || source.getLocationType() != null){
+        if(source.getLocationType() != null){
         	target.setLocationType(getLocationTypeDao().locationTypeVOToEntity(source.getLocationType()));
+        }
+        
+        if(source.getFallsWithinLocation() != null){
+        	target.setFallsWithinArea(this.loadLocationFromLocationVO(source.getFallsWithinLocation()));
         }
     }
 

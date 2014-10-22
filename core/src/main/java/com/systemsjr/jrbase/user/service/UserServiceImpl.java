@@ -31,19 +31,20 @@ public class UserServiceImpl
      * @see com.systemsjr.jrbase.user.service.UserService#saveUser(com.systemsjr.jrbase.user.vo.UserVO)
      */
     @Override
-	protected  com.systemsjr.jrbase.user.vo.UserVO handleSaveUser(com.systemsjr.jrbase.user.vo.UserDetailsVO userVO)
+	protected  com.systemsjr.jrbase.user.vo.UserVO handleSaveUser(com.systemsjr.jrbase.user.vo.UserDetailsVO userDetailsVO)
         throws java.lang.Exception
     {
     	User user;
     	
-    	if(userVO.getId() == null){
-    		user = getUserDao().create(getUserDao().userVOToEntity(userVO));
+    	if(userDetailsVO.getId() == null){
+    		//user = getUserDao().create(getUserDao().userVOToEntity(userVO));
+    		user = getUserDao().create(getUserDao().userDetailsVOToEntity(userDetailsVO));
     	} else{
-    		user = getUserDao().userDetailsVOToEntity(userVO);
+    		user = getUserDao().userDetailsVOToEntity(userDetailsVO);
     		getUserDao().update(user);
     	}
     	
-    	return getUserDao().toUserVO(user);
+    	return getUserDao().toUserDetailsVO(user);
     }    
 
 	@Override

@@ -95,11 +95,11 @@ public class OrganisationTypeDaoImpl
 		Criteria criteria = getSession().createCriteria(OrganisationType.class);
 		
 		if(searchCriteria.getLevelCode() != null){
-			criteria.add(Restrictions.ilike("levelCode", searchCriteria.getLevelCode()));
+			criteria.add(Restrictions.ilike("levelCode", "%" + searchCriteria.getLevelCode() + "%"));
 		}
 		
 		if(searchCriteria.getName() != null){
-			criteria.add(Restrictions.ilike("name", searchCriteria.getName()));
+			criteria.add(Restrictions.ilike("name", "%" + searchCriteria.getName() + "%"));
 		}
 		
 		return criteria.list();

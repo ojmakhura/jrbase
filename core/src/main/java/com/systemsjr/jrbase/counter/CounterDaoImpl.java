@@ -47,7 +47,6 @@ public class CounterDaoImpl
         if (counterVO.getId() != null)
         {
         	counter = this.load(counterVO.getId());
-            //return counter;
         } else{
         	counter = Counter.Factory.newInstance();
         }

@@ -11,7 +11,7 @@ import com.systemsjr.jrbase.individual.Individual;
 import com.systemsjr.jrbase.individual.vo.IndividualSearchCriteria;
 import com.systemsjr.jrbase.individual.vo.IndividualVO;
 import com.systemsjr.jrbase.individual.vo.KinSearchCriteria;
-import com.systemsjr.jrbase.individual.vo.NextOfKinVO;
+import com.systemsjr.jrbase.individual.vo.KinVO;
 
 /**
  * @see com.systemsjr.jrbase.individual.service.IndividualService
@@ -73,26 +73,26 @@ public class IndividualServiceImpl
 	}
 
 	@Override
-	protected NextOfKinVO handleSaveKin(NextOfKinVO kin) throws Exception {
-		// TODO Auto-generated method stub
+	protected KinVO handleSaveKin(KinVO kin) throws Exception {
+		//Collection 
 		return null;
 	}
 
 	@Override
-	protected NextOfKinVO handleGetAllKin(IndividualVO individualVO)
+	protected KinVO handleGetAllKin(IndividualVO individualVO)
 			throws Exception {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	protected void handleRemoveKin(NextOfKinVO kin) throws Exception {
+	protected void handleRemoveKin(KinVO kin) throws Exception {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	protected NextOfKinVO[] handleSearchKin(KinSearchCriteria searchCriteria)
+	protected KinVO[] handleSearchKin(KinSearchCriteria searchCriteria)
 			throws Exception {
 		// TODO Auto-generated method stub
 		return null;

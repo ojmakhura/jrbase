@@ -25,18 +25,17 @@ public class ProgramDaoImpl
     	Criteria criteria = getSession().createCriteria(Program.class);
     	
     	if(searchCriteria.getProgramId() != null){
-    		criteria.add(Restrictions.ilike("programId", searchCriteria.getProgramId()));
+    		criteria.add(Restrictions.ilike("programId", "%" + searchCriteria.getProgramId() + "%"));
     	}
     	
     	if(searchCriteria.getProgramName() != null){
-    		criteria.add(Restrictions.ilike("programName", searchCriteria.getProgramName()));
+    		criteria.add(Restrictions.ilike("programName", "%" + searchCriteria.getProgramName() + "%"));
     	}
     	
     	if(searchCriteria.getProgramDescription() != null){
-    		criteria.add(Restrictions.ilike("programDescription", searchCriteria.getProgramDescription()));
+    		criteria.add(Restrictions.ilike("programDescription", "%" + searchCriteria.getProgramDescription() + "%"));
     	}
     	
-        // @todo implement public com.systemsjr.jrbase.workbench.program.vo.ProgramVO[] handleFindByCriteria(com.systemsjr.jrbase.workbench.program.vo.ProgramSearchCriteria criteria)
         return criteria.list();
     }
 
@@ -72,17 +71,15 @@ public class ProgramDaoImpl
      */
     private com.systemsjr.jrbase.workbench.program.Program loadProgramFromProgramVO(com.systemsjr.jrbase.workbench.program.vo.ProgramVO programVO)
     {
-        // @todo implement loadProgramFromProgramVO
-        throw new java.lang.UnsupportedOperationException("com.systemsjr.jrbase.workbench.program.loadProgramFromProgramVO(com.systemsjr.jrbase.workbench.program.vo.ProgramVO) not yet implemented.");
-
-        /* A typical implementation looks like this:
-        com.systemsjr.jrbase.workbench.program.Program program = this.load(programVO.getId());
-        if (program == null)
+        com.systemsjr.jrbase.workbench.program.Program program = null;
+        if (programVO.getId() == null)
         {
             program = com.systemsjr.jrbase.workbench.program.Program.Factory.newInstance();
+        } else {
+        	program = this.load(programVO.getId());
         }
         return program;
-        */
+        
     }
 
     

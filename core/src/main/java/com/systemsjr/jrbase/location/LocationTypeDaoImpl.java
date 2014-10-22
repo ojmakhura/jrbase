@@ -27,22 +27,21 @@ public class LocationTypeDaoImpl
     	Criteria criteria = getSession().createCriteria(LocationType.class);
     	
     	if(searchCriteria.getLevelCode() != null){
-    		criteria.add(Restrictions.ilike("levelCode", searchCriteria.getLevelCode()));
+    		criteria.add(Restrictions.ilike("levelCode",  "%" + searchCriteria.getLevelCode() + "%"));
     	}
     	
     	if(searchCriteria.getName() != null){
-    		criteria.add(Restrictions.ilike("name", searchCriteria.getName()));
+    		criteria.add(Restrictions.ilike("name", "%" + searchCriteria.getName() + "%"));
     	}
     	
     	if(searchCriteria.getDescription() != null){
-    		criteria.add(Restrictions.ilike("description", searchCriteria.getDescription()));
+    		criteria.add(Restrictions.ilike("description", "%" + searchCriteria.getDescription() + "%"));
     	}
     	
     	if(searchCriteria.getStatus() != null){
     		criteria.add(Restrictions.eq("status", searchCriteria.getStatus()));
     	}
     	
-        // @todo implement public com.systemsjr.jrbase.location.vo.LocationTypeVO[] handleFindByCriteria(com.systemsjr.jrbase.location.vo.LocationTypeSearchCriteria searchCriteria)
         return criteria.list();
 }
 

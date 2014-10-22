@@ -150,6 +150,10 @@ public class LocationServiceImpl
 	@Override
 	protected LocationVO[] handleSearchLocations(
 			LocationSearchCriteria searchCriteria) throws Exception {
+		
+		if(searchCriteria == null){
+			return new LocationVO[]{};
+		}
 		List locations = getLocationDao().findByCriteria(searchCriteria);
 		return getLocationDao().toLocationVOArray(locations);
 	}
@@ -157,6 +161,11 @@ public class LocationServiceImpl
 	@Override
 	protected LocationTypeVO[] handleSearchLocationTypes(
 			LocationTypeSearchCriteria searchCriteria) throws Exception {
+		
+		if(searchCriteria == null){
+			return new LocationTypeVO[]{};
+		}
+		
 		List types = getLocationTypeDao().findByCriteria(searchCriteria);
 		return getLocationTypeDao().toLocationTypeVOArray(types);
 	}
