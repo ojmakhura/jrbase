@@ -11,7 +11,9 @@
 	<bean id="organisationForm" class="com.systemsjr.jrbase.organisation.OrganisationForm"/>
 	<bean id="organisationTypeForm" class="com.systemsjr.jrbase.organisation.OrganisationTypeForm"/>
 	<bean id="roleForm" class="com.systemsjr.jrbase.role.RoleForm"/>
-	<bean id="userForm" class="com.systemsjr.jrbase.user.UserForm"/>
+	<bean id="userForm" class="com.systemsjr.jrbase.user.UserForm">
+		<property name="details" ref="userDetails"/>
+	</bean>
 	<bean id="clearanceLevelForm" class="com.systemsjr.jrbase.clearancelevel.ClearanceLevelForm">
 		<property name="details" ref="clearanceLevelDetails"/>
 	</bean>
@@ -38,4 +40,33 @@
 	 <bean id="menuSearchForm" class="com.systemsjr.jrbase.workbench.menu.MenuSearchForm"/>
 	 <bean id="programSearchForm" class="com.systemsjr.jrbase.workbench.program.ProgramSearchForm"/>
 	 <bean id="applicationSearchForm" class="com.systemsjr.jrbase.workbench.application.ApplicationSearchForm"/>
+	 
+	 <!-- Detail forms -->	
+	<bean id="clearedRolesForm" class="com.systemsjr.jrbase.clearancelevel.ClearedRolesForm">
+		<property name="scrollPane">
+			<bean class="javax.swing.JScrollPane" lazy-init="false" />
+		</property>
+		<property name="listTable" ref="clearedRolesTable"/>
+	</bean>
+	
+	<bean id="userRolesForm" class="com.systemsjr.jrbase.user.UserRolesForm">
+		<property name="scrollPane">
+			<bean class="javax.swing.JScrollPane" lazy-init="false" />
+		</property>
+		<property name="listTable" ref="userRolesTable"/>
+	</bean>
+	
+	<bean id="userClearenceForm" class="com.systemsjr.jrbase.user.UserClearenceForm">
+		<property name="scrollPane">
+			<bean class="javax.swing.JScrollPane" lazy-init="false" />
+		</property>
+		<property name="listTable" ref="userClearenceTable"/>
+	</bean>
+	
+	<bean id="userLocationForm" class="com.systemsjr.jrbase.user.UserLocationForm">
+		<property name="scrollPane">
+			<bean class="javax.swing.JScrollPane" lazy-init="false" />
+		</property>
+		<property name="listTable" ref="userLocationTable"/>
+	</bean>
 </beans>

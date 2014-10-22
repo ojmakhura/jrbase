@@ -20,6 +20,11 @@ public class CounterSearchForm extends BaseItemFilterForm {
 		TableFormBuilder builder = new TableFormBuilder(sbf);
 		return builder.getForm();
 	}
+
+	@Override
+	public void onApplicationEvent(ApplicationEvent arg0) {
+		
+	}
 	
 	@Override
 	protected Object newFormObject() {

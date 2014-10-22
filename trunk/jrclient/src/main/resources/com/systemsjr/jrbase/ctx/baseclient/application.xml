@@ -72,7 +72,7 @@
     <property name="windowCommandManagerBeanName" value="windowCommandManager" />
     <property name="menubarBeanName" value="menuBar" />
     <property name="toolbarBeanName" value="toolBar" />
-    <property name="startingPageId" value="applicationView"/>
+    <property name="startingPageId" value="userView"/>
   </bean>
 
   <!--
@@ -197,7 +197,7 @@
 		class="org.springframework.context.support.ResourceMapFactoryBean">
 		<property name="locations">
 			<list>
-				<value>classpath:org/springframework/richclient/image/images.properties</value>
+				<!-- <value>classpath:org/springframework/richclient/image/images.properties</value> -->
 				<value>classpath:com/systemsjr/jrbase/ui/baseclient/images.properties</value>
 			</list>
 		</property>

@@ -57,4 +57,9 @@ public class IndividualSearchForm extends BaseItemFilterForm {
 			
 		JRTableUtils.refreshTable(table, individuals);
 	}
+
+	@Override
+	public void onApplicationEvent(ApplicationEvent arg0) {
+				
+	}
 }

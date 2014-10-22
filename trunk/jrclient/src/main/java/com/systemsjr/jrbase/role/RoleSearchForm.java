@@ -24,6 +24,18 @@ public class RoleSearchForm extends BaseItemFilterForm {
 		TableFormBuilder builder = new TableFormBuilder(sbf);
 		builder.setLabelAttributes("colSpec=right:pref");
 
+	@Override
+	public void onApplicationEvent(ApplicationEvent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	protected JComponent createFormControl() {
+		SwingBindingFactory sbf = (SwingBindingFactory) getBindingFactory();
+		TableFormBuilder builder = new TableFormBuilder(sbf);
+		builder.setLabelAttributes("colSpec=right:pref");
+
 		builder.row();
 		builder.add("roleCode");
 		builder.row();

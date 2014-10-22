@@ -36,6 +36,11 @@ public class ClearanceLevelSearchForm extends BaseItemFilterForm{
 	}
 
 	@Override
+	public void onApplicationEvent(ApplicationEvent arg0) {
+		
+	}
+
+	@Override
 	protected Object newFormObject() {
 		return new ClearanceLevelSearchCriteria();
 	}
