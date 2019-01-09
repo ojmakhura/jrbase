@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!--
     This is used to map merge patterns in files generated
-    by jsf cartridge to new patterns. Just add content to the
+    by jsf2 cartridge to new patterns. Just add content to the
     CDATA sections of the <to/> elements in order to
     use the following merge points.
 -->
@@ -10,12 +10,6 @@
         <from><![CDATA[<!-- context-param merge-point -->]]></from>
         <to>
             <![CDATA[
-            <!--context-param>
-				<param-name>contextConfigLocation</param-name>
-				<param-value>
-						/WEB-INF/applicationContext-security.xml
-				</param-value>
-			</context-param-->
             ]]>
         </to>
     </mapping>
@@ -47,12 +41,6 @@
         </init-param>
     </filter>
     -->
-    			
-			<!--filter>
-				<filter-name>springSecurityFilterChain</filter-name>
-				<filter-class>org.springframework.web.filter.DelegatingFilterProxy
-				</filter-class>
-			</filter-->
             ]]>
         </to>
     </mapping>
@@ -66,11 +54,6 @@
         <url-pattern>/*</url-pattern>
     </filter-mapping>
     -->
-    			
-			<!--filter-mapping>
-				<filter-name>springSecurityFilterChain</filter-name>
-				<url-pattern>/*</url-pattern>
-			</filter-mapping-->
             ]]>
         </to>
     </mapping>
@@ -78,9 +61,6 @@
         <from><![CDATA[<!-- listener merge-point -->]]></from>
         <to>
             <![CDATA[
-            <!--listener>
-				<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
-			</listener-->
             ]]>
         </to>
     </mapping>

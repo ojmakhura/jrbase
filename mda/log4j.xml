@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
 
-<!-- the log configuration file for the AndroMDA project -->
+<!-- the log configuration file for the AndroMDA project. Modify as needed for your project and testing -->
 
 <log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/" debug="false">
 
@@ -13,7 +13,7 @@
         <!-- Added HHmm so that new file with minute timestamp is created on each MDA run -->
         <param name="DatePattern" value="MMdd-HH"/>
         <param name="Threshold" value="DEBUG"/>
-        <param name="Append" value="false"/>
+        <param name="Append" value="true"/>
         <layout class="org.apache.log4j.PatternLayout">
             <!-- The default pattern: Date Priority [Category] Message\n -->
             <param name="ConversionPattern" value="%d %-5p [%c] %m%n"/>
