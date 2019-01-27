@@ -2,31 +2,34 @@
 /**
  * This is only generated once! It will never be overwritten.
  * You can (and have to!) safely modify it by hand.
+ * TEMPLATE:    SpringServiceImpl.vsl in andromda-spring cartridge
+ * MODEL CLASS: AndroMDAModel::jrbase::com.systemsjr.jrbase.workbench::program::service::ProgramService
+ * STEREOTYPE:  Service
  */
 package com.systemsjr.jrbase.workbench.program.service;
-
-import java.util.Collection;
 
 import com.systemsjr.jrbase.workbench.program.Program;
 import com.systemsjr.jrbase.workbench.program.vo.ProgramSearchCriteria;
 import com.systemsjr.jrbase.workbench.program.vo.ProgramVO;
+import java.util.Collection;
+import org.springframework.stereotype.Service;
 
 /**
  * @see com.systemsjr.jrbase.workbench.program.service.ProgramService
  */
+@Service("com.systemsjr.jrbase.workbench.program.service.ProgramService")
 public class ProgramServiceImpl
-    extends com.systemsjr.jrbase.workbench.program.service.ProgramServiceBase
+    extends ProgramServiceBase
 {
-
-    /**
+	/**
      * @see com.systemsjr.jrbase.workbench.program.service.ProgramService#getAllPrograms()
      */
     @Override
-	protected  ProgramVO[] handleGetAllPrograms()
+	protected  Collection<ProgramVO> handleGetAllPrograms()
         throws java.lang.Exception
     {
-    	Collection roles = getProgramDao().loadAll();
-    	return getProgramDao().toProgramVOArray(roles);
+    	Collection<Program> roles = getProgramDao().loadAll();
+    	return getProgramDao().toProgramVOCollection(roles);
     }
 
 	@Override
@@ -54,13 +57,16 @@ public class ProgramServiceImpl
 	}
 
 	@Override
-	protected ProgramVO[] handleSearchPrograms(
+	protected Collection<ProgramVO> handleSearchPrograms(
 			ProgramSearchCriteria searchCriteria) throws Exception {
 		
-		if(searchCriteria == null){
-			return new ProgramVO[]{};
-		}
-		return getProgramDao().toProgramVOArray(getProgramDao().findByCriteria(searchCriteria));
+		return getProgramDao().toProgramVOCollection(getProgramDao().findByCriteria(searchCriteria));
+	}
+
+	@Override
+	protected ProgramVO handleFindById(Long id) throws Exception {
+		
+		return id == null ? null : getProgramDao().toProgramVO(getProgramDao().load(id));
 	}
 
 }

@@ -2,29 +2,33 @@
 /**
  * This is only generated once! It will never be overwritten.
  * You can (and have to!) safely modify it by hand.
+ * TEMPLATE:    SpringServiceImpl.vsl in andromda-spring cartridge
+ * MODEL CLASS: AndroMDAModel::jrbase::com.systemsjr.jrbase::individual::service::IndividualService
+ * STEREOTYPE:  Service
  */
 package com.systemsjr.jrbase.individual.service;
-
-import java.util.Collection;
 
 import com.systemsjr.jrbase.individual.Individual;
 import com.systemsjr.jrbase.individual.vo.IndividualSearchCriteria;
 import com.systemsjr.jrbase.individual.vo.IndividualVO;
-import com.systemsjr.jrbase.individual.vo.KinSearchCriteria;
-import com.systemsjr.jrbase.individual.vo.KinVO;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import org.springframework.stereotype.Service;
 
 /**
  * @see com.systemsjr.jrbase.individual.service.IndividualService
  */
+@Service("com.systemsjr.jrbase.individual.service.IndividualService")
 public class IndividualServiceImpl
-    extends com.systemsjr.jrbase.individual.service.IndividualServiceBase
+    extends IndividualServiceBase
 {
 
-    /**
+	/**
      * @see com.systemsjr.jrbase.individual.service.IndividualService#saveIndividual(com.systemsjr.jrbase.individual.vo.IndividualVO)
      */
     @Override
-	protected  com.systemsjr.jrbase.individual.vo.IndividualVO handleSaveIndividual(com.systemsjr.jrbase.individual.vo.IndividualVO individualVO)
+	protected  IndividualVO handleSaveIndividual(IndividualVO individualVO)
         throws java.lang.Exception
     {
     	Individual individual = getIndividualDao().individualVOToEntity(individualVO);
@@ -42,11 +46,11 @@ public class IndividualServiceImpl
      * @see com.systemsjr.jrbase.individual.service.IndividualService#getAllIndividuals()
      */
     @Override
-	protected  IndividualVO[] handleGetAllIndividuals()
+	protected  Collection<IndividualVO>  handleGetAllIndividuals()
         throws java.lang.Exception
     {
-    	Collection individuals = getIndividualDao().loadAll();
-    	return getIndividualDao().toIndividualVOArray(individuals);
+    	Collection<Individual> individuals = getIndividualDao().loadAll();
+    	return getIndividualDao().toIndividualVOCollection(individuals);
     }
 
     /**
@@ -62,40 +66,20 @@ public class IndividualServiceImpl
     }
 
 	@Override
-	protected IndividualVO[] handleSearchIndividuals(
+	protected Collection<IndividualVO> handleSearchIndividuals(
 			IndividualSearchCriteria searchCriteria) throws Exception {
 		
 		if(searchCriteria == null){
-			return new IndividualVO[]{};
+			return new ArrayList<IndividualVO>();
 		}
 		
-		return getIndividualDao().toIndividualVOArray(getIndividualDao().findByCriteria(searchCriteria));
+		return getIndividualDao().toIndividualVOCollection(getIndividualDao().findByCriteria(searchCriteria));
 	}
 
 	@Override
-	protected KinVO handleSaveKin(KinVO kin) throws Exception {
-		//Collection 
-		return null;
-	}
-
-	@Override
-	protected KinVO handleGetAllKin(IndividualVO individualVO)
-			throws Exception {
+	protected IndividualVO handleFindById(Long id) throws Exception {
 		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	protected void handleRemoveKin(KinVO kin) throws Exception {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	protected KinVO[] handleSearchKin(KinSearchCriteria searchCriteria)
-			throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+		return id == null ? null : getIndividualDao().toIndividualVO(getIndividualDao().load(id));
 	}
 
 }

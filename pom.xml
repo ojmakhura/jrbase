@@ -154,7 +154,7 @@
             <dependency>
                 <groupId>org.primefaces</groupId>
                 <artifactId>primefaces</artifactId>
-                <version>6.2</version>
+                <version>6.1</version>
             </dependency>
             <dependency>
                 <groupId>org.slf4j</groupId>
@@ -347,6 +347,30 @@
                 <artifactId>spring-expression</artifactId>
                 <version>${spring.version}</version>
             </dependency>
+            <dependency>
+			    <groupId>org.springframework.security</groupId>
+			    <artifactId>spring-security-core</artifactId>
+			    <version>${spring.version}</version>
+			</dependency>
+			<!-- Spring Security Config -->
+			<dependency>
+			    <groupId>org.springframework.security</groupId>
+			    <artifactId>spring-security-config</artifactId>
+			    <version>${spring.version}</version>
+			</dependency>
+			 
+			<!-- Spring Security Web -->
+			<dependency>
+			    <groupId>org.springframework.security</groupId>
+			    <artifactId>spring-security-web</artifactId>
+			    <version>${spring.version}</version>
+			</dependency>
+			<!-- Spring MVC Dependency -->
+			<dependency>
+			    <groupId>org.springframework</groupId>
+			    <artifactId>spring-webmvc</artifactId>
+			    <version>${spring.version}</version>
+			</dependency>
             <!-- Uncomment out below if using JDBC or aop or spring test>
             <dependency>
                 <groupId>org.springframework</groupId>
@@ -421,7 +445,7 @@
                 <groupId>org.postgresql</groupId>
                 <artifactId>postgresql</artifactId>
                 <version>9.4.1212</version>
-                <scope>test</scope>
+                <scope>compile</scope>
             </dependency>
             <dependency>
                 <groupId>org.testng</groupId>

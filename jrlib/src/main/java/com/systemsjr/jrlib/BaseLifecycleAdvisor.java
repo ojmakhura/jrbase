@@ -1,6 +1,7 @@
 package com.systemsjr.jrlib;
 
 import java.awt.Dimension;
+import java.util.Collection;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -14,13 +15,11 @@ import org.springframework.security.core.Authentication;
 
 import com.systemsjr.jrbase.loginsession.SessionStatus;
 import com.systemsjr.jrbase.loginsession.vo.LoginSessionVO;
+import com.systemsjr.jrbase.security.UserDetailsImpl;
 import com.systemsjr.jrbase.user.UserLocationStatus;
 import com.systemsjr.jrbase.user.vo.UserDetailsVO;
 import com.systemsjr.jrbase.user.vo.UserLocationSearchCriteria;
 import com.systemsjr.jrbase.user.vo.UserLocationVO;
-import com.systemsjr.jrlib.security.UserDetailsImpl;
-import com.systemsjr.jrlib.utils.JRLibServiceUtils;
-//import com.systemsjr.jrbase.utils.BaseServiceUtils;
 
 
 public class BaseLifecycleAdvisor extends DefaultApplicationLifecycleAdvisor {
@@ -122,7 +121,7 @@ public class BaseLifecycleAdvisor extends DefaultApplicationLifecycleAdvisor {
 		
 		UserLocationSearchCriteria searchCriteria = new UserLocationSearchCriteria();
 		searchCriteria.setUser(user);
-		UserLocationVO[] userLocations = JRLibServiceUtils.getUserService().searchUserLocation(searchCriteria);
+		Collection<UserLocationVO> userLocations = JRLibServiceUtils.getUserLocationService().searchUserLocation(searchCriteria);
 				
 		for(UserLocationVO userLocation : userLocations ){
 			if(userLocation.getStatus() == UserLocationStatus.ACTIVE){

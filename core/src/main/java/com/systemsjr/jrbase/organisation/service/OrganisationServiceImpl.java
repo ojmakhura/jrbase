@@ -2,36 +2,36 @@
 /**
  * This is only generated once! It will never be overwritten.
  * You can (and have to!) safely modify it by hand.
+ * TEMPLATE:    SpringServiceImpl.vsl in andromda-spring cartridge
+ * MODEL CLASS: AndroMDAModel::jrbase::com.systemsjr.jrbase::organisation::service::OrganisationService
+ * STEREOTYPE:  Service
  */
 package com.systemsjr.jrbase.organisation.service;
 
-import java.util.Collection;
-import java.util.List;
-
 import com.systemsjr.jrbase.organisation.Organisation;
-import com.systemsjr.jrbase.organisation.OrganisationType;
 import com.systemsjr.jrbase.organisation.vo.OrganisationSearchCriteria;
-import com.systemsjr.jrbase.organisation.vo.OrganisationTypeSearchCriteria;
-import com.systemsjr.jrbase.organisation.vo.OrganisationTypeVO;
 import com.systemsjr.jrbase.organisation.vo.OrganisationVO;
+import java.util.Collection;
+import org.springframework.stereotype.Service;
 
 /**
  * @see com.systemsjr.jrbase.organisation.service.OrganisationService
  */
+@Service("com.systemsjr.jrbase.organisation.service.OrganisationService")
 public class OrganisationServiceImpl
-    extends com.systemsjr.jrbase.organisation.service.OrganisationServiceBase
+    extends OrganisationServiceBase
 {
 
-    /**
+	/**
      * @see com.systemsjr.jrbase.organisation.service.OrganisationService#getOrganisationBranches(com.systemsjr.jrbase.organisation.vo.OrganisationVO)
      */
     @Override
-	protected  OrganisationVO[] handleGetOrganisationBranches(com.systemsjr.jrbase.organisation.vo.OrganisationVO organisationVO)
+	protected  Collection<OrganisationVO> handleGetOrganisationBranches(OrganisationVO organisationVO)
         throws java.lang.Exception
     {
-    	OrganisationVO[] branches = null;
+    	Collection<OrganisationVO> branches = null;
     	if(organisationVO.getId() != null){
-    		branches = (OrganisationVO[])organisationVO.getBranches().toArray();
+    		branches = organisationVO.getBranches();
     	}
     	
     	return branches;
@@ -56,45 +56,16 @@ public class OrganisationServiceImpl
     }
 
     /**
-     * @see com.systemsjr.jrbase.organisation.service.OrganisationService#saveOrganisationType(com.systemsjr.jrbase.organisation.vo.OrganisationTypeVO)
-     */
-    @Override
-	protected  com.systemsjr.jrbase.organisation.vo.OrganisationTypeVO handleSaveOrganisationType(com.systemsjr.jrbase.organisation.vo.OrganisationTypeVO organisationTypeVO)
-        throws java.lang.Exception
-    {
-    	OrganisationType organisationType = getOrganisationTypeDao().organisationTypeVOToEntity(organisationTypeVO);
-    	
-    	if(organisationType.getId() == null){
-    		organisationType = getOrganisationTypeDao().create(organisationType);
-    	} else{
-    		getOrganisationTypeDao().update(organisationType);
-    	}
-    	
-    	return getOrganisationTypeDao().toOrganisationTypeVO(organisationType);
-    }
-
-    /**
      * @see com.systemsjr.jrbase.organisation.service.OrganisationService#getAllOrganisations()
      */
     @Override
-	protected  OrganisationVO[] handleGetAllOrganisations()
+	protected  Collection<OrganisationVO> handleGetAllOrganisations()
         throws java.lang.Exception
     {
-    	Collection orgs = getOrganisationDao().loadAll();
-    	return getOrganisationDao().toOrganisationVOArray(orgs);
+    	Collection<Organisation> orgs = getOrganisationDao().loadAll();
+    	return getOrganisationDao().toOrganisationVOCollection(orgs);
     }
 
-    /**
-     * @see com.systemsjr.jrbase.organisation.service.OrganisationService#getAllOrganisationTypes()
-     */
-    @Override
-	protected  OrganisationTypeVO[] handleGetAllOrganisationTypes()
-        throws java.lang.Exception
-    {
-    	Collection orgTypes = getOrganisationTypeDao().loadAll();
-    	
-    	return getOrganisationTypeDao().toOrganisationTypeVOArray(orgTypes);
-    }
 
 	@Override
 	protected void handleRemoveOrganisation(OrganisationVO organisationVO)
@@ -107,30 +78,15 @@ public class OrganisationServiceImpl
 	}
 
 	@Override
-	protected void handleRemoveOrganisationType(
-			OrganisationTypeVO organisationTypeVO) throws Exception {
+	protected Collection<OrganisationVO> handleSearchOrganisations(OrganisationSearchCriteria searchCriteria) throws Exception {
 		
-		if(organisationTypeVO.getId() != null){
-			getOrganisationTypeDao().remove(organisationTypeVO.getId());
-		}		
+		Collection<Organisation> orgs = getOrganisationDao().findByCriteria(searchCriteria);
+		return getOrganisationDao().toOrganisationVOCollection(orgs);
 	}
 
 	@Override
-	protected OrganisationVO[] handleSearchOrganisations(OrganisationSearchCriteria searchCriteria) throws Exception {
-		if(searchCriteria == null){
-			return new OrganisationVO[]{};
-		}
-		List orgs = getOrganisationDao().findByCriteria(searchCriteria);
-		return getOrganisationDao().toOrganisationVOArray(orgs);
-	}
-
-	@Override
-	protected OrganisationTypeVO[] handleSearchOrganisationTypes(
-			OrganisationTypeSearchCriteria searchCriteria) throws Exception {
-		if(searchCriteria == null){
-			return new OrganisationTypeVO[]{};
-		}
-		List types = getOrganisationTypeDao().findByCriteria(searchCriteria);
-		return getOrganisationTypeDao().toOrganisationTypeVOArray(types);
+	protected OrganisationVO handleFindById(Long id) throws Exception {
+		
+		return id == null ? null : getOrganisationDao().toOrganisationVO(getOrganisationDao().load(id));
 	}
 }

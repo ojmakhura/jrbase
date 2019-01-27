@@ -2,23 +2,28 @@
 /**
  * This is only generated once! It will never be overwritten.
  * You can (and have to!) safely modify it by hand.
+ * TEMPLATE:    SpringServiceImpl.vsl in andromda-spring cartridge
+ * MODEL CLASS: AndroMDAModel::jrbase::com.systemsjr.jrbase::clearancelevel::service::ClearanceLevelService
+ * STEREOTYPE:  Service
+ * STEREOTYPE:  WebService
  */
 package com.systemsjr.jrbase.clearancelevel.service;
-
-import java.util.Collection;
 
 import com.systemsjr.jrbase.clearancelevel.ClearanceLevel;
 import com.systemsjr.jrbase.clearancelevel.vo.ClearanceLevelSearchCriteria;
 import com.systemsjr.jrbase.clearancelevel.vo.ClearanceLevelVO;
+import java.util.Collection;
+import org.springframework.stereotype.Service;
 
 /**
  * @see com.systemsjr.jrbase.clearancelevel.service.ClearanceLevelService
  */
+@Service("com.systemsjr.jrbase.clearancelevel.service.ClearanceLevelService")
 public class ClearanceLevelServiceImpl
-    extends com.systemsjr.jrbase.clearancelevel.service.ClearanceLevelServiceBase
+    extends ClearanceLevelServiceBase
 {
 
-    /**
+	/**
      * @see com.systemsjr.jrbase.clearancelevel.service.ClearanceLevelService#saveClearanceLevel(com.systemsjr.jrbase.clearancelevel.vo.ClearanceLevelVO)
      */
     @Override
@@ -41,11 +46,11 @@ public class ClearanceLevelServiceImpl
      * @see com.systemsjr.jrbase.clearancelevel.service.ClearanceLevelService#getAllClearanceLevels()
      */
     @Override
-	protected  ClearanceLevelVO[] handleGetAllClearanceLevels()
+	protected  Collection<ClearanceLevelVO> handleGetAllClearanceLevels()
         throws java.lang.Exception
     {
-    	Collection levels = getClearanceLevelDao().loadAll();
-    	return getClearanceLevelDao().toClearanceLevelVOArray(levels);
+    	Collection<ClearanceLevel> levels = getClearanceLevelDao().loadAll();
+    	return getClearanceLevelDao().toClearanceLevelVOCollection(levels);
     }
 
 	@Override
@@ -58,14 +63,16 @@ public class ClearanceLevelServiceImpl
 	}
 
 	@Override
-	protected ClearanceLevelVO[] handleSearchClearenceLevel(
+	protected Collection<ClearanceLevelVO> handleSearchClearenceLevel(
 			ClearanceLevelSearchCriteria searchCriteria) throws Exception {
-		
-		if(searchCriteria == null){
-			return new ClearanceLevelVO[]{};
-		}
-		
-		return getClearanceLevelDao().toClearanceLevelVOArray(getClearanceLevelDao().findByCriteria(searchCriteria));
+				
+		return getClearanceLevelDao().toClearanceLevelVOCollection(getClearanceLevelDao().findByCriteria(searchCriteria));
+	}
+
+	@Override
+	protected ClearanceLevelVO handleFindById(Long id) throws Exception {
+		// TODO Auto-generated method stub
+		return id == null ? null : getClearanceLevelDao().toClearanceLevelVO(getClearanceLevelDao().load(id));
 	}
 
 }

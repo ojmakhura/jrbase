@@ -2,31 +2,35 @@
 /**
  * This is only generated once! It will never be overwritten.
  * You can (and have to!) safely modify it by hand.
+ * TEMPLATE:    SpringServiceImpl.vsl in andromda-spring cartridge
+ * MODEL CLASS: AndroMDAModel::jrbase::com.systemsjr.jrbase.workbench::menu::service::MenuService
+ * STEREOTYPE:  Service
  */
 package com.systemsjr.jrbase.workbench.menu.service;
-
-import java.util.Collection;
 
 import com.systemsjr.jrbase.workbench.menu.Menu;
 import com.systemsjr.jrbase.workbench.menu.vo.MenuSearchCriteria;
 import com.systemsjr.jrbase.workbench.menu.vo.MenuVO;
+import java.util.Collection;
+import org.springframework.stereotype.Service;
 
 /**
  * @see com.systemsjr.jrbase.workbench.menu.service.MenuService
  */
+@Service("com.systemsjr.jrbase.workbench.menu.service.MenuService")
 public class MenuServiceImpl
-    extends com.systemsjr.jrbase.workbench.menu.service.MenuServiceBase
+    extends MenuServiceBase
 {
 
-    /**
+	/**
      * @see com.systemsjr.jrbase.workbench.menu.service.MenuService#getAllMenus()
      */
     @Override
-	protected  MenuVO[] handleGetAllMenus()
+	protected  Collection<MenuVO> handleGetAllMenus()
         throws java.lang.Exception
     {
-    	Collection menus = getMenuDao().loadAll();
-    	return getMenuDao().toMenuVOArray(menus);
+    	Collection<Menu> menus = getMenuDao().loadAll();
+    	return getMenuDao().toMenuVOCollection(menus);
     }
 
     /**
@@ -81,13 +85,14 @@ public class MenuServiceImpl
 	}
 
 	@Override
-	protected MenuVO[] handleSearchMenus(MenuSearchCriteria searchCriteria)
+	protected Collection<MenuVO> handleSearchMenus(MenuSearchCriteria searchCriteria)
 			throws Exception {
 		
-		if(searchCriteria == null){
-			return new MenuVO[]{};
-		}
-		return getMenuDao().toMenuVOArray(getMenuDao().findByCriteria(searchCriteria));
+		return getMenuDao().toMenuVOCollection(getMenuDao().findByCriteria(searchCriteria));
 	}
 
+	@Override
+	protected MenuVO handleFindById(Long id) throws Exception {
+		return id == null ? null : getMenuDao().toMenuVO(getMenuDao().load(id));
+	}
 }
