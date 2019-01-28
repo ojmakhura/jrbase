@@ -8,14 +8,16 @@
  */
 package com.systemsjr.jrbase.user.location.service;
 
+import java.util.Collection;
+
+import org.springframework.stereotype.Service;
+
 import com.systemsjr.jrbase.user.User;
 import com.systemsjr.jrbase.user.location.UserLocation;
 import com.systemsjr.jrbase.user.location.UserLocationStatus;
 import com.systemsjr.jrbase.user.location.vo.UserLocationSearchCriteria;
 import com.systemsjr.jrbase.user.location.vo.UserLocationVO;
 import com.systemsjr.jrbase.user.vo.UserDetailsVO;
-import java.util.Collection;
-import org.springframework.stereotype.Service;
 
 /**
  * @see com.systemsjr.jrbase.user.location.service.UserLocationService

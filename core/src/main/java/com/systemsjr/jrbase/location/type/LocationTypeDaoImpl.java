@@ -6,14 +6,14 @@
  */
 package com.systemsjr.jrbase.location.type;
 
-import com.systemsjr.jrbase.location.type.vo.LocationTypeSearchCriteria;
-import com.systemsjr.jrbase.location.type.vo.LocationTypeVO;
-import java.util.Collection;
 import java.util.List;
 
 import org.hibernate.Criteria;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;
+
+import com.systemsjr.jrbase.location.type.vo.LocationTypeSearchCriteria;
+import com.systemsjr.jrbase.location.type.vo.LocationTypeVO;
 
 /**
  * @see LocationType

@@ -8,12 +8,14 @@
  */
 package com.systemsjr.jrbase.location.type.service;
 
+import java.util.Collection;
+
+import org.springframework.stereotype.Service;
+
 import com.systemsjr.jrbase.location.LocationStatus;
 import com.systemsjr.jrbase.location.type.LocationType;
 import com.systemsjr.jrbase.location.type.vo.LocationTypeSearchCriteria;
 import com.systemsjr.jrbase.location.type.vo.LocationTypeVO;
-import java.util.Collection;
-import org.springframework.stereotype.Service;
 
 /**
  * @see com.systemsjr.jrbase.location.type.service.LocationTypeService

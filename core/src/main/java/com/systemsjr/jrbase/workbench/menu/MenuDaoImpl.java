@@ -6,9 +6,6 @@
  */
 package com.systemsjr.jrbase.workbench.menu;
 
-import com.systemsjr.jrbase.workbench.menu.vo.MenuSearchCriteria;
-import com.systemsjr.jrbase.workbench.menu.vo.MenuVO;
-import java.util.Collection;
 import java.util.List;
 
 import org.hibernate.Criteria;

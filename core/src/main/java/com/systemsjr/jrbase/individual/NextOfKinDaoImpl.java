@@ -6,10 +6,11 @@
  */
 package com.systemsjr.jrbase.individual;
 
-import com.systemsjr.jrbase.individual.vo.KinSearchCriteria;
-import com.systemsjr.jrbase.individual.vo.NextOfKinVO;
 import java.util.Collection;
+
 import org.springframework.stereotype.Repository;
+
+import com.systemsjr.jrbase.individual.vo.KinSearchCriteria;
 
 /**
  * @see NextOfKin

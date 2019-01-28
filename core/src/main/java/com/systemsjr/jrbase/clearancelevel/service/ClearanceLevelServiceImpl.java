@@ -9,11 +9,13 @@
  */
 package com.systemsjr.jrbase.clearancelevel.service;
 
+import java.util.Collection;
+
+import org.springframework.stereotype.Service;
+
 import com.systemsjr.jrbase.clearancelevel.ClearanceLevel;
 import com.systemsjr.jrbase.clearancelevel.vo.ClearanceLevelSearchCriteria;
 import com.systemsjr.jrbase.clearancelevel.vo.ClearanceLevelVO;
-import java.util.Collection;
-import org.springframework.stereotype.Service;
 
 /**
  * @see com.systemsjr.jrbase.clearancelevel.service.ClearanceLevelService

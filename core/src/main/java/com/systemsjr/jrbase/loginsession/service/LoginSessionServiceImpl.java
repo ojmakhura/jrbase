@@ -8,9 +8,11 @@
  */
 package com.systemsjr.jrbase.loginsession.service;
 
-import com.systemsjr.jrbase.loginsession.vo.LoginSessionVO;
 import java.util.Collection;
+
 import org.springframework.stereotype.Service;
+
+import com.systemsjr.jrbase.loginsession.vo.LoginSessionVO;
 
 /**
  * @see com.systemsjr.jrbase.loginsession.service.LoginSessionService

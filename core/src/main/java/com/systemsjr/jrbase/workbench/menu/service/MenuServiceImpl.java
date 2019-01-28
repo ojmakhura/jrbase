@@ -8,11 +8,13 @@
  */
 package com.systemsjr.jrbase.workbench.menu.service;
 
+import java.util.Collection;
+
+import org.springframework.stereotype.Service;
+
 import com.systemsjr.jrbase.workbench.menu.Menu;
 import com.systemsjr.jrbase.workbench.menu.vo.MenuSearchCriteria;
 import com.systemsjr.jrbase.workbench.menu.vo.MenuVO;
-import java.util.Collection;
-import org.springframework.stereotype.Service;
 
 /**
  * @see com.systemsjr.jrbase.workbench.menu.service.MenuService

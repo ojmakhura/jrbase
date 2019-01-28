@@ -8,11 +8,13 @@
  */
 package com.systemsjr.jrbase.organisation.service;
 
+import java.util.Collection;
+
+import org.springframework.stereotype.Service;
+
 import com.systemsjr.jrbase.organisation.Organisation;
 import com.systemsjr.jrbase.organisation.vo.OrganisationSearchCriteria;
 import com.systemsjr.jrbase.organisation.vo.OrganisationVO;
-import java.util.Collection;
-import org.springframework.stereotype.Service;
 
 /**
  * @see com.systemsjr.jrbase.organisation.service.OrganisationService

@@ -8,13 +8,14 @@
  */
 package com.systemsjr.jrbase.individual.service;
 
+import java.util.ArrayList;
+import java.util.Collection;
+
+import org.springframework.stereotype.Service;
+
 import com.systemsjr.jrbase.individual.Individual;
 import com.systemsjr.jrbase.individual.vo.IndividualSearchCriteria;
 import com.systemsjr.jrbase.individual.vo.IndividualVO;
-
-import java.util.ArrayList;
-import java.util.Collection;
-import org.springframework.stereotype.Service;
 
 /**
  * @see com.systemsjr.jrbase.individual.service.IndividualService

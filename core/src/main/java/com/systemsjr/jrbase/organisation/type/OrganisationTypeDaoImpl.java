@@ -6,14 +6,14 @@
  */
 package com.systemsjr.jrbase.organisation.type;
 
-import com.systemsjr.jrbase.organisation.type.vo.OrganisationTypeSearchCriteria;
-import com.systemsjr.jrbase.organisation.type.vo.OrganisationTypeVO;
-import java.util.Collection;
 import java.util.List;
 
 import org.hibernate.Criteria;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;
+
+import com.systemsjr.jrbase.organisation.type.vo.OrganisationTypeSearchCriteria;
+import com.systemsjr.jrbase.organisation.type.vo.OrganisationTypeVO;
 
 /**
  * @see OrganisationType

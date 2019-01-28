@@ -8,11 +8,13 @@
  */
 package com.systemsjr.jrbase.workbench.application.service;
 
+import java.util.Collection;
+
+import org.springframework.stereotype.Service;
+
 import com.systemsjr.jrbase.workbench.application.Application;
 import com.systemsjr.jrbase.workbench.application.vo.ApplicationSearchCriteria;
 import com.systemsjr.jrbase.workbench.application.vo.ApplicationVO;
-import java.util.Collection;
-import org.springframework.stereotype.Service;
 
 /**
  * @see com.systemsjr.jrbase.workbench.application.service.ApplicationService

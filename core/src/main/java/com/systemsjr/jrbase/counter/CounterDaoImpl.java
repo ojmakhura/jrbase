@@ -6,8 +6,6 @@
  */
 package com.systemsjr.jrbase.counter;
 
-import com.systemsjr.jrbase.counter.vo.CounterVO;
-
 import java.util.Collection;
 
 import org.springframework.stereotype.Repository;

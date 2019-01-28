@@ -4,7 +4,6 @@ package com.systemsjr.jrbase.workbench.application.web.search;
 
 import java.util.Collection;
 
-import com.systemsjr.jrbase.JsfUtils;
 import com.systemsjr.jrbase.workbench.application.vo.ApplicationSearchCriteria;
 import com.systemsjr.jrbase.workbench.application.vo.ApplicationVO;
 
@@ -45,8 +44,7 @@ public class ApplicationSearchControllerImpl
     @Override
     public void doApplicationEdit(DoApplicationEditForm form)
     {
-        getSearchApplicationsForm().setId(form.getId());
-        form.setApplicationVO(getSelectedApplication());
+        form.setApplicationVO(getApplicationService().findById(form.getId()));        
     }
 
     /**
@@ -55,20 +53,7 @@ public class ApplicationSearchControllerImpl
     @Override
     public void doApplicationDetails(DoApplicationDetailsForm form)
     {
-        getSearchApplicationsForm().setId(form.getId());
-        form.setApplicationVO(getSelectedApplication());
-    }
-
-    /**
-     * @return 
-     * @see com.systemsjr.jrbase.workbench.application.web.search.ApplicationSearchController#getSelectedApplication()
-     */
-    @Override
-    protected ApplicationVO getSelectedApplication()
-    {
-    	ApplicationVO applicationVO = getApplicationService().findById(getSearchApplicationsForm().getId());
-    	JsfUtils.getFlash().put("applicationVO", applicationVO);
-    	return applicationVO;
+        form.setApplicationVO(getApplicationService().findById(form.getId()));
     }
 
 }

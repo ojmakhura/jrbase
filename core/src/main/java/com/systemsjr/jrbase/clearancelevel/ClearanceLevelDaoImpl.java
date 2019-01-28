@@ -6,14 +6,14 @@
  */
 package com.systemsjr.jrbase.clearancelevel;
 
-import com.systemsjr.jrbase.clearancelevel.vo.ClearanceLevelSearchCriteria;
-import com.systemsjr.jrbase.clearancelevel.vo.ClearanceLevelVO;
 import java.util.Collection;
-import java.util.List;
 
 import org.hibernate.Criteria;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;
+
+import com.systemsjr.jrbase.clearancelevel.vo.ClearanceLevelSearchCriteria;
+import com.systemsjr.jrbase.clearancelevel.vo.ClearanceLevelVO;
 
 /**
  * @see ClearanceLevel

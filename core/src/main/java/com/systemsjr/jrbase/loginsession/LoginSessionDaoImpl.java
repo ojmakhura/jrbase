@@ -6,9 +6,6 @@
  */
 package com.systemsjr.jrbase.loginsession;
 
-import com.systemsjr.jrbase.loginsession.vo.LoginSearchCriteria;
-import com.systemsjr.jrbase.loginsession.vo.LoginSessionVO;
-import java.util.Collection;
 import java.util.List;
 
 import org.hibernate.Criteria;

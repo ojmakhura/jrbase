@@ -8,11 +8,14 @@
  */
 package com.systemsjr.jrbase.role.service;
 
+import java.util.Collection;
+
+import org.springframework.stereotype.Service;
+
 import com.systemsjr.jrbase.clearancelevel.vo.ClearanceLevelVO;
+import com.systemsjr.jrbase.role.Role;
 import com.systemsjr.jrbase.role.vo.RoleSearchCriteria;
 import com.systemsjr.jrbase.role.vo.RoleVO;
-import java.util.Collection;
-import org.springframework.stereotype.Service;
 
 /**
  * @see com.systemsjr.jrbase.role.service.RoleService
@@ -22,70 +25,78 @@ public class RoleServiceImpl
     extends RoleServiceBase
 {
 
+
     /**
-     * @see com.systemsjr.jrbase.role.service.RoleService#saveRole(RoleVO)
+     * @see com.systemsjr.jrbase.role.service.RoleService#saveRole(com.systemsjr.jrbase.role.vo.RoleVO)
      */
     @Override
-    protected  RoleVO handleSaveRole(RoleVO roleVO)
-        throws Exception
+	protected  RoleVO handleSaveRole(RoleVO roleVO)
+        throws java.lang.Exception
     {
-        // TODO implement protected  RoleVO handleSaveRole(RoleVO roleVO)
-        throw new UnsupportedOperationException("com.systemsjr.jrbase.role.service.RoleService.handleSaveRole(RoleVO roleVO) Not implemented!");
+    	Role role;// = getRoleDao().roleVOToEntity(roleVO);
+    	
+    	if(roleVO.getId() == null){
+    		role = getRoleDao().create(getRoleDao().roleVOToEntity(roleVO));
+    	} else{
+    		role = getRoleDao().roleVOToEntity(roleVO);
+    		getRoleDao().update(role);
+    	}
+    	
+    	return getRoleDao().toRoleVO(role);
     }
 
     /**
      * @see com.systemsjr.jrbase.role.service.RoleService#getAllRoles()
      */
     @Override
-    protected  Collection<RoleVO> handleGetAllRoles()
-        throws Exception
+	protected  Collection<RoleVO> handleGetAllRoles()
+        throws java.lang.Exception
     {
-        // TODO implement protected  Collection<RoleVO> handleGetAllRoles()
-        throw new UnsupportedOperationException("com.systemsjr.jrbase.role.service.RoleService.handleGetAllRoles() Not implemented!");
+    	Collection<Role> roles = getRoleDao().loadAll();
+    	return getRoleDao().toRoleVOCollection(roles);
     }
 
     /**
-     * @see com.systemsjr.jrbase.role.service.RoleService#getRolesByClearance(ClearanceLevelVO)
+     * @see com.systemsjr.jrbase.role.service.RoleService#getRolesByClearance(com.systemsjr.jrbase.clearancelevel.vo.ClearanceLevelVO)
      */
     @Override
-    protected  Collection<RoleVO> handleGetRolesByClearance(ClearanceLevelVO clearanceVO)
-        throws Exception
+	protected  Collection<RoleVO> handleGetRolesByClearance(com.systemsjr.jrbase.clearancelevel.vo.ClearanceLevelVO clearanceVO)
+        throws java.lang.Exception
     {
-        // TODO implement protected  Collection<RoleVO> handleGetRolesByClearance(ClearanceLevelVO clearanceVO)
-        throw new UnsupportedOperationException("com.systemsjr.jrbase.role.service.RoleService.handleGetRolesByClearance(ClearanceLevelVO clearanceVO) Not implemented!");
+    	// @todo
+    	RoleSearchCriteria searchCriteria = new RoleSearchCriteria();
+    	
+    	return this.searchRoles(searchCriteria);
     }
 
-    /**
-     * @see com.systemsjr.jrbase.role.service.RoleService#getRoleClearanceLevels(RoleVO)
-     */
-    @Override
-    protected  Collection<ClearanceLevelVO> handleGetRoleClearanceLevels(RoleVO roleVO)
-        throws Exception
-    {
-        // TODO implement protected  Collection<ClearanceLevelVO> handleGetRoleClearanceLevels(RoleVO roleVO)
-        throw new UnsupportedOperationException("com.systemsjr.jrbase.role.service.RoleService.handleGetRoleClearanceLevels(RoleVO roleVO) Not implemented!");
-    }
+	@Override
+	protected Collection<ClearanceLevelVO> handleGetRoleClearanceLevels(RoleVO roleVO) throws Exception {
+		
+		Role role = getRoleDao().load(roleVO.getId());
+		
+		return getClearanceLevelDao().toClearanceLevelVOCollection(role.getRoleClearanceLevels());
+	}
 
-    /**
-     * @see com.systemsjr.jrbase.role.service.RoleService#removeRole(RoleVO)
-     */
-    @Override
-    protected  void handleRemoveRole(RoleVO roleVO)
-        throws Exception
-    {
-        // TODO implement protected  void handleRemoveRole(RoleVO roleVO)
-        throw new UnsupportedOperationException("com.systemsjr.jrbase.role.service.RoleService.handleRemoveRole(RoleVO roleVO) Not implemented!");
-    }
+	@Override
+	protected void handleRemoveRole(RoleVO roleVO) throws Exception {
+		
+		if(roleVO.getId() != null){
+			getRoleDao().remove(getRoleDao().roleVOToEntity(roleVO));
+		}
+	}
 
-    /**
-     * @see com.systemsjr.jrbase.role.service.RoleService#searchRoles(RoleSearchCriteria)
-     */
-    @Override
-    protected  Collection<RoleVO> handleSearchRoles(RoleSearchCriteria searchCriteria)
-        throws Exception
-    {
-        // TODO implement protected  Collection<RoleVO> handleSearchRoles(RoleSearchCriteria searchCriteria)
-        throw new UnsupportedOperationException("com.systemsjr.jrbase.role.service.RoleService.handleSearchRoles(RoleSearchCriteria searchCriteria) Not implemented!");
-    }
+	@Override
+	protected Collection<RoleVO> handleSearchRoles(RoleSearchCriteria searchCriteria)
+			throws Exception {
+		
+		Collection<Role> roles = getRoleDao().findByCriteria(searchCriteria); 
+		return getRoleDao().toRoleVOCollection(roles);
+	}
+
+	@Override
+	protected RoleVO handleFindById(Long id) throws Exception {
+		// TODO Auto-generated method stub
+		return getRoleDao().toRoleVO(getRoleDao().load(id));
+	}
 
 }

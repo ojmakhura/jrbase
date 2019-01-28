@@ -6,13 +6,14 @@
  */
 package com.systemsjr.jrbase.user.location;
 
-import com.systemsjr.jrbase.user.location.vo.UserLocationSearchCriteria;
-import com.systemsjr.jrbase.user.location.vo.UserLocationVO;
 import java.util.Collection;
 
 import org.hibernate.Criteria;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;
+
+import com.systemsjr.jrbase.user.location.vo.UserLocationSearchCriteria;
+import com.systemsjr.jrbase.user.location.vo.UserLocationVO;
 
 /**
  * @see UserLocation

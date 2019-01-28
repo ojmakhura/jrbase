@@ -6,90 +6,90 @@
  */
 package com.systemsjr.jrbase.workbench.application;
 
-import com.systemsjr.jrbase.workbench.application.vo.ApplicationSearchCriteria;
-import com.systemsjr.jrbase.workbench.application.vo.ApplicationVO;
-import java.util.Collection;
 import java.util.List;
 
+import org.hibernate.Criteria;
+import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;
+
+import com.systemsjr.jrbase.workbench.application.vo.ApplicationSearchCriteria;
+import com.systemsjr.jrbase.workbench.application.vo.ApplicationVO;
 
 /**
  * @see Application
  */
 @Repository
-public class ApplicationDaoImpl
-    extends ApplicationDaoBase
-{
+public class ApplicationDaoImpl extends ApplicationDaoBase {
 	/**
-     * {@inheritDoc}
-     */
-    protected List handleFindByCriteria(ApplicationSearchCriteria searchCriteria)
-    {
-        // TODO implement public List handleFindByCriteria(ApplicationSearchCriteria searchCriteria)
-        return null;
-}
+	 * {@inheritDoc}
+	 */
+	protected List handleFindByCriteria(ApplicationSearchCriteria searchCriteria) {
+		Criteria criteria = getSession().createCriteria(Application.class);
 
-    /**
-     * {@inheritDoc}
-     */
-    public void toApplicationVO(
-        Application source,
-        ApplicationVO target)
-    {
-        // TODO verify behavior of toApplicationVO
-        super.toApplicationVO(source, target);
-    }
+		if (searchCriteria.getCode() != null) {
+			criteria.add(Restrictions.ilike("code", "%" + searchCriteria.getCode() + "%"));
+		}
 
-    /**
-     * {@inheritDoc}
-     */
-    public ApplicationVO toApplicationVO(final Application entity)
-    {
-        // TODO verify behavior of toApplicationVO
-        return super.toApplicationVO(entity);
-    }
+		if (searchCriteria.getName() != null) {
+			criteria.add(Restrictions.ilike("name", "%" + searchCriteria.getName() + "%"));
+		}
 
-    /**
-     * Retrieves the entity object that is associated with the specified value object
-     * from the object store. If no such entity object exists in the object store,
-     * a new, blank entity is created
-     */
-    private Application loadApplicationFromApplicationVO(ApplicationVO applicationVO)
-    {
-        // TODO implement loadApplicationFromApplicationVO
-        throw new UnsupportedOperationException("com.systemsjr.jrbase.workbench.application.loadApplicationFromApplicationVO(ApplicationVO) not yet implemented.");
+		if (searchCriteria.getDescription() != null) {
+			criteria.add(Restrictions.ilike("description", "%" + searchCriteria.getDescription() + "%"));
+		}
 
-        /* A typical implementation looks like this:
-        Application application = this.get(applicationVO.getId());
-        if (application == null)
-        {
-            application = Application.Factory.newInstance();
-        }
-        return application;
-        */
-    }
+		return criteria.list();
+	}
 
-    /**
-     * {@inheritDoc}
-     */
-    public Application applicationVOToEntity(ApplicationVO applicationVO)
-    {
-        // TODO verify behavior of applicationVOToEntity
-        Application entity = this.loadApplicationFromApplicationVO(applicationVO);
-        this.applicationVOToEntity(applicationVO, entity, true);
-        return entity;
-    }
+	/**
+	 * {@inheritDoc}
+	 */
+	public void toApplicationVO(Application source, ApplicationVO target) {
+		// TODO verify behavior of toApplicationVO
+		super.toApplicationVO(source, target);
+	}
 
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    public void applicationVOToEntity(
-        ApplicationVO source,
-        Application target,
-        boolean copyIfNull)
-    {
-        // TODO verify behavior of applicationVOToEntity
-        super.applicationVOToEntity(source, target, copyIfNull);
-    }
+	/**
+	 * {@inheritDoc}
+	 */
+	public ApplicationVO toApplicationVO(final Application entity) {
+		// TODO verify behavior of toApplicationVO
+		return super.toApplicationVO(entity);
+	}
+
+	/**
+	 * Retrieves the entity object that is associated with the specified value
+	 * object from the object store. If no such entity object exists in the object
+	 * store, a new, blank entity is created
+	 */
+	private Application loadApplicationFromApplicationVO(ApplicationVO applicationVO) {
+		
+		Application application = Application.Factory.newInstance();
+		
+		if(applicationVO.getId() != null)
+		{
+			application = this.load(applicationVO.getId());
+		}
+		
+		return application;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	public Application applicationVOToEntity(ApplicationVO applicationVO) {
+		// TODO verify behavior of applicationVOToEntity
+		Application entity = this.loadApplicationFromApplicationVO(applicationVO);
+		this.applicationVOToEntity(applicationVO, entity, true);
+		return entity;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public void applicationVOToEntity(ApplicationVO source, Application target, boolean copyIfNull) {
+		// TODO verify behavior of applicationVOToEntity
+		super.applicationVOToEntity(source, target, copyIfNull);
+	}
 }

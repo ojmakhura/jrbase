@@ -6,9 +6,6 @@
  */
 package com.systemsjr.jrbase.workbench.program;
 
-import com.systemsjr.jrbase.workbench.program.vo.ProgramSearchCriteria;
-import com.systemsjr.jrbase.workbench.program.vo.ProgramVO;
-import java.util.Collection;
 import java.util.List;
 
 import org.hibernate.Criteria;

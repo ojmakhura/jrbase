@@ -9,10 +9,12 @@
  */
 package com.systemsjr.jrbase.counter.service;
 
+import java.util.Collection;
+
+import org.springframework.stereotype.Service;
+
 import com.systemsjr.jrbase.counter.Counter;
 import com.systemsjr.jrbase.counter.vo.CounterVO;
-import java.util.Collection;
-import org.springframework.stereotype.Service;
 
 /**
  * @see com.systemsjr.jrbase.counter.service.CounterService

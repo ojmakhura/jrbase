@@ -6,10 +6,12 @@
  */
 package com.systemsjr.jrbase.role;
 
+import java.util.Collection;
+
+import org.springframework.stereotype.Repository;
+
 import com.systemsjr.jrbase.role.vo.RoleSearchCriteria;
 import com.systemsjr.jrbase.role.vo.RoleVO;
-import java.util.Collection;
-import org.springframework.stereotype.Repository;
 
 /**
  * @see Role
